@@ -28,7 +28,7 @@ export default function Authority() {
                   src="/images/Dr.jpeg" 
                   alt="Dr. Vyakarnam Nageshwar" 
                   fill 
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </motion.div>
               <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-90" />
