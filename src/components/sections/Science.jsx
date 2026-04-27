@@ -1,8 +1,15 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CheckCircle2, Zap, Search, Activity } from "lucide-react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const steps = [
   {
@@ -27,95 +34,108 @@ const steps = [
 
 export default function Science() {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
+  const videoRef = useRef(null);
+  const contentRef = useRef(null);
 
-  const videoY = useTransform(scrollYProgress, [0, 1], [-60, 60]);
+  useGSAP(() => {
+    // Smooth reveal for content
+    gsap.from(".step-item", {
+      opacity: 0,
+      x: -50,
+      stagger: 0.2,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".step-item",
+        start: "top 80%",
+      }
+    });
+
+    // Parallax for video
+    gsap.to(videoRef.current, {
+      y: 100,
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+  }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="bg-[#0B0F0E] py-24 md:py-40 overflow-hidden text-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section ref={containerRef} className="bg-[#0B0F0E] py-24 md:py-40 overflow-hidden text-white relative">
+      {/* Background ambient glow - Claude style */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
           {/* CONTENT: THE LOGIC */}
-          <div className="flex-1 order-2 lg:order-1">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
+          <div ref={contentRef} className="flex-1 order-2 lg:order-1">
+            <div className="max-w-xl">
               <span className="text-primary-accent font-bold tracking-widest uppercase text-sm mb-4 block">Our Methodology</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-12 leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-12 leading-[1.1] tracking-tight">
                 Root-cause resolution. <br/>
-                <span className="text-gray-500">Not symptom management.</span>
+                <span className="text-slate-500">Not symptom management.</span>
               </h2>
 
-              <div className="space-y-12 relative pl-8">
+              <div className="space-y-16 relative pl-8">
                 {/* Vertical Line */}
-                <div className="absolute left-[15px] top-4 bottom-4 w-px bg-white/10" />
+                <div className="absolute left-[15px] top-4 bottom-4 w-px bg-gradient-to-b from-primary-accent/50 via-primary-accent/10 to-transparent" />
                 
                 {steps.map((step, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.2, ease: "easeOut" }}
-                    className="relative z-10"
-                  >
-                    {/* Bullet */}
-                    <div className="absolute -left-[40px] top-1.5 w-4 h-4 rounded-full bg-dark border-4 border-primary-accent shadow-[0_0_15px_rgba(0,255,150,0.4)]" />
+                  <div key={i} className="step-item relative z-10 group">
+                    {/* Bullet - Premium glow */}
+                    <div className="absolute -left-[40px] top-1.5 w-4 h-4 rounded-full bg-dark border-4 border-primary-accent shadow-[0_0_20px_rgba(0,255,150,0.4)] group-hover:scale-125 transition-transform duration-300" />
                     
-                    <div className="flex flex-col gap-2">
-                      <div className="flex items-center gap-3">
-                        <step.icon className="text-primary-accent" size={20} />
-                        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">{step.title}</h3>
+                    <div className="flex flex-col gap-3">
+                      <div className="flex items-center gap-4">
+                        <div className="p-2 rounded-lg bg-primary-accent/10 text-primary-accent">
+                          <step.icon size={20} />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white tracking-tight">{step.title}</h3>
                       </div>
                       <p className="text-primary-accent/80 font-bold text-xs uppercase tracking-widest">{step.label}</p>
-                      <p className="text-gray-400 text-lg leading-relaxed max-w-md">{step.description}</p>
+                      <p className="text-slate-400 text-lg leading-relaxed">{step.description}</p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* VIDEO: THE SCIENCE */}
           <div className="flex-1 order-1 lg:order-2 w-full">
             <div className="relative">
-              {/* Decorative Frame */}
-              <div className="absolute -inset-4 border border-white/5 rounded-3xl pointer-events-none" />
+              {/* Glass Frame - Claude inspired */}
+              <div className="absolute -inset-6 border border-white/5 rounded-3xl backdrop-blur-sm pointer-events-none" />
               
-              <motion.div 
-                style={{ y: videoY }}
+              <div 
+                ref={videoRef}
                 className="relative w-full aspect-[4/5] lg:aspect-square rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10"
               >
-                <motion.div
-                  animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-                  className="w-full h-full"
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover opacity-70 transition-opacity duration-1000 hover:opacity-90"
                 >
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover opacity-80"
-                  >
-                    <source src="/_INFLAMMATION%20VIDEO%20(Scientific%20Section).mp4" type="video/mp4" />
-                  </video>
-                </motion.div>
+                  <source src="/_INFLAMMATION%20VIDEO%20(Scientific%20Section).mp4" type="video/mp4" />
+                </video>
                 
-                {/* Scientific HUD Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-10 left-10 flex items-center gap-4">
-                  <div className="w-2.5 h-2.5 rounded-full bg-primary-accent animate-pulse shadow-[0_0_10px_#1A5F3A]" />
-                  <span className="text-xs font-bold uppercase tracking-[0.3em] text-white/50">Scientific Immune Spectrum</span>
+                {/* Premium Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-12 left-12 flex flex-col gap-2">
+                   <div className="flex items-center gap-3">
+                      <div className="w-2.5 h-2.5 rounded-full bg-primary-accent animate-pulse" />
+                      <span className="text-xs font-bold uppercase tracking-[0.4em] text-white/40">Real-time Analysis</span>
+                   </div>
+                   <p className="text-sm font-medium text-white/70">Immune Mapping Framework v4.2</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
 
