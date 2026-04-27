@@ -10,8 +10,8 @@ export default function StickyBottomBar() {
   const [isVisible, setIsVisible] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // Show after scrolling past hero (approx 600px)
-    if (latest > 600) {
+    // Show after scrolling past hero
+    if (latest > 400) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -20,22 +20,22 @@ export default function StickyBottomBar() {
 
   return (
     <motion.div
-      initial={{ y: 100 }}
-      animate={{ y: isVisible ? 0 : 100 }}
-      transition={{ duration: 0.3 }}
-      className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-100 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] md:hidden"
+      initial={{ y: 120 }}
+      animate={{ y: isVisible ? 0 : 120 }}
+      transition={{ duration: 0.5, ease: "circOut" }}
+      className="fixed bottom-6 left-4 right-4 z-50 md:hidden"
     >
-      <div className="flex px-4 py-3 gap-3">
+      <div className="bg-white/90 backdrop-blur-xl border border-gray-100 rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-2.5 flex gap-2.5">
         <Link 
           href="#contact"
-          className="flex-1 bg-primary text-white py-3 rounded-xl flex items-center justify-center gap-2 font-medium"
+          className="flex-[2] bg-primary text-white py-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-sm shadow-lg shadow-primary/20 active:scale-95 transition-transform"
         >
           <Calendar size={18} />
-          Book
+          Book Evaluation
         </Link>
         <Link 
           href="tel:+918074368748"
-          className="flex-1 border border-gray-200 text-gray-900 py-3 rounded-xl flex items-center justify-center gap-2 font-medium bg-gray-50"
+          className="flex-1 bg-gray-900 text-white py-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-sm active:scale-95 transition-transform"
         >
           <Phone size={18} />
           Call

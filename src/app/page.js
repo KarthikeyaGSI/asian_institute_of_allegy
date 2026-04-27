@@ -11,9 +11,11 @@ import GuidedEntry from "@/components/sections/GuidedEntry";
 // Phase 2
 import Comparison from "@/components/sections/Comparison";
 import Pathways from "@/components/sections/Pathways";
+import Science from "@/components/sections/Science";
 
 // Phase 3
 import Authority from "@/components/sections/Authority";
+import Testimonials from "@/components/sections/Testimonials";
 import BookingForm from "@/components/sections/BookingForm";
 
 import StickyBottomBar from "@/components/layout/StickyBottomBar";
@@ -35,9 +37,11 @@ export default function Home() {
       {/* PHASE 2: THE LOGIC LAYER */}
       <Comparison />
       <Pathways />
+      <Science />
       
       {/* PHASE 3: THE AUTHORITY LAYER */}
       <Authority />
+      <Testimonials />
       <BookingForm />
       
       <Footer />
