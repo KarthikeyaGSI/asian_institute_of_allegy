@@ -60,17 +60,17 @@ export default function Navbar() {
         </div>
 
         {/* Center Logo */}
-        <Link href="/" className="flex flex-col items-center group lg:absolute lg:left-1/2 lg:-translate-x-1/2 text-center">
-          <span className="text-lg md:text-xl font-bold text-white tracking-tighter uppercase leading-none">
+        <Link href="/" className="flex flex-col items-center group lg:absolute lg:left-1/2 lg:-translate-x-1/2 text-center flex-1 lg:flex-none px-2">
+          <span className="text-[11px] md:text-xl font-bold text-white tracking-tighter uppercase leading-none truncate max-w-[140px] md:max-w-none">
             {isWAF ? "World Allergy Foundation" : "Asian Institute"}
           </span>
-          <span className="text-[7px] text-white/40 font-black uppercase tracking-[0.4em] mt-1">
+          <span className="text-[5px] md:text-[7px] text-white/40 font-black uppercase tracking-[0.4em] mt-1">
             {isWAF ? "Global Research Wing" : "Centre of Excellence"}
           </span>
         </Link>
 
         {/* Right Side Actions */}
-        <div className="flex items-center gap-2 md:gap-4">
+        <div className="flex items-center gap-1 md:gap-4">
           <Link
             href="/#contact"
             className="hidden xl:block text-[11px] font-black text-white/60 hover:text-white transition-colors tracking-[0.2em] uppercase"

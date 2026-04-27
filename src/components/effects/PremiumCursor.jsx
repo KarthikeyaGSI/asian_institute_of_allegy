@@ -8,33 +8,40 @@ export default function PremiumCursor() {
   const followerRef = useRef(null);
 
   useEffect(() => {
+    // Only run on non-touch devices
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
     const cursor = cursorRef.current;
     const follower = followerRef.current;
 
+    const xSetter = gsap.quickSetter(cursor, "x", "px");
+    const ySetter = gsap.quickSetter(cursor, "y", "px");
+    const xFollowerSetter = gsap.quickSetter(follower, "x", "px");
+    const yFollowerSetter = gsap.quickSetter(follower, "y", "px");
+
     const moveCursor = (e) => {
-      gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.1,
-      });
+      xSetter(e.clientX);
+      ySetter(e.clientY);
+      
       gsap.to(follower, {
         x: e.clientX,
         y: e.clientY,
-        duration: 0.5,
+        duration: 0.6,
+        ease: "power2.out"
       });
     };
 
     const onMouseEnter = () => {
-      gsap.to(follower, { scale: 2, backgroundColor: "rgba(26, 95, 58, 0.15)", duration: 0.3 });
+      gsap.to(follower, { scale: 1.5, backgroundColor: "rgba(163, 230, 53, 0.1)", borderColor: "rgba(163, 230, 53, 0.5)", duration: 0.3 });
     };
 
     const onMouseLeave = () => {
-      gsap.to(follower, { scale: 1, backgroundColor: "transparent", duration: 0.3 });
+      gsap.to(follower, { scale: 1, backgroundColor: "transparent", borderColor: "rgba(163, 230, 53, 0.2)", duration: 0.3 });
     };
 
     window.addEventListener("mousemove", moveCursor);
     
-    const interactiveElements = document.querySelectorAll("a, button, [role='button']");
+    const interactiveElements = document.querySelectorAll("a, button");
     interactiveElements.forEach((el) => {
       el.addEventListener("mouseenter", onMouseEnter);
       el.addEventListener("mouseleave", onMouseLeave);
@@ -53,12 +60,12 @@ export default function PremiumCursor() {
     <>
       <div 
         ref={cursorRef} 
-        className="fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-[10000] mix-blend-difference hidden md:block"
+        className="fixed top-0 left-0 w-1.5 h-1.5 bg-primary-accent rounded-full pointer-events-none z-[10000] hidden lg:block mix-blend-difference"
         style={{ transform: "translate(-50%, -50%)" }}
       />
       <div 
         ref={followerRef} 
-        className="fixed top-0 left-0 w-10 h-10 border border-primary/30 rounded-full pointer-events-none z-[9999] hidden md:block"
+        className="fixed top-0 left-0 w-8 h-8 border border-primary-accent/20 rounded-full pointer-events-none z-[9999] hidden lg:block"
         style={{ transform: "translate(-50%, -50%)" }}
       />
     </>

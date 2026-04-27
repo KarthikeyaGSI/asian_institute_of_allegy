@@ -78,9 +78,9 @@ export default function Hero() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 text-left mt-16">
           <div className="max-w-5xl">
             <motion.div
-              initial={{ opacity: 0.01, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             >
               <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-[1] md:leading-[0.9] text-white tracking-tight font-heading">
                 We find what&apos;s <br className="hidden sm:block" />
