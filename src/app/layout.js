@@ -1,5 +1,8 @@
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/effects/SmoothScroll";
+import NoiseOverlay from "@/components/effects/NoiseOverlay";
+import PremiumCursor from "@/components/effects/PremiumCursor";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -22,8 +25,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${outfit.variable} ${plusJakarta.variable} h-full antialiased scroll-smooth`}>
-      <body className="min-h-full flex flex-col font-body">
-        {children}
+      <body className="min-h-full flex flex-col font-body overflow-x-hidden">
+        <SmoothScroll>
+          <NoiseOverlay />
+          <PremiumCursor />
+          {children}
+        </SmoothScroll>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

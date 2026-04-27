@@ -1,151 +1,95 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Wind, ShieldCheck, Activity, Zap, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, UserPlus, Clock, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 const options = [
   {
-    id: "breathing",
-    title: "Breathing Issues",
-    icon: Wind,
-    cause: "Usually dust mites, pollen, or allergic asthma triggers.",
-    approach: "PFT Diagnosis + Personalized SLIT (Immunotherapy).",
-    oneRoof: "Get your PFT, Allergy Testing, and Immunotherapy plan in one visit.",
+    id: "new-patient",
+    title: "I am a new patient",
+    subtitle: "First-time clinical workup",
+    description: "Start here if you have chronic symptoms but no definitive diagnosis.",
+    icon: UserPlus,
+    color: "bg-primary",
   },
   {
-    id: "skin",
-    title: "Skin Allergies",
-    icon: ShieldCheck,
-    cause: "Commonly Eczema, Hives, or Contact Dermatitis.",
-    approach: "Patch Testing + Barrier Restoration + Immune Training.",
-    oneRoof: "Complete diagnosis, patch testing, and treatment plan under one roof.",
-  },
-  {
-    id: "ent",
-    title: "Sinus / ENT",
-    icon: Activity,
-    cause: "Chronic Sinusitis, Allergic Rhinitis, or Nasal Polyps.",
-    approach: "Endoscopic Assessment + Targeted Allergen Neutralization.",
-    oneRoof: "Endoscopy, allergy screening, and personalized care in a single visit.",
-  },
-  {
-    id: "chronic",
-    title: "Chronic / Autoimmune",
-    icon: Zap,
-    cause: "Complex inflammatory responses and immune dysfunction.",
-    approach: "Systemic Diagnosis + Advanced Immunomodulation.",
-    oneRoof: "Comprehensive systemic evaluation and ongoing follow-ups in one place.",
-  },
+    id: "returning",
+    title: "I have a diagnosis",
+    subtitle: "Seeking second opinion",
+    description: "For those already diagnosed but seeking long-term resolution via SLIT.",
+    icon: Clock,
+    color: "bg-slate-900",
+  }
 ];
 
 export default function GuidedEntry() {
-  const [expandedId, setExpandedId] = useState(null);
-
   return (
-    <section id="how-we-help" className="bg-gray-50 py-24 md:py-32 overflow-hidden scroll-mt-24">
+    <section id="how-we-help" className="bg-white py-32 md:py-48 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Guided Entry</span>
-          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6">What are you dealing with?</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">Select your primary concern to see our root-cause approach.</p>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-end mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <Sparkles size={20} />
+              </div>
+              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs">Guided Entry</span>
+            </div>
+            <h2 className="text-6xl md:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tighter font-heading mb-8">
+              How can we <br/>
+              <span className="text-slate-300 italic">help you today?</span>
+            </h2>
+            <p className="text-xl text-slate-500 leading-relaxed font-medium max-w-xl">
+              Select your current situation to see the most relevant diagnostic pathway and treatment timeline.
+            </p>
+          </motion.div>
+          
+          <div className="hidden lg:flex justify-end">
+             <div className="w-32 h-32 rounded-full border border-slate-100 flex items-center justify-center animate-spin-slow">
+                <div className="w-2 h-2 bg-primary rounded-full" />
+             </div>
+          </div>
+        </div>
 
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
-          {options.map((option, index) => {
-            const isExpanded = expandedId === option.id;
-            
-            return (
-              <motion.div
-                key={option.id}
-                layout
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {options.map((opt, i) => (
+            <Link key={opt.id} href="/#contact" className="group">
+              <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`flex flex-col transition-all duration-500 ${
-                  isExpanded ? "lg:col-span-2 lg:row-span-1" : "lg:col-span-1"
-                }`}
+                transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="relative bg-slate-50 rounded-[3rem] p-10 md:p-16 overflow-hidden border border-slate-100 group-hover:border-primary/20 group-hover:bg-white transition-all duration-700"
               >
-                <motion.div
-                  layout
-                  onClick={() => setExpandedId(isExpanded ? null : option.id)}
-                  className={`bg-white rounded-3xl p-8 cursor-pointer h-full flex flex-col transition-all duration-300 relative group ${
-                    isExpanded 
-                      ? "ring-2 ring-primary shadow-2xl shadow-primary/10" 
-                      : "shadow-none border border-gray-100 hover:ring-2 hover:ring-primary/50 hover:shadow-2xl hover:shadow-primary/5"
-                  }`}
-                >
-                  <motion.div layout className="flex items-center gap-6 mb-6">
-                    <div className={`p-5 rounded-2xl transition-all duration-500 ${isExpanded ? "bg-primary text-white shadow-[0_0_25px_rgba(26,95,58,0.4)]" : "bg-gray-50 text-primary group-hover:bg-primary group-hover:text-white"}`}>
-                      <option.icon size={32} />
-                    </div>
-                    <h3 className={`text-2xl font-bold transition-colors duration-500 ${isExpanded ? "text-primary" : "text-gray-900"}`}>{option.title}</h3>
-                  </motion.div>
-
-                  <AnimatePresence mode="wait">
-                    {isExpanded ? (
-                      <motion.div
-                        key="expanded"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.4 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pt-6 border-t border-gray-100 mt-2 space-y-6">
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                             <div className="space-y-4">
-                                <div>
-                                  <span className="block text-xs uppercase tracking-widest text-primary font-bold mb-2">Likely Cause</span>
-                                  <p className="text-gray-600 text-base leading-relaxed">{option.cause}</p>
-                                </div>
-                                <div>
-                                  <span className="block text-xs uppercase tracking-widest text-primary font-bold mb-2">Our Approach</span>
-                                  <p className="text-gray-900 font-bold text-base leading-relaxed">{option.approach}</p>
-                                </div>
-                             </div>
-                             <div className="space-y-6">
-                                <div className="bg-primary/5 p-5 rounded-2xl border border-primary/10">
-                                  <span className="block text-xs uppercase tracking-widest text-primary font-bold mb-2">All-in-One Care</span>
-                                  <p className="text-primary font-medium text-sm leading-relaxed">{option.oneRoof}</p>
-                                </div>
-                                <Link 
-                                  href="#contact"
-                                  className="inline-flex items-center justify-center w-full gap-3 text-white bg-primary px-6 py-4 rounded-2xl font-bold text-base hover:bg-[#154d2e] transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-primary/20"
-                                  onClick={(e) => {
-                                      e.stopPropagation();
-                                  }}
-                                >
-                                  Explore Pathway <ArrowRight size={20} />
-                                </Link>
-                             </div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        key="collapsed"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="flex items-center text-primary font-bold text-sm group-hover:translate-x-2 transition-transform"
-                      >
-                        Select concern <ArrowRight size={16} className="ml-2" />
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
+                {/* Background Accent */}
+                <div className={`absolute top-0 right-0 w-64 h-64 ${opt.color} opacity-[0.02] rounded-full translate-x-1/2 -translate-y-1/2 group-hover:scale-150 transition-transform duration-1000`} />
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className={`w-20 h-20 rounded-3xl ${opt.color} text-white flex items-center justify-center mb-10 shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
+                    <opt.icon size={36} />
+                  </div>
+                  
+                  <span className="text-primary font-bold tracking-widest uppercase text-[10px] mb-4 block">{opt.subtitle}</span>
+                  <h3 className="text-4xl font-bold text-slate-900 mb-6 font-heading tracking-tight">{opt.title}</h3>
+                  <p className="text-lg text-slate-500 leading-relaxed font-medium mb-10 max-w-sm">
+                    {opt.description}
+                  </p>
+                  
+                  <div className="mt-auto flex items-center gap-4 text-slate-900 font-black uppercase tracking-widest text-xs">
+                    <span>Explore Pathway</span>
+                    <div className="w-10 h-px bg-slate-200 group-hover:w-20 group-hover:bg-primary transition-all duration-500" />
+                    <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                  </div>
+                </div>
               </motion.div>
-            );
-          })}
-        </motion.div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
