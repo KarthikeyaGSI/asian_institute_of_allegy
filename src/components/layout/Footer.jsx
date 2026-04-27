@@ -9,40 +9,43 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2">
-              <div className="bg-primary p-1.5 rounded-lg">
-                <div className="w-6 h-6 border-2 border-white rounded-full flex items-center justify-center">
-                  <div className="w-2 h-2 bg-white rounded-full" />
-                </div>
-              </div>
-              <span className="font-bold text-xl tracking-tight text-primary">
+              <span className="font-bold text-2xl tracking-tight text-primary font-heading">
                 Asian Institute
               </span>
             </Link>
-            <p className="text-gray-500 leading-relaxed">
-              Centre of Excellence for Allergy, Asthma & Immunology. 
-              Dedicated to root-cause treatment and long-term relief.
+            <p className="text-slate-500 leading-relaxed font-medium">
+              Global Centre of Excellence for Allergy & Immunological Research. 
+              Specialized in root-cause resolution through Sublingual Immunotherapy (SLIT).
             </p>
           </div>
 
           {/* Contact */}
           <div className="space-y-6">
-            <h4 className="font-bold text-lg">Contact Us</h4>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin className="text-primary mt-1 shrink-0" size={20} />
-                <span className="text-gray-600">
-                  Uppal Bhagayat, Hyderabad, Telangana, India
-                </span>
+            <h4 className="font-bold text-lg font-heading">Our Locations</h4>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <MapPin className="text-primary mt-1 shrink-0" size={22} />
+                <div>
+                  <span className="block font-bold text-slate-900 text-sm uppercase tracking-wider mb-1">Centre 1 (Primary)</span>
+                  <span className="text-slate-600 text-sm">
+                    Khajaguda, Hyderabad, Telangana
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-start gap-4">
+                <MapPin className="text-primary mt-1 shrink-0" size={22} />
+                <div>
+                  <span className="block font-bold text-slate-900 text-sm uppercase tracking-wider mb-1">Centre 2</span>
+                  <span className="text-slate-600 text-sm">
+                    Uppal Bhagayat, Hyderabad, Telangana
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 pt-2">
                 <Phone className="text-primary shrink-0" size={20} />
-                <Link href="tel:+918074368748" className="text-gray-600 hover:text-primary">
+                <Link href="tel:+918074368748" className="text-slate-600 font-bold hover:text-primary">
                   +91 80743 68748
                 </Link>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="text-primary shrink-0" size={20} />
-                <span className="text-gray-600">contact@asianallergy.com</span>
               </div>
             </div>
           </div>

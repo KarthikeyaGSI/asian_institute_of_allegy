@@ -82,23 +82,27 @@ export default function Authority() {
             <Globe size={300} strokeWidth={1} />
           </div>
           
-          <div className="relative z-10 max-w-3xl">
+          <div className="relative z-10 max-w-4xl">
             <div className="flex items-center gap-3 mb-6">
               <Globe className="text-primary-accent" size={24} />
-              <span className="text-primary-accent font-bold tracking-widest uppercase text-sm">Global Network</span>
+              <span className="text-primary-accent font-bold tracking-widest uppercase text-sm">Global Rarity</span>
             </div>
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6">
-              Integrated with the World Allergy Foundation
+            <h3 className="text-3xl md:text-5xl font-semibold mb-6 tracking-tight">
+              One of the few specialized <br/> institutes in the world.
             </h3>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              Our clinical protocols aren&apos;t just local; they are rooted in global research networks. We align our immune retraining and diagnostic standards with the world&apos;s leading immunological frameworks.
+            <p className="text-gray-300 text-xl mb-10 leading-relaxed font-medium">
+              Globally, dedicated centers for comprehensive allergy and immunological care across all age groups exist almost exclusively in Japan and Singapore. The Asian Institute in Hyderabad bridges this critical gap for the Indian subcontinent.
             </p>
-            <Link 
-              href="/world-allergy-foundation"
-              className="inline-flex items-center gap-2 bg-white text-dark px-8 py-4 rounded-xl font-bold text-sm hover:bg-gray-100 transition-colors"
-            >
-              Explore Our Global Reach <ArrowRight size={18} />
-            </Link>
+            <div className="flex flex-col md:flex-row gap-10">
+               <div className="flex-1">
+                  <span className="block text-4xl font-bold text-white mb-2">50,000+</span>
+                  <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Complex Cases Solved</span>
+               </div>
+               <div className="flex-1">
+                  <span className="block text-4xl font-bold text-primary-accent mb-2">15,000+</span>
+                  <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">SLIT Success Stories</span>
+               </div>
+            </div>
           </div>
         </motion.div>
 

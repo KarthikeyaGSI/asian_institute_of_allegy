@@ -95,7 +95,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="mt-8 text-slate-300 text-xl md:text-3xl font-medium max-w-2xl leading-relaxed"
             >
-              Root-cause care for allergy, asthma, and immune disorders. Stop running between hospitals.
+              One of the few specialized institutes globally. Addressing the root cause for patients aged 2 to 80.
             </motion.p>
 
             <motion.div 
