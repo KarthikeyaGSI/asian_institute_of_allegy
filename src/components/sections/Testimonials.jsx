@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, Play } from "lucide-react";
 
 const testimonials = [
   {
@@ -24,17 +24,33 @@ const testimonials = [
   }
 ];
 
+const videoTestimonials = [
+  "qv1NJ1PDEXA",
+  "10fIm_am9k8",
+  "Hppih_IZeCo",
+  "_mqPWMwwJzA",
+  "3qslDhkaUKI",
+  "URLAVakbZ8M",
+  "FepgsMC8sv0",
+  "W7IBuqq2BlE",
+  "udBxN633PI0",
+  "uA8Akbp-22Y",
+  "sXsNYSpMkhw",
+  "Ckhopz9Mjac"
+];
+
 export default function Testimonials() {
   return (
     <section className="bg-white py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
+        {/* TEXT TESTIMONIALS */}
         <div className="text-center mb-20">
           <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Success Stories</span>
           <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-6">Real Outcomes.</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">See how root-cause resolution transforms lives for those who have failed standard care.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-32">
           {testimonials.map((item, i) => (
             <motion.div
               key={i}
@@ -67,6 +83,42 @@ export default function Testimonials() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* VIDEO TESTIMONIALS */}
+        <div className="text-center mb-16">
+          <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Patient Voice</span>
+          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-6">Video Testimonials</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">Real patients sharing their journey from chronic suffering to recovery.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {videoTestimonials.map((videoId, i) => (
+            <motion.div
+              key={videoId}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+              className="relative aspect-video rounded-3xl overflow-hidden bg-gray-100 border border-gray-200 group"
+            >
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${videoId}?si=JsOgNjXXEZnX5Lf8`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </motion.div>
+          ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <p className="text-gray-500 font-medium italic">...and many more lives transformed.</p>
         </div>
       </div>
     </section>
