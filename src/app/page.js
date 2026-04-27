@@ -12,14 +12,10 @@ import GuidedEntry from "@/components/sections/GuidedEntry";
 import Comparison from "@/components/sections/Comparison";
 import Pathways from "@/components/sections/Pathways";
 
-// Existing components (Phase 3 & Legacy)
-import InflammationJourney from "@/components/home/InflammationJourney";
-import DoctorAnchor from "@/components/home/DoctorAnchor";
-import Testimonials from "@/components/home/Testimonials";
-import ProofSection from "@/components/home/ProofSection";
-import FoundationSection from "@/components/home/FoundationSection";
-import ContactForm from "@/components/home/ContactForm";
-import LocationSection from "@/components/home/LocationSection";
+// Phase 3
+import Authority from "@/components/sections/Authority";
+import BookingForm from "@/components/sections/BookingForm";
+
 import StickyBottomBar from "@/components/layout/StickyBottomBar";
 
 export default function Home() {
@@ -40,17 +36,9 @@ export default function Home() {
       <Comparison />
       <Pathways />
       
-      {/* 
-        Below are the legacy components.
-        These will be progressively replaced by Phase 3 (Authority, BookingForm) components.
-      */}
-      <InflammationJourney />
-      <DoctorAnchor />
-      <Testimonials />
-      <ProofSection />
-      <FoundationSection />
-      <ContactForm />
-      <LocationSection />
+      {/* PHASE 3: THE AUTHORITY LAYER */}
+      <Authority />
+      <BookingForm />
       
       <Footer />
       <StickyBottomBar />
