@@ -1,8 +1,59 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function BookingForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    condition: ""
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // 1. Submit to Web3Forms
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "3c43e0ba-47fb-424c-9103-345682cc4a5a",
+          subject: `New Inquiry from ${formData.name}`,
+          from_name: "Asian Institute Website",
+          name: formData.name,
+          phone: formData.phone,
+          condition: formData.condition,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // 2. Redirect to WhatsApp
+        const waMessage = encodeURIComponent(
+          `Hello Asian Institute,\n\nI would like to book an evaluation.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Condition:* ${formData.condition}\n\nPlease contact me.`
+        );
+        window.location.href = `https://wa.me/918074368748?text=${waMessage}`;
+      } else {
+        alert("Something went wrong. Please try again or call us directly.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Submission failed. Redirecting to WhatsApp directly...");
+      // Fallback redirect
+      window.location.href = "https://wa.me/918074368748";
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="bg-muted py-24 md:py-32 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -46,12 +97,14 @@ export default function BookingForm() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="p-10 md:p-16 flex-1 bg-white flex flex-col justify-center"
           >
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="full-name" className="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
                 <input 
                   id="full-name"
                   type="text" 
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
                   className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
                   placeholder="e.g. Rahul Sharma"
                   required
@@ -62,6 +115,8 @@ export default function BookingForm() {
                 <input 
                   id="phone"
                   type="tel" 
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
                   placeholder="+91"
                   required
@@ -71,15 +126,16 @@ export default function BookingForm() {
                 <label htmlFor="condition" className="block text-sm font-bold text-slate-700 mb-2">Primary Condition</label>
                 <select 
                   id="condition"
+                  value={formData.condition}
+                  onChange={(e) => setFormData({...formData, condition: e.target.value})}
                   className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50 text-slate-700 appearance-none"
-                  defaultValue=""
                   required
                 >
                   <option value="" disabled>Select an option</option>
-                  <option>Breathing Issues / Asthma</option>
-                  <option>Skin Allergies / Eczema</option>
-                  <option>Sinus / ENT Issues</option>
-                  <option>Complex / Autoimmune</option>
+                  <option value="Asthma">Breathing Issues / Asthma</option>
+                  <option value="Skin Allergy">Skin Allergies / Eczema</option>
+                  <option value="Sinus">Sinus / ENT Issues</option>
+                  <option value="Autoimmune">Complex / Autoimmune</option>
                 </select>
               </div>
               <div className="space-y-4">
@@ -87,10 +143,11 @@ export default function BookingForm() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
+                    disabled={isSubmitting}
                     aria-label="Request Complete Evaluation"
-                    className="w-full bg-primary text-white py-5 rounded-2xl font-bold shadow-2xl shadow-primary/20 hover:bg-[#154d2e] transition-all text-lg"
+                    className={`w-full bg-primary text-white py-5 rounded-2xl font-bold shadow-2xl shadow-primary/20 hover:bg-[#154d2e] transition-all text-lg ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
                 >
-                    Request Complete Evaluation
+                    {isSubmitting ? "Processing..." : "Request Complete Evaluation"}
                 </motion.button>
                 
                 <div className="flex flex-col gap-2 pt-2">
@@ -119,3 +176,4 @@ export default function BookingForm() {
     </section>
   );
 }
+
