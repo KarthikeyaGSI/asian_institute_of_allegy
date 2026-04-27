@@ -56,7 +56,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 gap-3">
               <Link href="#how-we-help" className="text-gray-500 hover:text-primary transition-colors">How We Help</Link>
               <Link href="#doctor" className="text-gray-500 hover:text-primary transition-colors">Our Specialists</Link>
-              <Link href="#research" className="text-gray-500 hover:text-primary transition-colors">Research Foundation</Link>
+              <Link href="/world-allergy-foundation" className="text-gray-500 hover:text-primary transition-colors">Research Foundation</Link>
               <Link href="#contact" className="text-gray-500 hover:text-primary transition-colors">Book Appointment</Link>
             </div>
           </div>
