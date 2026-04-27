@@ -128,18 +128,18 @@ export default function Science() {
                 
                 {/* Premium Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-12 left-12 flex flex-col gap-4 right-12">
+                <div className="absolute bottom-6 left-6 right-6 md:bottom-12 md:left-12 md:right-12 flex flex-col gap-3 md:gap-4">
                    <div className="flex items-center gap-3">
-                      <div className="w-2.5 h-2.5 rounded-full bg-primary-accent animate-pulse" />
-                      <span className="text-xs font-bold uppercase tracking-[0.4em] text-white/40">Inflammatory Spectrum</span>
+                      <div className="w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-primary-accent animate-pulse" />
+                      <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-white/40">Inflammatory Spectrum</span>
                    </div>
-                   <div className="grid grid-cols-4 gap-2 text-[10px] font-black uppercase tracking-tighter text-white/30 border-t border-white/5 pt-4">
+                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[10px] font-black uppercase tracking-tighter text-white/30 border-t border-white/5 pt-4">
                       <span className="text-primary-accent">Allergic</span>
                       <span>Autoimmune</span>
                       <span>Metabolic</span>
                       <span>Metastatic</span>
                    </div>
-                   <p className="text-sm font-medium text-white/70 leading-relaxed">
+                   <p className="text-xs md:text-sm font-medium text-white/70 leading-relaxed line-clamp-3 md:line-clamp-none">
                       "Inflammatory disease exists on a continuum. We evaluate and differentiate these complex pathways at Dr. Vyakarnam's desk."
                    </p>
                 </div>

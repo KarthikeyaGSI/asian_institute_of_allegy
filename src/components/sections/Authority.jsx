@@ -74,7 +74,7 @@ export default function Authority() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-10 pt-10 border-t border-white/5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 pt-10 border-t border-white/5">
               <div>
                 <span className="block text-4xl md:text-5xl font-bold text-white mb-2 font-heading tracking-tight">50k+</span>
                 <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Patients from Kashmir to Dubai</span>

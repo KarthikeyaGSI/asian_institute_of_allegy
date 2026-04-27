@@ -47,7 +47,7 @@ export default function WorldAllergyFoundation() {
               />
             </div>
             <span className="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4">Established 2024</span>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 font-heading">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-8 font-heading">
               World Allergy <br/> Foundation
             </h1>
             <p className="text-xl text-slate-500 max-w-3xl leading-relaxed font-medium">
@@ -94,7 +94,7 @@ export default function WorldAllergyFoundation() {
               <div className="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
                 <ShieldAlert size={14} /> Critical Advocacy
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight font-heading leading-tight">
+              <h2 className="text-3xl md:text-6xl font-bold tracking-tight font-heading leading-tight">
                 HPV Vaccination: <br/> <span className="text-red-600 font-medium italic">"NOT for All"</span>
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed font-medium italic">
@@ -147,7 +147,7 @@ export default function WorldAllergyFoundation() {
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <div className="flex-1 space-y-8">
               <span className="text-primary-accent font-bold tracking-[0.4em] uppercase text-xs">Pollution Monitoring</span>
-              <h2 className="text-4xl md:text-6xl font-bold font-heading tracking-tight">Swaach Akash Abhiyan</h2>
+              <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight">Swaach Akash Abhiyan</h2>
               <p className="text-slate-300 text-xl font-medium leading-relaxed">
                 A widespread periodic monitoring program across major Indian cities like Hyderabad and Warangal. We collect real pollution data to develop city-specific strategies for respiratory health.
               </p>
@@ -174,7 +174,7 @@ export default function WorldAllergyFoundation() {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-col items-center text-center mb-20">
              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4">Clinical Evidence</span>
-             <h2 className="text-4xl md:text-6xl font-bold font-heading tracking-tight text-slate-900">Transformation Stories</h2>
+             <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight text-slate-900">Transformation Stories</h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

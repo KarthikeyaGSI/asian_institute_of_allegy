@@ -29,16 +29,16 @@ export default function Navbar() {
       <motion.nav
         initial={false}
         animate={{
-          width: scrolled ? "95%" : "100%",
+          width: scrolled ? "92%" : "100%",
           maxWidth: scrolled ? "1000px" : "1400px",
           backgroundColor: scrolled ? "rgba(15, 15, 15, 0.9)" : "rgba(255, 255, 255, 0.05)",
           backdropFilter: "blur(20px)",
-          paddingLeft: scrolled ? "24px" : "32px",
-          paddingRight: scrolled ? "8px" : "32px",
-          borderRadius: scrolled ? "999px" : "24px",
+          paddingLeft: scrolled ? "16px" : "20px",
+          paddingRight: scrolled ? "8px" : "20px",
+          borderRadius: scrolled ? "999px" : "20px",
         }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="flex items-center justify-between h-[64px] border border-white/10 shadow-2xl overflow-hidden relative z-[1001]"
+        className="flex items-center justify-between h-[56px] md:h-[64px] border border-white/10 shadow-2xl overflow-hidden relative z-[1001]"
       >
         {/* Left Side Links */}
         <div className="hidden md:flex items-center gap-8">

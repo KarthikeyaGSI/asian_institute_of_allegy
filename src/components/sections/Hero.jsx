@@ -82,8 +82,8 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.9] text-white tracking-tight font-heading">
-                We find what&apos;s <br />
+              <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-[1] md:leading-[0.9] text-white tracking-tight font-heading">
+                We find what&apos;s <br className="hidden sm:block" />
                 <span className="text-primary-accent italic font-light">causing it.</span>
               </h1>
             </motion.div>
@@ -92,7 +92,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-10 text-slate-300 text-xl md:text-4xl font-medium max-w-3xl leading-tight"
+              className="mt-6 md:mt-10 text-slate-300 text-lg sm:text-2xl md:text-4xl font-medium max-w-3xl leading-snug md:leading-tight"
             >
               One of the few specialized institutes globally. <br className="hidden md:block" />
               Addressing the root cause for patients aged 2 to 80.
