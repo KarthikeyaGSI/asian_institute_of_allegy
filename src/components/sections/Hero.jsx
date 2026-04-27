@@ -67,7 +67,6 @@ export default function Hero() {
             muted
             playsInline
             className="w-full h-full object-cover object-center opacity-80"
-            poster="/images/best-allergy-hospital.webp"
           >
             <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
           </video>
