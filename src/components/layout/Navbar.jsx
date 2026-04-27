@@ -6,10 +6,10 @@ import { Menu, X, LayoutGrid } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { name: "How we help", href: "#how-we-help" },
-  { name: "Doctor", href: "#doctor" },
-  { name: "Research", href: "#research" },
-  { name: "Contact", href: "#contact" },
+  { name: "How we help", href: "/#how-we-help" },
+  { name: "Doctor", href: "/#doctor" },
+  { name: "Research", href: "/world-allergy-foundation" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -64,14 +64,14 @@ export default function Navbar() {
         {/* Right Side Actions */}
         <div className="flex items-center gap-2 md:gap-6">
           <Link
-            href="#contact"
+            href="/#contact"
             className="hidden md:block text-[13px] font-bold text-white/70 hover:text-white transition-colors tracking-widest uppercase"
           >
             Contact
           </Link>
           
           <Link
-            href="#contact"
+            href="/#contact"
             className="px-6 py-2.5 rounded-full bg-white text-black text-[12px] font-black uppercase tracking-wider hover:scale-[1.05] transition-all"
           >
             Book Consultation
