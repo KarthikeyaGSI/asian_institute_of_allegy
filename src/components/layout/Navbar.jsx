@@ -35,8 +35,8 @@ export default function Navbar() {
         animate={{
           width: scrolled ? "92%" : "100%",
           maxWidth: scrolled ? "1000px" : "1400px",
-          backgroundColor: scrolled ? "rgba(15, 15, 15, 0.95)" : "rgba(15, 15, 15, 0.05)",
-          backdropFilter: "blur(24px)",
+          backgroundColor: scrolled ? "rgba(10, 10, 10, 0.98)" : isWAF ? "rgba(10, 10, 10, 0.8)" : "rgba(15, 15, 15, 0.05)",
+          backdropFilter: scrolled ? "blur(32px)" : "blur(16px)",
           paddingLeft: scrolled ? "16px" : "20px",
           paddingRight: scrolled ? "8px" : "20px",
           borderRadius: scrolled ? "999px" : "24px",
