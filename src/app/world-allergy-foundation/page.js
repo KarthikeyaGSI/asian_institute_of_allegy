@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { Globe, Beaker, ShieldAlert, Leaf, Newspaper, ArrowRight } from "lucide-react";
 
 const sections = [
