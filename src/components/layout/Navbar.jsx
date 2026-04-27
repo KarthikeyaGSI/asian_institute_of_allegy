@@ -82,7 +82,7 @@ export default function Navbar() {
             href="/#contact"
             className="px-5 md:px-7 py-2 md:py-3 rounded-full bg-white text-black text-[10px] md:text-[11px] font-black uppercase tracking-wider hover:bg-primary-accent hover:text-black transition-all shadow-lg"
           >
-            {isWAF ? "Donate Support" : "Book Evaluation"}
+            {isWAF ? "Contribute Support" : "Book Evaluation"}
           </Link>
 
           {/* Mode Toggle Switch */}
