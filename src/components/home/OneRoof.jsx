@@ -57,7 +57,7 @@ export default function OneRoof() {
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-xl">
               <div ref={imageRef} className="absolute inset-0 w-full h-[120%] -top-[10%]">
                 <Image 
-                  src="/images/clinic.png" 
+                  src="/images/allergy-hospital-in-hyderabad.webp" 
                   alt="Clinic Facilities" 
                   fill 
                   className="object-cover scale-105"
