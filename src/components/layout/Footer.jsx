@@ -62,11 +62,21 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 md:mt-24 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-          <p>© {new Date().getFullYear()} Asian Institute of Allergy, Asthma & Immunology. All rights reserved.</p>
-          <div className="flex gap-8">
-            <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-primary">Terms of Service</Link>
+        <div className="mt-16 md:mt-24 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-400">
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <p>© {new Date().getFullYear()} Asian Institute of Allergy. All rights reserved.</p>
+            <span className="hidden md:block text-slate-200">|</span>
+            <Link 
+              href="https://linktr.ee/karthikeyathallapally" 
+              target="_blank" 
+              className="font-bold text-primary hover:underline transition-all"
+            >
+              Developed by Marketing ko labs
+            </Link>
+          </div>
+          <div className="flex gap-8 font-medium">
+            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

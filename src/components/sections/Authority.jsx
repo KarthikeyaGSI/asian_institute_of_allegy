@@ -14,7 +14,7 @@ export default function Authority() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* DOCTOR ANCHOR & PROOF */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
           <div className="order-2 lg:order-1 relative">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl max-w-md mx-auto lg:mx-0 ring-1 ring-white/10">
               <motion.div
@@ -34,9 +34,19 @@ export default function Authority() {
               <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-90" />
               
               <div className="absolute bottom-0 left-0 w-full p-8">
-                <p className="text-2xl font-bold text-white mb-1">Dr. Vyakarnam Nageshwar</p>
+                <p className="text-2xl font-bold text-white mb-1 font-heading">Dr. Vyakarnam Nageshwar</p>
                 <p className="text-gray-400 font-medium">Founder & Chief Immunologist</p>
               </div>
+            </div>
+            
+            {/* Accreditation Badges */}
+            <div className="mt-8 flex flex-wrap gap-4">
+               <div className="bg-white/5 border border-white/10 px-4 py-3 rounded-2xl flex items-center gap-3">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary-accent">Vatican Recognition</span>
+               </div>
+               <div className="bg-white/5 border border-white/10 px-4 py-3 rounded-2xl flex items-center gap-3">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary-accent">CMC Vellore</span>
+               </div>
             </div>
           </div>
 
@@ -45,26 +55,33 @@ export default function Authority() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="order-1 lg:order-2 space-y-8"
+            className="order-1 lg:order-2 space-y-10"
           >
-            <span className="text-primary-accent font-bold tracking-widest uppercase text-sm mb-2 block">The Authority</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] text-white">
-              Built to solve complex, <br/>
-              <span className="text-gray-400">treatment-resistant cases.</span>
-            </h2>
+            <div>
+              <span className="text-primary-accent font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Mission</span>
+              <h2 className="text-5xl md:text-7xl font-bold leading-[1] text-white tracking-tight font-heading">
+                A Journey Rooted in <br/>
+                <span className="text-gray-500">Suffering & Hope.</span>
+              </h2>
+            </div>
             
-            <p className="text-xl text-gray-300 max-w-lg leading-relaxed font-medium">
-              We specialize in the cases where others have failed. Our protocols are designed specifically for patients who have tried standard care without success.
-            </p>
+            <div className="space-y-6 text-slate-300 text-lg leading-relaxed font-medium">
+              <p>
+                Dr. Vyakarnam battled childhood asthma and allergic rhinitis himself. He transformed his personal suffering into a lifelong mission—to uncover the root causes for the 40 crore Indians who suffer silently.
+              </p>
+              <p>
+                From training at CMC Vellore and Patel Chest Institute to initiating India&apos;s first **Allergen Forensic Laboratory**, he has redefined allergy care through environmental aerobiology and precision diagnosis.
+              </p>
+            </div>
 
-            <div className="grid grid-cols-2 gap-6 pt-8 border-t border-white/10">
+            <div className="grid grid-cols-2 gap-10 pt-10 border-t border-white/5">
               <div>
-                <span className="block text-4xl md:text-5xl font-bold text-white mb-1">50k+</span>
-                <span className="text-sm font-medium text-gray-400 uppercase tracking-wider">Patients Treated</span>
+                <span className="block text-4xl md:text-5xl font-bold text-white mb-2 font-heading tracking-tight">50k+</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Patients from Kashmir to Dubai</span>
               </div>
               <div>
-                <span className="block text-4xl md:text-5xl font-bold text-primary-accent mb-1">15k+</span>
-                <span className="text-sm font-medium text-gray-400 uppercase tracking-wider">SLIT Successes</span>
+                <span className="block text-4xl md:text-5xl font-bold text-primary-accent mb-2 font-heading tracking-tight">12k+</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Successes (Aswini Legacy)</span>
               </div>
             </div>
           </motion.div>
@@ -76,32 +93,29 @@ export default function Authority() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-white/5 border border-white/10 p-10 md:p-16 rounded-3xl backdrop-blur-sm relative overflow-hidden"
+          className="bg-white/5 border border-white/10 p-10 md:p-16 rounded-[3rem] backdrop-blur-sm relative overflow-hidden group"
         >
-          <div className="absolute right-0 top-0 text-white/5 -translate-y-1/4 translate-x-1/4">
-            <Globe size={300} strokeWidth={1} />
+          <div className="absolute right-0 top-0 text-white/5 -translate-y-1/4 translate-x-1/4 group-hover:scale-110 transition-transform duration-1000">
+            <Globe size={400} strokeWidth={1} />
           </div>
           
           <div className="relative z-10 max-w-4xl">
-            <div className="flex items-center gap-3 mb-6">
-              <Globe className="text-primary-accent" size={24} />
-              <span className="text-primary-accent font-bold tracking-widest uppercase text-sm">Global Rarity</span>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center text-primary-accent">
+                <Globe size={18} />
+              </div>
+              <span className="text-primary-accent font-bold tracking-[0.3em] uppercase text-xs">Global Authority</span>
             </div>
-            <h3 className="text-3xl md:text-5xl font-semibold mb-6 tracking-tight">
-              One of the few specialized <br/> institutes in the world.
+            <h3 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-white font-heading">
+              The Iconic Hope for <br/> 40 Crore Indians.
             </h3>
-            <p className="text-gray-300 text-xl mb-10 leading-relaxed font-medium">
-              Globally, dedicated centers for comprehensive allergy and immunological care across all age groups exist almost exclusively in Japan and Singapore. The Asian Institute in Hyderabad bridges this critical gap for the Indian subcontinent.
+            <p className="text-slate-300 text-xl mb-12 leading-relaxed font-medium max-w-2xl">
+              While most research targets Western populations, Dr. Vyakarnam established the **World Allergy Foundation** to address the unique disease patterns of the Asian population. Our protocols align with the highest standards from Japan to the USA.
             </p>
-            <div className="flex flex-col md:flex-row gap-10">
-               <div className="flex-1">
-                  <span className="block text-4xl font-bold text-white mb-2">50,000+</span>
-                  <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Complex Cases Solved</span>
-               </div>
-               <div className="flex-1">
-                  <span className="block text-4xl font-bold text-primary-accent mb-2">15,000+</span>
-                  <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">SLIT Success Stories</span>
-               </div>
+            
+            <div className="inline-flex items-center gap-3 text-white/40 text-[10px] font-black uppercase tracking-[0.4em]">
+              <span className="flex items-center gap-2"><div className="w-1 h-1 rounded-full bg-primary-accent" /> Aerobiology Excellence</span>
+              <span className="flex items-center gap-2"><div className="w-1 h-1 rounded-full bg-primary-accent" /> Precision SLIT</span>
             </div>
           </div>
         </motion.div>
