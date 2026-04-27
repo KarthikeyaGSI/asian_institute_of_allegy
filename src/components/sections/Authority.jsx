@@ -16,7 +16,7 @@ export default function Authority() {
         {/* DOCTOR ANCHOR & PROOF */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="order-2 lg:order-1 relative">
-            <div className="aspect-[4/5] rounded-[2rem] overflow-hidden relative shadow-2xl max-w-md mx-auto lg:mx-0 ring-1 ring-white/10">
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl max-w-md mx-auto lg:mx-0 ring-1 ring-white/10">
               <motion.div
                 initial={{ scale: 1 }}
                 whileInView={{ scale: 1.05 }}
@@ -49,12 +49,12 @@ export default function Authority() {
           >
             <span className="text-primary-accent font-bold tracking-widest uppercase text-sm mb-2 block">The Authority</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] text-white">
-              Built from personal suffering. <br/>
-              <span className="text-gray-400">Refined over 20+ years.</span>
+              Built to solve complex, <br/>
+              <span className="text-gray-400">treatment-resistant cases.</span>
             </h2>
             
-            <p className="text-xl text-gray-300 max-w-lg leading-relaxed">
-              We are the specialists for the &quot;failed patient&quot;—the ones who have tried every inhaler, every antihistamine, and every home remedy without success.
+            <p className="text-xl text-gray-300 max-w-lg leading-relaxed font-medium">
+              We specialize in the cases where others have failed. Our protocols are designed specifically for patients who have tried standard care without success.
             </p>
 
             <div className="grid grid-cols-2 gap-6 pt-8 border-t border-white/10">
@@ -76,7 +76,7 @@ export default function Authority() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-white/5 border border-white/10 p-10 md:p-16 rounded-[2rem] backdrop-blur-sm relative overflow-hidden"
+          className="bg-white/5 border border-white/10 p-10 md:p-16 rounded-3xl backdrop-blur-sm relative overflow-hidden"
         >
           <div className="absolute right-0 top-0 text-white/5 -translate-y-1/4 translate-x-1/4">
             <Globe size={300} strokeWidth={1} />

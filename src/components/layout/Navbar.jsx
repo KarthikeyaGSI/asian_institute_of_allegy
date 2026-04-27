@@ -18,7 +18,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -28,7 +28,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 w-full z-[999] transition-all duration-500 ease-out ${
         scrolled 
-          ? "bg-[rgba(255,255,255,0.65)] backdrop-blur-[12px] py-3 border-b border-[rgba(0,0,0,0.06)] shadow-none" 
+          ? "bg-white/90 backdrop-blur-md py-3 border-b border-gray-100 shadow-sm" 
           : "bg-transparent py-6 border-transparent shadow-none"
       }`}
     >
@@ -49,10 +49,10 @@ export default function Navbar() {
             </div>
           </div>
           <div className="flex flex-col">
-            <span className={`font-bold text-2xl tracking-tight leading-none transition-colors duration-500 ${scrolled ? "text-[#0B0F0E]" : "text-white"}`}>
+            <span className={`font-bold text-2xl tracking-tight leading-none transition-colors duration-500 ${scrolled ? "text-slate-900" : "text-white"}`}>
               Asian Institute
             </span>
-            <span className={`text-[10px] uppercase tracking-[0.2em] font-bold mt-1 transition-all duration-500 ${scrolled ? "text-[#0B0F0E]/70" : "text-white/70"}`}>
+            <span className={`text-[10px] uppercase tracking-[0.2em] font-bold mt-1 transition-all duration-500 ${scrolled ? "text-slate-600" : "text-white/70"}`}>
               Centre of Excellence
             </span>
           </div>
@@ -64,7 +64,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-sm font-medium transition-colors duration-500 relative group ${scrolled ? "text-[#0B0F0E] hover:text-primary" : "text-white hover:text-white"}`}
+              className={`text-sm font-medium transition-colors duration-500 relative group ${scrolled ? "text-slate-600 hover:text-primary" : "text-white hover:text-white"}`}
             >
               {link.name}
               <span className={`absolute -bottom-1 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full ${scrolled ? "bg-primary" : "bg-white"}`} />
@@ -107,7 +107,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-2xl font-semibold text-[#0B0F0E]"
+                  className="text-2xl font-semibold text-slate-900"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}

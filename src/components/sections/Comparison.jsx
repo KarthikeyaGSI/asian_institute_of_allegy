@@ -27,7 +27,7 @@ export default function Comparison() {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">Standard treatments manage your symptoms day by day. We aim to train your immune system to stop reacting altogether.</p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-slate-100">
           
           {/* LEFT (Standard Care) */}
           <motion.div 

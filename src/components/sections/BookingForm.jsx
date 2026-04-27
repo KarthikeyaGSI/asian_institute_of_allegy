@@ -6,7 +6,7 @@ export default function BookingForm() {
   return (
     <section id="contact" className="bg-muted py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-2xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+        <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl shadow-primary/10 border border-slate-100 overflow-hidden flex flex-col md:flex-row">
           
           {/* LEFT (Value Prop) */}
           <div className="p-10 md:p-16 flex-1 bg-primary text-white flex flex-col justify-center relative overflow-hidden">
@@ -22,24 +22,18 @@ export default function BookingForm() {
               </p>
               
               <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-primary-accent shrink-0">
-                    1
-                  </div>
-                  <span className="font-medium text-lg">Submit your details</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-primary-accent shrink-0">
-                    2
-                  </div>
-                  <span className="font-medium text-lg">Receive a callback in 15 mins</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-primary-accent shrink-0">
-                    3
-                  </div>
-                  <span className="font-medium text-lg">Meet the specialists</span>
-                </div>
+                {[
+                    "Submit your details",
+                    "Receive a callback in 15 mins",
+                    "Meet the specialists"
+                ].map((step, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-primary-accent shrink-0 font-bold">
+                            {i + 1}
+                        </div>
+                        <span className="font-medium text-lg">{step}</span>
+                    </div>
+                ))}
               </div>
             </div>
           </div>
@@ -54,24 +48,24 @@ export default function BookingForm() {
           >
             <form className="space-y-6">
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">Full Name</label>
+                <label className="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
                 <input 
                   type="text" 
-                  className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-gray-50/50"
+                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
                   placeholder="e.g. Rahul Sharma"
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">Phone Number</label>
+                <label className="block text-sm font-bold text-slate-700 mb-2">Phone Number</label>
                 <input 
                   type="tel" 
-                  className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-gray-50/50"
+                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
                   placeholder="+91"
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">Primary Condition</label>
-                <select className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-gray-50/50 text-gray-700 appearance-none">
+                <label className="block text-sm font-bold text-slate-700 mb-2">Primary Condition</label>
+                <select className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50 text-slate-700 appearance-none">
                   <option value="" disabled selected>Select an option</option>
                   <option>Breathing Issues / Asthma</option>
                   <option>Skin Allergies / Eczema</option>
@@ -79,22 +73,38 @@ export default function BookingForm() {
                   <option>Complex / Autoimmune</option>
                 </select>
               </div>
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="button"
-                className="w-full bg-primary text-white py-4 rounded-xl font-bold shadow-lg hover:bg-[#154d2e] transition-colors mt-4 text-lg"
-              >
-                Request Complete Evaluation
-              </motion.button>
+              <div className="space-y-4">
+                <motion.button 
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="button"
+                    className="w-full bg-primary text-white py-5 rounded-2xl font-bold shadow-2xl shadow-primary/20 hover:bg-[#154d2e] transition-all text-lg"
+                >
+                    Request Complete Evaluation
+                </motion.button>
+                
+                <div className="flex flex-col gap-2 pt-2">
+                  {[
+                    "Direct specialist consultation",
+                    "No long-term medication dependency",
+                    "Personalized treatment plan"
+                  ].map((item, j) => (
+                    <div key={j} className="flex items-center gap-3 text-xs font-bold text-slate-500">
+                      <div className="w-4 h-4 rounded-full bg-slate-100 flex items-center justify-center text-primary">✔</div>
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
               
-              <div className="pt-6 mt-6 border-t border-gray-100">
-                <p className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest">
-                  Secure & Confidential
+              <div className="pt-6 mt-6 border-t border-slate-100">
+                <p className="text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                  Secure & Confidential Clinical Inquiry
                 </p>
               </div>
             </form>
           </motion.div>
+        </div>
 
         </div>
       </div>

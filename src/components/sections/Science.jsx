@@ -87,27 +87,33 @@ export default function Science() {
           <div className="flex-1 order-1 lg:order-2 w-full">
             <div className="relative">
               {/* Decorative Frame */}
-              <div className="absolute -inset-4 border border-white/5 rounded-[2rem] pointer-events-none" />
+              <div className="absolute -inset-4 border border-white/5 rounded-3xl pointer-events-none" />
               
               <motion.div 
                 style={{ y: videoY }}
-                className="relative w-full aspect-[4/5] lg:aspect-square rounded-[1.5rem] overflow-hidden shadow-2xl ring-1 ring-white/10"
+                className="relative w-full aspect-[4/5] lg:aspect-square rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10"
               >
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
+                <motion.div
+                  animate={{ scale: [1, 1.03, 1] }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-full h-full"
                 >
-                  <source src="/_INFLAMMATION%20VIDEO%20(Scientific%20Section).mp4" type="video/mp4" />
-                </video>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover opacity-80"
+                  >
+                    <source src="/_INFLAMMATION%20VIDEO%20(Scientific%20Section).mp4" type="video/mp4" />
+                  </video>
+                </motion.div>
                 
                 {/* Scientific HUD Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">Real-time Immune Mapping</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-10 left-10 flex items-center gap-4">
+                  <div className="w-2.5 h-2.5 rounded-full bg-primary-accent animate-pulse shadow-[0_0_10px_#1A5F3A]" />
+                  <span className="text-xs font-bold uppercase tracking-[0.3em] text-white/50">Scientific Immune Spectrum</span>
                 </div>
               </motion.div>
             </div>

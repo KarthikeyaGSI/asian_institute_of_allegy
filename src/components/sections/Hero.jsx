@@ -42,8 +42,8 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] text-white max-w-3xl"
           >
-            Most treatments manage symptoms. <br />
-            <span className="text-primary-accent">We solve the &quot;why.&quot;</span>
+            We find what&apos;s causing it. <br />
+            <span className="text-primary-accent">Then we treat it properly.</span>
           </motion.h1>
 
           <motion.p 
@@ -59,51 +59,79 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="mt-10 flex flex-col sm:flex-row gap-4"
+            className="mt-10 flex flex-col gap-8"
           >
-            <Link href="#contact" className="bg-primary text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 ease-out hover:bg-[#154d2e] hover:-translate-y-1 text-center shadow-lg">
-              <span className="block text-lg">Book Evaluation</span>
-              <span className="block text-xs text-white/80 font-normal mt-0.5">(15 min callback)</span>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="#contact" className="bg-primary text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 ease-out hover:bg-[#154d2e] hover:-translate-y-1 text-center shadow-lg group">
+                <span className="block text-lg">Book Evaluation</span>
+              </Link>
+            </div>
+            
+            <div className="flex flex-wrap gap-6 text-white/80 text-sm font-medium">
+              <span className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center text-primary-accent">✔</div>
+                15 min callback
+              </span>
+              <span className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center text-primary-accent">✔</div>
+                Direct specialist review
+              </span>
+              <span className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center text-primary-accent">✔</div>
+                No waiting
+              </span>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Market Gap Section */}
-      <section className="bg-white py-16 md:py-24 border-b border-gray-100">
+      {/* Scarcity Section */}
+      <section className="bg-white py-24 md:py-32 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
-          >
-            <div>
-              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
-                Why standard care fails.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 leading-tight">
+                Millions suffer in silence. <br/>
+                <span className="text-slate-400">Very few ever get the right diagnosis.</span>
               </h2>
-              <p className="text-lg text-gray-600">
-                In India, over <strong className="text-gray-900">35 Crore patients</strong> suffer from allergies and immune disorders. Yet, there are fewer than <strong className="text-gray-900">100 dedicated specialists</strong>. This massive specialist gap forces patients into a cycle of temporary relief—antihistamines and inhalers—without ever addressing the root cause.
+              <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
+                The standard healthcare loop is designed for temporary relief, not resolution. This systemic gap leaves millions of patients trapped in a cycle of failed treatments and recurring symptoms.
               </p>
-            </div>
-            <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-center">
-              <div className="flex items-center justify-between mb-8">
-                <div className="text-center">
-                  <span className="block text-4xl md:text-5xl font-bold text-gray-900">35Cr+</span>
-                  <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">Patients</span>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="grid grid-cols-2 gap-4 h-full"
+            >
+              {/* Left Side: Faded Patients */}
+              <div className="bg-slate-50 rounded-3xl p-8 flex flex-col justify-center items-center text-center border border-slate-100 opacity-60">
+                <div className="mb-4 flex flex-wrap justify-center gap-1 opacity-20">
+                   {[...Array(12)].map((_, i) => (
+                     <div key={i} className="w-4 h-4 rounded-full bg-slate-900" />
+                   ))}
                 </div>
-                <div className="text-primary text-2xl font-light">vs</div>
-                <div className="text-center">
-                  <span className="block text-4xl md:text-5xl font-bold text-primary">&lt;100</span>
-                  <span className="text-sm font-medium text-primary/70 uppercase tracking-wider">Specialists</span>
-                </div>
+                <span className="block text-4xl md:text-5xl font-bold text-slate-900 mb-2">35Cr+</span>
+                <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Patients</span>
               </div>
-              <p className="text-center text-gray-600 text-sm font-medium">
-                The Specialist Gap is why you haven&apos;t found a permanent solution.
-              </p>
-            </div>
-          </motion.div>
+
+              {/* Right Side: Bold Green Specialists */}
+              <div className="bg-primary rounded-3xl p-8 flex flex-col justify-center items-center text-center shadow-2xl shadow-primary/20">
+                <div className="mb-4 flex gap-1">
+                   <div className="w-4 h-4 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+                </div>
+                <span className="block text-4xl md:text-5xl font-bold text-white mb-2">Under 100</span>
+                <span className="text-xs font-bold text-white/70 uppercase tracking-widest">Specialists</span>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
     </>
