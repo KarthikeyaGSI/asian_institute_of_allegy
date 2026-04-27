@@ -25,7 +25,7 @@ export default function Authority() {
                 className="absolute inset-0 w-full h-full"
               >
                 <Image 
-                  src="/images/Dr.jpeg" 
+                  src="/images/dr-nageswar.webp" 
                   alt="Dr. Vyakarnam Nageshwar" 
                   fill 
                   className="object-cover object-top"

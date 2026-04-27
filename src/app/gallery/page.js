@@ -22,6 +22,7 @@ const images = [
   { src: "/images/inside.jpeg", title: "Advanced Treatment Room" },
   { src: "/images/kcr-at-hospital.webp", title: "Dignitary Visit" },
   { src: "/images/research.jpeg", title: "Clinical Research" },
+  { src: "/images/dr-nageswar.webp", title: "Dr. Vyakarnam Nageshwar" },
 ];
 
 export default function GalleryPage() {
