@@ -21,7 +21,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="space-y-6">
-            <h4 className="font-bold text-lg font-heading">Our Locations</h4>
+            <h3 className="font-bold text-lg font-heading text-slate-900">Our Locations</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <MapPin className="text-primary mt-1 shrink-0" size={22} />
@@ -43,7 +43,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-4 pt-2">
                 <Phone className="text-primary shrink-0" size={20} />
-                <Link href="tel:+918074368748" className="text-slate-600 font-bold hover:text-primary">
+                <Link href="tel:+918074368748" className="text-slate-700 font-bold hover:text-primary transition-colors">
                   +91 80743 68748
                 </Link>
               </div>
@@ -52,20 +52,20 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h4 className="font-bold text-lg">Quick Links</h4>
+            <h3 className="font-bold text-lg text-slate-900">Quick Links</h3>
             <div className="grid grid-cols-1 gap-3">
-              <Link href="/#how-we-help" className="text-gray-500 hover:text-primary transition-colors">How We Help</Link>
-              <Link href="/#doctor" className="text-gray-500 hover:text-primary transition-colors">Our Specialists</Link>
-              <Link href="/world-allergy-foundation" className="text-gray-500 hover:text-primary transition-colors">World Allergy Foundation</Link>
-              <Link href="/#contact" className="text-gray-500 hover:text-primary transition-colors">Book Appointment</Link>
+              <Link href="/#how-we-help" className="text-slate-600 font-medium hover:text-primary transition-colors">How We Help</Link>
+              <Link href="/#doctor" className="text-slate-600 font-medium hover:text-primary transition-colors">Our Specialists</Link>
+              <Link href="/world-allergy-foundation" className="text-slate-600 font-medium hover:text-primary transition-colors">World Allergy Foundation</Link>
+              <Link href="/#contact" className="text-slate-600 font-medium hover:text-primary transition-colors">Book Appointment</Link>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 md:mt-24 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-400">
-          <div className="flex flex-col md:flex-row items-center gap-4">
+        <div className="mt-16 md:mt-24 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-600">
+          <div className="flex flex-col md:flex-row items-center gap-4 font-medium">
             <p>© {new Date().getFullYear()} Asian Institute of Allergy. All rights reserved.</p>
-            <span className="hidden md:block text-slate-200">|</span>
+            <span className="hidden md:block text-slate-300">|</span>
             <Link 
               href="https://linktr.ee/karthikeyathallapally" 
               target="_blank" 
@@ -74,7 +74,7 @@ export default function Footer() {
               Developed by Marketing ko labs
             </Link>
           </div>
-          <div className="flex gap-8 font-medium">
+          <div className="flex gap-8 font-bold">
             <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>

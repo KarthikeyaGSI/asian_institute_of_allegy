@@ -78,9 +78,9 @@ export default function Hero() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 text-left mt-16">
           <div className="max-w-5xl">
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0.01, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-[1] md:leading-[0.9] text-white tracking-tight font-heading">
                 We find what&apos;s <br className="hidden sm:block" />
@@ -162,12 +162,12 @@ export default function Hero() {
             >
               <div className="bg-slate-50 rounded-3xl p-10 flex flex-col justify-center items-center text-center border border-slate-100 group hover:border-slate-200 transition-colors">
                 <span className="block text-5xl md:text-6xl font-bold text-slate-900 mb-4 opacity-40 group-hover:opacity-100 transition-opacity">35Cr+</span>
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-[0.3em]">Patients</span>
+                <span className="text-xs font-bold text-slate-500 uppercase tracking-[0.3em]">Patients</span>
               </div>
 
               <div className="bg-primary rounded-3xl p-10 flex flex-col justify-center items-center text-center shadow-2xl shadow-primary/20 group hover:scale-[1.02] transition-transform">
                 <span className="block text-5xl md:text-6xl font-bold text-white mb-4">Under 100</span>
-                <span className="text-xs font-bold text-white/50 uppercase tracking-[0.3em]">Specialists</span>
+                <span className="text-xs font-bold text-white/60 uppercase tracking-[0.3em]">Specialists</span>
               </div>
             </motion.div>
           </div>

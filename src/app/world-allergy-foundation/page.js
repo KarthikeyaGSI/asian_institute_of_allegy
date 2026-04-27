@@ -241,7 +241,61 @@ export default function WorldAllergyFoundation() {
         </div>
       </section>
 
+      {/* NEW: INVITE WORKSHOP & CONTRIBUTE */}
+      <section id="workshop" className="py-24 md:py-32 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Invite Workshop */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-slate-900 rounded-[3rem] p-10 md:p-16 text-white relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-125 transition-transform duration-700" />
+              <div className="relative z-10">
+                <span className="text-primary-accent font-bold tracking-[0.3em] uppercase text-[10px] mb-6 block">Educational Outreach</span>
+                <h3 className="text-4xl font-bold mb-6 font-heading tracking-tight">Invite us to organize <br/> a workshop</h3>
+                <p className="text-white/60 text-lg mb-10 font-medium leading-relaxed">
+                  Bring world-class allergy awareness to your institution, corporate office, or community center. We provide clinical insights and preventive strategies.
+                </p>
+                <Link 
+                  href="/#contact"
+                  className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-primary-accent transition-colors"
+                >
+                  Request Workshop <ArrowRight size={16} />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Contribute */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-primary rounded-[3rem] p-10 md:p-16 text-white relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-125 transition-transform duration-700" />
+              <div className="relative z-10">
+                <span className="text-white/40 font-bold tracking-[0.3em] uppercase text-[10px] mb-6 block">Support the Mission</span>
+                <h3 className="text-4xl font-bold mb-6 font-heading tracking-tight">Contribute to the <br/> Foundation</h3>
+                <p className="text-white/80 text-lg mb-10 font-medium leading-relaxed">
+                  Your support fuels our clinical research, environmental mapping, and awareness campaigns for a healthier, allergy-free India.
+                </p>
+                <Link 
+                  href="/#contact"
+                  className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-colors"
+                >
+                  Get Involved <ArrowRight size={16} />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
+
   );
 }

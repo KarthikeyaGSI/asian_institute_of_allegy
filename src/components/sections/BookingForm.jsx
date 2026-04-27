@@ -48,25 +48,34 @@ export default function BookingForm() {
           >
             <form className="space-y-6">
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
+                <label htmlFor="full-name" className="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
                 <input 
+                  id="full-name"
                   type="text" 
                   className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
                   placeholder="e.g. Rahul Sharma"
+                  required
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">Phone Number</label>
+                <label htmlFor="phone" className="block text-sm font-bold text-slate-700 mb-2">Phone Number</label>
                 <input 
+                  id="phone"
                   type="tel" 
                   className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
                   placeholder="+91"
+                  required
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">Primary Condition</label>
-                <select className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50 text-slate-700 appearance-none">
-                  <option value="" disabled selected>Select an option</option>
+                <label htmlFor="condition" className="block text-sm font-bold text-slate-700 mb-2">Primary Condition</label>
+                <select 
+                  id="condition"
+                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50 text-slate-700 appearance-none"
+                  defaultValue=""
+                  required
+                >
+                  <option value="" disabled>Select an option</option>
                   <option>Breathing Issues / Asthma</option>
                   <option>Skin Allergies / Eczema</option>
                   <option>Sinus / ENT Issues</option>
@@ -77,7 +86,8 @@ export default function BookingForm() {
                 <motion.button 
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    type="button"
+                    type="submit"
+                    aria-label="Request Complete Evaluation"
                     className="w-full bg-primary text-white py-5 rounded-2xl font-bold shadow-2xl shadow-primary/20 hover:bg-[#154d2e] transition-all text-lg"
                 >
                     Request Complete Evaluation
@@ -89,7 +99,7 @@ export default function BookingForm() {
                     "No long-term medication dependency",
                     "Personalized treatment plan"
                   ].map((item, j) => (
-                    <div key={j} className="flex items-center gap-3 text-xs font-bold text-slate-500">
+                    <div key={j} className="flex items-center gap-3 text-xs font-bold text-slate-600">
                       <div className="w-4 h-4 rounded-full bg-slate-100 flex items-center justify-center text-primary">✔</div>
                       {item}
                     </div>
@@ -98,7 +108,7 @@ export default function BookingForm() {
               </div>
               
               <div className="pt-6 mt-6 border-t border-slate-100">
-                <p className="text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                <p className="text-center text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                   Secure & Confidential Clinical Inquiry
                 </p>
               </div>

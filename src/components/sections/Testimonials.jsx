@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Quote, Play } from "lucide-react";
+import { Quote, Play } from "lucide-react";
+import { useState } from "react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -28,16 +30,50 @@ const videoTestimonials = [
   "qv1NJ1PDEXA",
   "10fIm_am9k8",
   "Hppih_IZeCo",
-  "_mqPWMwwJzA",
-  "3qslDhkaUKI",
-  "URLAVakbZ8M",
-  "FepgsMC8sv0",
-  "W7IBuqq2BlE",
-  "udBxN633PI0",
-  "uA8Akbp-22Y",
-  "sXsNYSpMkhw",
-  "Ckhopz9Mjac"
 ];
+
+function VideoTestimonial({ videoId, i }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: i * 0.1 }}
+      className="relative aspect-video rounded-3xl overflow-hidden bg-slate-100 shadow-2xl shadow-primary/5 group cursor-pointer"
+      onClick={() => setIsLoaded(true)}
+    >
+      {!isLoaded ? (
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+            alt="Video testimonial preview"
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+            <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl scale-90 group-hover:scale-110 transition-transform">
+              <Play fill="currentColor" size={24} className="ml-1" />
+            </div>
+          </div>
+        </div>
+      ) : (
+        <iframe
+          width="100%"
+          height="100%"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&si=JsOgNjXXEZnX5Lf8`}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          className="absolute inset-0 w-full h-full"
+        ></iframe>
+      )}
+    </motion.div>
+  );
+}
 
 export default function Testimonials() {
   return (
@@ -62,34 +98,16 @@ export default function Testimonials() {
 
         {/* 3 Video Thumbnails in a wide-format row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {videoTestimonials.slice(0, 3).map((videoId, i) => (
-            <motion.div
-              key={videoId}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="relative aspect-video rounded-3xl overflow-hidden bg-slate-100 shadow-2xl shadow-primary/5 group"
-            >
-               <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${videoId}?si=JsOgNjXXEZnX5Lf8`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              ></iframe>
-            </motion.div>
+          {videoTestimonials.map((videoId, i) => (
+            <VideoTestimonial key={videoId} videoId={videoId} i={i} />
           ))}
         </div>
         
         <div className="text-center mt-12">
-          <p className="text-slate-400 font-medium italic">...and many more lives transformed through root-cause resolution.</p>
+          <p className="text-slate-600 font-medium italic">...and many more lives transformed through root-cause resolution.</p>
         </div>
       </div>
     </section>
   );
 }
+
