@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function BookingForm() {
   return (
-    <section id="contact" className="bg-muted py-24 md:py-32">
+    <section id="contact" className="bg-muted py-24 md:py-32 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl shadow-primary/10 border border-slate-100 overflow-hidden flex flex-col md:flex-row">
           

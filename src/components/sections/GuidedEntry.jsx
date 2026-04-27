@@ -44,7 +44,7 @@ export default function GuidedEntry() {
   const [expandedId, setExpandedId] = useState(null);
 
   return (
-    <section id="how-we-help" className="bg-gray-50 py-24 md:py-32 overflow-hidden">
+    <section id="how-we-help" className="bg-gray-50 py-24 md:py-32 overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

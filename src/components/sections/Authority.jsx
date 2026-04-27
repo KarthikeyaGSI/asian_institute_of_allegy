@@ -7,7 +7,7 @@ import { ArrowRight, Globe } from "lucide-react";
 
 export default function Authority() {
   return (
-    <section className="bg-dark text-white py-24 md:py-32 overflow-hidden relative">
+    <section id="doctor" className="bg-dark text-white py-24 md:py-32 overflow-hidden relative scroll-mt-24">
       {/* Background Subtle Elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       

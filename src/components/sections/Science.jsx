@@ -65,7 +65,7 @@ export default function Science() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="bg-[#0B0F0E] py-24 md:py-40 overflow-hidden text-white relative">
+    <section id="research" ref={containerRef} className="bg-[#0B0F0E] py-24 md:py-40 overflow-hidden text-white relative scroll-mt-24">
       {/* Background ambient glow - Claude style */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
       
