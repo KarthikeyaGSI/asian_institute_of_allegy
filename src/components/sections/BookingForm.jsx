@@ -105,8 +105,6 @@ export default function BookingForm() {
             </form>
           </motion.div>
         </div>
-
-        </div>
       </div>
     </section>
   );
