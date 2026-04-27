@@ -8,21 +8,33 @@ export default function Hero() {
   return (
     <>
       <section className="relative h-[100vh] w-full overflow-hidden bg-dark flex items-center">
-        {/* Optimized Image Background instead of Video for <2.5s LCP */}
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src="/images/best-allergy-hospital.webp"
-            alt="Asian Institute of Allergy"
-            fill
-            priority
-            className="object-cover object-center scale-105"
-          />
-        </div>
+        {/* Background Video with subtle zoom animation */}
+        <motion.div 
+          animate={{ scale: [1, 1.05] }}
+          transition={{ 
+            duration: 20, 
+            ease: "linear", 
+            repeat: Infinity, 
+            repeatType: "reverse" 
+          }}
+          className="absolute inset-0 w-full h-full"
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover object-center"
+            poster="/images/best-allergy-hospital.webp"
+          >
+            <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
+          </video>
+        </motion.div>
 
-        {/* Critical Overlay */}
-        <div className="absolute inset-0 bg-black/40 md:bg-gradient-to-r md:from-[rgba(0,0,0,0.65)] md:to-[rgba(0,0,0,0.2)] pointer-events-none" />
+        {/* Cinematic Dark Gradient Overlay (35%) */}
+        <div className="absolute inset-0 bg-black/35 md:bg-gradient-to-r md:from-[rgba(0,0,0,0.55)] md:to-[rgba(0,0,0,0.15)] pointer-events-none" />
 
-        {/* Content */}
+        {/* Content - Positioned on the left as requested */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 text-left mt-16">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
