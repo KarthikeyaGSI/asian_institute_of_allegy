@@ -7,7 +7,8 @@
   --color-primary-accent: #A3E635;
   --color-accent: #F8F9FA;
   
-  --font-inter: "Inter", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
   
   --radius-3xl: 2rem;
   --radius-4xl: 3rem;
@@ -16,16 +17,17 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: var(--font-inter);
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
   }
   
   body {
-    @apply text-gray-900 bg-white;
-    line-height: 1.5;
+    @apply text-slate-900 bg-white;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4 {
+    font-family: var(--font-heading);
     @apply tracking-tight font-semibold;
   }
 }
