@@ -44,7 +44,7 @@ export default function GuidedEntry() {
               How can we <br/>
               <span className="text-slate-300 italic">help you today?</span>
             </h2>
-            <p className="text-xl text-slate-500 leading-relaxed font-medium max-w-xl">
+            <p className="text-xl text-slate-600 leading-relaxed font-medium max-w-xl">
               Select your current situation to see the most relevant diagnostic pathway and treatment timeline.
             </p>
           </motion.div>
@@ -76,7 +76,7 @@ export default function GuidedEntry() {
                   
                   <span className="text-primary font-bold tracking-widest uppercase text-[10px] mb-4 block">{opt.subtitle}</span>
                   <h3 className="text-4xl font-bold text-slate-900 mb-6 font-heading tracking-tight">{opt.title}</h3>
-                  <p className="text-lg text-slate-500 leading-relaxed font-medium mb-10 max-w-sm">
+                  <p className="text-lg text-slate-600 leading-relaxed font-medium mb-10 max-w-sm">
                     {opt.description}
                   </p>
                   

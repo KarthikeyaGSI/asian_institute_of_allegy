@@ -98,7 +98,7 @@ export default function Science() {
                         <h3 className="text-2xl font-bold text-white tracking-tight">{step.title}</h3>
                       </div>
                       <p className="text-primary-accent/80 font-bold text-xs uppercase tracking-widest">{step.label}</p>
-                      <p className="text-slate-400 text-lg leading-relaxed">{step.description}</p>
+                      <p className="text-slate-300 text-lg leading-relaxed">{step.description}</p>
                     </div>
                   </div>
                 ))}

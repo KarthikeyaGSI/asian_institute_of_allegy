@@ -24,7 +24,7 @@ export default function Comparison() {
         <div className="text-center mb-16">
           <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The clinical difference</span>
           <h2 className="text-3xl md:text-6xl font-bold mb-8 leading-tight tracking-tight text-slate-900">Root-cause resolution. <br/> <span className="text-slate-500 font-medium">Not temporary relief.</span></h2>
-          <p className="text-xl text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">Most clinical practices focus on short-term symptomatic relief. We aim to train your immune system to stop reacting altogether, providing permanent long-term solutions.</p>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed">Most clinical practices focus on short-term symptomatic relief. We aim to train your immune system to stop reacting altogether, providing permanent long-term solutions.</p>
         </div>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-slate-100">

@@ -74,12 +74,15 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "MedicalClinic",
               name: "Asian Institute of Allergy",
+              medicalSpecialty: ["Allergy", "Immunology", "Pulmonology"],
               address: {
                 "@type": "PostalAddress",
+                streetAddress: "Khajaguda",
                 addressLocality: "Hyderabad",
+                addressRegion: "Telangana",
+                postalCode: "500075",
                 addressCountry: "India"
-              },
-              medicalSpecialty: ["Allergy", "Immunology", "Pulmonology"]
+              }
             }),
           }}
         />
