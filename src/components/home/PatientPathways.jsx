@@ -47,7 +47,7 @@ export default function PatientPathways() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
               whileHover={{ rotateX: 5, rotateY: -5, scale: 1.02 }}
-              className="card flex flex-col h-full relative group"
+              className="card flex flex-col h-full relative group glass-card"
             >
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/20 rounded-2xl transition-colors duration-500 pointer-events-none group-hover:shadow-[0_0_20px_rgba(26,95,58,0.1)]" />
               

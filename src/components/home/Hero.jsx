@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative h-[70vh] md:h-[100vh] w-full overflow-hidden bg-dark flex items-center">
+    <section className="relative h-[60vh] sm:h-[80vh] md:h-[100vh] w-full overflow-hidden bg-dark flex items-center">
 
       {/* Video Background */}
       <motion.div
@@ -28,7 +28,7 @@ export default function Hero() {
 
       {/* Critical Overlay */}
       {/* Desktop: 0.55 to 0.15 Left->Right, Mobile: flat 0.35 or reduced gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.75)] via-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.15)] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.75)] via-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.15)] pointer-events-none hero-gradient" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-[600px] pl-[24px] md:pl-[80px] text-left">
@@ -57,7 +57,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="mt-10 flex flex-col sm:flex-row gap-4"
         >
-          <Link href="#contact" className="bg-primary text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 ease-out hover:bg-[#154d2e] hover:-translate-y-1 text-center">
+          <Link href="#contact" className="bg-primary text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 ease-out hover:bg-[#154d2e] hover:-translate-y-1 text-center cta-button">
             <span className="block text-lg">Book Consultation</span>
             <span className="block text-xs text-white/70 font-normal mt-0.5">(15 min callback)</span>
           </Link>

@@ -86,7 +86,7 @@ export default function Science() {
                 <div className="absolute left-[15px] top-4 bottom-4 w-px bg-gradient-to-b from-primary-accent/50 via-primary-accent/10 to-transparent" />
                 
                 {steps.map((step, i) => (
-                  <div key={i} className="step-item relative z-10 group">
+                  <div key={i} className="step-item relative z-10 group glass-card">
                     {/* Bullet - Premium glow */}
                     <div className="absolute -left-[40px] top-1.5 w-4 h-4 rounded-full bg-dark border-4 border-primary-accent shadow-[0_0_20px_rgba(0,255,150,0.4)] group-hover:scale-125 transition-transform duration-300" />
                     

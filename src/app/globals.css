@@ -59,3 +59,31 @@
   background: #1A5F3A;
   color: white;
 }
+
+/* Premium UI Enhancements */
+.glass-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+}
+
+.cta-button {
+  transition: all 0.25s ease;
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.cta-button:active {
+  transform: translateY(0);
+}
+
+.hero-gradient {
+  animation: gradientShift 12s ease-in-out infinite;
+}
+@keyframes gradientShift {
+  0% { opacity: 0.65; }
+  50% { opacity: 0.75; }
+  100% { opacity: 0.65; }
+}
