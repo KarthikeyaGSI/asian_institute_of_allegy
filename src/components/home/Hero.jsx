@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative h-[100vh] w-full overflow-hidden bg-dark flex items-center">
+    <section className="relative h-[70vh] md:h-[100vh] w-full overflow-hidden bg-dark flex items-center">
 
       {/* Video Background */}
       <motion.div
