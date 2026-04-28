@@ -27,8 +27,8 @@ function Counter({ end, duration = 2000 }) {
 }
 
 const stats = [
-  { value: 50000, suffix: "+", label: "Patients" },
-  { value: 15000, suffix: "+", label: "Immunotherapy" },
+  { value: 50000, suffix: "+", label: "Patients from Kashmir to Dubai" },
+  { value: 15, suffix: "k+", label: "SLIT Success Stories" },
   { value: 12, suffix: "+", label: "Countries" },
   { value: 100, suffix: "+", label: "Research" },
 ];

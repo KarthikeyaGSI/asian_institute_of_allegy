@@ -80,8 +80,8 @@ export default function Authority() {
                 <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Patients from Kashmir to Dubai</span>
               </div>
               <div>
-                <span className="block text-4xl md:text-5xl font-bold text-primary-accent mb-2 font-heading tracking-tight">12k+</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Successes (Aswini Legacy)</span>
+                <span className="block text-4xl md:text-5xl font-bold text-primary-accent mb-2 font-heading tracking-tight">15k+</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Success Stories</span>
               </div>
             </div>
           </motion.div>
@@ -109,13 +109,13 @@ export default function Authority() {
             <h3 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-white font-heading">
               The Iconic Hope for <br/> 40 Crore Indians.
             </h3>
-            <div className="flex flex-col md:flex-row gap-10 mb-12">
+             <div className="flex flex-col md:flex-row gap-10 mb-12">
                <div className="flex-1">
                   <span className="block text-4xl font-bold text-white mb-2 font-heading tracking-tight">50,000+</span>
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Complex Cases Solved</span>
                </div>
                <div className="flex-1">
-                  <span className="block text-4xl font-bold text-primary-accent mb-2 font-heading tracking-tight">12k+</span>
+                  <span className="block text-4xl font-bold text-primary-accent mb-2 font-heading tracking-tight">15k+</span>
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Success Stories</span>
                </div>
             </div>

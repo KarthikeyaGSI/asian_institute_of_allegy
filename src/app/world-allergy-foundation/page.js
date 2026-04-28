@@ -3,6 +3,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Globe, Beaker, ShieldAlert, Leaf, Newspaper, ArrowRight } from "lucide-react";
@@ -24,6 +25,89 @@ const sections = [
     content: "Through the 'Allergen Forensic Laboratory', we integrate botany and clinical immunology to identify region-specific triggers like pollen and pollutants."
   }
 ];
+
+const WAFActionForm = ({ type, title, description, buttonText, buttonStyle }) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({ name: "", phone: "" });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const subject = type === 'workshop' 
+      ? `New Workshop Request from ${formData.name}`
+      : `New Contribution Inquiry from ${formData.name}`;
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "3c43e0ba-47fb-424c-9103-345682cc4a5a",
+          subject: subject,
+          from_name: "WAF Foundation",
+          name: formData.name,
+          phone: formData.phone,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        const waMessage = encodeURIComponent(
+          `Hello World Allergy Foundation,\n\nI would like to ${type === 'workshop' ? 'request a workshop' : 'contribute to the foundation'}.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n\nPlease contact me.`
+        );
+        window.location.href = `https://wa.me/918074368748?text=${waMessage}`;
+      } else {
+        alert("Something went wrong. Please try again or call us directly.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Submission failed. Redirecting to WhatsApp directly...");
+      window.location.href = "https://wa.me/918074368748";
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="relative z-10 w-full">
+      <span className={type === 'workshop' ? "text-primary-accent font-bold tracking-[0.3em] uppercase text-[10px] mb-6 block" : "text-white/40 font-bold tracking-[0.3em] uppercase text-[10px] mb-6 block"}>{type === 'workshop' ? 'Educational Outreach' : 'Support the Mission'}</span>
+      <h3 className="text-4xl font-bold mb-6 font-heading tracking-tight" dangerouslySetInnerHTML={{ __html: title }} />
+      <p className={type === 'workshop' ? "text-white/60 text-lg mb-8 font-medium leading-relaxed" : "text-white/80 text-lg mb-8 font-medium leading-relaxed"}>{description}</p>
+      
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <input 
+            type="text" 
+            value={formData.name}
+            onChange={(e) => setFormData({...formData, name: e.target.value})}
+            placeholder="Your Name" 
+            className="w-full px-5 py-3 rounded-xl border border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary-accent"
+            required
+          />
+        </div>
+        <div>
+          <input 
+            type="tel" 
+            value={formData.phone}
+            onChange={(e) => setFormData({...formData, phone: e.target.value})}
+            placeholder="Phone Number" 
+            className="w-full px-5 py-3 rounded-xl border border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary-accent"
+            required
+          />
+        </div>
+        <button 
+          type="submit"
+          disabled={isSubmitting}
+          className={buttonStyle + " w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs transition-colors" + (isSubmitting ? " opacity-70 cursor-not-allowed" : "")}
+        >
+          {isSubmitting ? "Processing..." : buttonText} <ArrowRight size={16} />
+        </button>
+      </form>
+    </div>
+  );
+};
 
 export default function WorldAllergyFoundation() {
   return (
@@ -257,19 +341,13 @@ export default function WorldAllergyFoundation() {
               className="bg-slate-900 rounded-[3rem] p-10 md:p-16 text-white relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-125 transition-transform duration-700" />
-              <div className="relative z-10">
-                <span className="text-primary-accent font-bold tracking-[0.3em] uppercase text-[10px] mb-6 block">Educational Outreach</span>
-                <h3 className="text-4xl font-bold mb-6 font-heading tracking-tight">Invite us to organize <br/> a workshop</h3>
-                <p className="text-white/60 text-lg mb-10 font-medium leading-relaxed">
-                  Bring world-class allergy awareness to your institution, corporate office, or community center. We provide clinical insights and preventive strategies.
-                </p>
-                <Link 
-                  href="/#contact"
-                  className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-primary-accent transition-colors"
-                >
-                  Request Workshop <ArrowRight size={16} />
-                </Link>
-              </div>
+              <WAFActionForm 
+                type="workshop"
+                title="Invite us to organize <br/> a workshop"
+                description="Bring world-class allergy awareness to your institution, corporate office, or community center. We provide clinical insights and preventive strategies."
+                buttonText="Request Workshop"
+                buttonStyle="bg-white text-black hover:bg-primary-accent hover:text-white"
+              />
             </motion.div>
 
             {/* Contribute */}
@@ -280,19 +358,13 @@ export default function WorldAllergyFoundation() {
               className="bg-primary rounded-[3rem] p-10 md:p-16 text-white relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-125 transition-transform duration-700" />
-              <div className="relative z-10">
-                <span className="text-white/40 font-bold tracking-[0.3em] uppercase text-[10px] mb-6 block">Support the Mission</span>
-                <h3 className="text-4xl font-bold mb-6 font-heading tracking-tight">Contribute to the <br/> Foundation</h3>
-                <p className="text-white/80 text-lg mb-10 font-medium leading-relaxed">
-                  Your support fuels our clinical research, environmental mapping, and awareness campaigns for a healthier, allergy-free India.
-                </p>
-                <Link 
-                  href="/#contact"
-                  className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-colors"
-                >
-                  Get Involved <ArrowRight size={16} />
-                </Link>
-              </div>
+              <WAFActionForm 
+                type="contribute"
+                title="Contribute to the <br/> Foundation"
+                description="Your support fuels our clinical research, environmental mapping, and awareness campaigns for a healthier, allergy-free India."
+                buttonText="Get Involved"
+                buttonStyle="bg-black text-white hover:bg-white hover:text-black"
+              />
             </motion.div>
           </div>
         </div>
