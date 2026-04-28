@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Wind, ShieldCheck, Activity, Zap, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import QuizModal from "./QuizModal";
 
 const options = [
   {
@@ -39,14 +40,32 @@ const options = [
 export default function GuidedEntry() {
   const [expandedId, setExpandedId] = useState(null);
 
+  const [showQuiz, setShowQuiz] = useState(false);
+
+  const openQuiz = () => setShowQuiz(true);
+  const closeQuiz = () => setShowQuiz(false);
+
+  // ... existing code
   return (
     <section id="how-we-help" className="bg-white py-24 md:py-32">
       <div className="container-custom">
         <div className="text-center mb-16 fade-up">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-6">What are you dealing with?</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold mb-6">Find what’s actually causing your allergy</h2>
         </div>
 
+        {/* Quiz trigger button */}
+        <div className="flex justify-center mb-8">
+          <button onClick={openQuiz} className="bg-primary text-white px-8 py-4 rounded-full font-medium hover:bg-primary-accent transition">
+            Start Diagnostic Quiz
+          </button>
+        </div>
+
+        {/* Quiz Modal */}
+        <QuizModal isOpen={showQuiz} onClose={closeQuiz} />
+
+        {/* Existing options grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
           {options.map((option, index) => {
             const isExpanded = expandedId === option.id;
             
