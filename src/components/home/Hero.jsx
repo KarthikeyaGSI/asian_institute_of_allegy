@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative h-[100vh] w-full overflow-hidden bg-dark flex items-center">
-      
+
       {/* Video Background */}
       <motion.div
         animate={{ scale: [1, 1.05] }}
@@ -32,7 +32,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-[600px] pl-[24px] md:pl-[80px] text-left">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -42,7 +42,7 @@ export default function Hero() {
           <span className="text-primary-accent">You need the right diagnosis.</span>
         </motion.h1>
 
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
@@ -51,7 +51,7 @@ export default function Hero() {
           Root-cause care for allergy, asthma and immune disorders.
         </motion.p>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}

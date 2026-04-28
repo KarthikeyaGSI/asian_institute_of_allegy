@@ -67,7 +67,7 @@ export default function Science() {
   return (
     <section id="research" ref={containerRef} className="bg-[#0B0F0E] py-24 md:py-40 overflow-hidden text-white relative scroll-mt-24">
       {/* Background ambient glow - Claude style */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">

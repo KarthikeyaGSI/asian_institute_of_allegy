@@ -51,10 +51,10 @@ export default function Hero() {
     <>
       <section ref={containerRef} className="relative h-[100vh] w-full overflow-hidden bg-dark flex items-center">
         {/* Background Video with subtle zoom animation */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, scale: [1, 1.05] }}
-          transition={{ 
+          transition={{
             opacity: { duration: 2.5, ease: "easeOut" },
             scale: { duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }
           }}
@@ -88,7 +88,7 @@ export default function Hero() {
               </h1>
             </motion.div>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -98,22 +98,22 @@ export default function Hero() {
               Addressing the root cause for patients aged 2 to 80.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="mt-14 flex flex-col gap-10"
             >
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link 
-                  href="/#contact" 
+                <Link
+                  href="/#contact"
                   ref={buttonRef}
                   className="bg-primary text-white px-12 py-6 rounded-full font-black uppercase tracking-widest transition-all duration-500 ease-out hover:bg-primary-accent hover:text-black text-center shadow-2xl shadow-primary/30 group relative overflow-hidden"
                 >
                   <span className="relative z-10 text-lg">Book Evaluation</span>
                 </Link>
               </div>
-              
+
               <div className="flex flex-wrap gap-10 text-white/40 text-[10px] font-black uppercase tracking-[0.4em]">
                 {[
                   "15 min callback",
@@ -134,7 +134,7 @@ export default function Hero() {
       {/* Scarcity Section - Refined Claude Design */}
       <section className="bg-white py-32 md:py-48 border-b border-slate-100 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,rgba(26,95,58,0.02)_0%,transparent_50%)] pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <motion.div
@@ -145,7 +145,7 @@ export default function Hero() {
             >
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">The Specialist Gap</span>
               <h2 className="text-5xl md:text-7xl font-semibold text-slate-900 mb-8 leading-[1.05] tracking-tight">
-                Millions suffer. <br/>
+                Millions suffer. <br />
                 <span className="text-slate-300">Very few are diagnosed.</span>
               </h2>
               <p className="text-xl text-slate-500 leading-relaxed max-w-xl font-medium">
@@ -153,7 +153,7 @@ export default function Hero() {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}

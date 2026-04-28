@@ -9,7 +9,7 @@ export default function Authority() {
   return (
     <section id="doctor" className="bg-dark text-white py-24 md:py-32 overflow-hidden relative scroll-mt-24">
       {/* Background Subtle Elements */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
@@ -25,7 +25,7 @@ export default function Authority() {
                 className="absolute inset-0 w-full h-full"
               >
                 <Image 
-                  src="/images/dr-nageswar.webp" 
+                  src="/images/dr-nageswar.jpeg" 
                   alt="Dr. Vyakarnam Nageshwar" 
                   fill 
                   className="object-cover object-top"

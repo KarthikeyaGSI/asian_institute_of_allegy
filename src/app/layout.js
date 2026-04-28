@@ -29,6 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${outfit.variable} ${plusJakarta.variable} h-full antialiased scroll-smooth`}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Microsoft Clarity */}
         <Script id="clarity-script" strategy="afterInteractive">
           {`

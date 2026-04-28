@@ -19,7 +19,7 @@ export default function DoctorAnchor() {
                 className="absolute inset-0 w-full h-full"
               >
                 <Image 
-                  src="/images/Dr.jpeg" 
+                  src="/images/dr-nageswar.jpeg" 
                   alt="Dr. Vyakarnam Nageshwar" 
                   fill 
                   className="object-cover"
