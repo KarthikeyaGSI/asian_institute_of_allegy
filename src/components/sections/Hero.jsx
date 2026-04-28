@@ -147,6 +147,7 @@ export default function Hero() {
               <h2 className="text-6xl md:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tighter font-heading mb-8 transition-transform hover:scale-105 hover:shadow-[0_0_10px_rgba(0,255,0,0.5)]">
                Tell us what you're experiencing.<br/>
               </h2>
+              <span className="text-slate-400 font-semibold mb-4 block">Most never find the actual cause.</span>
               <p className="text-xl text-slate-500 leading-relaxed max-w-xl font-medium">
                 The standard healthcare loop is designed for temporary relief, not resolution. This systemic gap leaves millions of patients trapped in a cycle of failed treatments and recurring symptoms.
               </p>
