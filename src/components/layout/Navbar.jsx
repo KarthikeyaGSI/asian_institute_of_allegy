@@ -37,15 +37,15 @@ export default function Navbar() {
           maxWidth: scrolled ? "1000px" : "1400px",
           backgroundColor: scrolled ? "rgba(10, 10, 10, 0.98)" : isWAF ? "rgba(10, 10, 10, 0.8)" : "rgba(15, 15, 15, 0.05)",
           backdropFilter: scrolled ? "blur(32px)" : "blur(16px)",
-          paddingLeft: scrolled ? "16px" : "20px",
-          paddingRight: scrolled ? "8px" : "20px",
+          paddingLeft: scrolled ? "40px" : "20px",
+          paddingRight: scrolled ? "40px" : "20px",
           borderRadius: scrolled ? "999px" : "24px",
         }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="flex items-center justify-between h-[56px] md:h-[68px] border border-white/10 shadow-2xl overflow-hidden relative z-[1001]"
       >
         {/* Left Side Links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8 flex-1">
           {navLinks.slice(0, 3).map((link) => (
             <Link
               key={link.name}
@@ -60,7 +60,7 @@ export default function Navbar() {
         </div>
 
         {/* Center Logo */}
-        <Link href="/" className="flex flex-col items-center group lg:absolute lg:left-1/2 lg:-translate-x-1/2 text-center flex-1 lg:flex-none px-2">
+        <Link href="/" className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group text-center px-2">
           <span className="text-[11px] md:text-xl font-bold text-white tracking-tighter uppercase leading-none truncate max-w-[140px] md:max-w-none">
             {isWAF ? "World Allergy Foundation" : "Asian Institute"}
           </span>
@@ -70,7 +70,7 @@ export default function Navbar() {
         </Link>
 
         {/* Right Side Actions */}
-        <div className="flex items-center gap-1 md:gap-4">
+        <div className="flex items-center gap-1 md:gap-4 justify-end">
           <Link
             href="/#contact"
             className="hidden xl:block text-[11px] font-black text-white/60 hover:text-white transition-colors tracking-[0.2em] uppercase"
@@ -82,7 +82,7 @@ export default function Navbar() {
             href="/#contact"
             className="px-5 md:px-7 py-2 md:py-3 rounded-full bg-white text-black text-[10px] md:text-[11px] font-black uppercase tracking-wider hover:bg-primary-accent hover:text-black transition-all shadow-lg"
           >
-            {isWAF ? "Contribute Support" : "Book Evaluation"}
+            {isWAF ? "Contribute Now" : "Book Evaluation"}
           </Link>
 
           {/* Mode Toggle Switch */}
