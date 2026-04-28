@@ -34,18 +34,16 @@ export default function Navbar() {
         initial={false}
         animate={{
           width: scrolled ? "92%" : "100%",
-          maxWidth: scrolled ? "1000px" : "1400px",
+          maxWidth: scrolled ? "1200px" : "1440px",
           backgroundColor: scrolled ? "rgba(10, 10, 10, 0.98)" : isWAF ? "rgba(10, 10, 10, 0.8)" : "rgba(15, 15, 15, 0.05)",
           backdropFilter: scrolled ? "blur(32px)" : "blur(16px)",
-          paddingLeft: scrolled ? "40px" : "20px",
-          paddingRight: scrolled ? "40px" : "20px",
-          borderRadius: scrolled ? "999px" : "24px",
+          borderRadius: scrolled ? "999px" : "0px",
         }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="flex items-center justify-between h-[56px] md:h-[68px] border border-white/10 shadow-2xl overflow-hidden relative z-[1001]"
+        className="grid grid-cols-2 lg:grid-cols-3 items-center h-[64px] md:h-[80px] border border-white/10 shadow-2xl relative z-[1001] px-6 md:px-10 overflow-visible"
       >
         {/* Left Side Links */}
-        <div className="hidden lg:flex items-center gap-8 flex-1">
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.slice(0, 3).map((link) => (
             <Link
               key={link.name}
@@ -60,11 +58,11 @@ export default function Navbar() {
         </div>
 
         {/* Center Logo */}
-        <Link href="/" className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group text-center px-2">
-          <span className="text-[11px] md:text-xl font-bold text-white tracking-tighter uppercase leading-none truncate max-w-[140px] md:max-w-none">
+        <Link href="/" className="flex flex-col items-center group text-center px-4 justify-self-center">
+          <span className="text-[12px] md:text-xl font-bold text-white tracking-tighter uppercase leading-none">
             {isWAF ? "World Allergy Foundation" : "Asian Institute"}
           </span>
-          <span className="text-[5px] md:text-[7px] text-white/40 font-black uppercase tracking-[0.4em] mt-1">
+          <span className="text-[6px] md:text-[8px] text-white/40 font-black uppercase tracking-[0.4em] mt-1.5">
             {isWAF ? "Global Research Wing" : "Centre of Excellence"}
           </span>
         </Link>
@@ -79,8 +77,8 @@ export default function Navbar() {
           </Link>
           
           <Link
-            href="/#contact"
-            className="px-5 md:px-7 py-2 md:py-3 rounded-full bg-white text-black text-[10px] md:text-[11px] font-black uppercase tracking-wider hover:bg-primary-accent hover:text-black transition-all shadow-lg"
+            href={isWAF ? "/contribute" : "/#contact"}
+            className="px-6 md:px-8 py-2.5 md:py-3.5 rounded-full bg-white text-black text-[9px] md:text-[11px] font-black uppercase tracking-widest hover:bg-primary-accent hover:text-black transition-all shadow-xl hover:scale-105 active:scale-95"
           >
             {isWAF ? "Contribute Now" : "Book Evaluation"}
           </Link>
@@ -157,8 +155,8 @@ export default function Navbar() {
               </div>
 
               <Link
-                href="/#contact"
-                className="bg-primary-accent text-black py-5 rounded-full font-black text-center text-lg uppercase tracking-widest"
+                href={isWAF ? "/contribute" : "/#contact"}
+                className="bg-primary-accent text-black py-5 rounded-full font-black text-center text-lg uppercase tracking-widest shadow-xl shadow-primary-accent/20"
                 onClick={() => setIsOpen(false)}
               >
                 {isWAF ? "Contribute Now" : "Book Evaluation"}
