@@ -72,7 +72,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Cinematic Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/15 pointer-events-none" />
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto pl-6 md:pl-[100px] pr-6 md:pr-12 text-left mt-16">
@@ -144,9 +144,8 @@ export default function Hero() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">The Specialist Gap</span>
-              <h2 className="text-5xl md:text-7xl font-semibold text-slate-900 mb-8 leading-[1.05] tracking-tight">
-                Millions suffer. <br />
-                <span className="text-slate-300">Very few are diagnosed.</span>
+              <h2 className="text-6xl md:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tighter font-heading mb-8 transition-transform hover:scale-105 hover:shadow-[0_0_10px_rgba(0,255,0,0.5)]">
+               Tell us what you're experiencing.<br/>
               </h2>
               <p className="text-xl text-slate-500 leading-relaxed max-w-xl font-medium">
                 The standard healthcare loop is designed for temporary relief, not resolution. This systemic gap leaves millions of patients trapped in a cycle of failed treatments and recurring symptoms.
@@ -162,11 +161,11 @@ export default function Hero() {
             >
               <div className="bg-slate-50 rounded-3xl p-10 flex flex-col justify-center items-center text-center border border-slate-100 group hover:border-slate-200 transition-colors">
                 <span className="block text-5xl md:text-6xl font-bold text-slate-900 mb-4 opacity-40 group-hover:opacity-100 transition-opacity">35Cr+</span>
-                <span className="text-xs font-bold text-slate-500 uppercase tracking-[0.3em]">Patients</span>
+                <h3 className="text-xl font-semibold mb-6 text-gray-900">Patients</h3>
               </div>
 
               <div className="bg-primary rounded-3xl p-10 flex flex-col justify-center items-center text-center shadow-2xl shadow-primary/20 group hover:scale-[1.02] transition-transform">
-                <span className="block text-5xl md:text-6xl font-bold text-white mb-4">Under 100</span>
+                <span className="block text-6xl md:text-7xl font-bold text-white mb-4">Under 100</span>
                 <span className="text-xs font-bold text-white/60 uppercase tracking-[0.3em]">Specialists</span>
               </div>
             </motion.div>

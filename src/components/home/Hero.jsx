@@ -28,7 +28,7 @@ export default function Hero() {
 
       {/* Critical Overlay */}
       {/* Desktop: 0.55 to 0.15 Left->Right, Mobile: flat 0.35 or reduced gradient */}
-      <div className="absolute inset-0 bg-black/35 md:bg-gradient-to-r md:from-[rgba(0,0,0,0.55)] md:to-[rgba(0,0,0,0.15)] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.75)] via-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.15)] pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-[600px] pl-[24px] md:pl-[80px] text-left">

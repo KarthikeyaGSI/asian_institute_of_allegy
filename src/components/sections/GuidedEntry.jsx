@@ -40,9 +40,8 @@ export default function GuidedEntry() {
               </div>
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs">Guided Entry</span>
             </div>
-            <h2 className="text-6xl md:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tighter font-heading mb-8">
-              How can we <br/>
-              <span className="text-slate-300 italic">help you today?</span>
+            <h2 className="text-6xl md:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tighter font-heading mb-8 transform hover:-translate-y-1 hover:shadow-[0_0_10px_rgba(0,255,0,0.5)]">
+              Tell us what you're experiencing.<br/>
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed font-medium max-w-xl">
               Select your current situation to see the most relevant diagnostic pathway and treatment timeline.
