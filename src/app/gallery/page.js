@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Maximize2, Plus } from "lucide-react";
 
 const images = [
   { src: "/images/Asian.jpeg", title: "Asian Institute Entrance" },
@@ -68,9 +69,14 @@ export default function GalleryPage() {
                 height={600}
                 className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <p className="text-white font-bold text-xl">{img.title}</p>
-                <p className="text-white/60 text-xs uppercase tracking-widest mt-2">Asian Institute of Allergy</p>
+              <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-500">
+                  <Plus className="text-white" size={32} />
+                </div>
+                
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+                   <p className="text-[10px] font-black text-white/60 uppercase tracking-[0.4em] whitespace-nowrap">Asian Institute • Global Excellence</p>
+                </div>
               </div>
             </motion.div>
           ))}
