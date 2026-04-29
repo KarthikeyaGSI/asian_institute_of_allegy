@@ -31,12 +31,12 @@ const NOTIFICATIONS = [
   { type: 'booking', action: 'just booked a consultation', icon: Calendar, color: 'text-blue-400' },
   { type: 'booking', action: 'scheduled a follow-up', icon: Calendar, color: 'text-emerald-400' },
   { type: 'booking', action: 'completed a diagnostic quiz', icon: CheckCircle2, color: 'text-blue-400' },
-  { type: 'booking', action: 'joined a Trigger Mapping Session', icon: MapPin, color: 'text-rose-400' },
+  { type: 'booking', action: 'joined a Trigger mapping session', icon: MapPin, color: 'text-rose-400' },
   { type: 'booking', action: 'joined the SLIT program', icon: Zap, color: 'text-amber-400' },
   { type: 'booking', action: 'requested a second opinion', icon: UserCheck, color: 'text-purple-400' },
 
   // Clinical / System Triggers
-  { type: 'system', title: 'Trigger Mapping Session', content: 'In progress for 15+ patients globally today', icon: MapPin, color: 'text-rose-400' },
+  { type: 'system', title: 'Trigger mapping session', content: 'In progress for 15+ patients globally today', icon: MapPin, color: 'text-rose-400' },
   { type: 'system', title: 'Safe Engine Active', content: 'Analyzing multi-regional allergen data', icon: ShieldCheck, color: 'text-indigo-400' },
   { type: 'system', title: 'Clinical Precision', content: 'AI-driven diagnostic engine online', icon: Zap, color: 'text-cyan-400' },
   { type: 'system', title: 'Pollutants Analysis', content: 'Air quality index monitored for key cities', icon: Activity, color: 'text-orange-400' },
@@ -128,6 +128,7 @@ const NotificationTriggers = () => {
       <AnimatePresence mode="wait">
         {isVisible && currentNotification && (
           <motion.div
+            key={currentNotification.id}
             initial={{ opacity: 0, y: 50, scale: 0.9, x: -20 }}
             animate={{ opacity: 1, y: 0, scale: 1, x: 0 }}
             exit={{ opacity: 0, y: 20, scale: 0.95, transition: { duration: 0.2 } }}

@@ -8,7 +8,6 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import GuidedEntry from "@/components/sections/GuidedEntry";
 import DiagnosticQuiz from "@/components/sections/DiagnosticQuiz";
-import LiveSignals from "@/components/sections/LiveSignals";
 import SLITScience from "@/components/sections/SLITScience";
 import ResolutionPath from "@/components/sections/ResolutionPath";
 import { useState } from "react";
@@ -42,7 +41,6 @@ export default function Home() {
       <GuidedEntry onStartQuiz={() => setIsQuizOpen(true)} />
       
       <DiagnosticQuiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
-      <LiveSignals />
       
       {/* PHASE 2: THE LOGIC LAYER */}
       <Comparison />
