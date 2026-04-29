@@ -8,6 +8,7 @@ import {
   ChevronRight, Sparkles, MessageCircle, Phone
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const steps = [
   {
@@ -110,8 +111,21 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
   const [severity, setSeverity] = useState(5);
   const [isFinishing, setIsFinishing] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [reportEmail, setReportEmail] = useState("");
+  const [isSubmittingReport, setIsSubmittingReport] = useState(false);
+  const [isReportSent, setIsReportSent] = useState(false);
 
   const currentStepData = steps[currentStep];
+
+  // Dynamic Analysis
+  const conditionTitle = answers.segmentation === 'nasal' ? 'Rhinitis' 
+                       : answers.segmentation === 'respiratory' ? 'Asthma' 
+                       : answers.segmentation === 'skin' ? 'Dermatitis/Hives'
+                       : 'Immunological Disorder';
+  
+  const severityTier = severity > 7 ? 'Critical / Chronic' 
+                    : severity > 4 ? 'Moderate-Severe' 
+                    : 'Early Onset';
 
   const handleOptionSelect = (optionId) => {
     if (currentStepData.multiSelect) {
@@ -136,6 +150,38 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
       setIsFinishing(false);
       setShowResults(true);
     }, 2000);
+  };
+
+  const handleReportSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmittingReport(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "3c43e0ba-47fb-424c-9103-345682cc4a5a",
+          subject: `Diagnostic Report: ${conditionTitle} (${severityTier})`,
+          from_name: "AIA Diagnostic Funnel",
+          email: reportEmail,
+          condition: conditionTitle,
+          severity: severityTier,
+          history: answers.duration,
+          triggers: (answers.triggers || []).join(", "),
+          impact: (answers.impact || []).join(", "),
+          goal: answers.stakes
+        }),
+      });
+
+      if (response.ok) {
+        setIsReportSent(true);
+      }
+    } catch (error) {
+      console.error("Report submission failed", error);
+    } finally {
+      setIsSubmittingReport(false);
+    }
   };
 
   const nextStep = () => {
@@ -305,22 +351,21 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
             >
               <div className="bg-slate-900 rounded-[2rem] p-8 md:p-12 text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-                
-                <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
                   <div>
                     <span className="text-primary-accent font-bold tracking-[0.4em] uppercase text-[10px] mb-4 block">Clinical Insight</span>
                     <h3 className="text-4xl font-bold mb-6 font-heading tracking-tight leading-tight">
-                      Your Allergy <br/><span className="text-primary-accent">Diagnostic Profile.</span>
+                       Your Allergy <br/><span className="text-primary-accent">Diagnostic Profile.</span>
                     </h3>
                     
                     <div className="space-y-4">
                       <div className="bg-white/5 border border-white/10 p-4 rounded-xl">
                         <p className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-1">Primary Condition</p>
-                        <p className="text-lg font-bold">Allergic {answers.segmentation === 'nasal' ? 'Rhinitis' : answers.segmentation === 'respiratory' ? 'Asthma' : 'Immunological Disorder'}</p>
+                        <p className="text-lg font-bold">Allergic {conditionTitle}</p>
                       </div>
                       <div className="bg-white/5 border border-white/10 p-4 rounded-xl">
                         <p className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-1">Severity Tier</p>
-                        <p className="text-lg font-bold">{severity > 7 ? 'Critical / Chronic' : severity > 4 ? 'Moderate-Severe' : 'Early Onset'}</p>
+                        <p className="text-lg font-bold">{severityTier}</p>
                       </div>
                     </div>
                   </div>
@@ -331,8 +376,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                      </p>
                      <p className="text-slate-200 leading-relaxed italic text-lg font-medium">
                        "Patients with your profile who rely solely on antihistamines typically experience 
-                       <strong> progressive sensitization</strong>—meaning more allergens trigger reactions over time. 
-                       SLIT has shown 87% long-term resolution in cases like yours."
+                       <strong> progressive sensitization</strong>. SLIT has shown 87% long-term resolution in cases like yours."
                      </p>
                   </div>
                 </div>
@@ -343,23 +387,24 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                   <h4 className="text-2xl font-bold text-slate-900 font-heading">Recommended Next Step</h4>
                   <div className="space-y-4">
                     <div className="flex gap-4">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">1</div>
+                      <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 font-bold">1</div>
                       <p className="text-slate-600 font-medium pt-1">Precision 400-Allergen Mapping Session</p>
                     </div>
                     <div className="flex gap-4">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">2</div>
+                      <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 font-bold">2</div>
                       <p className="text-slate-600 font-medium pt-1">Custom SLIT Recalibration Protocol</p>
                     </div>
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                    <Link
-                      href="https://wa.me/918074368748?text=I've just completed the Diagnostic Quiz. My profile indicates Moderate-Severe Rhinitis. I'd like to book my evaluation."
+                    <a
+                      href={`https://wa.me/918074368748?text=${encodeURIComponent(`I've just completed the Diagnostic Quiz. My profile indicates ${severityTier} ${conditionTitle}. I'd like to book my evaluation.`)}`}
+                      target="_blank"
                       className="bg-[#25D366] text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2"
                     >
                       <MessageCircle size={20} fill="currentColor" />
                       Expedite via WhatsApp
-                    </Link>
+                    </a>
                     <button
                       onClick={onClose}
                       className="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-800 transition-all"
@@ -370,26 +415,43 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                 </div>
 
                 <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
-                      <img src="/images/dr-nageswar.jpeg" className="w-full h-full object-cover object-top" />
+                  {!isReportSent ? (
+                    <>
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
+                          <img src="/images/dr-nageswar.jpeg" alt="Doctor" className="w-full h-full object-cover object-top" />
+                        </div>
+                        <div>
+                          <p className="text-slate-900 font-bold">Get Full Report</p>
+                          <p className="text-slate-500 text-xs font-medium">Sent to your inbox instantly</p>
+                        </div>
+                      </div>
+                      <form onSubmit={handleReportSubmit} className="space-y-4">
+                        <input 
+                          type="email" 
+                          placeholder="Your Email Address"
+                          value={reportEmail}
+                          onChange={(e) => setReportEmail(e.target.value)}
+                          className="w-full px-5 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary"
+                          required
+                        />
+                        <button 
+                          disabled={isSubmittingReport}
+                          className="w-full bg-primary text-white py-4 rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-[#154d2e] transition-all disabled:opacity-50"
+                        >
+                          {isSubmittingReport ? "Sending..." : "Send My Allergy Report"}
+                        </button>
+                      </form>
+                    </>
+                  ) : (
+                    <div className="text-center py-6">
+                       <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+                         <CheckCircle2 size={32} />
+                       </div>
+                       <p className="font-bold text-slate-900">Report Sent!</p>
+                       <p className="text-sm text-slate-500 mt-1">Please check your inbox (and spam folder).</p>
                     </div>
-                    <div>
-                      <p className="text-slate-900 font-bold">Get Full Report</p>
-                      <p className="text-slate-500 text-xs font-medium">Sent to your inbox instantly</p>
-                    </div>
-                  </div>
-                  <form className="space-y-4">
-                    <input 
-                      type="email" 
-                      placeholder="Your Email Address"
-                      className="w-full px-5 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary"
-                      required
-                    />
-                    <button className="w-full bg-primary text-white py-4 rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-[#154d2e] transition-all">
-                      Send My Allergy Report
-                    </button>
-                  </form>
+                  )}
                 </div>
               </div>
             </motion.div>
