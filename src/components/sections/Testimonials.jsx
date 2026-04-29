@@ -15,40 +15,40 @@ const categories = [
 
 const testimonials = [
   {
-    name: "Aman Verma",
-    age: 29,
-    location: "Mumbai",
-    category: "asthma",
-    duration: "12 years",
-    previous: "5 inhalers a day, multiple ER visits",
-    outcome: "Zero inhalers in 8 months",
-    quote: "I had spent 12 years just managing symptoms. The Asian Institute was the first place that actually looked for the 'Why'. Immunotherapy changed my life.",
-    videoId: "qv1NJ1PDEXA",
-    metrics: [10, 7, 4, 2, 0] // Severity over time
-  },
-  {
-    name: "Priya Reddy",
-    age: 34,
-    location: "Hyderabad",
+    name: "Raghukumar",
+    age: 52,
+    location: "Andhra Pradesh",
     category: "skin",
-    duration: "4 years",
-    previous: "Chronic antihistamines, steroid creams",
-    outcome: "Permanent resolution, clear skin",
-    quote: "The root-cause approach is real. I stopped reacting to triggers that used to send me to the ER. Truly scientific care.",
-    videoId: "10fIm_am9k8",
-    metrics: [10, 8, 5, 3, 0]
+    duration: "40 years",
+    previous: "Lifetime of steroid creams & dependency",
+    outcome: "Complete skin resolution",
+    quote: "I had spent 40 years just managing symptoms. The Asian Institute was the first place that actually looked for the 'Why'. Immunotherapy changed my life.",
+    videoId: "qv1NJ1PDEXA",
+    metrics: [10, 9, 6, 3, 0]
   },
   {
-    name: "Dr. K. Sharma",
-    age: 45,
-    location: "Delhi",
+    name: "S. Karthikeyan",
+    age: 33,
+    location: "Trichy, Tamil Nadu",
     category: "rhinitis",
-    duration: "15 years",
-    previous: "ENT surgery, daily nasal sprays",
-    outcome: "Regained sense of smell, clear breathing",
-    quote: "As a doctor myself, I appreciate the evidence-based protocols used here. They don't just give you a prescription; they give you a cure.",
+    duration: "3 years",
+    previous: "Chronic Rhinitis, Pharyngitis & Bronchitis",
+    outcome: "Permanent respiratory freedom",
+    quote: "As a bank officer, my allergies were affecting my career. I stopped reacting to triggers that used to send me to the ER. Truly scientific care.",
+    videoId: "10fIm_am9k8",
+    metrics: [10, 8, 5, 2, 0]
+  },
+  {
+    name: "Baby Akshara",
+    age: 7,
+    location: "Hyderabad",
+    category: "asthma",
+    duration: "5 years",
+    previous: "Severe pediatric asthma & chronic attacks",
+    outcome: "No inhalers, normal childhood",
+    quote: "We were scared for our daughter's future. The evidence-based protocols used here didn't just give her a prescription; they gave her a childhood.",
     videoId: "Hppih_IZeCo",
-    metrics: [10, 6, 3, 1, 0]
+    metrics: [10, 7, 4, 1, 0]
   }
 ];
 
