@@ -36,7 +36,7 @@ export default function Hero() {
 
   return (
     <section 
-      className={`relative h-[100dvh] w-full overflow-hidden flex items-end text-white transition-all duration-700 ease-in-out ${
+      className={`relative h-[100dvh] w-full bg-black overflow-hidden flex items-end text-white transition-all duration-700 ease-in-out ${
         isScrolled ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
       }`}
     >
@@ -60,7 +60,7 @@ export default function Hero() {
           objectPosition: "center"
         }}
       >
-        <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
+        <source src="/hero-video-cinematic.mp4" type="video/mp4" />
         <track kind="captions" src="" label="English" />
       </video>
 
