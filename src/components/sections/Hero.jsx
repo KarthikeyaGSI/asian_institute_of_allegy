@@ -36,11 +36,11 @@ export default function Hero() {
 
   return (
     <section 
-      className={`relative h-[100dvh] w-full overflow-hidden flex items-end px-6 pt-32 pb-12 md:px-20 text-white transition-all duration-700 ease-in-out ${
+      className={`relative h-[100dvh] w-full overflow-hidden flex items-end text-white transition-all duration-700 ease-in-out ${
         isScrolled ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
       }`}
     >
-      {/* 🎥 VIDEO - Centered and Shifted */}
+      {/* 🎥 VIDEO - Cinematic Background */}
       <video
         autoPlay
         muted
@@ -53,8 +53,8 @@ export default function Hero() {
           object-cover 
           -translate-x-1/2 -translate-y-1/2 
           z-0 
-          transition-transform duration-[12000ms] linear 
-          ${isLoaded ? "scale-[1.15]" : "scale-100"}
+          transition-transform duration-[15000ms] linear 
+          ${isLoaded ? "scale-[1.05]" : "scale-100"}
         `}
         style={{
           objectPosition: "center"
@@ -64,22 +64,24 @@ export default function Hero() {
         <track kind="captions" src="" label="English" />
       </video>
 
-      {/* 🎨 OVERLAY - Readable Left, Clear Right */}
+      {/* 🎨 OVERLAY - Precise Gradient Specs */}
       <div 
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background: isMobile 
-            ? "linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 100%)" 
-            : "linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0.12) 70%, rgba(0,0,0,0) 100%)"
+            ? "rgba(0,0,0,0.35)" 
+            : "linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 35%, rgba(0,0,0,0.15) 100%)"
         }}
       />
 
-        {/* 📝 CONTENT */}
-        <div className="relative z-[2] max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 items-end gap-12">
+        {/* 📝 CONTENT - Precise Padding & Width */}
+        <div className="relative z-[2] w-full max-w-7xl mx-auto px-6 md:px-20 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-12 items-end gap-12">
           
-          {/* Main Copy (8 columns) */}
-          <div className="lg:col-span-8 w-full space-y-10 md:space-y-12">
-            <div>
+          {/* Text Content Block */}
+          <div className="lg:col-span-8 w-full space-y-10 md:space-y-12 pl-0 md:pl-[0px]"> 
+            {/* Note: md:px-20 on section already provides ~80px padding if container is large. 
+                Wait, I'll adjust the padding-left specifically. */}
+            <div className="max-w-[600px]">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={isLoaded ? { opacity: 1, y: 0 } : {}}
@@ -94,7 +96,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-                className="mt-6 md:mt-8 text-[17px] md:text-[21px] text-white/90 font-medium leading-relaxed max-w-[520px]"
+                className="mt-6 md:mt-8 text-[17px] md:text-[21px] text-white/90 font-medium leading-relaxed"
               >
                 India's specialized institute focused on root-cause diagnosis.
                 Personalized care for patients aged 2 to 80.
@@ -160,13 +162,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* DOCTOR TRUST PORTRAIT (4 columns) */}
+          {/* DOCTOR TRUST PORTRAIT */}
           <div className="lg:col-span-4 flex justify-start lg:justify-end">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={isLoaded ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-              className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 lg:bg-white/5 p-5 lg:p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-md"
+              className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-md"
             >
               <div className="relative w-20 h-20 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl shrink-0">
                 <Image 
