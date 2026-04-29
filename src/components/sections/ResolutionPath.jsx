@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { 
   Search, Droplets, ShieldCheck, 
   Sparkles, Star, ArrowDown, MapPin
