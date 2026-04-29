@@ -13,9 +13,9 @@ export default function Footer() {
               <Image 
                 src="/images/asian institute of allergy logo.jpg" 
                 alt="Asian Institute of Allergy" 
-                width={240} 
-                height={80}
-                className="h-[60px] w-auto object-contain"
+                width={360} 
+                height={120}
+                className="h-[100px] w-auto object-contain"
               />
             </Link>
             <p className="text-slate-600 leading-relaxed font-medium">

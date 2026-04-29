@@ -63,9 +63,9 @@ export default function Navbar() {
           <Image 
             src="/images/asian institute of allergy logo.jpg" 
             alt="Asian Institute of Allergy" 
-            width={200} 
-            height={60}
-            className="h-[48px] md:h-[72px] w-auto object-contain"
+            width={300} 
+            height={100}
+            className="h-[64px] md:h-[100px] w-auto object-contain"
           />
         </Link>
 
