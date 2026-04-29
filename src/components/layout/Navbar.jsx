@@ -88,8 +88,8 @@ export default function Navbar() {
 
         {/* Center Logo */}
         <Link href="/" className="flex items-center justify-self-center group">
-          <div className={`rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 flex items-center justify-center ${
-            isLight ? "bg-slate-900 ring-1 ring-slate-800" : "bg-white ring-1 ring-white/10"
+          <div className={`rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 flex items-center justify-center bg-white ${
+            isLight ? "ring-1 ring-slate-200" : "ring-1 ring-white/10"
           } ${
             isScrolled ? "p-1.5 md:p-2" : "p-2 md:p-3"
           }`}>
@@ -99,8 +99,6 @@ export default function Navbar() {
               width={200} 
               height={200}
               className={`w-auto object-contain transition-all duration-500 ${
-                isLight ? "brightness-0 invert" : ""
-              } ${
                 isScrolled ? "h-[45px] md:h-[65px]" : "h-[60px] md:h-[90px]"
               }`}
               priority

@@ -198,6 +198,7 @@ export default function Hero() {
           <div className="flex items-center gap-12">
              <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">CMC VELLORE</span>
              <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">PATEL CHEST</span>
+             <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">CVR NEWS LIVE</span>
              <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">VATICAN RECOGNITION</span>
              <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">WAO WORLDWIDE</span>
           </div>

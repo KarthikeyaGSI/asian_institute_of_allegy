@@ -333,7 +333,7 @@ export default function WorldAllergyFoundation() {
               />
             </div>
             <h4 className="text-2xl font-bold font-heading mb-6 italic">"A Referral Hub for Complex Allergy & Immunological Conditions."</h4>
-            <p className="text-slate-500 font-medium">Featured in European Sun Times, Deccan Herald, Deccan Chronicle, TV9 Telugu, and more.</p>
+            <p className="text-slate-500 font-medium">Featured in CVR NEWS LIVE Analysis, European Sun Times, Deccan Herald, Deccan Chronicle, TV9 Telugu, and more.</p>
           </div>
         </section>
 
