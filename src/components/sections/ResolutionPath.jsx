@@ -56,7 +56,7 @@ const timelineSteps = [
 
 export default function ResolutionPath() {
   return (
-    <section className="bg-white py-24 md:py-32 overflow-hidden">
+    <section className="bg-white py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center max-w-3xl mx-auto mb-24">
           <span className="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4 block">The Journey</span>
@@ -129,13 +129,13 @@ export default function ResolutionPath() {
           viewport={{ once: true }}
           className="mt-32 text-center"
         >
-          <a 
-            href="#contact"
+          <Link 
+            href="/#contact"
             className="inline-flex items-center gap-4 bg-slate-900 text-white px-12 py-6 rounded-[2rem] font-bold text-lg hover:bg-primary transition-all shadow-2xl shadow-primary/20 active:scale-95"
           >
             <MapPin size={24} />
             Secure My Week 1 Appointment
-          </a>
+          </Link>
           <p className="mt-8 text-slate-400 font-medium">85% of SLIT patients maintain symptom freedom for 5+ years.</p>
         </motion.div>
       </div>

@@ -68,7 +68,8 @@ export default function Pathways() {
           scrub: 1,
           snap: 1 / (sections.length - 1),
           start: "top top",
-          end: () => `+=${triggerRef.current.offsetWidth}`,
+          end: () => `+=${sections.length * 100}%`,
+          pinSpacing: true,
         }
       });
     });
@@ -146,7 +147,7 @@ export default function Pathways() {
 
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center w-full bg-primary-accent text-black py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-primary-accent/10"
+                className="inline-flex items-center justify-center w-full bg-primary-accent text-black py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-primary-accent/10 transition-all active:scale-95"
               >
                 Start Recovery Plan
               </Link>
