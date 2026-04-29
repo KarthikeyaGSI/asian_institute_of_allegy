@@ -60,7 +60,7 @@ export default function Hero() {
           objectPosition: "center"
         }}
       >
-        <source src="/hero-video-cinematic.mp4" type="video/mp4" />
+        <source src="/_HERO VIDEO (Breathing Cinematic).mp4" type="video/mp4" />
         <track kind="captions" src="" label="English" />
       </video>
 
@@ -74,116 +74,116 @@ export default function Hero() {
         }}
       />
 
-        {/* 📝 CONTENT - Precise Padding & Width */}
-        <div className="relative z-[2] w-full max-w-7xl mx-auto px-6 md:px-20 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-12 items-end gap-12">
-          
-          {/* Text Content Block */}
-          <div className="lg:col-span-8 w-full space-y-10 md:space-y-12 pl-0 md:pl-[0px]"> 
-            {/* Note: md:px-20 on section already provides ~80px padding if container is large. 
-                Wait, I'll adjust the padding-left specifically. */}
-            <div className="max-w-[600px]">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-[36px] sm:text-[48px] md:text-[68px] font-bold leading-[1.1] tracking-tight font-heading"
-              >
-                We find the <span className="text-[#A3E635]">root cause</span>.<br />
-                We fix it for good.
-              </motion.h1>
+        {/* 📝 CONTENT - Strict Left Alignment & Padding */}
+        <div className="relative z-[2] w-full pb-16 md:pb-32 pl-6 md:pl-20 pr-6 md:pr-12">
+          <div className="flex flex-col lg:flex-row items-end justify-between gap-12">
+            
+            {/* Text Content Block */}
+            <div className="w-full max-w-[600px] space-y-10 md:space-y-12"> 
+              <div>
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="text-[36px] sm:text-[48px] md:text-[68px] font-bold leading-[1.1] tracking-tight font-heading"
+                >
+                  We find the <span className="text-[#A3E635]">root cause</span>.<br />
+                  We fix it for good.
+                </motion.h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-                className="mt-6 md:mt-8 text-[17px] md:text-[21px] text-white/90 font-medium leading-relaxed"
-              >
-                India's specialized institute focused on root-cause diagnosis.
-                Personalized care for patients aged 2 to 80.
-              </motion.p>
-            </div>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+                  className="mt-6 md:mt-8 text-[17px] md:text-[21px] text-white/90 font-medium leading-relaxed"
+                >
+                  India's specialized institute focused on root-cause diagnosis.
+                  Personalized care for patients aged 2 to 80.
+                </motion.p>
+              </div>
 
-            {/* 🔘 BUTTONS */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-5"
-            >
-              <Link
-                href="/#contact"
-                className="bg-primary text-white px-10 md:px-12 py-5 md:py-4 rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 text-center shadow-xl flex items-center justify-center gap-3"
-              >
-                Start Root-Cause Diagnosis
-              </Link>
-              <Link
-                href="https://wa.me/918074368748?text=Hi, I'd like to start my root-cause evaluation."
-                target="_blank"
-                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 md:px-12 py-5 md:py-4 rounded-full font-bold transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-3"
-              >
-                <MessageCircle size={22} className="text-[#25D366]" />
-                WhatsApp Specialist
-              </Link>
-            </motion.div>
-
-            {/* 📍 POINTS & TRUST BADGE */}
-            <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
+              {/* 🔘 BUTTONS */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
-                className="flex flex-col gap-3 text-[13px] font-bold text-white/60 uppercase tracking-widest"
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                className="flex flex-col sm:flex-row gap-5"
               >
-                <span className="flex items-center gap-3">
-                  <span className="text-primary-accent text-xl leading-none">•</span> 15 min callback
-                </span>
-                <span className="flex items-center gap-3">
-                  <span className="text-primary-accent text-xl leading-none">•</span> Specialist review
-                </span>
-                <span className="flex items-center gap-3">
-                  <span className="text-primary-accent text-xl leading-none">•</span> No waiting
-                </span>
+                <Link
+                  href="/#contact"
+                  className="bg-primary text-white px-10 md:px-12 py-5 md:py-4 rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 text-center shadow-xl flex items-center justify-center gap-3"
+                >
+                  Start Root-Cause Diagnosis
+                </Link>
+                <Link
+                  href="https://wa.me/918074368748?text=Hi, I'd like to start my root-cause evaluation."
+                  target="_blank"
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 md:px-12 py-5 md:py-4 rounded-full font-bold transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-3"
+                >
+                  <MessageCircle size={22} className="text-[#25D366]" />
+                  WhatsApp Specialist
+                </Link>
               </motion.div>
 
+              {/* 📍 POINTS & TRUST BADGE */}
+              <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
+                  className="flex flex-col gap-3 text-[13px] font-bold text-white/60 uppercase tracking-widest"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="text-primary-accent text-xl leading-none">•</span> 15 min callback
+                  </span>
+                  <span className="flex items-center gap-3">
+                    <span className="text-primary-accent text-xl leading-none">•</span> Specialist review
+                  </span>
+                  <span className="flex items-center gap-3">
+                    <span className="text-primary-accent text-xl leading-none">•</span> No waiting
+                  </span>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+                  className="flex items-center gap-5 bg-white/5 border border-white/10 px-8 py-5 rounded-3xl backdrop-blur-xl w-fit"
+                >
+                  <div className="text-primary-accent">
+                    <CheckCircle2 size={36} />
+                  </div>
+                  <div>
+                    <p className="text-3xl font-black text-white leading-none">50k+</p>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mt-1.5">Patients Treated</p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* DOCTOR TRUST PORTRAIT */}
+            <div className="flex justify-start lg:justify-end pr-0 md:pr-12">
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
-                className="flex items-center gap-5 bg-white/5 border border-white/10 px-8 py-5 rounded-3xl backdrop-blur-xl w-fit"
+                initial={{ opacity: 0, x: 20 }}
+                animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-md"
               >
-                <div className="text-primary-accent">
-                  <CheckCircle2 size={36} />
+                <div className="relative w-20 h-20 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl shrink-0">
+                  <Image 
+                    src="/images/dr-nageswar.jpeg"
+                    alt="Dr. Vyakarnam"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 1024px) 80px, 160px"
+                  />
                 </div>
-                <div>
-                  <p className="text-3xl font-black text-white leading-none">50k+</p>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mt-1.5">Patients Treated</p>
+                <div className="text-left lg:text-center">
+                  <p className="text-base lg:text-lg font-bold text-white tracking-tight">Dr. Vyakarnam</p>
+                  <p className="text-[10px] lg:text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mt-1">Chief Immunologist</p>
                 </div>
               </motion.div>
             </div>
-          </div>
-
-          {/* DOCTOR TRUST PORTRAIT */}
-          <div className="lg:col-span-4 flex justify-start lg:justify-end">
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={isLoaded ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-              className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-md"
-            >
-              <div className="relative w-20 h-20 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl shrink-0">
-                <Image 
-                  src="/images/dr-nageswar.jpeg"
-                  alt="Dr. Vyakarnam"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 1024px) 80px, 160px"
-                />
-              </div>
-              <div className="text-left lg:text-center">
-                <p className="text-base lg:text-lg font-bold text-white tracking-tight">Dr. Vyakarnam</p>
-                <p className="text-[10px] lg:text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mt-1">Chief Immunologist</p>
-              </div>
-            </motion.div>
           </div>
         </div>
 
