@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -9,9 +10,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2">
-              <span className="font-bold text-2xl tracking-tight text-primary font-heading">
-                Asian Institute
-              </span>
+              <Image 
+                src="/images/asian institute of allergy logo.jpg" 
+                alt="Asian Institute of Allergy" 
+                width={240} 
+                height={80}
+                className="h-[60px] w-auto object-contain"
+              />
             </Link>
             <p className="text-slate-600 leading-relaxed font-medium">
               Global Centre of Excellence for Allergy & Immunological Research. 
