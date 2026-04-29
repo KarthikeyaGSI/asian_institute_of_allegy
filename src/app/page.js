@@ -54,7 +54,7 @@ export default function Home() {
       {/* PHASE 3: THE AUTHORITY LAYER */}
       <Authority />
       <Testimonials />
-      <BookingForm />
+      <BookingForm onStartQuiz={() => setIsQuizOpen(true)} />
       
       <Footer />
       <StickyBottomBar />
