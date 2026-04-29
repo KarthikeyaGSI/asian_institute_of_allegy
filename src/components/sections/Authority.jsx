@@ -26,7 +26,7 @@ export default function Authority() {
               >
                 <Image 
                   src="/images/dr-nageswar.jpeg" 
-                  alt="Dr. Vyakarnam Nageshwar" 
+                  alt="Dr. Vyakarnam" 
                   fill 
                   className="object-cover object-top"
                   sizes="(max-w-768px) 100vw, 400px"
@@ -36,7 +36,7 @@ export default function Authority() {
               <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-90" />
               
               <div className="absolute bottom-0 left-0 w-full p-8">
-                <p className="text-2xl font-bold text-white mb-1 font-heading">Dr. Vyakarnam Nageshwar</p>
+                <p className="text-2xl font-bold text-white mb-1 font-heading">Dr. Vyakarnam</p>
                 <p className="text-gray-400 font-medium">Founder & Chief Immunologist</p>
               </div>
             </div>

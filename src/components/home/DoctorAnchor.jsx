@@ -20,7 +20,7 @@ export default function DoctorAnchor() {
               >
                 <Image 
                   src="/images/dr-nageswar.jpeg" 
-                  alt="Dr. Vyakarnam Nageshwar" 
+                  alt="Dr. Vyakarnam" 
                   fill 
                   className="object-cover"
                 />
@@ -43,7 +43,7 @@ export default function DoctorAnchor() {
             </h2>
 
             <div className="space-y-2 mt-8">
-              <p className="text-xl font-medium text-white">Dr. Vyakarnam Nageshwar</p>
+              <p className="text-xl font-medium text-white">Dr. Vyakarnam</p>
               <p className="text-gray-400">Founder & Chief Immunologist</p>
             </div>
           </motion.div>

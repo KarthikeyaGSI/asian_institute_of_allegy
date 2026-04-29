@@ -36,7 +36,7 @@ export default function Hero() {
 
   return (
     <section 
-      className={`relative h-screen w-full overflow-hidden flex items-end px-[20px] pt-[24px] pb-[32px] md:px-[80px] text-white transition-all duration-700 ease-in-out ${
+      className={`relative h-[100dvh] w-full overflow-hidden flex items-end px-[20px] pt-[24px] pb-[32px] md:px-[80px] text-white transition-all duration-700 ease-in-out ${
         isScrolled ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
       }`}
     >
@@ -46,7 +46,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        poster="/images/asianinstituteof allergy.jpeg"
+        preload="auto"
         className={`absolute top-1/2 left-1/2 
           w-full 
           h-full 
@@ -57,7 +57,7 @@ export default function Hero() {
           ${isLoaded ? "scale-[1.05]" : "scale-100"}
         `}
         style={{
-          objectPosition: isMobile ? "55% center" : "center"
+          objectPosition: isMobile ? "center" : "center"
         }}
       >
         <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
@@ -164,14 +164,14 @@ export default function Hero() {
             <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl">
               <Image 
                 src="/images/dr-nageswar.jpeg"
-                alt="Dr. Vyakarnam Nageshwar"
+                alt="Dr. Vyakarnam"
                 fill
                 className="object-cover object-top"
                 sizes="128px"
               />
             </div>
             <div className="text-center">
-              <p className="text-sm font-bold text-white tracking-tight">Dr. V. Nageshwar</p>
+              <p className="text-sm font-bold text-white tracking-tight">Dr. Vyakarnam</p>
               <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mt-0.5">Chief Immunologist</p>
             </div>
           </motion.div>
