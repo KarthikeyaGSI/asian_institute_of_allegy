@@ -36,7 +36,7 @@ export default function Hero() {
 
   return (
     <section 
-      className={`relative h-[100dvh] w-full bg-black overflow-hidden flex items-end px-6 pt-32 pb-12 md:px-20 text-white transition-all duration-700 ease-in-out ${
+      className={`relative h-[100dvh] w-screen overflow-hidden flex items-end px-6 pt-32 pb-12 md:px-20 text-white transition-all duration-700 ease-in-out ${
         isScrolled ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
       }`}
     >
@@ -48,13 +48,13 @@ export default function Hero() {
         playsInline
         preload="auto"
         className={`absolute top-1/2 left-1/2 
-          w-full 
+          w-screen 
           h-full 
           object-cover 
           -translate-x-1/2 -translate-y-1/2 
           z-0 
           transition-transform duration-[12000ms] linear 
-          ${isLoaded ? "scale-[1.05]" : "scale-100"}
+          ${isLoaded ? "scale-[1.15]" : "scale-100"}
         `}
         style={{
           objectPosition: "center"
