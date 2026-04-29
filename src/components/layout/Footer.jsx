@@ -56,6 +56,12 @@ export default function Footer() {
             <div className="grid grid-cols-1 gap-3">
               <Link href="/#how-we-help" className="text-slate-600 font-medium hover:text-primary transition-colors">How We Help</Link>
               <Link href="/#doctor" className="text-slate-600 font-medium hover:text-primary transition-colors">Our Specialists</Link>
+              <button 
+                onClick={() => window.dispatchEvent(new CustomEvent("open-quiz"))}
+                className="text-left text-slate-600 font-medium hover:text-primary transition-colors cursor-pointer"
+              >
+                Free Diagnostic Report
+              </button>
               <Link href="/world-allergy-foundation" className="text-slate-600 font-medium hover:text-primary transition-colors">World Allergy Foundation</Link>
               <Link href="/gallery" className="text-slate-600 font-medium hover:text-primary transition-colors">Institute Gallery</Link>
               <Link href="/#contact" className="text-slate-600 font-medium hover:text-primary transition-colors">Book Appointment</Link>

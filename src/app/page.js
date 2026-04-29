@@ -27,6 +27,12 @@ import StickyBottomBar from "@/components/layout/StickyBottomBar";
 export default function Home() {
   const [isQuizOpen, setIsQuizOpen] = useState(false);
 
+  useEffect(() => {
+    const handleOpen = () => setIsQuizOpen(true);
+    window.addEventListener("open-quiz", handleOpen);
+    return () => window.removeEventListener("open-quiz", handleOpen);
+  }, []);
+
   return (
     <motion.main 
       initial={{ opacity: 0 }}

@@ -132,7 +132,8 @@ const NotificationTriggers = () => {
             initial={{ opacity: 0, y: 50, scale: 0.9, x: -20 }}
             animate={{ opacity: 1, y: 0, scale: 1, x: 0 }}
             exit={{ opacity: 0, y: 20, scale: 0.95, transition: { duration: 0.2 } }}
-            className="pointer-events-auto"
+            className="pointer-events-auto cursor-pointer"
+            onClick={() => window.dispatchEvent(new CustomEvent("open-quiz"))}
           >
             <div className="relative group">
               {/* Glassmorphic Container */}
@@ -174,6 +175,7 @@ const NotificationTriggers = () => {
 
                   {/* Close Indicator (Subtle) */}
                   <div className="h-full flex flex-col items-end justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+                     <span className="text-[10px] text-primary-accent font-black uppercase tracking-tighter">Click to analyze</span>
                      <span className="text-[10px] text-white/20 font-mono">LIVE</span>
                   </div>
                 </div>

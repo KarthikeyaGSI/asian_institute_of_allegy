@@ -26,11 +26,13 @@ export default function BookingForm({ onStartQuiz }) {
         },
         body: JSON.stringify({
           access_key: "3c43e0ba-47fb-424c-9103-345682cc4a5a",
-          subject: `New Inquiry from ${formData.name}`,
-          from_name: "Asian Institute Website",
+          subject: `New Clinical Inquiry: ${formData.name}`,
+          from_name: "AIA Official Website",
           name: formData.name,
           phone: formData.phone,
           condition: formData.condition,
+          message: `Patient Name: ${formData.name}\nPhone: ${formData.phone}\nPrimary Condition: ${formData.condition}`,
+          botcheck: ""
         }),
       });
 
@@ -39,12 +41,12 @@ export default function BookingForm({ onStartQuiz }) {
       if (result.success) {
         setIsSubmitted(true);
       } else {
-        alert("Something went wrong. Please try again or call us directly.");
+        throw new Error(result.message || "Submission failed");
       }
     } catch (error) {
       console.error("Submission error:", error);
-      alert("Submission failed. Redirecting to WhatsApp directly...");
-      window.location.href = "https://wa.me/918074368748";
+      // Fallback: If Web3Forms fails, redirect to WhatsApp
+      window.location.href = `https://wa.me/918074368748?text=${encodeURIComponent(`Hi, I'm ${formData.name}. I'd like to book an evaluation for ${formData.condition}.`)}`;
     } finally {
       setIsSubmitting(false);
     }

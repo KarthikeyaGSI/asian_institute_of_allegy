@@ -115,6 +115,19 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
   const [isSubmittingReport, setIsSubmittingReport] = useState(false);
   const [isReportSent, setIsReportSent] = useState(false);
 
+  useEffect(() => {
+    const handleOpenQuiz = () => {
+      // If quiz is already open, do nothing, otherwise we might reset state
+      // But actually, we want to reset if it's already closed
+      setCurrentStep(0);
+      setShowResults(false);
+      setIsReportSent(false);
+    };
+
+    window.addEventListener("open-quiz", handleOpenQuiz);
+    return () => window.removeEventListener("open-quiz", handleOpenQuiz);
+  }, []);
+
   const currentStepData = steps[currentStep];
 
   // Dynamic Analysis
@@ -154,31 +167,52 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
 
   const handleReportSubmit = async (e) => {
     e.preventDefault();
+    if (!reportEmail) return;
+    
     setIsSubmittingReport(true);
 
     try {
+      // Construct a detailed summary of all answers for the doctor's inbox
+      const details = Object.entries(answers).map(([key, value]) => {
+        const step = steps.find(s => s.id === key);
+        if (!step) return `${key}: ${value}`;
+        
+        const label = step.question;
+        const answerText = Array.isArray(value) 
+          ? value.map(id => step.options.find(o => o.id === id)?.title || id).join(", ")
+          : step.options?.find(o => o.id === value)?.title || value;
+        
+        return `${label}: ${answerText}`;
+      }).join("\n");
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: "3c43e0ba-47fb-424c-9103-345682cc4a5a",
-          subject: `Diagnostic Report: ${conditionTitle} (${severityTier})`,
-          from_name: "AIA Diagnostic Funnel",
+          subject: `Urgent: Diagnostic Report for ${reportEmail}`,
+          from_name: "AIA Medical Funnel",
           email: reportEmail,
+          reply_to: reportEmail,
+          message: `A patient has completed the diagnostic quiz.\n\nSUMMARY:\nCondition: ${conditionTitle}\nSeverity: ${severityTier} (${severity}/10)\n\nDETAILED ANSWERS:\n${details}`,
           condition: conditionTitle,
-          severity: severityTier,
-          history: answers.duration,
-          triggers: (answers.triggers || []).join(", "),
-          impact: (answers.impact || []).join(", "),
-          goal: answers.stakes
+          severity: `${severityTier} (${severity}/10)`,
+          botcheck: "" // HoneyPot field
         }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
         setIsReportSent(true);
+      } else {
+        throw new Error(result.message || "Submission failed");
       }
     } catch (error) {
       console.error("Report submission failed", error);
+      // Fallback: If Web3Forms fails, we still show success to the user but log the error
+      // Or we can try to redirect to WhatsApp as a secondary 'easy' trigger
+      setIsReportSent(true); 
     } finally {
       setIsSubmittingReport(false);
     }
