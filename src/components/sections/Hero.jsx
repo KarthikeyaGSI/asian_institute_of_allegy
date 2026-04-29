@@ -81,7 +81,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-[32px] md:text-[64px] font-bold leading-[1.15] md:leading-[1.1] tracking-tight font-heading"
         >
-          Find the root cause.<br />
+          Find the <span className="text-[#A3E635]">root cause</span>.<br />
           Fix it for good.
         </motion.h1>
 
