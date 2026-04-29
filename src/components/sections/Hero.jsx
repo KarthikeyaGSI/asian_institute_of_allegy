@@ -32,24 +32,17 @@ export default function Hero() {
         isScrolled ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
       }`}
     >
-      {/* 🎥 VIDEO ZOOM - Aligned Right to keep subject visible */}
-      <motion.div
-        initial={{ scale: 1.3 }}
-        animate={isLoaded ? { scale: 1.4 } : {}}
-        transition={{ duration: 12, ease: "linear" }}
-        className="absolute inset-0 w-full h-full z-0 origin-[75%_center]"
+      {/* 🎥 VIDEO - Pinned Right to keep subject visible */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/images/best-allergy-hospital.webp"
+        className={`absolute top-0 right-0 h-full w-[140%] md:w-full object-cover object-right md:object-center z-0 transition-transform duration-[12000ms] linear ${isLoaded ? "scale-110" : "scale-100"}`}
       >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/best-allergy-hospital.webp"
-          className="w-full h-full object-cover object-[75%_center] md:object-center opacity-100"
-        >
-          <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
-        </video>
-      </motion.div>
+        <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
+      </video>
 
       {/* 🎨 OVERLAY - Readable Left, Visible Right */}
       <div 
