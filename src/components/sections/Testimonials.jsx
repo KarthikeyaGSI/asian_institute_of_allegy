@@ -27,16 +27,16 @@ const testimonials = [
     metrics: [10, 9, 6, 3, 0]
   },
   {
-    name: "S. Karthikeyan",
-    age: 33,
-    location: "Trichy, Tamil Nadu",
+    name: "Seetaram Reddy",
+    age: 70,
+    location: "Hyderabad",
     category: "rhinitis",
-    duration: "3 years",
-    previous: "Chronic Rhinitis, Pharyngitis & Bronchitis",
-    outcome: "Permanent respiratory freedom",
-    quote: "As a bank officer, my allergies were affecting my career. I stopped reacting to triggers that used to send me to the ER. Truly scientific care.",
-    videoId: "10fIm_am9k8",
-    metrics: [10, 8, 5, 2, 0]
+    duration: "10+ years",
+    previous: "Decade of nasal, skin & stomach allergies",
+    outcome: "New lease of life, 100% resolution",
+    quote: "After 10 years of struggling with multiple health problems, the advanced Skin Prick Test identified the exact root cause. I now live a happy, healthy life once again.",
+    videoId: "Xh0Yp_eK-yQ",
+    metrics: [10, 7, 4, 2, 0]
   },
   {
     name: "Baby Akshara",
