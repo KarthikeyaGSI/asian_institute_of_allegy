@@ -127,9 +127,9 @@ export default function WorldAllergyFoundation() {
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.05, rotateY: 5, rotateX: 5 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="relative w-48 h-48 md:w-64 md:h-64 mb-12 rounded-[3rem] shadow-[0_32px_64px_-15px_rgba(0,0,0,0.1)] ring-1 ring-slate-200 bg-white flex items-center justify-center p-8 md:p-12 perspective-1000 mx-auto"
+              className="relative w-64 h-64 md:w-80 md:h-80 mb-12 flex items-center justify-center perspective-1000 mx-auto"
             >
-              <div className="relative w-full h-full drop-shadow-2xl">
+              <div className="relative w-full h-full mix-blend-multiply">
                 <Image 
                   src="/images/world%20allergy%20foundation%20logo.jpeg" 
                   alt="World Allergy Foundation Logo" 
