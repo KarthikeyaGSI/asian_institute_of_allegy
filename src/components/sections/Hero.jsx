@@ -32,12 +32,12 @@ export default function Hero() {
         isScrolled ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
       }`}
     >
-      {/* 🎥 VIDEO ZOOM */}
+      {/* 🎥 VIDEO ZOOM - Aligned Right to keep subject visible */}
       <motion.div
-        initial={{ scale: 1, x: "-50%", y: "-50%" }}
-        animate={isLoaded ? { scale: 1.05 } : {}}
+        initial={{ scale: 1.15 }}
+        animate={isLoaded ? { scale: 1.2 } : {}}
         transition={{ duration: 12, ease: "linear" }}
-        className="absolute top-1/2 left-1/2 w-[120%] h-[120%] md:w-[110%] md:h-[110%] z-0"
+        className="absolute inset-0 w-full h-full z-0 origin-right"
       >
         <video
           autoPlay
@@ -50,11 +50,11 @@ export default function Hero() {
         </video>
       </motion.div>
 
-      {/* 🎨 OVERLAY */}
+      {/* 🎨 OVERLAY - Readable Left, Visible Right */}
       <div 
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
-          background: "linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.25) 100%)"
+          background: "linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 35%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0) 100%)"
         }}
       />
 
