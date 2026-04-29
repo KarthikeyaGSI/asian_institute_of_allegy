@@ -37,14 +37,14 @@ export default function Hero() {
         initial={{ scale: 1, x: "-50%", y: "-50%" }}
         animate={isLoaded ? { scale: 1.05 } : {}}
         transition={{ duration: 12, ease: "linear" }}
-        className="absolute top-1/2 left-1/2 w-[120%] h-[120%] z-0"
+        className="absolute top-1/2 left-1/2 w-[120%] h-[120%] md:w-[110%] md:h-[110%] z-0"
       >
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover object-[right_center] md:object-center opacity-80"
+          className="w-full h-full object-cover object-right md:object-center opacity-100"
         >
           <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
         </video>
