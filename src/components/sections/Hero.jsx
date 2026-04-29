@@ -1,178 +1,131 @@
 "use client";
 
-import { useRef } from "react";
-import { motion } from "framer-motion";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
-  const containerRef = useRef(null);
-  const buttonRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  useGSAP(() => {
-    const button = buttonRef.current;
-    if (!button) return;
+  useEffect(() => {
+    // Trigger entry animation
+    setIsLoaded(true);
 
-    const onMouseMove = (e) => {
-      const { clientX, clientY } = e;
-      const { left, top, width, height } = button.getBoundingClientRect();
-      const x = clientX - (left + width / 2);
-      const y = clientY - (top + height / 2);
-
-      gsap.to(button, {
-        x: x * 0.3,
-        y: y * 0.3,
-        duration: 0.5,
-        ease: "power2.out",
-      });
+    // Scroll fade effect
+    const handleScroll = () => {
+      if (window.scrollY > 120) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
 
-    const onMouseLeave = () => {
-      gsap.to(button, {
-        x: 0,
-        y: 0,
-        duration: 0.5,
-        ease: "elastic.out(1, 0.3)",
-      });
-    };
-
-    button.addEventListener("mousemove", onMouseMove);
-    button.addEventListener("mouseleave", onMouseLeave);
-
-    return () => {
-      button.removeEventListener("mousemove", onMouseMove);
-      button.removeEventListener("mouseleave", onMouseLeave);
-    };
-  }, { scope: containerRef });
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <>
-      <section ref={containerRef} className="relative h-[100vh] w-full overflow-hidden bg-dark flex items-center">
-        {/* Background Video with subtle zoom animation */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, scale: [1, 1.05] }}
-          transition={{
-            opacity: { duration: 2.5, ease: "easeOut" },
-            scale: { duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }
-          }}
-          className="absolute inset-0 w-full h-full"
+    <section 
+      className={`relative h-screen w-full overflow-hidden flex items-end px-[20px] pt-[24px] pb-[32px] md:px-[80px] text-white transition-all duration-700 ease-in-out ${
+        isScrolled ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
+      }`}
+    >
+      {/* 🎥 VIDEO ZOOM */}
+      <motion.div
+        initial={{ scale: 1, x: "-50%", y: "-50%" }}
+        animate={isLoaded ? { scale: 1.05 } : {}}
+        transition={{ duration: 12, ease: "linear" }}
+        className="absolute top-1/2 left-1/2 w-[120%] h-[120%] z-0"
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover object-[right_center] md:object-center opacity-80"
         >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover object-center opacity-80"
+          <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
+        </video>
+      </motion.div>
+
+      {/* 🎨 OVERLAY */}
+      <div 
+        className="absolute inset-0 z-[1] pointer-events-none"
+        style={{
+          background: "linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.25) 100%)"
+        }}
+      />
+
+      {/* 🏥 NAV / LOGO */}
+      <header className="absolute top-[16px] left-[20px] md:left-[80px] z-[2]">
+        <Link href="/">
+          <Image 
+            src="/images/asian institute of allergy logo.jpg" 
+            alt="Asian Institute of Allergy" 
+            width={140} 
+            height={40}
+            className="h-[28px] md:h-[32px] w-auto object-contain"
+          />
+        </Link>
+      </header>
+
+      {/* 📝 CONTENT */}
+      <div className="relative z-[2] max-w-[600px] w-full">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-[32px] md:text-[64px] font-bold leading-[1.15] md:leading-[1.1] tracking-tight font-heading"
+        >
+          Find the root cause.<br />
+          Fix it for good.
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+          className="mt-3 md:mt-6 text-[15px] md:text-[20px] text-white/85 font-medium leading-relaxed max-w-[480px]"
+        >
+          One of the few specialized institutes focused on root-cause diagnosis.
+          Personalized care for patients aged 2 to 80.
+        </motion.p>
+
+        {/* 🔘 BUTTON */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="mt-[18px] md:mt-10"
+        >
+          <Link
+            href="/#contact"
+            className="block md:inline-block w-full md:w-auto bg-[#1f7a4c] text-white px-12 py-[16px] md:py-5 rounded-full font-semibold transition-all duration-300 hover:bg-[#155d3a] hover:scale-105 active:scale-95 text-center shadow-xl"
           >
-            <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
-          </video>
+            Book Evaluation
+          </Link>
         </motion.div>
 
-        {/* Cinematic Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/15 pointer-events-none" />
-
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto pl-6 md:pl-[100px] pr-6 md:pr-12 text-left mt-16">
-          <div className="max-w-[520px]">
-            <motion.div
-              initial={{ opacity: 1, y: 0 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-            >
-              <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-[1] md:leading-[0.9] text-white tracking-tight font-heading">
-                We find what&apos;s <br className="hidden sm:block" />
-                <span className="text-primary-accent italic font-light">causing it.</span>
-              </h1>
-            </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 md:mt-10 text-slate-300 text-lg sm:text-2xl md:text-4xl font-medium max-w-3xl leading-snug md:leading-tight"
-            >
-              One of the few specialized institutes globally. <br className="hidden md:block" />
-              Addressing the root cause for patients aged 2 to 80.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-14 flex flex-col gap-10"
-            >
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Link
-                  href="/#contact"
-                  ref={buttonRef}
-                  className="bg-primary text-white px-12 py-6 rounded-full font-black uppercase tracking-widest transition-all duration-500 ease-out hover:bg-primary-accent hover:text-black text-center shadow-2xl shadow-primary/30 group relative overflow-hidden"
-                >
-                  <span className="relative z-10 text-lg">Book Evaluation</span>
-                </Link>
-              </div>
-
-              <div className="flex flex-wrap gap-10 text-white/40 text-[10px] font-black uppercase tracking-[0.4em]">
-                {[
-                  "15 min callback",
-                  "Direct specialist review",
-                  "No waiting"
-                ].map((item, i) => (
-                  <span key={i} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary-accent shadow-[0_0_10px_rgba(163,230,53,0.8)]" />
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Scarcity Section - Refined Claude Design */}
-      <section className="bg-white py-32 md:py-48 border-b border-slate-100 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,rgba(26,95,58,0.02)_0%,transparent_50%)] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">The Specialist Gap</span>
-              <h2 className="text-6xl md:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tighter font-heading mb-8 transition-transform hover:scale-105 hover:shadow-[0_0_10px_rgba(0,255,0,0.5)]">
-               Tell us what you're experiencing.<br/>
-              </h2>
-              <span className="text-slate-400 font-semibold mb-4 block">Most never find the actual cause.</span>
-              <p className="text-xl text-slate-500 leading-relaxed max-w-xl font-medium">
-                The standard healthcare loop is designed for temporary relief, not resolution. This systemic gap leaves millions of patients trapped in a cycle of failed treatments and recurring symptoms.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="grid grid-cols-2 gap-6 h-full"
-            >
-              <div className="bg-slate-50 rounded-3xl p-10 flex flex-col justify-center items-center text-center border border-slate-100 group hover:border-slate-200 transition-colors">
-                <span className="block text-5xl md:text-6xl font-bold text-slate-900 mb-4 opacity-40 group-hover:opacity-100 transition-opacity">35Cr+</span>
-                <h3 className="text-xl font-semibold mb-6 text-gray-900">Patients</h3>
-              </div>
-
-              <div className="bg-primary rounded-3xl p-10 flex flex-col justify-center items-center text-center shadow-2xl shadow-primary/20 group hover:scale-[1.02] transition-transform">
-                <span className="block text-6xl md:text-7xl font-bold text-white mb-4">Under 100</span>
-                <span className="text-xs font-bold text-white/60 uppercase tracking-[0.3em]">Specialists</span>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-    </>
+        {/* 📍 POINTS */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
+          className="mt-[14px] md:mt-8 flex flex-col gap-[6px] md:gap-3 text-[12px] md:text-[14px] font-medium text-white/60"
+        >
+          <span className="flex items-center gap-2">
+            <span className="text-[#1f7a4c]">●</span> 15 min callback
+          </span>
+          <span className="flex items-center gap-2">
+            <span className="text-[#1f7a4c]">●</span> Specialist review
+          </span>
+          <span className="flex items-center gap-2">
+            <span className="text-[#1f7a4c]">●</span> No waiting
+          </span>
+        </motion.div>
+      </div>
+    </section>
   );
 }
