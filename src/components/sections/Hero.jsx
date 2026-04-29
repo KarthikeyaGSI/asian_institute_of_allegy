@@ -47,16 +47,16 @@ export default function Hero() {
         playsInline
         poster="/images/best-allergy-hospital.webp"
         className={`absolute top-1/2 left-1/2 
-          w-[160%] md:w-full 
-          h-[160%] md:h-full 
+          w-[110%] md:w-full 
+          h-[110%] md:h-full 
           object-cover 
           -translate-x-1/2 -translate-y-1/2 
           z-0 
           transition-transform duration-[12000ms] linear 
-          ${isLoaded ? "scale-[1.2]" : "scale-100"}
+          ${isLoaded ? "scale-[1.05]" : "scale-100"}
         `}
         style={{
-          objectPosition: isMobile ? "75% center" : "center"
+          objectPosition: isMobile ? "65% center" : "center"
         }}
       >
         <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
