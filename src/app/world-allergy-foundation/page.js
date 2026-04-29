@@ -131,8 +131,8 @@ export default function WorldAllergyFoundation() {
             >
               <div className="relative w-full h-full drop-shadow-2xl">
                 <Image 
-                  src="/images/WAF%20logo.jpg" 
-                  alt="WAF Logo" 
+                  src="/images/world%20allergy%20foundation%20logo.jpeg" 
+                  alt="World Allergy Foundation Logo" 
                   fill 
                   className="object-contain"
                   priority
