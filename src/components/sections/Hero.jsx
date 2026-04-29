@@ -195,11 +195,11 @@ export default function Hero() {
           className="absolute bottom-8 left-1/2 -translate-x-1/2 w-full max-w-7xl px-8 hidden md:flex items-center justify-between border-t border-white/5 pt-8"
         >
           <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20 mr-8">Affiliations</div>
-          <div className="flex items-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-             <span className="text-white font-bold tracking-tighter text-lg">CMC VELLORE</span>
-             <span className="text-white font-bold tracking-tighter text-lg">PATEL CHEST</span>
-             <span className="text-white font-bold tracking-tighter text-lg">VATICAN RECOGNITION</span>
-             <span className="text-white font-bold tracking-tighter text-lg">WAO WORLDWIDE</span>
+          <div className="flex items-center gap-12">
+             <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">CMC VELLORE</span>
+             <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">PATEL CHEST</span>
+             <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">VATICAN RECOGNITION</span>
+             <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">WAO WORLDWIDE</span>
           </div>
         </motion.div>
     </section>
