@@ -1,20 +1,22 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     // Trigger entry animation
     setIsLoaded(true);
 
-    // Scroll fade effect
-    const handleScroll = () => {
+    // Initial check and scroll fade effect
+    const handleCheck = () => {
+      setIsMobile(window.innerWidth < 768);
       if (window.scrollY > 120) {
         setIsScrolled(true);
       } else {
@@ -22,8 +24,13 @@ export default function Hero() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleCheck();
+    window.addEventListener("resize", handleCheck);
+    window.addEventListener("scroll", handleCheck);
+    return () => {
+      window.removeEventListener("resize", handleCheck);
+      window.removeEventListener("scroll", handleCheck);
+    };
   }, []);
 
   return (
@@ -32,23 +39,37 @@ export default function Hero() {
         isScrolled ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
       }`}
     >
-      {/* 🎥 VIDEO - Pinned Right to keep subject visible */}
+      {/* 🎥 VIDEO - Centered and Shifted */}
       <video
         autoPlay
         muted
         loop
         playsInline
         poster="/images/best-allergy-hospital.webp"
-        className={`absolute top-0 right-0 h-full w-[140%] md:w-full object-cover object-right md:object-center z-0 transition-transform duration-[12000ms] linear ${isLoaded ? "scale-110" : "scale-100"}`}
+        className={`absolute top-1/2 left-1/2 
+          w-[160%] md:w-full 
+          h-[160%] md:h-full 
+          object-cover 
+          -translate-x-1/2 -translate-y-1/2 
+          z-0 
+          transition-transform duration-[12000ms] linear 
+          ${isLoaded ? "scale-[1.2]" : "scale-100"}
+        `}
+        style={{
+          objectPosition: isMobile ? "75% center" : "center"
+        }}
       >
         <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
       </video>
 
-      {/* 🎨 OVERLAY - Readable Left, Visible Right */}
+      {/* Mobile-specific control layer */}
+      <div className="block md:hidden absolute inset-0 z-[0]" />
+
+      {/* 🎨 OVERLAY - Readable Left, Clear Right */}
       <div 
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
-          background: "linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 35%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0) 100%)"
+          background: "linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0.12) 70%, rgba(0,0,0,0) 100%)"
         }}
       />
 
