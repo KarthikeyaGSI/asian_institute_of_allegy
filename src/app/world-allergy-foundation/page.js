@@ -121,13 +121,15 @@ export default function WorldAllergyFoundation() {
       <section className="pt-24 md:pt-40 pb-24 bg-slate-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col items-center text-center"
-          >
-            <div className="relative w-32 h-32 mb-8 rounded-3xl shadow-xl ring-1 ring-slate-200 bg-white flex items-center justify-center p-6">
-              <div className="relative w-full h-full">
+          <div className="flex flex-col items-center text-center">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.05, rotateY: 5, rotateX: 5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="relative w-48 h-48 md:w-64 md:h-64 mb-12 rounded-[3rem] shadow-[0_32px_64px_-15px_rgba(0,0,0,0.1)] ring-1 ring-slate-200 bg-white flex items-center justify-center p-8 md:p-12 perspective-1000 mx-auto"
+            >
+              <div className="relative w-full h-full drop-shadow-2xl">
                 <Image 
                   src="/images/WAF%20logo.jpg" 
                   alt="WAF Logo" 
@@ -136,7 +138,7 @@ export default function WorldAllergyFoundation() {
                   priority
                 />
               </div>
-            </div>
+            </motion.div>
             <span className="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4">Established 2024</span>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-8 font-heading">
               World Allergy <br/> Foundation
@@ -144,7 +146,7 @@ export default function WorldAllergyFoundation() {
             <p className="text-xl text-slate-500 max-w-3xl leading-relaxed font-medium">
               Bridging clinical excellence, scientific research, and global public health awareness to solve the crisis of chronic inflammation.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
