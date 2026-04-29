@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote, Play } from "lucide-react";
+import { Quote, Play, Clock, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 
