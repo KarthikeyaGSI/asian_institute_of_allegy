@@ -126,12 +126,12 @@ export default function WorldAllergyFoundation() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center text-center"
           >
-            <div className="relative w-32 h-32 mb-8 rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-200">
+            <div className="relative w-32 h-32 mb-8 rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-200 bg-white p-4">
               <Image 
                 src="/images/world allergy foundation logo.jpeg" 
                 alt="WAF Logo" 
                 fill 
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <span className="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4">Established 2024</span>
