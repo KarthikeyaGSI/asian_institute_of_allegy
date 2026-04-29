@@ -22,8 +22,33 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata = {
   title: "Asian Institute of Allergy, Asthma & Immunology | Centre of Excellence",
-  description: "Root-cause treatment for chronic allergic and immunological disorders. Led by Dr. Vyakarnam Nageshwar with 20+ years of expertise.",
-  keywords: "allergy treatment, asthma clinic, immunotherapy, immunology, Dr. Vyakarnam Nageshwar",
+  description: "India's leading institute for root-cause allergy treatment. Specialist care for Asthma, Eczema, and Immunological disorders in Hyderabad. Led by Dr. Vyakarnam Nageshwar, providing Sublingual Immunotherapy (SLIT) for permanent relief to 50,000+ patients.",
+  keywords: "allergy treatment Hyderabad, asthma specialist India, immunotherapy centre, Dr. Vyakarnam Nageshwar, root cause allergy diagnosis, sublingual immunotherapy SLIT, skin allergy treatment, chronic sinusitis relief",
+  openGraph: {
+    title: "Asian Institute of Allergy & Immunology | Root-Cause Excellence",
+    description: "Resolving chronic allergic conditions for 20+ years. Advanced diagnostic protocols and permanent immunotherapy solutions.",
+    url: "https://asianinstituteofallergy.com",
+    siteName: "Asian Institute of Allergy",
+    images: [
+      {
+        url: "/images/dr-nageswar.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Vyakarnam Nageshwar - Asian Institute of Allergy",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Asian Institute of Allergy | India's Root-Cause Specialists",
+    description: "Expert immunology care and SLIT treatment for chronic conditions.",
+    images: ["/images/dr-nageswar.jpeg"],
+  },
+  alternates: {
+    canonical: "https://asianinstituteofallergy.com",
+  },
 };
 
 export default function RootLayout({ children }) {

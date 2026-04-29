@@ -10,7 +10,7 @@ import GuidedEntry from "@/components/sections/GuidedEntry";
 import DiagnosticQuiz from "@/components/sections/DiagnosticQuiz";
 import SLITScience from "@/components/sections/SLITScience";
 import ResolutionPath from "@/components/sections/ResolutionPath";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Phase 2
 import Comparison from "@/components/sections/Comparison";
@@ -23,6 +23,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import BookingForm from "@/components/sections/BookingForm";
 
 import StickyBottomBar from "@/components/layout/StickyBottomBar";
+import LocationSection from "@/components/home/LocationSection";
 
 export default function Home() {
   const [isQuizOpen, setIsQuizOpen] = useState(false);
@@ -59,7 +60,7 @@ export default function Home() {
       <Authority />
       <Testimonials />
       <BookingForm onStartQuiz={() => setIsQuizOpen(true)} />
-      
+      <LocationSection />
       <Footer />
       <StickyBottomBar />
     </motion.main>

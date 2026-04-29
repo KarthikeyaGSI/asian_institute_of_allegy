@@ -8,8 +8,8 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 const navLinks = [
-  { name: "How we help", href: "/#how-we-help" },
-  { name: "Doctor", href: "/#doctor" },
+  { name: "Treatments", href: "/treatments" },
+  { name: "Success Stories", href: "/clinical-success" },
   { name: "World Allergy Foundation", href: "/world-allergy-foundation" },
   { name: "Contact", href: "/#contact" },
 ];
