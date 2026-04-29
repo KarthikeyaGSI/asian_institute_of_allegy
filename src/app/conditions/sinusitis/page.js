@@ -4,7 +4,7 @@ import { Activity, Wind, ShieldCheck } from "lucide-react";
 export const metadata = {
   title: "Chronic Sinusitis & Rhinitis Treatment Hyderabad | Root-Cause Care",
   description: "End the cycle of nasal congestion and sinus pain. Root-cause treatment for Allergic Rhinitis in Hyderabad using precision immunotherapy.",
-  keywords: "sinusitis treatment Hyderabad, allergic rhinitis specialist, sinus pain relief, Dr. Vyakarnam Nageshwar, immunotherapy for sinus",
+  keywords: "sinusitis treatment Hyderabad, allergic rhinitis specialist, sinus pain relief, Dr. Vyakarnam, immunotherapy for sinus",
 };
 
 export default function SinusitisPage() {

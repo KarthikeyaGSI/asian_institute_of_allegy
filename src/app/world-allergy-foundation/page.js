@@ -12,7 +12,7 @@ const sections = [
   {
     title: "Clinical Research",
     icon: Beaker,
-    content: "Established in 2024, WAF bridges clinical practice and scientific literature. Led by Dr. Vyakarnam Nageshwar and Dr. Bhagheerathi, we focus on evidence-based therapies for treatment-resistant autoimmune and allergic conditions."
+    content: "Established in 2024, WAF bridges clinical practice and scientific literature. Led by Dr. Vyakarnam and Dr. Bhagheerathi, we focus on evidence-based therapies for treatment-resistant autoimmune and allergic conditions."
   },
   {
     title: "National Awareness",
@@ -189,7 +189,7 @@ export default function WorldAllergyFoundation() {
                 HPV Vaccination: <br/> <span className="text-red-600 font-medium italic">"NOT for All"</span>
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed font-medium italic">
-                "As a medically qualified citizen, I urge you to potentially prevent the calamity of flare-ups in Allergy & Autoimmune diseases." — Dr. Vyakarnam Nageshwar
+                "As a medically qualified citizen, I urge you to potentially prevent the calamity of flare-ups in Allergy & Autoimmune diseases." — Dr. Vyakarnam
               </p>
               <div className="space-y-4">
                 <h4 className="font-bold text-slate-900 uppercase tracking-widest text-xs">The Scientific Concern:</h4>
@@ -292,7 +292,7 @@ export default function WorldAllergyFoundation() {
                 <div className="flex gap-4">
                   <div className="w-1 h-12 bg-primary rounded-full" />
                   <p className="text-slate-500 italic leading-relaxed">
-                    "Unless the root cause—the immunological basis—is identified, patients remain dependent on temporary relief like steroids." — Dr. Nageshwar
+                    "Unless the root cause—the immunological basis—is identified, patients remain dependent on temporary relief like steroids." — Dr. Vyakarnam
                   </p>
                 </div>
                 <p className="text-slate-600 leading-relaxed font-medium">

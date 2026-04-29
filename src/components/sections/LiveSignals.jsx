@@ -13,7 +13,7 @@ export default function LiveSignals() {
     {
       id: "availability",
       icon: <Circle size={10} className="fill-emerald-500 text-emerald-500 animate-pulse" />,
-      text: "Dr. Nageshwar is currently in session",
+      text: "Dr. Vyakarnam is currently in session",
       subtext: "Next slot: Today, 4:30 PM",
       action: "Secure Slot"
     },

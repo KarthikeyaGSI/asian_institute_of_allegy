@@ -60,7 +60,7 @@ export default function Hero() {
           objectPosition: "center"
         }}
       >
-        <source src="/_HERO VIDEO (Breathing Cinematic).mp4" type="video/mp4" />
+        <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
         <track kind="captions" src="" label="English" />
       </video>
 

@@ -370,7 +370,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
               </div>
               <div>
                 <h3 className="text-3xl font-bold text-slate-900 font-heading">Analyzing Your Profile...</h3>
-                <p className="text-slate-500 font-medium mt-2 italic">Matching symptoms with Dr. Nageshwar's clinical protocols</p>
+                <p className="text-slate-500 font-medium mt-2 italic">Matching symptoms with Dr. Vyakarnam's clinical protocols</p>
               </div>
             </div>
           )}

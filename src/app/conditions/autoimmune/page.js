@@ -3,8 +3,8 @@ import { ShieldCheck, Activity, Zap } from "lucide-react";
 
 export const metadata = {
   title: "Autoimmune Disorder Treatment Hyderabad | Clinical Immunology",
-  description: "Specialized care for complex autoimmune conditions and systemic inflammation. Led by world-renowned immunologist Dr. Vyakarnam Nageshwar.",
-  keywords: "autoimmune treatment Hyderabad, clinical immunology India, chronic inflammation, Dr. Vyakarnam Nageshwar, systemic immune dysfunction",
+  description: "Specialized care for complex autoimmune conditions and systemic inflammation. Led by world-renowned immunologist Dr. Vyakarnam.",
+  keywords: "autoimmune treatment Hyderabad, clinical immunology India, chronic inflammation, Dr. Vyakarnam, systemic immune dysfunction",
 };
 
 export default function AutoimmunePage() {
@@ -37,7 +37,7 @@ export default function AutoimmunePage() {
     },
     {
       question: "Do you treat rare immunological conditions?",
-      answer: "Yes, Dr. Nageshwar is a specialist in complex and rare immunological cases that have not responded to standard clinical protocols."
+      answer: "Yes, Dr. Vyakarnam is a specialist in complex and rare immunological cases that have not responded to standard clinical protocols."
     }
   ];
 

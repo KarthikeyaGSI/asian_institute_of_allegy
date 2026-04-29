@@ -3,8 +3,8 @@ import { ShieldCheck, Search, Zap } from "lucide-react";
 
 export const metadata = {
   title: "Chronic Eczema & Skin Allergy Treatment Hyderabad | AIA",
-  description: "Advanced root-cause treatment for Eczema, Urticaria, and chronic skin allergies in Hyderabad. Led by Dr. Vyakarnam Nageshwar with precision immunotherapy.",
-  keywords: "eczema treatment Hyderabad, skin allergy specialist, urticaria relief, Dr. Vyakarnam Nageshwar, immunotherapy for skin allergy",
+  description: "Advanced root-cause treatment for Eczema, Urticaria, and chronic skin allergies in Hyderabad. Led by Dr. Vyakarnam with precision immunotherapy.",
+  keywords: "eczema treatment Hyderabad, skin allergy specialist, urticaria relief, Dr. Vyakarnam, immunotherapy for skin allergy",
 };
 
 export default function EczemaPage() {

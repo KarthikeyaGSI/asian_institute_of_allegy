@@ -16,14 +16,14 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   
   const isWAF = pathname === "/world-allergy-foundation";
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -34,11 +34,11 @@ export default function Navbar() {
       <motion.nav
         initial={false}
         animate={{
-          width: scrolled ? "92%" : "100%",
-          maxWidth: scrolled ? "1200px" : "1440px",
-          backgroundColor: scrolled ? "rgba(10, 10, 10, 0.98)" : isWAF ? "rgba(10, 10, 10, 0.8)" : "rgba(15, 15, 15, 0.05)",
-          backdropFilter: scrolled ? "blur(32px)" : "blur(16px)",
-          borderRadius: scrolled ? "999px" : "0px",
+          width: isScrolled ? "92%" : "100%",
+          maxWidth: isScrolled ? "1200px" : "1440px",
+          backgroundColor: isScrolled ? "rgba(10, 10, 10, 0.98)" : isWAF ? "rgba(10, 10, 10, 0.8)" : "rgba(15, 15, 15, 0.05)",
+          backdropFilter: isScrolled ? "blur(32px)" : "blur(16px)",
+          borderRadius: isScrolled ? "999px" : "0px",
         }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="grid grid-cols-2 lg:grid-cols-3 items-center h-[64px] md:h-[80px] border border-white/10 shadow-2xl relative z-[1001] px-6 md:px-10 overflow-visible"

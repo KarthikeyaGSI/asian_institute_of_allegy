@@ -4,7 +4,7 @@ import { Wind, Activity, ShieldCheck } from "lucide-react";
 export const metadata = {
   title: "Advanced Allergic Asthma Treatment Hyderabad | Root-Cause Care",
   description: "Specialized allergic asthma treatment in Hyderabad using Sublingual Immunotherapy (SLIT). Identify triggers with PFT and resolve asthma at the root cause.",
-  keywords: "asthma treatment Hyderabad, allergic asthma specialist, Dr. Vyakarnam Nageshwar, immunotherapy for asthma, PFT test Hyderabad",
+  keywords: "asthma treatment Hyderabad, allergic asthma specialist, Dr. Vyakarnam, immunotherapy for asthma, PFT test Hyderabad",
 };
 
 export default function AsthmaPage() {
