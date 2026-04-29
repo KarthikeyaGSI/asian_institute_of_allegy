@@ -4,8 +4,16 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import BookingForm from "@/components/sections/BookingForm";
-import { CheckCircle2, ArrowRight, ShieldCheck, Activity, Search } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Activity, Search, Wind, Zap } from "lucide-react";
 import Image from "next/image";
+
+const ICON_MAP = {
+  wind: Wind,
+  activity: Activity,
+  shield: ShieldCheck,
+  search: Search,
+  zap: Zap,
+};
 
 export default function ConditionTemplate({ 
   title, 
@@ -74,7 +82,14 @@ export default function ConditionTemplate({
                 className="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl transition-all group"
               >
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                  <item.icon size={24} />
+                  {item.iconName && ICON_MAP[item.iconName] ? (
+                    (() => {
+                      const IconComponent = ICON_MAP[item.iconName];
+                      return <IconComponent size={24} />;
+                    })()
+                  ) : (
+                    <Activity size={24} />
+                  )}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{item.desc}</p>

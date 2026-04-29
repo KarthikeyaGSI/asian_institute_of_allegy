@@ -10,17 +10,17 @@ export const metadata = {
 export default function FoodAllergyPage() {
   const highlights = [
     {
-      icon: Search,
+      iconName: "search",
       title: "Molecular Mapping",
       desc: "Precision testing to distinguish between true food allergies and sensitivities, identifying exact protein triggers."
     },
     {
-      icon: Activity,
+      iconName: "activity",
       title: "Gut-Immune Axis",
       desc: "Addressing the relationship between your digestive health and systemic immune responses for better tolerance."
     },
     {
-      icon: Zap,
+      iconName: "zap",
       title: "Safety Protocols",
       desc: "Providing comprehensive avoidance strategies and emergency preparedness while working towards oral tolerance."
     }

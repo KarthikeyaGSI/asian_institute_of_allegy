@@ -10,17 +10,17 @@ export const metadata = {
 export default function AsthmaPage() {
   const highlights = [
     {
-      icon: Wind,
+      iconName: "wind",
       title: "Trigger Identification",
       desc: "Advanced Pulmonary Function Tests (PFT) and allergen forensic mapping to find exactly what sets off your asthma."
     },
     {
-      icon: Activity,
+      iconName: "activity",
       title: "Lung Modulation",
       desc: "Moving beyond inhalers to modulate the immune system's response to environmental pollutants and pollens."
     },
     {
-      icon: ShieldCheck,
+      iconName: "shield",
       title: "Permanent Relief",
       desc: "Sublingual Immunotherapy (SLIT) protocols designed to provide long-term resolution without steroid dependency."
     }

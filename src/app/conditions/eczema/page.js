@@ -10,17 +10,17 @@ export const metadata = {
 export default function EczemaPage() {
   const highlights = [
     {
-      icon: Search,
+      iconName: "search",
       title: "Dermal Diagnostics",
       desc: "Precise patch testing and molecular screening to identify contact and systemic triggers for skin inflammation."
     },
     {
-      icon: Zap,
+      iconName: "zap",
       title: "Inflammation Control",
       desc: "Using molecular hydrogen therapy and targeted clinical protocols to resolve deep-seated dermal flare-ups."
     },
     {
-      icon: ShieldCheck,
+      iconName: "shield",
       title: "Barrier Restoration",
       desc: "Immunotherapy protocols that strengthen the body's internal defense, leading to clear, healthy skin from within."
     }

@@ -10,17 +10,17 @@ export const metadata = {
 export default function SinusitisPage() {
   const highlights = [
     {
-      icon: Activity,
+      iconName: "activity",
       title: "Mucosal Analysis",
       desc: "Deep diagnostic evaluation of the nasal mucosa to identify specific environmental triggers like dust mites and pollen."
     },
     {
-      icon: Wind,
+      iconName: "wind",
       title: "Airway Clearing",
       desc: "Moving beyond temporary nasal sprays to address the inflammatory basis of your sinus blockage."
     },
     {
-      icon: ShieldCheck,
+      iconName: "shield",
       title: "Long-term Resolution",
       desc: "SLIT protocols that desensitize your immune system to airborne allergens, providing permanent relief from chronic rhinitis."
     }

@@ -10,17 +10,17 @@ export const metadata = {
 export default function AutoimmunePage() {
   const highlights = [
     {
-      icon: Activity,
+      iconName: "activity",
       title: "Systemic Mapping",
       desc: "Comprehensive evaluation of inflammatory markers to understand why the immune system is attacking the body's own tissues."
     },
     {
-      icon: Zap,
+      iconName: "zap",
       title: "Immune Modulation",
       desc: "Advanced protocols focused on balancing the immune system rather than just suppressing it with broad-spectrum steroids."
     },
     {
-      icon: ShieldCheck,
+      iconName: "shield",
       title: "Precision Recovery",
       desc: "Tailored clinical pathways that address the root cause of systemic dysfunction for patients with complex cases."
     }
