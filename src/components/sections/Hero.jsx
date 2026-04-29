@@ -36,7 +36,7 @@ export default function Hero() {
 
   return (
     <section 
-      className={`relative h-[100dvh] w-full overflow-hidden flex items-end px-6 pt-32 pb-12 md:px-20 text-white transition-all duration-700 ease-in-out ${
+      className={`relative h-[100dvh] w-full bg-black overflow-hidden flex items-end px-6 pt-32 pb-12 md:px-20 text-white transition-all duration-700 ease-in-out ${
         isScrolled ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
       }`}
     >
@@ -69,13 +69,13 @@ export default function Hero() {
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background: isMobile 
-            ? "linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%)" 
-            : "linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0.12) 70%, rgba(0,0,0,0) 100%)"
+            ? "linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 100%)" 
+            : "linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0.12) 70%, rgba(0,0,0,0) 100%)"
         }}
       />
 
         {/* 📝 CONTENT */}
-        <div className="relative z-[2] max-w-7xl mx-auto w-full flex flex-col md:flex-row items-end justify-between gap-8 md:gap-12">
+        <div className="relative z-[2] max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-end justify-between gap-10 md:gap-12">
           <div className="flex-1 w-full">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -156,25 +156,25 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* DOCTOR TRUST PORTRAIT (Floating Desktop, Stacks Mobile) */}
+          {/* DOCTOR TRUST PORTRAIT (Visible on Desktop & Mobile) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={isLoaded ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-            className="hidden lg:flex flex-col items-center gap-4"
+            className="flex flex-row lg:flex-col items-center gap-4 bg-white/5 lg:bg-transparent p-4 lg:p-0 rounded-2xl border border-white/10 lg:border-none backdrop-blur-md lg:backdrop-blur-none"
           >
-            <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl">
+            <div className="relative w-16 h-16 lg:w-32 lg:h-32 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl shrink-0">
               <Image 
                 src="/images/dr-nageswar.jpeg"
                 alt="Dr. Vyakarnam"
                 fill
                 className="object-cover object-top"
-                sizes="128px"
+                sizes="(max-width: 1024px) 64px, 128px"
               />
             </div>
-            <div className="text-center">
-              <p className="text-sm font-bold text-white tracking-tight">Dr. Vyakarnam</p>
-              <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mt-0.5">Chief Immunologist</p>
+            <div className="text-left lg:text-center">
+              <p className="text-sm lg:text-sm font-bold text-white tracking-tight">Dr. Vyakarnam</p>
+              <p className="text-[9px] lg:text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mt-0.5">Chief Immunologist</p>
             </div>
           </motion.div>
         </div>
