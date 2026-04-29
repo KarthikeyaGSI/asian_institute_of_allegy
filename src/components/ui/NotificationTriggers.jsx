@@ -14,29 +14,42 @@ import {
   Clock
 } from 'lucide-react';
 
+const NAMES = [
+  'Rahul M.', 'Priya S.', 'Dr. Anjali', 'Suresh K.', 'Karthik R.', 'Ananya G.', 'Vikram P.', 'Sanya H.',
+  'John D.', 'Emily W.', 'Aarav N.', 'Meera J.', 'David L.', 'Sarah K.', 'Arjun V.', 'Ishani T.',
+  'Zoya R.', 'Omar F.', 'Chen W.', 'Sofia M.', 'Rohan B.', 'Tanvi C.', 'Nikhil D.', 'Sneha K.'
+];
+
+const LOCATIONS = [
+  'Hyderabad', 'Bangalore', 'Vizag', 'Chennai', 'Mumbai', 'Delhi', 'Pune', 'Kolkata',
+  'London', 'New York', 'Dubai', 'Singapore', 'Sydney', 'Toronto', 'Berlin', 'Tokyo',
+  'Ahmedabad', 'Jaipur', 'Lucknow', 'Kochi', 'Chandigarh', 'Bhopal', 'Indore', 'Surat'
+];
+
 const NOTIFICATIONS = [
-  // Bookings (Social Proof)
-  { id: 1, type: 'booking', name: 'Rahul M.', location: 'Hyderabad', action: 'just booked a consultation', icon: Calendar, color: 'text-blue-400' },
-  { id: 2, type: 'booking', name: 'Priya S.', location: 'Bangalore', action: 'scheduled a follow-up', icon: Calendar, color: 'text-emerald-400' },
-  { id: 3, type: 'booking', name: 'Dr. Anjali', location: 'Vizag', action: 'referred a complex case', icon: UserCheck, color: 'text-purple-400' },
-  { id: 4, type: 'booking', name: 'Suresh K.', location: 'Chennai', action: 'completed a diagnostic quiz', icon: CheckCircle2, color: 'text-blue-400' },
-  { id: 5, type: 'booking', name: 'Karthik R.', location: 'Hyderabad', action: 'joined the SLIT program', icon: Zap, color: 'text-amber-400' },
+  // Bookings (Social Proof) - These will be templates for dynamic selection
+  { type: 'booking', action: 'just booked a consultation', icon: Calendar, color: 'text-blue-400' },
+  { type: 'booking', action: 'scheduled a follow-up', icon: Calendar, color: 'text-emerald-400' },
+  { type: 'booking', action: 'completed a diagnostic quiz', icon: CheckCircle2, color: 'text-blue-400' },
+  { type: 'booking', action: 'joined a Trigger Mapping Session', icon: MapPin, color: 'text-rose-400' },
+  { type: 'booking', action: 'joined the SLIT program', icon: Zap, color: 'text-amber-400' },
+  { type: 'booking', action: 'requested a second opinion', icon: UserCheck, color: 'text-purple-400' },
 
   // Clinical / System Triggers
-  { id: 6, type: 'system', title: 'Trigger Mapping Session', content: 'In progress for 12+ patients today', icon: MapPin, color: 'text-rose-400' },
-  { id: 7, type: 'system', title: 'Safe Engine Active', content: 'Monitoring environmental allergens', icon: ShieldCheck, color: 'text-indigo-400' },
-  { id: 8, type: 'system', title: 'Pollutants Analysis', content: 'Local AQI updated for Hyderabad', icon: Activity, color: 'text-orange-400' },
-  { id: 9, type: 'system', title: 'Clinical Precision', content: 'AI-driven diagnostic engine online', icon: Zap, color: 'text-cyan-400' },
+  { type: 'system', title: 'Trigger Mapping Session', content: 'In progress for 15+ patients globally today', icon: MapPin, color: 'text-rose-400' },
+  { type: 'system', title: 'Safe Engine Active', content: 'Analyzing multi-regional allergen data', icon: ShieldCheck, color: 'text-indigo-400' },
+  { type: 'system', title: 'Clinical Precision', content: 'AI-driven diagnostic engine online', icon: Zap, color: 'text-cyan-400' },
+  { type: 'system', title: 'Pollutants Analysis', content: 'Air quality index monitored for key cities', icon: Activity, color: 'text-orange-400' },
 
   // Availability / Time Relevant
-  { id: 10, type: 'availability', title: 'Doctor Availability', content: 'Dr. Vyakarnam is currently taking consults', icon: UserCheck, color: 'text-emerald-400', time: 'day' },
-  { id: 11, type: 'availability', title: 'Video Consultations', content: 'Slots open for evening tele-health', icon: Activity, color: 'text-blue-400', time: 'evening' },
-  { id: 12, type: 'availability', title: 'Emergency Support', content: '24/7 allergy crisis line active', icon: Bell, color: 'text-rose-500', time: 'night' },
-  { id: 13, type: 'availability', title: 'Early Birds', content: 'Morning slots for 6:00 AM available', icon: Clock, color: 'text-amber-400', time: 'morning' },
+  { type: 'availability', title: 'Doctor Availability', content: 'Dr. Vyakarnam is currently taking consults', icon: UserCheck, color: 'text-emerald-400', time: 'day' },
+  { type: 'availability', title: 'Video Consultations', content: 'Slots open for evening tele-health', icon: Activity, color: 'text-blue-400', time: 'evening' },
+  { type: 'availability', title: 'Emergency Support', content: '24/7 allergy crisis line active', icon: Bell, color: 'text-rose-500', time: 'night' },
+  { type: 'availability', title: 'Early Birds', content: 'Morning slots for 6:00 AM available', icon: Clock, color: 'text-amber-400', time: 'morning' },
 
-  // Contextual Stuff
-  { id: 14, type: 'info', title: 'Knowledge Base', content: 'New study on SLIT effectiveness published', icon: CheckCircle2, color: 'text-emerald-400' },
-  { id: 15, type: 'info', title: 'Hyderabad Update', content: 'High pollen count expected tomorrow', icon: Activity, color: 'text-amber-500' },
+  // Sunday Specials
+  { type: 'holiday', title: 'Sunday Consultations', content: 'Book your session today for priority slots tomorrow', icon: Calendar, color: 'text-blue-400', time: 'sunday' },
+  { type: 'holiday', title: 'Weekly Health Planning', content: 'Plan your allergy journey this Sunday', icon: Activity, color: 'text-emerald-400', time: 'sunday' },
 ];
 
 const NotificationTriggers = () => {
@@ -44,7 +57,11 @@ const NotificationTriggers = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const getTimeContext = () => {
-    const hour = new Date().getHours();
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours();
+
+    if (day === 0) return 'sunday';
     if (hour >= 5 && hour < 12) return 'morning';
     if (hour >= 12 && hour < 17) return 'day';
     if (hour >= 17 && hour < 22) return 'evening';
@@ -57,13 +74,32 @@ const NotificationTriggers = () => {
 
     const showNext = () => {
       const timeContext = getTimeContext();
-      const relevant = NOTIFICATIONS.filter(n => !n.time || n.time === timeContext || n.time === 'any');
       
+      // Filter notifications based on time context
+      let relevant = NOTIFICATIONS.filter(n => !n.time || n.time === timeContext || (timeContext !== 'sunday' && n.time === 'any'));
+      
+      // If Sunday, only show holiday/sunday messages + generic bookings
+      if (timeContext === 'sunday') {
+        relevant = NOTIFICATIONS.filter(n => n.time === 'sunday' || n.type === 'booking');
+      }
+
       setCurrentNotification(prev => {
         let next;
-        do {
-          next = relevant[Math.floor(Math.random() * relevant.length)];
-        } while (prev && next.id === prev.id && relevant.length > 1);
+        // Selection logic
+        const rawNext = relevant[Math.floor(Math.random() * relevant.length)];
+        
+        // If it's a booking, populate it with random data
+        if (rawNext.type === 'booking') {
+          next = {
+            ...rawNext,
+            id: Math.random(),
+            name: NAMES[Math.floor(Math.random() * NAMES.length)],
+            location: LOCATIONS[Math.floor(Math.random() * LOCATIONS.length)]
+          };
+        } else {
+          next = { ...rawNext, id: Math.random() };
+        }
+        
         return next;
       });
 
@@ -72,8 +108,8 @@ const NotificationTriggers = () => {
       // Hide after 6 seconds
       visibilityTimeoutId = setTimeout(() => {
         setIsVisible(false);
-        // Schedule next notification after hiding (10-25s delay)
-        const nextInterval = Math.random() * (25000 - 10000) + 10000;
+        // Schedule next notification after hiding (8-15s delay for more frequency)
+        const nextInterval = Math.random() * (15000 - 8000) + 8000;
         timeoutId = setTimeout(showNext, nextInterval);
       }, 6000);
     };
