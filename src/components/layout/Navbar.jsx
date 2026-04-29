@@ -60,13 +60,17 @@ export default function Navbar() {
 
         {/* Center Logo */}
         <Link href="/" className="flex items-center justify-self-center group">
-          <div className="bg-white p-2 md:p-3 rounded-2xl shadow-2xl ring-1 ring-white/10 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1">
+          <div className={`bg-white rounded-2xl shadow-2xl ring-1 ring-white/10 flex items-center justify-center transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 ${
+            isScrolled ? "p-1.5 md:p-2" : "p-2 md:p-3"
+          }`}>
             <Image 
               src="/images/asian institute of allergy logo.jpg" 
               alt="Asian Institute of Allergy" 
               width={200} 
               height={200}
-              className="h-[60px] md:h-[100px] w-auto object-contain"
+              className={`w-auto object-contain transition-all duration-500 ${
+                isScrolled ? "h-[45px] md:h-[65px]" : "h-[60px] md:h-[90px]"
+              }`}
               priority
             />
           </div>
