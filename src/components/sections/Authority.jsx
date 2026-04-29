@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Globe } from "lucide-react";
+import { ArrowRight, Globe, CheckCircle2 } from "lucide-react";
 
 export default function Authority() {
   return (
@@ -29,6 +29,8 @@ export default function Authority() {
                   alt="Dr. Vyakarnam Nageshwar" 
                   fill 
                   className="object-cover object-top"
+                  sizes="(max-w-768px) 100vw, 400px"
+                  priority
                 />
               </motion.div>
               <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-90" />
@@ -40,12 +42,24 @@ export default function Authority() {
             </div>
             
             {/* Accreditation Badges */}
-            <div className="mt-8 flex flex-wrap gap-4">
-               <div className="bg-white/5 border border-white/10 px-4 py-3 rounded-2xl flex items-center gap-3">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary-accent">Vatican Recognition</span>
+            <div className="mt-8 flex flex-col gap-4">
+               <div className="flex items-start gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl group hover:border-primary-accent/30 transition-colors">
+                  <div className="bg-primary-accent/10 p-2 rounded-lg text-primary-accent">
+                    <CheckCircle2 size={16} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-primary-accent block mb-1">Vatican Recognition</span>
+                    <p className="text-xs text-white/60 leading-tight">Recognized by the Pontifical Council for Healthcare for pioneering contribution to affordable allergy cures.</p>
+                  </div>
                </div>
-               <div className="bg-white/5 border border-white/10 px-4 py-3 rounded-2xl flex items-center gap-3">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary-accent">CMC Vellore</span>
+               <div className="flex items-start gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl group hover:border-primary-accent/30 transition-colors">
+                  <div className="bg-primary-accent/10 p-2 rounded-lg text-primary-accent">
+                    <CheckCircle2 size={16} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-primary-accent block mb-1">CMC Vellore Trained</span>
+                    <p className="text-xs text-white/60 leading-tight">Clinical training and specialization from India's #1 ranked clinical institution for respiratory excellence.</p>
+                  </div>
                </div>
             </div>
           </div>

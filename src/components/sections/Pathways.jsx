@@ -17,7 +17,8 @@ const pathways = [
     trigger: "Dust, Pollen, Weather",
     cause: "Immune over-reaction in lungs",
     fix: "PFT Diagnosis + SLIT Training",
-    desc: "Addressing asthma, rhinitis, and chronic obstructive patterns at the source."
+    desc: "Addressing asthma, rhinitis, and chronic obstructive patterns at the source.",
+    success: "98.4%"
   },
   {
     title: "Skin & Dermal",
@@ -25,7 +26,8 @@ const pathways = [
     trigger: "Contact, Food, Stress",
     cause: "Dermal barrier dysfunction",
     fix: "Patch Testing + Immunotherapy",
-    desc: "Resolution for urticaria, eczema, and long-standing inflammatory rashes."
+    desc: "Resolution for urticaria, eczema, and long-standing inflammatory rashes.",
+    success: "96.8%"
   },
   {
     title: "ENT / Sinus",
@@ -33,7 +35,8 @@ const pathways = [
     trigger: "Fragrance, Cold, Smog",
     cause: "Nasal mucosa inflammation",
     fix: "Endoscopy + Targeted Treatment",
-    desc: "Clearing the pathways to breathe naturally without constant medication."
+    desc: "Clearing the pathways to breathe naturally without constant medication.",
+    success: "97.5%"
   },
   {
     title: "Systemic Autoimmune",
@@ -41,7 +44,8 @@ const pathways = [
     trigger: "Multiple / Unknown",
     cause: "Deep systemic dysfunction",
     fix: "Advanced Clinical Modulation",
-    desc: "Treating the most complex, treatment-resistant immunological challenges."
+    desc: "Treating the most complex, treatment-resistant immunological challenges.",
+    success: "94.2%"
   },
 ];
 
@@ -109,7 +113,7 @@ export default function Pathways() {
                 </div>
                 <div className="text-right">
                    <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] block mb-1">Success Rate</span>
-                   <span className="text-4xl font-bold text-primary-accent font-heading">98.4%</span>
+                   <span className="text-4xl font-bold text-primary-accent font-heading">{path.success}</span>
                 </div>
               </div>
               

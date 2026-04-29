@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -36,11 +37,9 @@ export default function BookingForm() {
       const result = await response.json();
 
       if (result.success) {
-        // 2. Redirect to WhatsApp
-        const waMessage = encodeURIComponent(
-          `Hello Asian Institute,\n\nI would like to book an evaluation.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Condition:* ${formData.condition}\n\nPlease contact me.`
-        );
-        window.location.href = `https://wa.me/918074368748?text=${waMessage}`;
+        setIsSubmitted(true);
+        // We'll let them see the success screen, and if they want to chat on WhatsApp they can from there
+        // or we can auto-redirect after a delay
       } else {
         alert("Something went wrong. Please try again or call us directly.");
       }
@@ -89,87 +88,132 @@ export default function BookingForm() {
             </div>
           </div>
 
-          {/* RIGHT (Form) */}
+          {/* RIGHT (Form or Thank You) */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="p-10 md:p-16 flex-1 bg-white flex flex-col justify-center"
+            className="p-10 md:p-16 flex-1 bg-white flex flex-col justify-center min-h-[500px]"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="full-name" className="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
-                <input 
-                  id="full-name"
-                  type="text" 
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
-                  placeholder="e.g. Rahul Sharma"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-bold text-slate-700 mb-2">Phone Number</label>
-                <input 
-                  id="phone"
-                  type="tel" 
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
-                  placeholder="+91"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="condition" className="block text-sm font-bold text-slate-700 mb-2">Primary Condition</label>
-                <select 
-                  id="condition"
-                  value={formData.condition}
-                  onChange={(e) => setFormData({...formData, condition: e.target.value})}
-                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50 text-slate-700 appearance-none"
-                  required
-                >
-                  <option value="" disabled>Select an option</option>
-                  <option value="Asthma">Breathing Issues / Asthma</option>
-                  <option value="Skin Allergy">Skin Allergies / Eczema</option>
-                  <option value="Sinus">Sinus / ENT Issues</option>
-                  <option value="Autoimmune">Complex / Autoimmune</option>
-                </select>
-              </div>
-              <div className="space-y-4">
-                <motion.button 
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    type="submit"
-                    disabled={isSubmitting}
-                    aria-label="Request Complete Evaluation"
-                    className={`w-full bg-primary text-white py-5 rounded-2xl font-bold shadow-2xl shadow-primary/20 hover:bg-[#154d2e] transition-all text-lg ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
-                >
-                    {isSubmitting ? "Processing..." : "Request Complete Evaluation"}
-                </motion.button>
-                
-                <div className="flex flex-col gap-2 pt-2">
-                  {[
-                    "Direct specialist consultation",
-                    "No long-term medication dependency",
-                    "Personalized treatment plan"
-                  ].map((item, j) => (
-                    <div key={j} className="flex items-center gap-3 text-xs font-bold text-slate-600">
-                      <div className="w-4 h-4 rounded-full bg-slate-100 flex items-center justify-center text-primary">✔</div>
-                      {item}
-                    </div>
-                  ))}
+            {!isSubmitted ? (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="full-name" className="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
+                  <input 
+                    id="full-name"
+                    type="text" 
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
+                    placeholder="e.g. Rahul Sharma"
+                    required
+                  />
                 </div>
-              </div>
-              
-              <div className="pt-6 mt-6 border-t border-slate-100">
-                <p className="text-center text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                  Secure & Confidential Clinical Inquiry
-                </p>
-              </div>
-            </form>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-bold text-slate-700 mb-2">Phone Number</label>
+                  <input 
+                    id="phone"
+                    type="tel" 
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
+                    placeholder="+91"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="condition" className="block text-sm font-bold text-slate-700 mb-2">Primary Condition</label>
+                  <select 
+                    id="condition"
+                    value={formData.condition}
+                    onChange={(e) => setFormData({...formData, condition: e.target.value})}
+                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50 text-slate-700 appearance-none"
+                    required
+                  >
+                    <option value="" disabled>Select an option</option>
+                    <option value="Asthma">Breathing Issues / Asthma</option>
+                    <option value="Skin Allergy">Skin Allergies / Eczema</option>
+                    <option value="Sinus">Sinus / ENT Issues</option>
+                    <option value="Autoimmune">Complex / Autoimmune</option>
+                  </select>
+                </div>
+                <div className="space-y-4">
+                  <motion.button 
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      type="submit"
+                      disabled={isSubmitting}
+                      className={`w-full bg-primary text-white py-5 rounded-2xl font-bold shadow-2xl shadow-primary/20 hover:bg-[#154d2e] transition-all text-lg ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
+                  >
+                      {isSubmitting ? "Processing..." : "Request Complete Evaluation"}
+                  </motion.button>
+                  
+                  <div className="flex flex-col gap-2 pt-2">
+                    {[
+                      "Direct specialist consultation",
+                      "No long-term medication dependency",
+                      "Personalized treatment plan"
+                    ].map((item, j) => (
+                      <div key={j} className="flex items-center gap-3 text-xs font-bold text-slate-600">
+                        <div className="w-4 h-4 rounded-full bg-slate-100 flex items-center justify-center text-primary">✔</div>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="pt-6 mt-6 border-t border-slate-100">
+                  <p className="text-center text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                    Secure & Confidential Clinical Inquiry
+                  </p>
+                </div>
+              </form>
+            ) : (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center space-y-8"
+              >
+                <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-primary ring-4 ring-primary/10">
+                  <img 
+                    src="/images/dr-nageswar.jpeg" 
+                    alt="Dr. Vyakarnam Nageshwar"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold text-slate-900 mb-2 font-heading tracking-tight">Evaluation Confirmed.</h3>
+                  <p className="text-slate-600 font-medium">Expect a call from our specialists within <span className="text-primary font-bold">15 minutes</span>.</p>
+                </div>
+                
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-left space-y-4">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Next Steps</p>
+                  <div className="space-y-3">
+                    <div className="flex gap-3 text-sm font-medium text-slate-700">
+                      <div className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">1</div>
+                      <span>Reviewing your condition profile</span>
+                    </div>
+                    <div className="flex gap-3 text-sm font-medium text-slate-700">
+                      <div className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">2</div>
+                      <span>Verifying specialist availability</span>
+                    </div>
+                    <div className="flex gap-3 text-sm font-medium text-slate-700">
+                      <div className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">3</div>
+                      <span>Coordinating your clinical recovery path</span>
+                    </div>
+                  </div>
+                </div>
+
+                <a 
+                  href={`https://wa.me/918074368748?text=${encodeURIComponent("Hi, I just submitted my evaluation form. I'd like to expedite my root-cause diagnosis.")}`}
+                  target="_blank"
+                  className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
+                >
+                  Want to expedite via WhatsApp? Click here.
+                </a>
+              </motion.div>
+            )}
           </motion.div>
         </div>
       </div>

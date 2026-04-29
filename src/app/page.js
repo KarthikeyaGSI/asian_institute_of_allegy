@@ -7,6 +7,11 @@ import Footer from "@/components/layout/Footer";
 // Phase 1
 import Hero from "@/components/sections/Hero";
 import GuidedEntry from "@/components/sections/GuidedEntry";
+import DiagnosticQuiz from "@/components/sections/DiagnosticQuiz";
+import LiveSignals from "@/components/sections/LiveSignals";
+import SLITScience from "@/components/sections/SLITScience";
+import ResolutionPath from "@/components/sections/ResolutionPath";
+import { useState } from "react";
 
 // Phase 2
 import Comparison from "@/components/sections/Comparison";
@@ -21,6 +26,8 @@ import BookingForm from "@/components/sections/BookingForm";
 import StickyBottomBar from "@/components/layout/StickyBottomBar";
 
 export default function Home() {
+  const [isQuizOpen, setIsQuizOpen] = useState(false);
+
   return (
     <motion.main 
       initial={{ opacity: 0 }}
@@ -32,10 +39,15 @@ export default function Home() {
       
       {/* PHASE 1: THE TRUST LAYER */}
       <Hero />
-      <GuidedEntry />
+      <GuidedEntry onStartQuiz={() => setIsQuizOpen(true)} />
+      
+      <DiagnosticQuiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
+      <LiveSignals />
       
       {/* PHASE 2: THE LOGIC LAYER */}
       <Comparison />
+      <SLITScience />
+      <ResolutionPath />
       <Pathways />
       <Science />
       

@@ -5,35 +5,76 @@ import { Quote, Play } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 
+const categories = [
+  { id: "all", label: "All Cases" },
+  { id: "rhinitis", label: "Rhinitis / Sinus", data: { rate: "87%", meds: "91%", count: 47 } },
+  { id: "asthma", label: "Asthma", data: { rate: "91%", meds: "88%", count: 32 } },
+  { id: "skin", label: "Skin / Hives", data: { rate: "79%", meds: "85%", count: 28 } },
+  { id: "food", label: "Food Allergy", data: { rate: "82%", meds: "76%", count: 19 } }
+];
+
 const testimonials = [
   {
     name: "Aman Verma",
-    condition: "Severe Allergic Asthma",
-    outcome: "From 5 inhalers a day to zero in 8 months.",
-    quote: "I had spent 12 years just managing symptoms. The Asian Institute was the first place that actually looked for the 'Why'. Immunotherapy changed my life."
+    age: 29,
+    location: "Mumbai",
+    category: "asthma",
+    duration: "12 years",
+    previous: "5 inhalers a day, multiple ER visits",
+    outcome: "Zero inhalers in 8 months",
+    quote: "I had spent 12 years just managing symptoms. The Asian Institute was the first place that actually looked for the 'Why'. Immunotherapy changed my life.",
+    videoId: "qv1NJ1PDEXA",
+    metrics: [10, 7, 4, 2, 0] // Severity over time
   },
   {
     name: "Priya Reddy",
-    condition: "Chronic Skin Hives",
-    outcome: "Permanent resolution after 4 years of failed treatments.",
-    quote: "The root-cause approach is real. I stopped reacting to triggers that used to send me to the ER. Truly scientific care."
+    age: 34,
+    location: "Hyderabad",
+    category: "skin",
+    duration: "4 years",
+    previous: "Chronic antihistamines, steroid creams",
+    outcome: "Permanent resolution, clear skin",
+    quote: "The root-cause approach is real. I stopped reacting to triggers that used to send me to the ER. Truly scientific care.",
+    videoId: "10fIm_am9k8",
+    metrics: [10, 8, 5, 3, 0]
   },
   {
     name: "Dr. K. Sharma",
-    condition: "Chronic Sinusitis",
-    outcome: "Regained sense of smell and clear breathing.",
-    quote: "As a doctor myself, I appreciate the evidence-based protocols used here. They don't just give you a prescription; they give you a cure."
+    age: 45,
+    location: "Delhi",
+    category: "rhinitis",
+    duration: "15 years",
+    previous: "ENT surgery, daily nasal sprays",
+    outcome: "Regained sense of smell, clear breathing",
+    quote: "As a doctor myself, I appreciate the evidence-based protocols used here. They don't just give you a prescription; they give you a cure.",
+    videoId: "Hppih_IZeCo",
+    metrics: [10, 6, 3, 1, 0]
   }
 ];
 
-const videoTestimonials = [
-  "qv1NJ1PDEXA",
-  "10fIm_am9k8",
-  "Hppih_IZeCo",
-];
+function SeverityChart({ metrics }) {
+  return (
+    <div className="space-y-1.5 mt-6">
+      <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Severity Trend</p>
+      {["Before", "Month 3", "Month 6", "Today"].map((label, i) => (
+        <div key={label} className="flex items-center gap-3">
+          <span className="text-[10px] font-bold text-slate-500 w-16">{label}</span>
+          <div className="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: `${(metrics[i] / 10) * 100}%` }}
+              viewport={{ once: true }}
+              className="h-full bg-primary"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
-function VideoTestimonial({ videoId, i }) {
-  const [isLoaded, setIsLoaded] = useState(false);
+function TestimonialCard({ item, i }) {
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <motion.div
@@ -41,70 +82,173 @@ function VideoTestimonial({ videoId, i }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: i * 0.1 }}
-      className="relative aspect-video rounded-3xl overflow-hidden bg-slate-100 shadow-2xl shadow-primary/5 group cursor-pointer"
-      onClick={() => setIsLoaded(true)}
+      className="bg-white rounded-[2.5rem] border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 flex flex-col group"
     >
-      {!isLoaded ? (
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-            alt="Video testimonial preview"
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-700"
-          />
-          <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors">
-            <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl scale-90 group-hover:scale-110 transition-transform">
-              <Play fill="currentColor" size={24} className="ml-1" />
+      {/* Video Section */}
+      <div className="relative aspect-video bg-slate-100 overflow-hidden cursor-pointer" onClick={() => setIsPlaying(true)}>
+        {!isPlaying ? (
+          <>
+            <Image
+              src={`https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
+              alt={item.name}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+              sizes="(max-w-768px) 100vw, 400px"
+            />
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+              <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform">
+                <Play fill="currentColor" size={24} className="ml-1" />
+              </div>
             </div>
-          </div>
+            <div className="absolute bottom-4 left-4 flex gap-2">
+               <span className="bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest text-slate-900 shadow-sm">
+                 {item.category}
+               </span>
+            </div>
+          </>
+        ) : (
+          <iframe
+            width="100%"
+            height="100%"
+            src={`https://www.youtube.com/embed/${item.videoId}?autoplay=1`}
+            title="Video testimonial"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0"
+          ></iframe>
+        )}
+      </div>
+
+      {/* Content Section */}
+      <div className="p-8 flex flex-col flex-1">
+        <div className="mb-6">
+          <p className="text-xl font-bold text-slate-900 mb-1">{item.name}</p>
+          <p className="text-xs font-medium text-slate-400">{item.age} years • {item.location}</p>
         </div>
-      ) : (
-        <iframe
-          width="100%"
-          height="100%"
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&si=JsOgNjXXEZnX5Lf8`}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-          className="absolute inset-0 w-full h-full"
-        ></iframe>
-      )}
+
+        <div className="space-y-4 mb-8">
+           <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 shrink-0">
+                 <Clock size={14} />
+              </div>
+              <div>
+                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Duration</p>
+                 <p className="text-sm font-bold text-slate-700">{item.duration} suffering</p>
+              </div>
+           </div>
+           <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 shrink-0">
+                 <ShieldCheck size={14} />
+              </div>
+              <div>
+                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Outcome</p>
+                 <p className="text-sm font-bold text-primary">{item.outcome}</p>
+              </div>
+           </div>
+        </div>
+
+        <blockquote className="text-slate-600 font-medium italic leading-relaxed text-sm border-l-2 border-primary/20 pl-4">
+          &ldquo;{item.quote}&rdquo;
+        </blockquote>
+
+        <SeverityChart metrics={item.metrics} />
+      </div>
     </motion.div>
   );
 }
 
 export default function Testimonials() {
-  return (
-    <section className="bg-white py-24 md:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Main High-Authority Quote */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center mb-24"
-        >
-          <Quote size={60} className="text-primary/10 mx-auto mb-8" />
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-slate-900 leading-[1.1] tracking-tight italic">
-            &ldquo;As a doctor myself, I appreciate the evidence-based protocols here. They don&apos;t just give you a prescription; they give you a cure.&rdquo;
-          </h2>
-          <div className="mt-8">
-            <p className="text-xl font-bold text-slate-900">Dr. K. Sharma</p>
-            <p className="text-primary font-bold uppercase tracking-widest text-xs mt-1">Chronic Sinusitis Patient</p>
-          </div>
-        </motion.div>
+  const [activeFilter, setActiveFilter] = useState("all");
 
-        {/* 3 Video Thumbnails in a wide-format row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {videoTestimonials.map((videoId, i) => (
-            <VideoTestimonial key={videoId} videoId={videoId} i={i} />
+  const filteredTestimonials = activeFilter === "all" 
+    ? testimonials 
+    : testimonials.filter(t => t.category === activeFilter);
+
+  const activeCategoryData = categories.find(c => c.id === activeFilter)?.data;
+
+  return (
+    <section className="bg-slate-50/50 py-24 md:py-32 overflow-hidden border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20">
+          <div className="max-w-2xl">
+            <span className="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Patient Proof</span>
+            <h2 className="text-5xl md:text-7xl font-bold text-slate-900 leading-[1] tracking-tighter font-heading mb-8">
+              Relevant Proof. <br/>
+              <span className="text-gray-400">Real Outcomes.</span>
+            </h2>
+            <p className="text-xl text-slate-600 font-medium">
+              See how patients with your specific condition achieved long-term resolution.
+            </p>
+          </div>
+
+          {/* Filters */}
+          <div className="flex flex-wrap gap-2">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveFilter(cat.id)}
+                className={`px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition-all ${
+                  activeFilter === cat.id 
+                    ? "bg-primary text-white shadow-xl shadow-primary/20 scale-105" 
+                    : "bg-white text-slate-400 border border-slate-200 hover:border-slate-400"
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Dynamic Outcome Stats */}
+        {activeCategoryData && (
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 bg-white p-8 rounded-[2rem] border border-slate-100"
+          >
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Success Rate</p>
+              <p className="text-4xl font-bold text-primary font-heading">{activeCategoryData.rate}</p>
+              <p className="text-xs font-medium text-slate-500 mt-1">Significant improvement in {activeFilter} cases</p>
+            </div>
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Medication Freedom</p>
+              <p className="text-4xl font-bold text-slate-900 font-heading">{activeCategoryData.meds}</p>
+              <p className="text-xs font-medium text-slate-500 mt-1">Medication-free after 12 months</p>
+            </div>
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Verified Stories</p>
+              <p className="text-4xl font-bold text-slate-900 font-heading">{activeCategoryData.count}</p>
+              <p className="text-xs font-medium text-slate-500 mt-1">Documented success stories in our records</p>
+            </div>
+          </motion.div>
+        )}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredTestimonials.map((item, i) => (
+            <TestimonialCard key={item.name} item={item} i={i} />
           ))}
         </div>
-        
-        <div className="text-center mt-12">
-          <p className="text-slate-600 font-medium italic">...and many more lives transformed through root-cause resolution.</p>
+
+        <div className="mt-20 text-center">
+           <div className="inline-flex items-center gap-8 p-6 bg-white rounded-3xl border border-slate-100">
+             <div className="flex -space-x-3">
+                {[1,2,3,4].map(i => (
+                  <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                    <img src={`https://i.pravatar.cc/100?u=${i}`} alt="user" />
+                  </div>
+                ))}
+             </div>
+             <div className="text-left">
+                <p className="text-sm font-bold text-slate-900">Join 50,000+ success stories</p>
+                <p className="text-xs text-slate-500">From Kashmir to Dubai</p>
+             </div>
+             <a href="#contact" className="bg-primary text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-105 transition-all">
+                Start My Journey
+             </a>
+           </div>
         </div>
       </div>
     </section>

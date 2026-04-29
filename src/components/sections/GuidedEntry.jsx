@@ -23,7 +23,7 @@ const options = [
   }
 ];
 
-export default function GuidedEntry() {
+export default function GuidedEntry({ onStartQuiz }) {
   return (
     <section id="how-we-help" className="bg-white py-32 md:py-48 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -40,8 +40,8 @@ export default function GuidedEntry() {
               </div>
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs">Guided Entry</span>
             </div>
-            <h2 className="text-6xl md:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tighter font-heading mb-8 transform hover:-translate-y-1 hover:shadow-[0_0_10px_rgba(0,255,0,0.5)]">
-              Tell us what you're experiencing.<br/>
+            <h2 className="text-6xl md:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tighter font-heading mb-8">
+              Tell us what you&apos;re experiencing.<br/>
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed font-medium max-w-xl">
               Select your current situation to see the most relevant diagnostic pathway and treatment timeline.
@@ -56,14 +56,15 @@ export default function GuidedEntry() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {options.map((opt, i) => (
-            <Link key={opt.id} href="/#contact" className="group">
+          {options.map((opt, i) => {
+            const isNew = opt.id === "new-patient";
+            const Content = (
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="relative bg-slate-50 rounded-[3rem] p-10 md:p-16 overflow-hidden border border-slate-100 group-hover:border-primary/20 group-hover:bg-white transition-all duration-700"
+                className="relative bg-slate-50 rounded-[3rem] p-10 md:p-16 overflow-hidden border border-slate-100 group-hover:border-primary/20 group-hover:bg-white transition-all duration-700 text-left h-full"
               >
                 {/* Background Accent */}
                 <div className={`absolute top-0 right-0 w-64 h-64 ${opt.color} opacity-[0.02] rounded-full translate-x-1/2 -translate-y-1/2 group-hover:scale-150 transition-transform duration-1000`} />
@@ -80,14 +81,24 @@ export default function GuidedEntry() {
                   </p>
                   
                   <div className="mt-auto flex items-center gap-4 text-slate-900 font-black uppercase tracking-widest text-xs">
-                    <span>Explore Pathway</span>
+                    <span>{isNew ? "Start My Assessment" : "Explore Pathway"}</span>
                     <div className="w-10 h-px bg-slate-200 group-hover:w-20 group-hover:bg-primary transition-all duration-500" />
                     <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
               </motion.div>
-            </Link>
-          ))}
+            );
+
+            return isNew ? (
+              <button key={opt.id} onClick={onStartQuiz} className="group cursor-pointer appearance-none border-none bg-transparent p-0 outline-none">
+                {Content}
+              </button>
+            ) : (
+              <Link key={opt.id} href="/#contact" className="group">
+                {Content}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
