@@ -47,8 +47,8 @@ export default function Hero() {
         playsInline
         poster="/images/best-allergy-hospital.webp"
         className={`absolute top-1/2 left-1/2 
-          w-[110%] md:w-full 
-          h-[110%] md:h-full 
+          w-full 
+          h-full 
           object-cover 
           -translate-x-1/2 -translate-y-1/2 
           z-0 
@@ -56,7 +56,7 @@ export default function Hero() {
           ${isLoaded ? "scale-[1.05]" : "scale-100"}
         `}
         style={{
-          objectPosition: isMobile ? "65% center" : "center"
+          objectPosition: isMobile ? "55% center" : "center"
         }}
       >
         <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
