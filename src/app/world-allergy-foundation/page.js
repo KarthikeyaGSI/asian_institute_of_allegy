@@ -129,7 +129,7 @@ export default function WorldAllergyFoundation() {
             <div className="relative w-32 h-32 mb-8 rounded-3xl shadow-xl ring-1 ring-slate-200 bg-white flex items-center justify-center p-6">
               <div className="relative w-full h-full">
                 <Image 
-                  src="/images/world allergy foundation logo.jpeg" 
+                  src="/images/WAF%20logo.jpg" 
                   alt="WAF Logo" 
                   fill 
                   className="object-contain"
