@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, LayoutGrid, Globe, Building2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const navLinks = [
   { name: "How we help", href: "/#how-we-help" },
@@ -58,13 +59,14 @@ export default function Navbar() {
         </div>
 
         {/* Center Logo */}
-        <Link href="/" className="flex flex-col items-center group text-center px-4 justify-self-center">
-          <span className="text-[12px] md:text-xl font-bold text-white tracking-tighter uppercase leading-none">
-            {isWAF ? "World Allergy Foundation" : "Asian Institute"}
-          </span>
-          <span className="text-[6px] md:text-[8px] text-white/40 font-black uppercase tracking-[0.4em] mt-1.5">
-            {isWAF ? "Global Research Wing" : "Centre of Excellence"}
-          </span>
+        <Link href="/" className="flex items-center justify-self-center">
+          <Image 
+            src="/images/asian institute of allergy logo.jpg" 
+            alt="Asian Institute of Allergy" 
+            width={120} 
+            height={40}
+            className="h-[32px] md:h-[48px] w-auto object-contain"
+          />
         </Link>
 
         {/* Right Side Actions */}

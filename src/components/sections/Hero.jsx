@@ -58,19 +58,6 @@ export default function Hero() {
         }}
       />
 
-      {/* 🏥 NAV / LOGO */}
-      <header className="absolute top-[16px] left-[20px] md:left-[80px] z-[2]">
-        <Link href="/">
-          <Image 
-            src="/images/asian institute of allergy logo.jpg" 
-            alt="Asian Institute of Allergy" 
-            width={140} 
-            height={40}
-            className="h-[28px] md:h-[32px] w-auto object-contain"
-          />
-        </Link>
-      </header>
-
       {/* 📝 CONTENT */}
       <div className="relative z-[2] max-w-[600px] w-full">
         <motion.h1
