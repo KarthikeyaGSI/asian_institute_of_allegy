@@ -56,6 +56,7 @@ export default function LocationSection() {
                 </div>
               </div>
             </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
