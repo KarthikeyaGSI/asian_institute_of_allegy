@@ -9,14 +9,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
           {/* Brand */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <Image 
-                src="/images/asian institute of allergy logo.jpg" 
-                alt="Asian Institute of Allergy" 
-                width={500} 
-                height={200}
-                className="h-[160px] w-auto object-contain mix-blend-screen"
-              />
+            <Link href="/" className="inline-block group">
+              <div className="bg-white p-4 md:p-6 rounded-[2rem] shadow-xl border border-gray-100 transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2">
+                <Image 
+                  src="/images/asian institute of allergy logo.jpg" 
+                  alt="Asian Institute of Allergy" 
+                  width={250} 
+                  height={250}
+                  className="h-[120px] md:h-[180px] w-auto object-contain"
+                />
+              </div>
             </Link>
             <p className="text-slate-600 leading-relaxed font-medium">
               Global Centre of Excellence for Allergy & Immunological Research. 
