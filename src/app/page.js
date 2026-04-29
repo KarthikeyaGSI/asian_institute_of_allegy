@@ -1,29 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-
-// Phase 1
-import Hero from "@/components/sections/Hero";
-import GuidedEntry from "@/components/sections/GuidedEntry";
-import DiagnosticQuiz from "@/components/sections/DiagnosticQuiz";
-import SLITScience from "@/components/sections/SLITScience";
-import ResolutionPath from "@/components/sections/ResolutionPath";
+import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 
-// Phase 2
-import Comparison from "@/components/sections/Comparison";
-import Pathways from "@/components/sections/Pathways";
-import Science from "@/components/sections/Science";
+// Phase 1 (Static - Above the fold)
+import Hero from "@/components/sections/Hero";
+import GuidedEntry from "@/components/sections/GuidedEntry";
 
-// Phase 3
-import Authority from "@/components/sections/Authority";
-import Testimonials from "@/components/sections/Testimonials";
-import BookingForm from "@/components/sections/BookingForm";
+// Phase 2 (Dynamic)
+const Comparison = dynamic(() => import("@/components/sections/Comparison"), { ssr: true });
+const SLITScience = dynamic(() => import("@/components/sections/SLITScience"), { ssr: true });
+const ResolutionPath = dynamic(() => import("@/components/sections/ResolutionPath"), { ssr: true });
+const Pathways = dynamic(() => import("@/components/sections/Pathways"), { ssr: false }); // GSAP needs client side
+const Science = dynamic(() => import("@/components/sections/Science"), { ssr: true });
 
+// Phase 3 (Dynamic)
+const Authority = dynamic(() => import("@/components/sections/Authority"), { ssr: true });
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials"), { ssr: true });
+const BookingForm = dynamic(() => import("@/components/sections/BookingForm"), { ssr: true });
+const DiagnosticQuiz = dynamic(() => import("@/components/sections/DiagnosticQuiz"), { ssr: false });
+const LocationSection = dynamic(() => import("@/components/home/LocationSection"), { ssr: true });
+
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import StickyBottomBar from "@/components/layout/StickyBottomBar";
-import LocationSection from "@/components/home/LocationSection";
 
 export default function Home() {
   const [isQuizOpen, setIsQuizOpen] = useState(false);

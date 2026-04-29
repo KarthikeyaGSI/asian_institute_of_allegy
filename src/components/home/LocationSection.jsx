@@ -30,7 +30,7 @@ export default function LocationSection() {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg">Our Address</h4>
+                  <h3 className="font-bold text-lg">Our Address</h3>
                   <p className="text-slate-500 text-sm">Aswini Allergy Centre, Khajaguda, <br/> Hyderabad, Telangana 500075</p>
                 </div>
               </div>
@@ -41,7 +41,7 @@ export default function LocationSection() {
                     <Clock size={20} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm">Timings</h4>
+                    <h3 className="font-bold text-sm">Timings</h3>
                     <p className="text-slate-500 text-xs">Mon - Sat: 9 AM - 8 PM</p>
                   </div>
                 </div>
@@ -50,7 +50,7 @@ export default function LocationSection() {
                     <Phone size={20} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm">Helpline</h4>
+                    <h3 className="font-bold text-sm">Helpline</h3>
                     <p className="text-slate-500 text-xs">+91 80743 68748</p>
                   </div>
                 </div>

@@ -50,7 +50,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               className={`text-[11px] font-black tracking-[0.2em] uppercase transition-all duration-300 ${
-                pathname === link.href ? "text-primary-accent" : "text-white/60 hover:text-white"
+                pathname === link.href ? "text-primary-accent" : "text-white/80 hover:text-white"
               }`}
             >
               {link.name}
@@ -73,7 +73,7 @@ export default function Navbar() {
         <div className="flex items-center gap-1 md:gap-4 justify-end">
           <Link
             href="/#contact"
-            className="hidden xl:block text-[11px] font-black text-white/60 hover:text-white transition-colors tracking-[0.2em] uppercase"
+            className="hidden xl:block text-[11px] font-black text-white/80 hover:text-white transition-colors tracking-[0.2em] uppercase"
           >
             Contact
           </Link>

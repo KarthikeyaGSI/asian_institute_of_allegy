@@ -46,6 +46,7 @@ export default function Hero() {
         muted
         loop
         playsInline
+        poster="/images/asianinstituteof allergy.jpeg"
         className={`absolute top-1/2 left-1/2 
           w-full 
           h-full 
@@ -60,6 +61,7 @@ export default function Hero() {
         }}
       >
         <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
+        <track kind="captions" src="" label="English" />
       </video>
 
       {/* 🎨 OVERLAY - Readable Left, Clear Right */}

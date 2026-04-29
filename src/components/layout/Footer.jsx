@@ -13,7 +13,7 @@ export default function Footer() {
                 Asian Institute
               </span>
             </Link>
-            <p className="text-slate-500 leading-relaxed font-medium">
+            <p className="text-slate-600 leading-relaxed font-medium">
               Global Centre of Excellence for Allergy & Immunological Research. 
               Specialized in root-cause resolution through Sublingual Immunotherapy (SLIT).
             </p>
@@ -27,7 +27,7 @@ export default function Footer() {
                 <MapPin className="text-primary mt-1 shrink-0" size={22} />
                 <div>
                   <span className="block font-bold text-slate-900 text-sm uppercase tracking-wider mb-1">Centre 1 (Primary)</span>
-                  <span className="text-slate-600 text-sm">
+                  <span className="text-slate-700 text-sm">
                     Khajaguda, Hyderabad, Telangana
                   </span>
                 </div>
@@ -36,7 +36,7 @@ export default function Footer() {
                 <MapPin className="text-primary mt-1 shrink-0" size={22} />
                 <div>
                   <span className="block font-bold text-slate-900 text-sm uppercase tracking-wider mb-1">Centre 2</span>
-                  <span className="text-slate-600 text-sm">
+                  <span className="text-slate-700 text-sm">
                     Uppal Bhagayat, Hyderabad, Telangana
                   </span>
                 </div>
@@ -54,18 +54,18 @@ export default function Footer() {
           <div className="space-y-6">
             <h3 className="font-bold text-lg text-slate-900">Quick Links</h3>
             <div className="grid grid-cols-1 gap-3">
-              <Link href="/treatments" className="text-slate-600 font-medium hover:text-primary transition-colors">Advanced Treatments</Link>
-              <Link href="/clinical-success" className="text-slate-600 font-medium hover:text-primary transition-colors">Success Stories</Link>
+              <Link href="/treatments" className="text-slate-700 font-medium hover:text-primary transition-colors">Advanced Treatments</Link>
+              <Link href="/clinical-success" className="text-slate-700 font-medium hover:text-primary transition-colors">Success Stories</Link>
               <button 
                 onClick={() => window.dispatchEvent(new CustomEvent("open-quiz"))}
-                className="text-left text-slate-600 font-medium hover:text-primary transition-colors cursor-pointer"
+                className="text-left text-slate-700 font-medium hover:text-primary transition-colors cursor-pointer"
               >
                 Free Diagnostic Report
               </button>
-              <Link href="/world-allergy-foundation" className="text-slate-600 font-medium hover:text-primary transition-colors">World Allergy Foundation</Link>
-              <Link href="/gallery" className="text-slate-600 font-medium hover:text-primary transition-colors">Institute Gallery</Link>
-              <Link href="/contribute" className="text-slate-600 font-medium hover:text-primary transition-colors">Support & Contribute</Link>
-              <Link href="/#contact" className="text-slate-600 font-medium hover:text-primary transition-colors">Book Appointment</Link>
+              <Link href="/world-allergy-foundation" className="text-slate-700 font-medium hover:text-primary transition-colors">World Allergy Foundation</Link>
+              <Link href="/gallery" className="text-slate-700 font-medium hover:text-primary transition-colors">Institute Gallery</Link>
+              <Link href="/contribute" className="text-slate-700 font-medium hover:text-primary transition-colors">Support & Contribute</Link>
+              <Link href="/#contact" className="text-slate-700 font-medium hover:text-primary transition-colors">Book Appointment</Link>
             </div>
           </div>
         </div>
