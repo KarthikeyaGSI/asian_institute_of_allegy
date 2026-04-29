@@ -64,6 +64,7 @@ export default function Footer() {
               </button>
               <Link href="/world-allergy-foundation" className="text-slate-600 font-medium hover:text-primary transition-colors">World Allergy Foundation</Link>
               <Link href="/gallery" className="text-slate-600 font-medium hover:text-primary transition-colors">Institute Gallery</Link>
+              <Link href="/contribute" className="text-slate-600 font-medium hover:text-primary transition-colors">Support & Contribute</Link>
               <Link href="/#contact" className="text-slate-600 font-medium hover:text-primary transition-colors">Book Appointment</Link>
             </div>
           </div>

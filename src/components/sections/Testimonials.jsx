@@ -236,8 +236,13 @@ export default function Testimonials() {
            <div className="inline-flex items-center gap-8 p-6 bg-white rounded-3xl border border-slate-100">
              <div className="flex -space-x-3">
                 {[1,2,3,4].map(i => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
-                    <img src={`https://i.pravatar.cc/100?u=${i}`} alt="user" />
+                  <div key={i} className="relative w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                    <Image 
+                      src={`https://i.pravatar.cc/100?u=${i}`} 
+                      alt="user" 
+                      fill 
+                      className="object-cover"
+                    />
                   </div>
                 ))}
              </div>

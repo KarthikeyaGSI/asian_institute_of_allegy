@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function BookingForm({ onStartQuiz }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -176,10 +177,11 @@ export default function BookingForm({ onStartQuiz }) {
                 className="text-center space-y-8"
               >
                 <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-primary ring-4 ring-primary/10">
-                  <img 
+                  <Image 
                     src="/images/dr-nageswar.jpeg" 
                     alt="Dr. Vyakarnam Nageshwar"
-                    className="w-full h-full object-cover object-top"
+                    fill
+                    className="object-cover object-top"
                   />
                 </div>
                 <div>
