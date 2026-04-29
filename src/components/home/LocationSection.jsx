@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MapPin, Navigation, Phone, Clock } from "lucide-react";
+import Image from "next/image";
 
 export default function LocationSection() {
   return (
@@ -56,31 +57,20 @@ export default function LocationSection() {
               </div>
             </div>
 
-            <a 
-              href="https://maps.app.goo.gl/YourMapID" 
-              target="_blank"
-              className="btn-primary inline-flex items-center gap-2"
-            >
-              Get Directions <Navigation size={18} />
-            </a>
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="w-full aspect-square md:aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white relative"
           >
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.135246733221!2d78.3687353!3d17.4053228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93f0b2f1e27f%3A0x6b3b2c2f2b2b2b2b!2sKhajaguda!5e0!3m2!1sen!2sin!4v1714156942055!5m2!1sen!2sin" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen="" 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Clinic Location"
-            />
+            <div className="absolute inset-0 bg-primary/5 flex items-center justify-center">
+              <Image 
+                src="/images/allergy-hospital-in-hyderabad.webp"
+                alt="Asian Institute of Allergy Building"
+                fill
+                className="object-cover"
+              />
+            </div>
           </motion.div>
         </div>
       </div>
