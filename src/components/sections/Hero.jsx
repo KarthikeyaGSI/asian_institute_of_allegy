@@ -36,7 +36,7 @@ export default function Hero() {
 
   return (
     <section 
-      className={`relative h-[100dvh] w-full overflow-hidden flex items-end px-[20px] pt-[24px] pb-[32px] md:px-[80px] text-white transition-all duration-700 ease-in-out ${
+      className={`relative h-[100dvh] w-full overflow-hidden flex items-end px-6 pt-32 pb-12 md:px-20 text-white transition-all duration-700 ease-in-out ${
         isScrolled ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
       }`}
     >
@@ -57,7 +57,7 @@ export default function Hero() {
           ${isLoaded ? "scale-[1.05]" : "scale-100"}
         `}
         style={{
-          objectPosition: isMobile ? "center" : "center"
+          objectPosition: "center"
         }}
       >
         <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
@@ -68,18 +68,20 @@ export default function Hero() {
       <div 
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
-          background: "linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0.12) 70%, rgba(0,0,0,0) 100%)"
+          background: isMobile 
+            ? "linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%)" 
+            : "linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0.12) 70%, rgba(0,0,0,0) 100%)"
         }}
       />
 
         {/* 📝 CONTENT */}
-        <div className="relative z-[2] max-w-[800px] w-full flex flex-col md:flex-row items-end justify-between gap-12">
-          <div className="flex-1">
+        <div className="relative z-[2] max-w-7xl mx-auto w-full flex flex-col md:flex-row items-end justify-between gap-8 md:gap-12">
+          <div className="flex-1 w-full">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={isLoaded ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-[32px] md:text-[64px] font-bold leading-[1.15] md:leading-[1.1] tracking-tight font-heading"
+              className="text-[34px] sm:text-[42px] md:text-[64px] font-bold leading-[1.1] tracking-tight font-heading"
             >
               We find the <span className="text-[#A3E635]">root cause</span>.<br />
               We fix it for good.
@@ -89,9 +91,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={isLoaded ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-              className="mt-3 md:mt-6 text-[15px] md:text-[20px] text-white/85 font-medium leading-relaxed max-w-[480px]"
+              className="mt-4 md:mt-6 text-[16px] md:text-[20px] text-white/90 font-medium leading-relaxed max-w-[480px]"
             >
-              One of the few specialized institutes focused on root-cause diagnosis.
+              India's specialized institute focused on root-cause diagnosis.
               Personalized care for patients aged 2 to 80.
             </motion.p>
 
@@ -100,18 +102,18 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={isLoaded ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="mt-[18px] md:mt-10 flex flex-col sm:flex-row gap-4"
+              className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4"
             >
               <Link
                 href="/#contact"
-                className="bg-[#1f7a4c] text-white px-8 md:px-10 py-[16px] md:py-4 rounded-full font-bold transition-all duration-300 hover:bg-[#155d3a] hover:scale-105 active:scale-95 text-center shadow-xl flex items-center justify-center gap-2"
+                className="bg-primary text-white px-8 md:px-10 py-5 md:py-4 rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 text-center shadow-xl flex items-center justify-center gap-2"
               >
                 Start Root-Cause Diagnosis
               </Link>
               <Link
                 href="https://wa.me/918074368748?text=Hi, I'd like to start my root-cause evaluation."
                 target="_blank"
-                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 md:px-10 py-[16px] md:py-4 rounded-full font-bold transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-2"
+                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 md:px-10 py-5 md:py-4 rounded-full font-bold transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-2"
               >
                 <MessageCircle size={20} className="text-[#25D366]" />
                 WhatsApp Specialist
@@ -119,21 +121,21 @@ export default function Hero() {
             </motion.div>
 
             {/* 📍 POINTS & TRUST BADGE */}
-            <div className="mt-[24px] md:mt-12 flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
+            <div className="mt-10 md:mt-12 flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
-                className="flex flex-col gap-[6px] md:gap-3 text-[12px] md:text-[13px] font-bold text-white/60 uppercase tracking-widest"
+                className="flex flex-col gap-2 md:gap-3 text-[12px] md:text-[13px] font-bold text-white/60 uppercase tracking-widest"
               >
                 <span className="flex items-center gap-2">
-                  <span className="text-[#1f7a4c]">●</span> 15 min callback
+                  <span className="text-primary-accent text-lg leading-none">•</span> 15 min callback
                 </span>
                 <span className="flex items-center gap-2">
-                  <span className="text-[#1f7a4c]">●</span> Specialist review
+                  <span className="text-primary-accent text-lg leading-none">•</span> Specialist review
                 </span>
                 <span className="flex items-center gap-2">
-                  <span className="text-[#1f7a4c]">●</span> No waiting
+                  <span className="text-primary-accent text-lg leading-none">•</span> No waiting
                 </span>
               </motion.div>
 
@@ -141,13 +143,13 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
-                className="flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl backdrop-blur-xl"
+                className="flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl backdrop-blur-xl w-fit"
               >
                 <div className="text-primary-accent">
                   <CheckCircle2 size={32} />
                 </div>
                 <div>
-                  <p className="text-xl font-black text-white leading-none">50k+</p>
+                  <p className="text-2xl font-black text-white leading-none">50k+</p>
                   <p className="text-[9px] font-black uppercase tracking-widest text-white/40 mt-1">Patients Treated</p>
                 </div>
               </motion.div>
