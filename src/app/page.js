@@ -53,15 +53,21 @@ export default function Home() {
       {/* PHASE 2: THE LOGIC LAYER */}
       <Comparison />
       <SLITScience />
-      <ResolutionPath />
+      <div data-header-theme="light">
+        <ResolutionPath />
+      </div>
       <Pathways />
       <Science />
       
       {/* PHASE 3: THE AUTHORITY LAYER */}
       <Authority />
-      <Testimonials />
+      <div data-header-theme="light">
+        <Testimonials />
+      </div>
       <BookingForm onStartQuiz={() => setIsQuizOpen(true)} />
-      <LocationSection />
+      <div data-header-theme="light">
+        <LocationSection />
+      </div>
       <Footer />
       <StickyBottomBar />
     </motion.main>
