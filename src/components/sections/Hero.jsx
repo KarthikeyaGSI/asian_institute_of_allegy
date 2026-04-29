@@ -34,17 +34,18 @@ export default function Hero() {
     >
       {/* 🎥 VIDEO ZOOM - Aligned Right to keep subject visible */}
       <motion.div
-        initial={{ scale: 1.15 }}
-        animate={isLoaded ? { scale: 1.2 } : {}}
+        initial={{ scale: 1.3 }}
+        animate={isLoaded ? { scale: 1.4 } : {}}
         transition={{ duration: 12, ease: "linear" }}
-        className="absolute inset-0 w-full h-full z-0 origin-right"
+        className="absolute inset-0 w-full h-full z-0 origin-[75%_center]"
       >
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover object-right md:object-center opacity-100"
+          poster="/images/best-allergy-hospital.webp"
+          className="w-full h-full object-cover object-[75%_center] md:object-center opacity-100"
         >
           <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
         </video>
