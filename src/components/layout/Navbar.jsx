@@ -60,7 +60,7 @@ export default function Navbar() {
 
         {/* Center Logo */}
         <Link href="/" className="flex items-center justify-self-center group">
-          <div className="bg-white p-2 md:p-3 rounded-2xl shadow-2xl ring-1 ring-white/10 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1">
+          <div className="bg-white p-2 md:p-3 rounded-2xl shadow-2xl ring-1 ring-white/10 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1">
             <Image 
               src="/images/asian institute of allergy logo.jpg" 
               alt="Asian Institute of Allergy" 

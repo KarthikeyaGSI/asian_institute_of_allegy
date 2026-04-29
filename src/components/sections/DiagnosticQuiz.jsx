@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  X, ArrowRight, ArrowLeft, CheckCircle2, 
-  Wind, ShieldCheck, Activity, Zap, 
+import {
+  X, ArrowRight, ArrowLeft, CheckCircle2,
+  Wind, ShieldCheck, Activity, Zap,
   ChevronRight, Sparkles, MessageCircle, Phone
 } from "lucide-react";
 import Image from "next/image";
@@ -131,14 +131,14 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
   const currentStepData = steps[currentStep];
 
   // Dynamic Analysis
-  const conditionTitle = answers.segmentation === 'nasal' ? 'Rhinitis' 
-                       : answers.segmentation === 'respiratory' ? 'Asthma' 
-                       : answers.segmentation === 'skin' ? 'Dermatitis/Hives'
-                       : 'Immunological Disorder';
-  
-  const severityTier = severity > 7 ? 'Critical / Chronic' 
-                    : severity > 4 ? 'Moderate-Severe' 
-                    : 'Early Onset';
+  const conditionTitle = answers.segmentation === 'nasal' ? 'Rhinitis'
+    : answers.segmentation === 'respiratory' ? 'Asthma'
+      : answers.segmentation === 'skin' ? 'Dermatitis/Hives'
+        : 'Immunological Disorder';
+
+  const severityTier = severity > 7 ? 'Critical / Chronic'
+    : severity > 4 ? 'Moderate-Severe'
+      : 'Early Onset';
 
   const handleOptionSelect = (optionId) => {
     if (currentStepData.multiSelect) {
@@ -168,7 +168,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
   const handleReportSubmit = async (e) => {
     e.preventDefault();
     if (!reportEmail) return;
-    
+
     setIsSubmittingReport(true);
 
     try {
@@ -176,12 +176,12 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
       const details = Object.entries(answers).map(([key, value]) => {
         const step = steps.find(s => s.id === key);
         if (!step) return `${key}: ${value}`;
-        
+
         const label = step.question;
-        const answerText = Array.isArray(value) 
+        const answerText = Array.isArray(value)
           ? value.map(id => step.options.find(o => o.id === id)?.title || id).join(", ")
           : step.options?.find(o => o.id === value)?.title || value;
-        
+
         return `${label}: ${answerText}`;
       }).join("\n");
 
@@ -212,7 +212,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
       console.error("Report submission failed", error);
       // Fallback: If Web3Forms fails, we still show success to the user but log the error
       // Or we can try to redirect to WhatsApp as a secondary 'easy' trigger
-      setIsReportSent(true); 
+      setIsReportSent(true);
     } finally {
       setIsSubmittingReport(false);
     }
@@ -236,7 +236,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-8 bg-slate-950/90 backdrop-blur-xl overflow-y-auto">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         className="relative w-full max-w-4xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden"
@@ -249,7 +249,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
             </div>
             <span className="text-xs font-black uppercase tracking-[0.2em] text-slate-400">Step {currentStep + 1} of {steps.length}</span>
           </div>
-          <button 
+          <button
             onClick={onClose}
             className="p-2 hover:bg-slate-100 rounded-full transition-colors text-slate-400"
           >
@@ -259,7 +259,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
 
         {/* Quiz Progress Bar */}
         <div className="w-full h-1 bg-slate-100">
-          <motion.div 
+          <motion.div
             className="h-full bg-primary"
             initial={{ width: 0 }}
             animate={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
@@ -289,15 +289,15 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                 {/* Question Types */}
                 {currentStepData.type === "slider" ? (
                   <div className="py-12 space-y-12">
-                    <input 
-                      type="range" 
-                      min="1" 
-                      max="10" 
-                      value={severity} 
+                    <input
+                      type="range"
+                      min="1"
+                      max="10"
+                      value={severity}
                       onChange={(e) => {
                         const val = parseInt(e.target.value);
                         setSeverity(val);
-                        setAnswers({...answers, severity: val});
+                        setAnswers({ ...answers, severity: val });
                       }}
                       className="w-full h-4 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-primary"
                     />
@@ -315,19 +315,18 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {currentStepData.options.map((opt) => {
-                      const isSelected = currentStepData.multiSelect 
+                      const isSelected = currentStepData.multiSelect
                         ? (answers[currentStepData.id] || []).includes(opt.id)
                         : answers[currentStepData.id] === opt.id;
-                      
+
                       return (
                         <button
                           key={opt.id}
                           onClick={() => handleOptionSelect(opt.id)}
-                          className={`flex items-start gap-4 p-6 rounded-2xl border-2 text-left transition-all duration-300 ${
-                            isSelected 
-                              ? "border-primary bg-primary/5 shadow-lg scale-[1.02]" 
+                          className={`flex items-start gap-4 p-6 rounded-2xl border-2 text-left transition-all duration-300 ${isSelected
+                              ? "border-primary bg-primary/5 shadow-lg scale-[1.02]"
                               : "border-slate-100 bg-slate-50/50 hover:border-slate-300"
-                          }`}
+                            }`}
                         >
                           {opt.icon && (
                             <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${isSelected ? "bg-primary text-white" : "bg-white text-slate-400"}`}>
@@ -363,7 +362,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
             <div className="py-24 text-center space-y-8">
               <div className="relative w-24 h-24 mx-auto">
                 <div className="absolute inset-0 rounded-full border-4 border-slate-100" />
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 rounded-full border-4 border-primary border-t-transparent"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
@@ -378,20 +377,20 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
 
           {/* Results Page */}
           {showResults && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="space-y-10"
             >
               <div className="bg-slate-900 rounded-[2rem] p-8 md:p-12 text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-                             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
                   <div>
                     <span className="text-primary-accent font-bold tracking-[0.4em] uppercase text-[10px] mb-4 block">Clinical Insight</span>
                     <h3 className="text-4xl font-bold mb-6 font-heading tracking-tight leading-tight">
-                       Your Allergy <br/><span className="text-primary-accent">Diagnostic Profile.</span>
+                      Your Allergy <br /><span className="text-primary-accent">Diagnostic Profile.</span>
                     </h3>
-                    
+
                     <div className="space-y-4">
                       <div className="bg-white/5 border border-white/10 p-4 rounded-xl">
                         <p className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-1">Primary Condition</p>
@@ -405,13 +404,13 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                   </div>
 
                   <div className="bg-white/10 border border-white/10 rounded-3xl p-8 backdrop-blur-md">
-                     <p className="text-primary-accent font-bold mb-4 flex items-center gap-2">
-                       <CheckCircle2 size={16} /> Expert Verdict
-                     </p>
-                     <p className="text-slate-200 leading-relaxed italic text-lg font-medium">
-                       "Patients with your profile who rely solely on antihistamines typically experience 
-                       <strong> progressive sensitization</strong>. SLIT has shown 87% long-term resolution in cases like yours."
-                     </p>
+                    <p className="text-primary-accent font-bold mb-4 flex items-center gap-2">
+                      <CheckCircle2 size={16} /> Expert Verdict
+                    </p>
+                    <p className="text-slate-200 leading-relaxed italic text-lg font-medium">
+                      "Patients with your profile who rely solely on antihistamines typically experience
+                      <strong> progressive sensitization</strong>. SLIT has shown 87% long-term resolution in cases like yours."
+                    </p>
                   </div>
                 </div>
               </div>
@@ -429,7 +428,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                       <p className="text-slate-600 font-medium pt-1">Custom SLIT Recalibration Protocol</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <a
                       href={`https://wa.me/918074368748?text=${encodeURIComponent(`I've just completed the Diagnostic Quiz. My profile indicates ${severityTier} ${conditionTitle}. I'd like to book my evaluation.`)}`}
@@ -453,11 +452,11 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                     <>
                       <div className="flex items-center gap-4 mb-6">
                         <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
-                          <Image 
-                            src="/images/dr-nageswar.jpeg" 
-                            alt="Doctor" 
-                            fill 
-                            className="object-cover object-top" 
+                          <Image
+                            src="/images/dr-nageswar.jpeg"
+                            alt="Doctor"
+                            fill
+                            className="object-cover object-top"
                           />
                         </div>
                         <div>
@@ -466,15 +465,15 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                         </div>
                       </div>
                       <form onSubmit={handleReportSubmit} className="space-y-4">
-                        <input 
-                          type="email" 
+                        <input
+                          type="email"
                           placeholder="Your Email Address"
                           value={reportEmail}
                           onChange={(e) => setReportEmail(e.target.value)}
                           className="w-full px-5 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary"
                           required
                         />
-                        <button 
+                        <button
                           disabled={isSubmittingReport}
                           className="w-full bg-primary text-white py-4 rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-[#154d2e] transition-all disabled:opacity-50"
                         >
@@ -484,11 +483,11 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                     </>
                   ) : (
                     <div className="text-center py-6">
-                       <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
-                         <CheckCircle2 size={32} />
-                       </div>
-                       <p className="font-bold text-slate-900">Report Sent!</p>
-                       <p className="text-sm text-slate-500 mt-1">Please check your inbox (and spam folder).</p>
+                      <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+                        <CheckCircle2 size={32} />
+                      </div>
+                      <p className="font-bold text-slate-900">Report Sent!</p>
+                      <p className="text-sm text-slate-500 mt-1">Please check your inbox (and spam folder).</p>
                     </div>
                   )}
                 </div>
@@ -500,16 +499,16 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
         {/* Footer Navigation */}
         {!showResults && !isFinishing && (
           <div className="px-8 py-6 bg-slate-50 flex items-center justify-between">
-            <button 
+            <button
               onClick={prevStep}
               disabled={currentStep === 0}
               className={`flex items-center gap-2 font-bold text-sm uppercase tracking-widest transition-opacity ${currentStep === 0 ? "opacity-0" : "opacity-60 hover:opacity-100"}`}
             >
               <ArrowLeft size={16} /> Back
             </button>
-            
+
             {currentStepData.multiSelect || currentStepData.type === "slider" ? (
-              <button 
+              <button
                 onClick={nextStep}
                 className="bg-primary text-white px-10 py-4 rounded-2xl font-bold text-sm uppercase tracking-[0.2em] shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all flex items-center gap-3"
               >
