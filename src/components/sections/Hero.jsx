@@ -45,7 +45,6 @@ export default function Hero() {
         muted
         loop
         playsInline
-        poster="/images/best-allergy-hospital.webp"
         className={`absolute top-1/2 left-1/2 
           w-full 
           h-full 
@@ -61,9 +60,6 @@ export default function Hero() {
       >
         <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
       </video>
-
-      {/* Mobile-specific control layer */}
-      <div className="block md:hidden absolute inset-0 z-[0]" />
 
       {/* 🎨 OVERLAY - Readable Left, Clear Right */}
       <div 
