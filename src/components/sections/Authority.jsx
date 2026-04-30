@@ -84,7 +84,7 @@ export default function Authority() {
                 Dr. Vyakarnam battled childhood asthma and allergic rhinitis himself. He transformed his personal suffering into a lifelong mission—to uncover the root causes for the 40 crore Indians who suffer silently.
               </p>
               <p>
-                From training at CMC Vellore and Patel Chest Institute to initiating India&apos;s first **Allergen Forensic Laboratory**, he has redefined allergy care through environmental aerobiology and precision diagnosis.
+                From training at CMC Vellore and Patel Chest Institute to initiating India&apos;s first Allergen Forensic Laboratory, he has redefined allergy care through environmental aerobiology and precision diagnosis.
               </p>
             </div>
 
