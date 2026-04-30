@@ -67,12 +67,12 @@ export default function Navbar() {
           borderColor: isLight ? "rgba(0,0,0,0.1)" : "rgba(255,255,255,0.1)",
         }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-[1001] border shadow-2xl overflow-visible h-[64px] lg:h-[80px]"
+        className="relative z-[1001] border shadow-2xl overflow-visible h-[64px] lg:h-[80px] flex items-center"
       >
-        {/* MOBILE & TABLET HEADER (≤1024px) */}
-        <div className="flex lg:hidden items-center justify-between h-[64px] px-4 w-full">
-          {/* Logo Left */}
-          <Link href="/" className="flex items-center group cursor-pointer">
+        {/* --- MOBILE & TABLET LAYOUT (≤1024px) --- */}
+        <div className="flex lg:hidden items-center justify-between w-full px-4 h-full">
+          {/* Logo: Left Aligned, Small Scale */}
+          <Link href="/" className="flex items-center group cursor-pointer relative z-10">
             <div className={`rounded-xl shadow-lg transition-all duration-500 bg-white p-1 ${
               isLight ? "ring-1 ring-slate-200" : "ring-1 ring-white/10"
             }`}>
@@ -87,8 +87,8 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Right Actions: CTA + Hamburger */}
-          <div className="flex items-center gap-2">
+          {/* Actions: CTA + Menu icon (Right) */}
+          <div className="flex items-center gap-2 relative z-10">
             <Link
               href={isWAF ? "/contribute" : "/#contact"}
               className={`px-3.5 h-[36px] rounded-full text-[12px] font-black uppercase tracking-widest transition-all shadow-xl flex items-center justify-center whitespace-nowrap ${
@@ -108,9 +108,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* DESKTOP HEADER (≥1024px) */}
-        <div className="hidden lg:grid grid-cols-3 items-center h-[80px] px-10 w-full relative">
-          {/* Left: Links */}
+        {/* --- DESKTOP LAYOUT (≥1024px) --- */}
+        <div className="hidden lg:flex items-center justify-between w-full px-10 h-full relative">
+          {/* Left: Navigation Links */}
           <div className="flex items-center gap-8">
             {navLinks.slice(0, 3).map((link) => (
               <Link
@@ -127,9 +127,9 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Center: Logo */}
-          <div className="flex items-center justify-center">
-            <Link href="/" className="flex items-center group cursor-pointer relative z-10">
+          {/* Center: Centered Logo (Absolute positioned for mathematical centering) */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+            <Link href="/" className="flex items-center group cursor-pointer pointer-events-auto">
               <div className={`rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 flex items-center justify-center bg-white ${
                 isLight ? "ring-1 ring-slate-200" : "ring-1 ring-white/10"
               } ${
@@ -150,7 +150,7 @@ export default function Navbar() {
           </div>
 
           {/* Right: Actions */}
-          <div className="flex items-center gap-4 justify-end">
+          <div className="flex items-center gap-4">
             <Link
               href="/#contact"
               className={`hidden xl:block text-[11px] font-black transition-colors tracking-[0.2em] uppercase ${
