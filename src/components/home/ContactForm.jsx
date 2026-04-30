@@ -61,7 +61,7 @@ export default function ContactForm() {
               </motion.button>
               
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 font-medium border-t border-gray-100 gap-2">
-                <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-green-500 rounded-full"/> No waiting</span>
+                <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-green-500 rounded-full"/> ERASE CONFUSION = GET CLARITY</span>
                 <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-green-500 rounded-full"/> Direct specialist review</span>
                 <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-green-500 rounded-full"/> Personalized diagnosis</span>
               </div>

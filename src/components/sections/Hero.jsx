@@ -36,7 +36,7 @@ export default function Hero() {
 
   return (
     <section 
-      className={`relative h-[100dvh] w-full bg-black overflow-hidden flex items-end text-white transition-all duration-700 ease-in-out ${
+      className={`relative min-h-screen md:h-[100dvh] w-full bg-black overflow-hidden flex flex-col md:items-end text-white transition-all duration-700 ease-in-out ${
         isScrolled ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
       }`}
     >
@@ -69,23 +69,23 @@ export default function Hero() {
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background: isMobile 
-            ? "rgba(0,0,0,0.35)" 
+            ? "linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%)" 
             : "linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 35%, rgba(0,0,0,0.15) 100%)"
         }}
       />
 
         {/* 📝 CONTENT - Strict Left Alignment & Padding */}
-        <div className="relative z-[2] w-full pb-16 md:pb-32 pl-6 md:pl-20 pr-6 md:pr-12">
-          <div className="flex flex-col lg:flex-row items-end justify-between gap-12">
+        <div className="relative z-[2] w-full pt-[120px] md:pt-0 pb-10 md:pb-32 px-6 md:pl-20 md:pr-12">
+          <div className="flex flex-col lg:flex-row md:items-end justify-between gap-12">
             
             {/* Text Content Block */}
-            <div className="w-full max-w-[600px] space-y-10 md:space-y-12"> 
-              <div>
+            <div className="w-full max-w-full md:max-w-[600px] flex flex-col items-start"> 
+              <div className="w-full">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="text-[36px] sm:text-[48px] md:text-[68px] font-bold leading-[1.1] tracking-tight font-heading"
+                  className="text-[34px] md:text-[68px] font-bold leading-[42px] md:leading-[1.1] tracking-tight font-heading text-left"
                 >
                   We find the <span className="text-[#A3E635]">root cause</span>.<br />
                   We fix it for good.
@@ -95,7 +95,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-                  className="mt-6 md:mt-8 text-[17px] md:text-[21px] text-white/90 font-medium leading-relaxed"
+                  className="mt-4 md:mt-8 text-[16px] md:text-[21px] leading-[24px] md:leading-relaxed text-white/90 font-medium text-left"
                 >
                   India's specialized institute focused on root-cause diagnosis.
                   Personalized care for patients aged 2 to 80.
@@ -107,18 +107,18 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="flex flex-col sm:flex-row gap-5"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-5 mt-6 w-full md:w-auto"
               >
                 <Link
                   href="/#contact"
-                  className="bg-primary text-white px-10 md:px-12 py-5 md:py-4 rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 text-center shadow-xl flex items-center justify-center gap-3"
+                  className="bg-primary text-white w-full sm:w-auto px-10 md:px-12 h-[48px] md:h-auto md:py-4 rounded-[12px] md:rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 text-center shadow-xl flex items-center justify-center gap-3"
                 >
                   Start Root-Cause Diagnosis
                 </Link>
                 <Link
                   href="https://wa.me/918074368748?text=Hi, I'd like to start my root-cause evaluation."
                   target="_blank"
-                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 md:px-12 py-5 md:py-4 rounded-full font-bold transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-3"
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white w-full sm:w-auto px-10 md:px-12 h-[48px] md:h-auto md:py-4 rounded-[12px] md:rounded-full font-bold transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-3 mt-1 sm:mt-0"
                 >
                   <MessageCircle size={22} className="text-[#25D366]" />
                   WhatsApp Specialist
@@ -126,12 +126,12 @@ export default function Hero() {
               </motion.div>
 
               {/* 📍 POINTS & TRUST BADGE */}
-              <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
+              <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-16 mt-5 md:mt-12">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
-                  className="flex flex-col gap-3 text-[13px] font-bold text-white/60 uppercase tracking-widest"
+                  className="flex flex-col gap-2 md:gap-3 text-[13px] font-bold text-white/60 uppercase tracking-widest"
                 >
                   <span className="flex items-center gap-3">
                     <span className="text-primary-accent text-xl leading-none">•</span> 15 min callback
@@ -140,7 +140,7 @@ export default function Hero() {
                     <span className="text-primary-accent text-xl leading-none">•</span> Specialist review
                   </span>
                   <span className="flex items-center gap-3">
-                    <span className="text-primary-accent text-xl leading-none">•</span> No waiting
+                    <span className="text-primary-accent text-xl leading-none">•</span> ERASE CONFUSION = GET CLARITY
                   </span>
                 </motion.div>
 
@@ -148,7 +148,7 @@ export default function Hero() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
-                  className="flex items-center gap-5 bg-white/5 border border-white/10 px-8 py-5 rounded-3xl backdrop-blur-xl w-fit"
+                  className="flex items-center gap-5 bg-white/5 border border-white/10 px-8 py-5 rounded-3xl backdrop-blur-xl w-full md:w-fit"
                 >
                   <div className="text-primary-accent">
                     <CheckCircle2 size={36} />
@@ -159,17 +159,15 @@ export default function Hero() {
                   </div>
                 </motion.div>
               </div>
-            </div>
 
-            {/* DOCTOR TRUST PORTRAIT */}
-            <div className="flex justify-start lg:justify-end pr-0 md:pr-12">
+              {/* DOCTOR TRUST PORTRAIT (Moved below main content for mobile) */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={isLoaded ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-                className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-md"
+                className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[1.5rem] md:rounded-[2.5rem] border border-white/10 backdrop-blur-md w-full md:w-auto mt-6 md:mt-0"
               >
-                <div className="relative w-20 h-20 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl shrink-0">
+                <div className="relative w-16 h-16 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl shrink-0">
                   <Image 
                     src="/images/dr-nageswar.jpeg"
                     alt="Dr. Vyakarnam"
@@ -184,6 +182,7 @@ export default function Hero() {
                 </div>
               </motion.div>
             </div>
+
           </div>
         </div>
 

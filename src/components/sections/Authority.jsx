@@ -49,7 +49,7 @@ export default function Authority() {
                   </div>
                   <div>
                     <span className="text-[10px] font-black uppercase tracking-widest text-primary-accent block mb-1">Vatican Recognition</span>
-                    <p className="text-xs text-white/60 leading-tight">Recognized by the Pontifical Council for Healthcare for pioneering contribution to affordable allergy cures.</p>
+                    <p className="text-xs text-white/60 leading-tight">Recognized by the Pontifical Council for Healthcare for pioneering contribution to affordable allergy clinical relief(long term sustained).</p>
                   </div>
                </div>
                <div className="flex items-start gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl group hover:border-primary-accent/30 transition-colors">

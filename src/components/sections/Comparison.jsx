@@ -24,7 +24,24 @@ export default function Comparison() {
         <div className="text-center mb-16">
           <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The clinical difference</span>
           <h2 className="text-3xl md:text-6xl font-bold mb-8 leading-tight tracking-tight text-slate-900">Root-cause resolution. <br/> <span className="text-slate-500 font-medium">Not temporary relief.</span></h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed">Most clinical practices focus on short-term symptomatic relief. We aim to train your immune system to stop reacting altogether, providing permanent long-term solutions.</p>
+          <p className="text-xl text-slate-600 max-w-4xl mx-auto font-medium leading-relaxed mb-8">
+            The clinical practice is based to understand the patient individual immune responses. At the Asian Institute of Allergy Asthma and Immunology, every patient has his own story and his own treatment protocol.
+            <br /><br />
+            Understanding how the disease started is half the work done. Applying treatment without a silent conversation, without a patient conversation with the sufferer, will only lead to the rebound of diseases.
+            <br /><br />
+            At Asian Institute of Allergy Asthma and Immunology, our team has an interaction clinically with the patient, just to know how their disease started. It may prolong to the extent of 45 minutes to one and a half hour, and that is the key of the success of each patient.
+          </p>
+          <div className="bg-slate-50 p-8 md:p-12 rounded-[2rem] border border-slate-100 max-w-4xl mx-auto text-left">
+            <p className="text-lg md:text-xl text-slate-900 font-bold leading-relaxed">
+              From allergy to autoimmune disorders, to metabolic disorders, and to the malignancy conditions, it is all the same immunological changes.
+              <br /><br />
+              Where are you?<br />
+              Where are you proceeding?<br />
+              And how to stop this progress of immunological cascade determines your recovery.
+              <br /><br />
+              At Asian Institute of Allergy, our team is trained to identify at which stage you are and do a reset of the same.
+            </p>
+          </div>
         </div>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-slate-100">

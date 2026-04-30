@@ -67,10 +67,11 @@ export default function Navbar() {
           borderColor: isLight ? "rgba(0,0,0,0.1)" : "rgba(255,255,255,0.1)",
         }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="grid grid-cols-2 lg:grid-cols-3 items-center h-[64px] md:h-[80px] border shadow-2xl relative z-[1001] px-6 md:px-10 overflow-visible"
+        className="grid grid-cols-3 items-center h-[64px] md:h-[80px] border shadow-2xl relative z-[1001] px-6 md:px-10 overflow-visible"
       >
         {/* Left Side Links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="flex items-center">
+          <div className="hidden lg:flex items-center gap-8">
           {navLinks.slice(0, 3).map((link) => (
             <Link
               key={link.name}
@@ -84,14 +85,15 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+          </div>
         </div>
 
         {/* Center Logo */}
-        <Link href="/" className="flex items-center justify-self-center group">
+        <Link href="/" className="flex items-center justify-self-center group cursor-pointer">
           <div className={`rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 flex items-center justify-center bg-white ${
             isLight ? "ring-1 ring-slate-200" : "ring-1 ring-white/10"
           } ${
-            isScrolled ? "p-1.5 md:p-2" : "p-2 md:p-3"
+            isScrolled ? "p-1 md:p-1.5" : "p-1.5 md:p-2"
           }`}>
             <Image 
               src="/images/asian institute of allergy logo.jpg" 
@@ -99,7 +101,7 @@ export default function Navbar() {
               width={200} 
               height={200}
               className={`w-auto object-contain transition-all duration-500 ${
-                isScrolled ? "h-[45px] md:h-[65px]" : "h-[60px] md:h-[90px]"
+                isScrolled ? "h-[55px] md:h-[70px]" : "h-[85px] md:h-[110px]"
               }`}
               priority
             />
@@ -119,7 +121,7 @@ export default function Navbar() {
           
           <Link
             href={isWAF ? "/contribute" : "/#contact"}
-            className={`px-6 md:px-8 py-2.5 md:py-3.5 rounded-full text-[9px] md:text-[11px] font-black uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95 ${
+            className={`px-6 md:px-8 py-2.5 md:py-3.5 rounded-full text-[10px] md:text-[11px] font-black uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95 ${
               isLight ? "bg-slate-900 text-white hover:bg-primary" : "bg-white text-black hover:bg-primary-accent"
             }`}
           >

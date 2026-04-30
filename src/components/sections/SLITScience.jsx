@@ -28,7 +28,7 @@ const mechanismData = {
       { text: "Reprograms immune T-cells", icon: <PlusCircle className="text-primary-accent" /> },
       { text: "No needles, 30s home routine", icon: <PlusCircle className="text-primary-accent" /> },
       { text: "Resolves the underlying cause", icon: <PlusCircle className="text-primary-accent" /> },
-      { text: "Clinical cure in 6-12 months", icon: <PlusCircle className="text-primary-accent" /> }
+      { text: "clinical relief(long term sustained) in 6-12 months", icon: <PlusCircle className="text-primary-accent" /> }
     ],
     outcome: "Medication Freedom",
     color: "bg-primary-accent/10 border-primary-accent/20"

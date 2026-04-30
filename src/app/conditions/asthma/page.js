@@ -28,7 +28,7 @@ export default function AsthmaPage() {
 
   const faqs = [
     {
-      question: "Can allergic asthma be cured permanently?",
+      question: "Can allergic asthma provide clinical relief(long term sustained)?",
       answer: "While traditional medicine focuses on management via inhalers, our root-cause approach using Sublingual Immunotherapy (SLIT) aims to desensitize the immune system, leading to long-term resolution and significantly reduced drug dependency."
     },
     {
