@@ -67,12 +67,12 @@ export default function Navbar() {
           borderColor: isLight ? "rgba(0,0,0,0.1)" : "rgba(255,255,255,0.1)",
         }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="flex items-center justify-between h-[64px] md:h-[80px] border shadow-2xl relative z-[1001] px-4 md:px-10 overflow-visible"
+        className="relative z-[1001] border shadow-2xl overflow-visible"
       >
-        {/* Left Side: Logo (Mobile) or Links (Desktop) */}
-        <div className="flex items-center gap-8">
-          {/* Mobile Logo */}
-          <Link href="/" className="flex lg:hidden items-center group cursor-pointer">
+        {/* MOBILE & TABLET HEADER (≤1024px) */}
+        <div className="flex lg:hidden items-center justify-between h-[64px] px-4 w-full">
+          {/* Logo Left */}
+          <Link href="/" className="flex items-center group cursor-pointer">
             <div className={`rounded-xl shadow-lg transition-all duration-500 bg-white p-1 ${
               isLight ? "ring-1 ring-slate-200" : "ring-1 ring-white/10"
             }`}>
@@ -87,8 +87,31 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-8">
+          {/* Right Actions: CTA + Hamburger */}
+          <div className="flex items-center gap-2">
+            <Link
+              href={isWAF ? "/contribute" : "/#contact"}
+              className={`px-3.5 h-[36px] rounded-full text-[12px] font-black uppercase tracking-widest transition-all shadow-xl flex items-center justify-center whitespace-nowrap ${
+                isLight ? "bg-slate-900 text-white hover:bg-primary" : "bg-white text-black hover:bg-primary-accent"
+              }`}
+            >
+              {isWAF ? "Contribute" : "Book Evaluation"}
+            </Link>
+            <button 
+              onClick={() => setIsOpen(!isOpen)}
+              className={`p-2 rounded-xl transition-colors ${
+                isLight ? "text-slate-900 hover:bg-slate-100" : "text-white hover:bg-white/10"
+              }`}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* DESKTOP HEADER (≥1024px) */}
+        <div className="hidden lg:grid grid-cols-3 items-center h-[80px] px-10 w-full relative">
+          {/* Left: Links */}
+          <div className="flex items-center gap-8">
             {navLinks.slice(0, 3).map((link) => (
               <Link
                 key={link.name}
@@ -103,83 +126,70 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-        </div>
 
-        {/* Center Logo (Desktop Only) */}
-        <div className="absolute left-1/2 -translate-x-1/2 hidden lg:block">
-          <Link href="/" className="flex items-center group cursor-pointer">
-            <div className={`rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 flex items-center justify-center bg-white ${
-              isLight ? "ring-1 ring-slate-200" : "ring-1 ring-white/10"
-            } ${
-              isScrolled ? "p-1 md:p-1.5" : "p-1.5 md:p-2"
-            }`}>
-              <Image 
-                src="/images/asian institute of allergy logo.jpg" 
-                alt="Asian Institute of Allergy" 
-                width={200} 
-                height={200}
-                className={`w-auto object-contain transition-all duration-500 ${
-                  isScrolled ? "h-[55px] md:h-[70px]" : "h-[85px] md:h-[110px]"
-                }`}
-                priority
-              />
-            </div>
-          </Link>
-        </div>
-
-        {/* Right Side Actions */}
-        <div className="flex items-center gap-2 md:gap-4">
-          <Link
-            href="/#contact"
-            className={`hidden xl:block text-[11px] font-black transition-colors tracking-[0.2em] uppercase ${
-              isLight ? "text-slate-900/60 hover:text-slate-900" : "text-white/80 hover:text-white"
-            }`}
-          >
-            Contact
-          </Link>
-          
-          <Link
-            href={isWAF ? "/contribute" : "/#contact"}
-            className={`px-3.5 md:px-8 h-[36px] md:h-auto md:py-3.5 rounded-full text-[12px] md:text-[11px] font-black uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center justify-center whitespace-nowrap ${
-              isLight ? "bg-slate-900 text-white hover:bg-primary" : "bg-white text-black hover:bg-primary-accent"
-            }`}
-          >
-            {isWAF ? "Contribute" : "Book Evaluation"}
-          </Link>
-
-          {/* Mode Toggle Switch (Desktop Only) */}
-          <div className={`hidden md:flex items-center rounded-full p-1 border transition-colors ${
-            isLight ? "bg-slate-900/5 border-slate-900/10" : "bg-white/5 border-white/10"
-          }`}>
-            <Link 
-              href="/"
-              aria-label="Switch to Asian Institute"
-              className={`p-2 rounded-full transition-all ${!isWAF 
-                ? (isLight ? "bg-slate-900 text-white" : "bg-white text-black shadow-lg") 
-                : "text-slate-400 hover:text-slate-900"}`}
-            >
-              <Building2 size={14} />
-            </Link>
-            <Link 
-              href="/world-allergy-foundation"
-              aria-label="Switch to World Allergy Foundation"
-              className={`p-2 rounded-full transition-all ${isWAF 
-                ? "bg-primary text-white shadow-lg" 
-                : (isLight ? "text-slate-400 hover:text-slate-900" : "text-white/40 hover:text-white")}`}
-            >
-              <Globe size={14} />
+          {/* Center: Logo */}
+          <div className="flex items-center justify-center">
+            <Link href="/" className="flex items-center group cursor-pointer relative z-10">
+              <div className={`rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 flex items-center justify-center bg-white ${
+                isLight ? "ring-1 ring-slate-200" : "ring-1 ring-white/10"
+              } ${
+                isScrolled ? "p-1 md:p-1.5" : "p-1.5 md:p-2"
+              }`}>
+                <Image 
+                  src="/images/asian institute of allergy logo.jpg" 
+                  alt="Asian Institute of Allergy" 
+                  width={200} 
+                  height={200}
+                  className={`w-auto object-contain transition-all duration-500 ${
+                    isScrolled ? "h-[55px] md:h-[70px]" : "h-[85px] md:h-[110px]"
+                  }`}
+                  priority
+                />
+              </div>
             </Link>
           </div>
 
-          {/* Hamburger */}
-          <button 
-            onClick={() => setIsOpen(!isOpen)}
-            className={`p-2 rounded-xl transition-colors ${
-              isLight ? "text-slate-900 hover:bg-slate-100" : "text-white hover:bg-white/10"
-            }`}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Right: Actions */}
+          <div className="flex items-center gap-4 justify-end">
+            <Link
+              href="/#contact"
+              className={`hidden xl:block text-[11px] font-black transition-colors tracking-[0.2em] uppercase ${
+                isLight ? "text-slate-900/60 hover:text-slate-900" : "text-white/80 hover:text-white"
+              }`}
+            >
+              Contact
+            </Link>
+            
+            <Link
+              href={isWAF ? "/contribute" : "/#contact"}
+              className={`px-8 py-3.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95 ${
+                isLight ? "bg-slate-900 text-white hover:bg-primary" : "bg-white text-black hover:bg-primary-accent"
+              }`}
+            >
+              {isWAF ? "Contribute Now" : "Book Evaluation"}
+            </Link>
+
+            <div className={`flex items-center rounded-full p-1 border transition-colors ${
+              isLight ? "bg-slate-900/5 border-slate-900/10" : "bg-white/5 border-white/10"
+            }`}>
+              <Link 
+                href="/"
+                className={`p-2 rounded-full transition-all ${!isWAF 
+                  ? (isLight ? "bg-slate-900 text-white" : "bg-white text-black shadow-lg") 
+                  : "text-slate-400 hover:text-slate-900"}`}
+              >
+                <Building2 size={14} />
+              </Link>
+              <Link 
+                href="/world-allergy-foundation"
+                className={`p-2 rounded-full transition-all ${isWAF 
+                  ? "bg-primary text-white shadow-lg" 
+                  : (isLight ? "text-slate-400 hover:text-slate-900" : "text-white/40 hover:text-white")}`}
+              >
+                <Globe size={14} />
+              </Link>
+            </div>
+          </div>
         </div>
       </motion.nav>
 
