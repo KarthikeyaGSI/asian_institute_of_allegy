@@ -67,7 +67,7 @@ export default function Navbar() {
           borderColor: isLight ? "rgba(0,0,0,0.1)" : "rgba(255,255,255,0.1)",
         }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-[1001] border shadow-2xl overflow-visible"
+        className="relative z-[1001] border shadow-2xl overflow-visible h-[64px] lg:h-[80px]"
       >
         {/* MOBILE & TABLET HEADER (≤1024px) */}
         <div className="flex lg:hidden items-center justify-between h-[64px] px-4 w-full">
