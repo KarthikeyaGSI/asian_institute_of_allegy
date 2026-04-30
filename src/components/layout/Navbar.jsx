@@ -60,8 +60,8 @@ export default function Navbar() {
           backgroundColor: isScrolled 
             ? (isLight ? "rgba(255, 255, 255, 0.98)" : "rgba(10, 10, 10, 0.98)")
             : isWAF 
-              ? "rgba(10, 10, 10, 0.8)" 
-              : (isLight ? "rgba(255, 255, 255, 0.05)" : "rgba(15, 15, 15, 0.05)"),
+              ? (isLight ? "rgba(255, 255, 255, 0.95)" : "rgba(10, 10, 10, 0.8)")
+              : (isLight ? "rgba(255, 255, 255, 0.1)" : "rgba(15, 15, 15, 0.1)"),
           backdropFilter: isScrolled ? "blur(32px)" : "blur(16px)",
           borderRadius: isScrolled ? "999px" : "0px",
           borderColor: isLight ? "rgba(0,0,0,0.1)" : "rgba(255,255,255,0.1)",
@@ -111,18 +111,18 @@ export default function Navbar() {
         {/* --- DESKTOP LAYOUT (≥1024px) --- */}
         <div className="hidden lg:flex items-center justify-between w-full px-10 h-full relative">
           {/* Left: Navigation Links */}
-          <div className="flex items-center gap-8">
+          <div className={`flex items-center transition-all duration-500 ${isScrolled ? "gap-4 xl:gap-6" : "gap-6 xl:gap-8"}`}>
             {navLinks.slice(0, 3).map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-[11px] font-black tracking-[0.2em] uppercase transition-all duration-300 ${
+                className={`text-[10px] xl:text-[11px] font-black tracking-[0.15em] xl:tracking-[0.2em] uppercase transition-all duration-300 whitespace-nowrap ${
                   pathname === link.href 
                     ? "text-primary-accent" 
                     : (isLight ? "text-slate-900/60 hover:text-slate-900" : "text-white/80 hover:text-white")
                 }`}
               >
-                {link.name}
+                {link.name === "World Allergy Foundation" ? "Foundation" : link.name}
               </Link>
             ))}
           </div>

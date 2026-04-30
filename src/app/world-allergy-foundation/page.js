@@ -119,7 +119,7 @@ export default function WorldAllergyFoundation() {
       
       <div data-header-theme="light">
         {/* Hero Section */}
-        <section className="pt-24 md:pt-40 pb-24 bg-slate-50 relative overflow-hidden">
+        <section className="pt-32 md:pt-40 pb-24 bg-slate-50 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
           <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
             <div className="flex flex-col items-center text-center">
