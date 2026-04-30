@@ -21,12 +21,12 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "Asian Institute of Allergy, Asthma & Immunology | Centre of Excellence",
-  description: "India's leading institute for root-cause allergy treatment. Specialist care for Asthma, Eczema, and Immunological disorders in Hyderabad. Led by Dr. Vyakarnam, providing Sublingual Immunotherapy (SLIT) for permanent relief to 50,000+ patients.",
-  keywords: "allergy treatment Hyderabad, asthma specialist India, immunotherapy centre, Dr. Vyakarnam, root cause allergy diagnosis, sublingual immunotherapy SLIT, skin allergy treatment, chronic sinusitis relief",
+  title: "Allergy Specialist in Hyderabad | Dr. Vyakarnam | Asian Institute of Allergy",
+  description: "Eliminate allergies at the root cause with India's leading specialists. Advanced treatment for Asthma, Skin Allergy, Eczema & Chronic Sinusitis in Hyderabad. Global standard Sublingual Immunotherapy (SLIT) for permanent clinical relief. Book your 45-minute specialist interaction today.",
+  keywords: "best allergy doctor Hyderabad, asthma specialist India, permanent allergy cure, immunotherapy center Hyderabad, Dr. Vyakarnam Nageshwar, root cause allergy diagnosis, SLIT treatment India, paediatric allergy specialist",
   openGraph: {
-    title: "Asian Institute of Allergy & Immunology | Root-Cause Excellence",
-    description: "Resolving chronic allergic conditions for 20+ years. Advanced diagnostic protocols and permanent immunotherapy solutions.",
+    title: "Asian Institute of Allergy | India's Leading Root-Cause Clinic",
+    description: "Specialized clinical relief for chronic allergies. 50,000+ success stories worldwide. Led by Chief Immunologist Dr. Vyakarnam.",
     url: "https://asianinstituteofallergy.com",
     siteName: "Asian Institute of Allergy",
     images: [
@@ -42,7 +42,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asian Institute of Allergy | India's Root-Cause Specialists",
+    title: "Asian Institute of Allergy | Permanent Allergy Relief Specialists",
     description: "Expert immunology care and SLIT treatment for chronic conditions.",
     images: ["/images/dr-nageswar.jpeg"],
   },
@@ -126,6 +126,41 @@ export default function RootLayout({ children }) {
                 "@type": "MedicalClinic",
                 name: "Asian Institute of Allergy"
               }
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Can allergies be cured permanently?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, at the Asian Institute of Allergy, we focus on root-cause diagnosis and Sublingual Immunotherapy (SLIT) to train the immune system, providing long-term clinical relief from chronic allergies."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is root-cause allergy diagnosis?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Root-cause diagnosis involves understanding a patient's individual immune response through extensive clinical interaction (45-90 minutes) to identify why the disease started, rather than just treating symptoms."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is immunotherapy safe for children?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Sublingual Immunotherapy (SLIT) is a safe, needle-free, and effective treatment option for patients as young as 2 years old, helping them develop natural immunity against allergens."
+                  }
+                }
+              ]
             }),
           }}
         />

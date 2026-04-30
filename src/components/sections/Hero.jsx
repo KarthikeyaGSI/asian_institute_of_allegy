@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle, CheckCircle2, ChevronDown } from "lucide-react";
+import Magnetic from "@/components/effects/Magnetic";
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -111,20 +112,24 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col sm:flex-row gap-3 sm:gap-5 mt-8 w-full lg:w-auto"
             >
-              <Link
-                href="/#contact"
-                className="bg-primary text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 text-center shadow-2xl flex items-center justify-center gap-3"
-              >
-                Start Root-Cause Diagnosis
-              </Link>
-              <Link
-                href="https://wa.me/918074368748?text=Hi, I'd like to start my root-cause evaluation."
-                target="_blank"
-                className="bg-white/10 backdrop-blur-md border border-white/20 text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-3 mt-1 sm:mt-0"
-              >
-                <MessageCircle size={22} className="text-[#25D366]" />
-                WhatsApp Specialist
-              </Link>
+              <Magnetic>
+                <Link
+                  href="/#contact"
+                  className="bg-primary text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 text-center shadow-2xl flex items-center justify-center gap-3"
+                >
+                  Start Root-Cause Diagnosis
+                </Link>
+              </Magnetic>
+              <Magnetic>
+                <Link
+                  href="https://wa.me/918074368748?text=Hi, I'd like to start my root-cause evaluation."
+                  target="_blank"
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-3 mt-1 sm:mt-0"
+                >
+                  <MessageCircle size={22} className="text-[#25D366]" />
+                  WhatsApp Specialist
+                </Link>
+              </Magnetic>
             </motion.div>
 
             {/* 📍 POINTS & TRUST BADGE */}

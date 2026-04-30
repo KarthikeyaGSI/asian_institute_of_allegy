@@ -6,6 +6,7 @@ import { Menu, X, LayoutGrid, Globe, Building2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Magnetic from "@/components/effects/Magnetic";
 
 const navLinks = [
   { name: "Treatments", href: "/treatments" },
@@ -160,14 +161,16 @@ export default function Navbar() {
               Contact
             </Link>
             
-            <Link
-              href={isWAF ? "/contribute" : "/#contact"}
-              className={`px-8 py-3.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95 ${
-                isLight ? "bg-slate-900 text-white hover:bg-primary" : "bg-white text-black hover:bg-primary-accent"
-              }`}
-            >
-              {isWAF ? "Contribute Now" : "Book Evaluation"}
-            </Link>
+            <Magnetic>
+              <Link
+                href={isWAF ? "/contribute" : "/#contact"}
+                className={`px-8 py-3.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95 ${
+                  isLight ? "bg-slate-900 text-white hover:bg-primary" : "bg-white text-black hover:bg-primary-accent"
+                }`}
+              >
+                {isWAF ? "Contribute Now" : "Book Evaluation"}
+              </Link>
+            </Magnetic>
 
             <div className={`flex items-center rounded-full p-1 border transition-colors ${
               isLight ? "bg-slate-900/5 border-slate-900/10" : "bg-white/5 border-white/10"
