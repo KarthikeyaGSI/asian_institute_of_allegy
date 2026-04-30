@@ -21,12 +21,15 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "Allergy Specialist in Hyderabad | Dr. Vyakarnam | Asian Institute of Allergy",
-  description: "Eliminate allergies at the root cause with India's leading specialists. Advanced treatment for Asthma, Skin Allergy, Eczema & Chronic Sinusitis in Hyderabad. Global standard Sublingual Immunotherapy (SLIT) for permanent clinical relief. Book your 45-minute specialist interaction today.",
-  keywords: "best allergy doctor Hyderabad, asthma specialist India, permanent allergy cure, immunotherapy center Hyderabad, Dr. Vyakarnam Nageshwar, root cause allergy diagnosis, SLIT treatment India, paediatric allergy specialist",
+  title: {
+    default: "Asian Institute of Allergy",
+    template: "%s | Asian Institute"
+  },
+  description: "Centre of Excellence for Allergy, Asthma & Immunology. Root-cause treatment for chronic conditions. 50,000+ patients treated with a permanent clinical relief approach in Hyderabad, India.",
+  keywords: "allergy treatment Hyderabad, asthma specialist India, permanent allergy relief, Dr. Vyakarnam Nageshwar, root cause diagnosis, SLIT immunotherapy",
   openGraph: {
-    title: "Asian Institute of Allergy | India's Leading Root-Cause Clinic",
-    description: "Specialized clinical relief for chronic allergies. 50,000+ success stories worldwide. Led by Chief Immunologist Dr. Vyakarnam.",
+    title: "Asian Institute of Allergy | Root-Cause Excellence",
+    description: "Resolving chronic allergic conditions for 20+ years. Advanced diagnostic protocols and permanent immunotherapy solutions.",
     url: "https://asianinstituteofallergy.com",
     siteName: "Asian Institute of Allergy",
     images: [
