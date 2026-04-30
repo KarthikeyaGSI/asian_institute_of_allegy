@@ -111,18 +111,18 @@ export default function Navbar() {
         {/* --- DESKTOP LAYOUT (≥1024px) --- */}
         <div className="hidden lg:flex items-center justify-between w-full px-10 h-full relative">
           {/* Left: Navigation Links */}
-          <div className={`flex items-center transition-all duration-500 ${isScrolled ? "gap-4 xl:gap-6" : "gap-6 xl:gap-8"}`}>
+          <div className={`flex items-center transition-all duration-500 ${isScrolled ? "gap-2 xl:gap-6" : "gap-4 xl:gap-8"}`}>
             {navLinks.slice(0, 3).map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-[10px] xl:text-[11px] font-black tracking-[0.15em] xl:tracking-[0.2em] uppercase transition-all duration-300 whitespace-nowrap ${
+                className={`text-[9px] xl:text-[11px] font-black tracking-tighter xl:tracking-[0.15em] uppercase transition-all duration-300 whitespace-nowrap ${
                   pathname === link.href 
                     ? "text-primary-accent" 
                     : (isLight ? "text-slate-900/60 hover:text-slate-900" : "text-white/80 hover:text-white")
                 }`}
               >
-                {link.name === "World Allergy Foundation" ? "Foundation" : link.name}
+                {link.name}
               </Link>
             ))}
           </div>
