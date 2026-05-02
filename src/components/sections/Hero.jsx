@@ -167,24 +167,25 @@ export default function Hero() {
               </motion.div>
             </div>
 
-            {/* DOCTOR TRUST PORTRAIT */}
+            {/* DOCTOR TRUST PORTRAIT - Optimized for Relative Mobile */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[1.5rem] lg:rounded-[2.5rem] border border-white/10 backdrop-blur-md w-full lg:w-auto mt-10 lg:mt-0 lg:ml-auto lg:self-center"
+              className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[1.5rem] lg:rounded-[2.5rem] border border-white/10 backdrop-blur-md w-full lg:w-auto mt-12 lg:mt-0 lg:ml-auto lg:self-center relative overflow-hidden group"
             >
+              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               <div className="relative w-16 h-16 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl shrink-0">
                 <Image 
                   src="/images/dr-nageswar.jpeg"
-                  alt="Dr. Vyakarnam"
+                  alt="Dr. Vyakarnam Nageshwar - Chief Immunologist"
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 1024px) 80px, 160px"
                 />
               </div>
-              <div className="text-left lg:text-center">
-                <p className="text-base lg:text-lg font-bold text-white tracking-tight">Dr. Vyakarnam</p>
+              <div className="text-left lg:text-center relative z-10">
+                <p className="text-base lg:text-xl font-bold text-white tracking-tight">Dr. Vyakarnam</p>
                 <p className="text-[10px] lg:text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mt-1">Chief Immunologist</p>
               </div>
             </motion.div>

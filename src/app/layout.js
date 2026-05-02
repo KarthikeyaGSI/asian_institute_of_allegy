@@ -26,11 +26,11 @@ export const metadata = {
     default: "Asian Institute of Allergy | Root-Cause Clinical Excellence",
     template: "%s | Asian Institute of Allergy"
   },
-  description: "India's leading Centre of Excellence for Chronic Allergy, Asthma & Immunology. Specializing in permanent clinical relief through root-cause diagnosis and SLIT immunotherapy. 50,000+ success stories.",
-  keywords: "chronic allergy treatment, asthma specialist Hyderabad, permanent allergy relief, root cause immunology, SLIT treatment India, environmental allergy mapping, H5N1 global health advisory, HPV vaccine safety research, Dr. Vyakarnam Nageshwar, seasonal allergy trends 2025",
+  description: "India's specialized Centre of Excellence for Chronic Allergy, Asthma & Immunology. We resolve chronic conditions by identifying the root-cause using precision diagnostics and Sublingual Immunotherapy (SLIT). Directed by Dr. Vyakarnam Nageshwar.",
+  keywords: "chronic allergy resolution, SLIT immunotherapy benefits, asthma root cause treatment, permanent allergy relief Hyderabad, Dr. Vyakarnam Nageshwar immunology, environmental trigger mapping, H5N1 global health advisory 2025, HPV vaccine immune safety, immunotherapy success rate India",
   openGraph: {
-    title: "Asian Institute of Allergy | The Science of Permanent Relief",
-    description: "Don't just suppress symptoms. We identify and resolve the root cause of your allergies. Advanced diagnostic protocols for patients aged 2 to 80.",
+    title: "Asian Institute of Allergy | Science of Permanent Immune Relief",
+    description: "Don't just mask symptoms. Our clinical protocols identify 'why' your immune system overreacts. Advanced SLIT solutions for long-term health freedom.",
     url: "https://asianinstituteofallergy.com",
     siteName: "Asian Institute of Allergy",
     images: [
@@ -46,8 +46,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asian Institute of Allergy | Root-Cause Specialists",
-    description: "Advanced immunology care and permanent SLIT treatment for chronic conditions.",
+    title: "Asian Institute of Allergy | Root-Cause Resolution Experts",
+    description: "Resolving chronic respiratory and skin allergies through precision immunology.",
     images: ["/images/dr-nageswar.jpeg"],
   },
   alternates: {
