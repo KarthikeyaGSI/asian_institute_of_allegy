@@ -222,18 +222,7 @@ export default function Testimonials() {
 
         <div className="mt-20 text-center">
            <div className="inline-flex items-center gap-8 p-6 bg-white rounded-3xl border border-slate-100">
-             <div className="flex -space-x-3">
-                {[1,2,3,4].map(i => (
-                  <div key={i} className="relative w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
-                    <Image 
-                      src={`https://i.pravatar.cc/100?u=${i}`} 
-                      alt="user" 
-                      fill 
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
-             </div>
+
              <div className="text-left">
                 <p className="text-sm font-bold text-slate-900">Join 50,000+ Patient Stories</p>
                 <p className="text-xs text-slate-500">International patients</p>
