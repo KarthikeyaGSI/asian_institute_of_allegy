@@ -19,7 +19,6 @@ export default function Hero() {
           loop
           muted
           playsInline
-          poster="/images/best-allergy-hospital.webp" // Mobile fallback/poster
           className="w-full h-full object-cover object-center"
         >
           <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
