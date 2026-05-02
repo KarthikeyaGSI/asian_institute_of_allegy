@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 // Phase 1 (Static - Above the fold)
 import Hero from "@/components/sections/Hero";
-import GuidedEntry from "@/components/sections/GuidedEntry";
+
 
 // Phase 2 (Dynamic)
 const Comparison = dynamic(() => import("@/components/sections/Comparison"), { ssr: true });
@@ -46,7 +46,7 @@ export default function Home() {
       
       {/* PHASE 1: THE TRUST LAYER */}
       <Hero />
-      <GuidedEntry onStartQuiz={() => setIsQuizOpen(true)} />
+
       
       <DiagnosticQuiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
       

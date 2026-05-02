@@ -144,23 +144,7 @@ export default function ClinicalSuccessPage() {
         </div>
       </section>
 
-      {/* Proof Strip */}
-      <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1a5f3a20_0%,transparent_50%)]" />
-        <div className="container-custom relative z-10 text-center">
-           <div className="inline-flex items-center gap-4 mb-12">
-              <Microscope className="text-primary-accent" size={24} />
-              <span className="text-xs font-black uppercase tracking-[0.5em] text-white/40">Clinical Validation</span>
-           </div>
-           <h3 className="text-3xl md:text-5xl font-bold font-heading mb-12 italic">"A Referral Hub for Complex Allergy & Immunological Conditions."</h3>
-           <div className="flex flex-wrap justify-center gap-12 opacity-30">
-              <span className="font-bold">TV9 TELUGU</span>
-              <span className="font-bold">DECCAN CHRONICLE</span>
-              <span className="font-bold">EUROPEAN SUN TIMES</span>
-              <span className="font-bold">DECCAN HERALD</span>
-           </div>
-        </div>
-      </section>
+
 
       <Footer />
     </main>
