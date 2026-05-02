@@ -62,7 +62,7 @@ export default function Footer() {
             <h3 className="font-bold text-lg text-slate-900">Quick Links</h3>
             <div className="grid grid-cols-1 gap-3">
               <Link href="/treatments" className="text-slate-700 font-medium hover:text-primary transition-colors">Advanced Treatments</Link>
-              <Link href="/clinical-success" className="text-slate-700 font-medium hover:text-primary transition-colors">Success Stories</Link>
+              <Link href="/clinical-success" className="text-slate-700 font-medium hover:text-primary transition-colors">Patient Stories</Link>
               <button 
                 onClick={() => window.dispatchEvent(new CustomEvent("open-quiz"))}
                 className="text-left text-slate-700 font-medium hover:text-primary transition-colors cursor-pointer"

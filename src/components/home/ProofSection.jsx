@@ -27,10 +27,10 @@ function Counter({ end, duration = 2000 }) {
 }
 
 const stats = [
-  { value: 50000, suffix: "+", label: "Patients from Kashmir to Dubai" },
-  { value: 15, suffix: "k+", label: "SLIT Success Stories" },
+  { value: 50000, suffix: "+", label: "International patients" },
+  { value: 15, suffix: "k+", label: "SLIT Patients Treated" },
   { value: 12, suffix: "+", label: "Countries" },
-  { value: 100, suffix: "+", label: "Research" },
+  { value: 100, suffix: "+", label: "Clinical Insights" },
 ];
 
 export default function ProofSection() {

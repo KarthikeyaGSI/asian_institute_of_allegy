@@ -58,8 +58,7 @@ export default function ClinicalSuccessPage() {
            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { label: "Patients Treated", value: "50,000+" },
-                { label: "Success Rate", value: "95%+" },
-                { label: "Success Stories", value: "15,000+" },
+                { label: "Patient Stories", value: "15,000+" },
                 { label: "Years Excellence", value: "20+" }
               ].map((stat, i) => (
                 <div key={i} className="text-center">
@@ -137,7 +136,7 @@ export default function ClinicalSuccessPage() {
                     href="/#contact"
                     className="btn-primary inline-flex items-center gap-3"
                  >
-                    Start Your Success Story <ArrowRight size={18} />
+                    Start Your Recovery Story <ArrowRight size={18} />
                  </Link>
               </div>
             </motion.div>

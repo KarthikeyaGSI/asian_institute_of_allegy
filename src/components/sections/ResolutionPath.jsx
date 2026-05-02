@@ -22,7 +22,7 @@ const timelineSteps = [
     label: "MONTH 1-3",
     title: "Immune Recalibration",
     description: "Daily sublingual drops + dose escalation protocol.",
-    feeling: "My morning symptoms are 30% less severe",
+    feeling: "My morning symptoms have significantly improved",
     icon: <Droplets size={24} />,
     color: "bg-indigo-500"
   },
@@ -48,7 +48,7 @@ const timelineSteps = [
     id: "protected",
     label: "YEAR 2+",
     title: "Protected Life",
-    description: "85% of patients maintain symptom freedom for 5+ years.",
+    description: "Most patients maintain symptom freedom for 5+ years.",
     feeling: "Living freely, breathing naturally",
     icon: <Star size={24} />,
     color: "bg-amber-400"
@@ -137,7 +137,7 @@ export default function ResolutionPath() {
             <MapPin size={24} />
             Secure My Week 1 Appointment
           </Link>
-          <p className="mt-8 text-slate-400 font-medium">85% of SLIT patients maintain symptom freedom for 5+ years.</p>
+          <p className="mt-8 text-slate-400 font-medium">Most SLIT patients maintain symptom freedom for 5+ years.</p>
         </motion.div>
       </div>
     </section>

@@ -11,7 +11,7 @@ import GuidedEntry from "@/components/sections/GuidedEntry";
 // Phase 2 (Dynamic)
 const Comparison = dynamic(() => import("@/components/sections/Comparison"), { ssr: true });
 const SLITScience = dynamic(() => import("@/components/sections/SLITScience"), { ssr: true });
-const ResolutionPath = dynamic(() => import("@/components/sections/ResolutionPath"), { ssr: true });
+
 const Pathways = dynamic(() => import("@/components/sections/Pathways"), { ssr: false }); // GSAP needs client side
 const Science = dynamic(() => import("@/components/sections/Science"), { ssr: true });
 
@@ -53,9 +53,7 @@ export default function Home() {
       {/* PHASE 2: THE LOGIC LAYER */}
       <Comparison />
       <SLITScience />
-      <div data-header-theme="light">
-        <ResolutionPath />
-      </div>
+
       <Pathways />
       <Science />
       

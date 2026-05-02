@@ -10,7 +10,7 @@ export default function ContactForm() {
           
           <div className="p-10 md:p-16 flex-1 bg-primary text-white flex flex-col justify-center">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-              Get a callback within 15 minutes
+              Request a clinical consultation
             </h2>
             <p className="text-primary-accent text-lg">
               Speak directly with our care coordinators to understand the right next step for your condition.

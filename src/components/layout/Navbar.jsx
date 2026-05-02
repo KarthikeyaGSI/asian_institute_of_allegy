@@ -10,7 +10,7 @@ import Magnetic from "@/components/effects/Magnetic";
 
 const navLinks = [
   { name: "Treatments", href: "/treatments" },
-  { name: "Success Stories", href: "/clinical-success" },
+  { name: "Patient Stories", href: "/clinical-success" },
   { name: "World Allergy Foundation", href: "/world-allergy-foundation" },
   { name: "Contact", href: "/#contact" },
 ];

@@ -13,7 +13,7 @@ const treatments = [
     subtitle: "The Needle-Free Permanent Fix",
     description: "A clinically proven, non-invasive treatment that trains your immune system to tolerate allergens, addressing the root cause rather than just suppressing symptoms.",
     icon: ShieldCheck,
-    features: ["Safe for ages 2-80", "Administered at home", "No steroid dependency", "95%+ Success Rate"],
+    features: ["Safe for ages 2-80", "Administered at home", "No steroid dependency"],
     color: "bg-primary"
   },
   {
@@ -119,9 +119,9 @@ export default function TreatmentsPage() {
            <div className="flex flex-col md:flex-row items-center justify-between gap-12 opacity-50 grayscale">
               <span className="text-sm font-black uppercase tracking-[0.4em]">Global Recognition</span>
               <div className="flex flex-wrap justify-center gap-12 font-heading font-black text-2xl">
-                 <span>CMC VELLORE</span>
+
                  <span>PATEL CHEST</span>
-                 <span>VATICAN</span>
+
                  <span>WAO WORLDWIDE</span>
               </div>
            </div>

@@ -17,8 +17,7 @@ const pathways = [
     trigger: "Dust, Pollen, Weather",
     cause: "Immune over-reaction in lungs",
     fix: "PFT Diagnosis + SLIT Training",
-    desc: "Addressing asthma, rhinitis, and chronic obstructive patterns at the source.",
-    success: "98.4%"
+    desc: "Addressing asthma, rhinitis, and chronic obstructive patterns at the source."
   },
   {
     title: "Skin & Dermal",
@@ -26,8 +25,7 @@ const pathways = [
     trigger: "Contact, Food, Stress",
     cause: "Dermal barrier dysfunction",
     fix: "Patch Testing + Immunotherapy",
-    desc: "Resolution for urticaria, eczema, and long-standing inflammatory rashes.",
-    success: "96.8%"
+    desc: "Resolution for urticaria, eczema, and long-standing inflammatory rashes."
   },
   {
     title: "ENT / Sinus",
@@ -35,8 +33,7 @@ const pathways = [
     trigger: "Fragrance, Cold, Smog",
     cause: "Nasal mucosa inflammation",
     fix: "Endoscopy + Targeted Treatment",
-    desc: "Clearing the pathways to breathe naturally without constant medication.",
-    success: "97.5%"
+    desc: "Clearing the pathways to breathe naturally without constant medication."
   },
   {
     title: "Systemic Autoimmune",
@@ -44,8 +41,7 @@ const pathways = [
     trigger: "Multiple / Unknown",
     cause: "Deep systemic dysfunction",
     fix: "Advanced Clinical Modulation",
-    desc: "Treating the most complex, treatment-resistant immunological challenges.",
-    success: "94.2%"
+    desc: "Treating the most complex, treatment-resistant immunological challenges."
   },
 ];
 
@@ -112,10 +108,7 @@ export default function Pathways() {
                   </div>
                   <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight font-heading">{path.title}</h3>
                 </div>
-                <div className="text-right">
-                   <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] block mb-1">Success Rate</span>
-                   <span className="text-4xl font-bold text-primary-accent font-heading">{path.success}</span>
-                </div>
+
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">

@@ -42,26 +42,7 @@ export default function Authority() {
             </div>
             
             {/* Accreditation Badges */}
-            <div className="mt-8 flex flex-col gap-4">
-               <div className="flex items-start gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl group hover:border-primary-accent/30 transition-colors">
-                  <div className="bg-primary-accent/10 p-2 rounded-lg text-primary-accent">
-                    <CheckCircle2 size={16} />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-primary-accent block mb-1">Vatican Recognition</span>
-                    <p className="text-xs text-white/60 leading-tight">Recognized by the Pontifical Council for Healthcare for pioneering contribution to affordable allergy clinical relief(long term sustained).</p>
-                  </div>
-               </div>
-               <div className="flex items-start gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl group hover:border-primary-accent/30 transition-colors">
-                  <div className="bg-primary-accent/10 p-2 rounded-lg text-primary-accent">
-                    <CheckCircle2 size={16} />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-primary-accent block mb-1">CMC Vellore Trained</span>
-                    <p className="text-xs text-white/60 leading-tight">Clinical training and specialization from India's #1 ranked clinical institution for respiratory excellence.</p>
-                  </div>
-               </div>
-            </div>
+
           </div>
 
           <motion.div 
@@ -84,18 +65,18 @@ export default function Authority() {
                 Dr. Vyakarnam battled childhood asthma and allergic rhinitis himself. He transformed his personal suffering into a lifelong mission—to uncover the root causes for the 40 crore Indians who suffer silently.
               </p>
               <p>
-                From training at CMC Vellore and Patel Chest Institute to initiating India&apos;s first Allergen Forensic Laboratory, he has redefined allergy care through environmental aerobiology and precision diagnosis.
+                From training at Patel Chest Institute to initiating India&apos;s first Allergen Forensic Laboratory, he has redefined allergy care through environmental aerobiology and precision diagnosis.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 pt-10 border-t border-white/5">
               <div>
                 <span className="block text-4xl md:text-5xl font-bold text-white mb-2 font-heading tracking-tight">50k+</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Patients from Kashmir to Dubai</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">International patients</span>
               </div>
               <div>
                 <span className="block text-4xl md:text-5xl font-bold text-primary-accent mb-2 font-heading tracking-tight">15k+</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Success Stories</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Patients Treated</span>
               </div>
             </div>
           </motion.div>
@@ -130,7 +111,7 @@ export default function Authority() {
                </div>
                <div className="flex-1">
                   <span className="block text-4xl font-bold text-primary-accent mb-2 font-heading tracking-tight">15k+</span>
-                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Success Stories</span>
+                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Patients Treated</span>
                </div>
             </div>
 

@@ -9,7 +9,7 @@ import { Maximize2, Plus } from "lucide-react";
 const images = [
   { src: "/images/Asian.jpeg", title: "Asian Institute Entrance" },
   { src: "/images/Aswini-Allergy-Centre-Hyderabad-Achieves-National-Recognition-for-RootCause-Allergy-Management-1275x768.jpeg", title: "National Recognition" },
-  { src: "/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.png", title: "Clinical Success Story" },
+  { src: "/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.png", title: "Clinical Recovery Story" },
   { src: "/images/Work shop on allegy.jpeg", title: "Allergy Workshop" },
   { src: "/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png", title: "World Allergy Foundation" },
   { src: "/images/allergy-hospital-in-hyderabad.webp", title: "Hospital View" },

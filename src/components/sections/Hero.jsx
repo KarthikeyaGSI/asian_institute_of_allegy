@@ -140,9 +140,7 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
                 className="flex flex-col gap-3 lg:gap-4 text-[12px] lg:text-[13px] font-bold text-white/60 uppercase tracking-widest"
               >
-                <span className="flex items-center gap-3">
-                  <span className="text-primary-accent text-xl leading-none">•</span> 15 min callback
-                </span>
+
                 <span className="flex items-center gap-3">
                   <span className="text-primary-accent text-xl leading-none">•</span> Specialist review
                 </span>
@@ -214,10 +212,10 @@ export default function Hero() {
       >
         <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20 mr-8">Affiliations</div>
         <div className="flex items-center gap-12">
-           <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">CMC VELLORE</span>
+
            <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">PATEL CHEST</span>
            <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">CVR NEWS LIVE</span>
-           <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">VATICAN RECOGNITION</span>
+
            <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">WAO WORLDWIDE</span>
         </div>
       </motion.div>

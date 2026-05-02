@@ -59,7 +59,6 @@ export default function Hero() {
         >
           <Link href="#contact" className="bg-primary text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 ease-out hover:bg-[#154d2e] hover:-translate-y-1 text-center cta-button">
             <span className="block text-lg">Book Consultation</span>
-            <span className="block text-xs text-white/70 font-normal mt-0.5">(15 min callback)</span>
           </Link>
 
           <Link href="tel:+918074368748" className="border border-white/30 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 ease-out hover:bg-white/10 hover:-translate-y-1 flex items-center justify-center">

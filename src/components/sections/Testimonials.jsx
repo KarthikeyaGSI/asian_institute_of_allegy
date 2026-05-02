@@ -7,10 +7,10 @@ import Image from "next/image";
 
 const categories = [
   { id: "all", label: "All Cases" },
-  { id: "rhinitis", label: "Rhinitis / Sinus", data: { rate: "87%", meds: "91%", count: 47 } },
-  { id: "asthma", label: "Asthma", data: { rate: "91%", meds: "88%", count: 32 } },
-  { id: "skin", label: "Skin / Hives", data: { rate: "79%", meds: "85%", count: 28 } },
-  { id: "food", label: "Food Allergy", data: { rate: "82%", meds: "76%", count: 19 } }
+  { id: "rhinitis", label: "Rhinitis / Sinus" },
+  { id: "asthma", label: "Asthma" },
+  { id: "skin", label: "Skin / Hives" },
+  { id: "food", label: "Food Allergy" }
 ];
 
 const testimonials = [
@@ -33,7 +33,7 @@ const testimonials = [
     category: "rhinitis",
     duration: "10+ years",
     previous: "Decade of nasal, skin & stomach allergies",
-    outcome: "New lease of life, 100% resolution",
+    outcome: "New lease of life, total recovery",
     quote: "After 10 years of struggling with multiple health problems, the advanced Skin Prick Test identified the exact root cause. I now live a happy, healthy life once again.",
     videoId: "Xh0Yp_eK-yQ",
     metrics: [10, 7, 4, 2, 0]
@@ -165,7 +165,7 @@ export default function Testimonials() {
     ? testimonials 
     : testimonials.filter(t => t.category === activeFilter);
 
-  const activeCategoryData = categories.find(c => c.id === activeFilter)?.data;
+
 
   return (
     <section className="bg-slate-50/50 py-24 md:py-32 overflow-hidden border-t border-slate-100">
@@ -202,29 +202,17 @@ export default function Testimonials() {
         </div>
 
         {/* Dynamic Outcome Stats */}
-        {activeCategoryData && (
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 bg-white p-8 rounded-[2rem] border border-slate-100"
-          >
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Success Rate</p>
-              <p className="text-4xl font-bold text-primary font-heading">{activeCategoryData.rate}</p>
-              <p className="text-xs font-medium text-slate-500 mt-1">Significant improvement in {activeFilter} cases</p>
-            </div>
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Medication Freedom</p>
-              <p className="text-4xl font-bold text-slate-900 font-heading">{activeCategoryData.meds}</p>
-              <p className="text-xs font-medium text-slate-500 mt-1">Medication-free after 12 months</p>
-            </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 bg-white p-8 rounded-[2rem] border border-slate-100"
+        >
             <div>
               <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Verified Stories</p>
-              <p className="text-4xl font-bold text-slate-900 font-heading">{activeCategoryData.count}</p>
-              <p className="text-xs font-medium text-slate-500 mt-1">Documented success stories in our records</p>
+              <p className="text-4xl font-bold text-slate-900 font-heading">{filteredTestimonials.length}</p>
+              <p className="text-xs font-medium text-slate-500 mt-1">Documented Patient Stories in our records</p>
             </div>
-          </motion.div>
-        )}
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredTestimonials.map((item, i) => (
@@ -247,8 +235,8 @@ export default function Testimonials() {
                 ))}
              </div>
              <div className="text-left">
-                <p className="text-sm font-bold text-slate-900">Join 50,000+ success stories</p>
-                <p className="text-xs text-slate-500">From Kashmir to Dubai</p>
+                <p className="text-sm font-bold text-slate-900">Join 50,000+ Patient Stories</p>
+                <p className="text-xs text-slate-500">International patients</p>
              </div>
              <a href="#contact" className="bg-primary text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-105 transition-all">
                 Start My Journey

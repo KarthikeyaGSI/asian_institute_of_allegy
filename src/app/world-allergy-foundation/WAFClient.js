@@ -189,7 +189,7 @@ export default function WorldAllergyFoundation() {
                   Join the Mission
                 </button>
                 <Link href="/clinical-success" className="px-8 py-4 bg-white text-slate-900 rounded-full font-black uppercase tracking-widest text-xs border border-slate-200 hover:bg-slate-50 transition-all active:scale-95 shadow-sm">
-                  View Success Stories
+                  View Patient Stories
                 </Link>
               </div>
             </div>
@@ -241,9 +241,7 @@ export default function WorldAllergyFoundation() {
                 </p>
                 <div className="space-y-4">
                   <h4 className="font-bold text-slate-900 uppercase tracking-widest text-xs">The Scientific Concern:</h4>
-                  <p className="text-slate-600 leading-relaxed">
-                    While HPV vaccination is key for cancer prevention, WAF highlights risks associated with yeast-based recombinant vaccines. Research at Aswini Allergy Centre found a **40% yeast hypersensitivity prevalence** in screened patients.
-                  </p>
+                    While HPV vaccination is key for cancer prevention, WAF highlights risks associated with yeast-based recombinant vaccines. Research at Aswini Allergy Centre found a **significant yeast hypersensitivity prevalence** in screened patients.
                 </div>
                 <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
                   <p className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-widest">WAF Recommendations:</p>
@@ -297,13 +295,13 @@ export default function WorldAllergyFoundation() {
                     Recent reports from **Deccan Chronicle** highlight a critical emergence of Avian Flu (H5N1) in dairy animals. While human infections remain rare, the clinical severity is staggering.
                   </p>
                   <div className="p-8 bg-white/50 backdrop-blur-md rounded-[2rem] border border-slate-200/50 shadow-xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Fatality Rate</span>
-                    <span className="text-4xl font-bold text-red-600"><Counter value="49" suffix="%" /> <span className="text-sm font-medium text-slate-500 ml-2">Global Average</span></span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Clinical Concern</span>
+                    <span className="text-4xl font-bold text-red-600">High <span className="text-sm font-medium text-slate-500 ml-2">Fatality Risk</span></span>
                   </div>
                 </div>
                 <div className="space-y-6 flex flex-col justify-center">
                   <p className="text-slate-500 text-lg leading-relaxed italic">
-                    "With mortality exceeding 50% in symptomatic cases, the seriousness of this virus cannot be understated. We are monitoring the HPAI strains closely."
+                    "With mortality being high in symptomatic cases, the seriousness of this virus cannot be understated. We are monitoring the HPAI strains closely."
                   </p>
                   <div className="flex items-center gap-4 pt-4 border-t border-slate-100">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">

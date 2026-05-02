@@ -64,7 +64,7 @@ export default function BookingForm({ onStartQuiz }) {
             <div className="relative z-10">
               <span className="text-primary-accent font-bold tracking-widest uppercase text-sm mb-4 block">Frictionless Booking</span>
               <h2 className="text-3xl md:text-5xl font-semibold mb-6 leading-tight">
-                Get a callback within 15 minutes.
+                Schedule your clinical evaluation.
               </h2>
               <p className="text-white/80 text-lg mb-10 leading-relaxed">
                 Skip the waiting room. Speak directly with our care coordinators to schedule your comprehensive evaluation.
@@ -73,8 +73,8 @@ export default function BookingForm({ onStartQuiz }) {
               <div className="space-y-4">
                 {[
                     "Submit your details",
-                    "Receive a callback in 15 mins",
-                    "Meet the specialists"
+                    "Specialist review",
+                    "Meet the team"
                 ].map((step, i) => (
                     <div key={i} className="flex items-center gap-4">
                         <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-primary-accent shrink-0 font-bold">
@@ -186,7 +186,7 @@ export default function BookingForm({ onStartQuiz }) {
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold text-slate-900 mb-2 font-heading tracking-tight">Evaluation Confirmed.</h3>
-                  <p className="text-slate-600 font-medium">Expect a call from our specialists within <span className="text-primary font-bold">15 minutes</span>.</p>
+                  <p className="text-slate-600 font-medium">Our specialists will contact you shortly to confirm your clinical recovery path.</p>
                 </div>
                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-left space-y-4">
                   <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Next Steps</p>

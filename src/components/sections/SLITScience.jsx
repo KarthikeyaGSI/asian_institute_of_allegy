@@ -161,22 +161,7 @@ export default function SLITScience() {
               </AnimatePresence>
             </div>
 
-            {/* Scientific Decorative Card */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-10 -left-10 bg-primary-accent p-6 rounded-3xl shadow-2xl hidden md:block"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center text-black">
-                  <Zap size={24} />
-                </div>
-                <div>
-                  <p className="text-black font-black text-xl leading-none">87%</p>
-                  <p className="text-black/60 text-[10px] font-bold uppercase tracking-widest mt-1">Resolution Rate</p>
-                </div>
-              </div>
-            </motion.div>
+
           </motion.div>
         </div>
       </div>

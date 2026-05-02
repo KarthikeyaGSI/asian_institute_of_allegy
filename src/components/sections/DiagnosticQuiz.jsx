@@ -409,7 +409,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                     </p>
                     <p className="text-slate-200 leading-relaxed italic text-lg font-medium">
                       "Patients with your profile who rely solely on antihistamines typically experience
-                      <strong> progressive sensitization</strong>. SLIT has shown 87% long-term resolution in cases like yours."
+                      <strong> progressive sensitization</strong>. SLIT has shown sustained long-term resolution in cases like yours."
                     </p>
                   </div>
                 </div>

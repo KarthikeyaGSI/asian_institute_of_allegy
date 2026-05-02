@@ -39,7 +39,7 @@ export default function DoctorAnchor() {
             <h2 className="text-4xl md:text-5xl font-semibold leading-tight text-white">
               Built from personal suffering. <br/>
               <span className="text-gray-400">Refined over 20+ years.</span> <br/>
-              <span className="text-primary-accent">Trusted by 50,000+ patients from Kashmir to Dubai.</span>
+              <span className="text-primary-accent">Trusted by 50,000+ international patients.</span>
             </h2>
 
             <div className="space-y-2 mt-8">
