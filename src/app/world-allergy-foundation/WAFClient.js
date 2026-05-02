@@ -778,7 +778,7 @@ export default function WorldAllergyFoundation() {
               className="absolute top-6 right-6 md:top-12 md:right-12 text-white/50 hover:text-white" 
               onClick={() => setSelectedImg(null)}
             >
-              <X size={32} md:size={48} />
+              <X size={40} />
             </motion.button>
             <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="relative max-w-7xl w-full max-h-[80vh] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-white/10" onClick={e => e.stopPropagation()}>
               <Image src={selectedImg.src} alt={selectedImg.alt} width={1920} height={1080} className="w-full h-full object-contain" />
