@@ -295,17 +295,15 @@ export default function WorldAllergyFoundation() {
               </div>
 
               <div className="flex flex-wrap justify-center gap-3 pt-4">
-                  {["Viral Pneumonia", "ARDS Risk", "Multi-organ Failure", "Dairy-to-Human Transfer"].map((tag) => (
-                    <span key={tag} className="px-4 py-2 bg-slate-100 rounded-lg text-[11px] font-bold text-slate-600 border border-slate-200">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                {["Viral Pneumonia", "ARDS Risk", "Multi-organ Failure", "Dairy-to-Human Transfer"].map((tag) => (
+                  <span key={tag} className="px-4 py-2 bg-slate-100 rounded-lg text-[10px] md:text-[11px] font-bold text-slate-600 border border-slate-200">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
         </section>
-      </div>
 
       {/* Swaach Akash Abhiyan - DARK SECTION */}
       <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
