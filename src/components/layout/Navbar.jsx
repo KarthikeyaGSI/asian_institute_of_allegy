@@ -99,6 +99,7 @@ export default function Navbar() {
               {isWAF ? "Contribute" : "Book Evaluation"}
             </Link>
             <button 
+              aria-label={isOpen ? "Close mobile menu" : "Open mobile menu"}
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-xl transition-colors ${
                 isLight ? "text-slate-900 hover:bg-slate-100" : "text-white hover:bg-white/10"

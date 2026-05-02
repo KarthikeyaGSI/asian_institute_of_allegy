@@ -121,6 +121,7 @@ export default function Science() {
                   loop
                   muted
                   playsInline
+                  preload="none"
                   className="w-full h-full object-cover opacity-70 transition-opacity duration-1000 hover:opacity-90"
                 >
                   <source src="/_INFLAMMATION%20VIDEO%20(Scientific%20Section).mp4" type="video/mp4" />

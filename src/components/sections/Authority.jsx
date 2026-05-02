@@ -54,7 +54,7 @@ export default function Authority() {
           >
             <div>
               <span className="text-primary-accent font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Mission</span>
-              <h2 className="text-5xl md:text-7xl font-bold leading-[1] text-white tracking-tight font-heading">
+              <h2 className="text-3xl md:text-7xl font-bold leading-[1.1] text-white tracking-tight font-heading">
                 A Journey Rooted in <br/>
                 <span className="text-gray-500">Suffering & Hope.</span>
               </h2>

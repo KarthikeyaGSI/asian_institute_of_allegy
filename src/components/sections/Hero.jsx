@@ -56,7 +56,8 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
+          poster="/images/dr-nageswar.jpeg"
           className="w-full h-full object-cover"
           style={{ objectPosition: "center" }}
         >
@@ -124,6 +125,7 @@ export default function Hero() {
                 <Link
                   href="https://wa.me/918074368748?text=Hi, I'd like to start my root-cause evaluation."
                   target="_blank"
+                  aria-label="Contact Specialist on WhatsApp"
                   className="bg-white/10 backdrop-blur-md border border-white/20 text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-3 mt-1 sm:mt-0"
                 >
                   <MessageCircle size={22} className="text-[#25D366]" />

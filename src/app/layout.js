@@ -23,14 +23,14 @@ const inter = Inter({
 
 export const metadata = {
   title: {
-    default: "Asian Institute of Allergy",
-    template: "%s | Asian Institute"
+    default: "Asian Institute of Allergy | Root-Cause Clinical Excellence",
+    template: "%s | Asian Institute of Allergy"
   },
-  description: "Centre of Excellence for Allergy, Asthma & Immunology. Root-cause treatment for chronic conditions. 50,000+ patients treated with a permanent clinical relief approach in Hyderabad, India.",
-  keywords: "allergy treatment Hyderabad, asthma specialist India, permanent allergy relief, Dr. Vyakarnam Nageshwar, root cause diagnosis, SLIT immunotherapy",
+  description: "India's leading Centre of Excellence for Chronic Allergy, Asthma & Immunology. Specializing in permanent clinical relief through root-cause diagnosis and SLIT immunotherapy. 50,000+ success stories.",
+  keywords: "chronic allergy treatment, asthma specialist Hyderabad, permanent allergy relief, root cause immunology, SLIT treatment India, environmental allergy mapping, H5N1 global health advisory, HPV vaccine safety research, Dr. Vyakarnam Nageshwar, seasonal allergy trends 2025",
   openGraph: {
-    title: "Asian Institute of Allergy | Root-Cause Excellence",
-    description: "Resolving chronic allergic conditions for 20+ years. Advanced diagnostic protocols and permanent immunotherapy solutions.",
+    title: "Asian Institute of Allergy | The Science of Permanent Relief",
+    description: "Don't just suppress symptoms. We identify and resolve the root cause of your allergies. Advanced diagnostic protocols for patients aged 2 to 80.",
     url: "https://asianinstituteofallergy.com",
     siteName: "Asian Institute of Allergy",
     images: [
@@ -38,7 +38,7 @@ export const metadata = {
         url: "/images/dr-nageswar.jpeg",
         width: 1200,
         height: 630,
-        alt: "Dr. Vyakarnam - Asian Institute of Allergy",
+        alt: "Dr. Vyakarnam - Chief Immunologist at Asian Institute of Allergy",
       },
     ],
     locale: "en_IN",
@@ -46,8 +46,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asian Institute of Allergy | Permanent Allergy Relief Specialists",
-    description: "Expert immunology care and SLIT treatment for chronic conditions.",
+    title: "Asian Institute of Allergy | Root-Cause Specialists",
+    description: "Advanced immunology care and permanent SLIT treatment for chronic conditions.",
     images: ["/images/dr-nageswar.jpeg"],
   },
   alternates: {

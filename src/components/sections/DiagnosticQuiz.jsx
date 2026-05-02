@@ -251,6 +251,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
           </div>
           <button
             onClick={onClose}
+            aria-label="Close diagnostic quiz"
             className="p-2 hover:bg-slate-100 rounded-full transition-colors text-slate-400"
           >
             <X size={24} />
