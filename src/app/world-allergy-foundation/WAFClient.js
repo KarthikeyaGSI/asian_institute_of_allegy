@@ -261,14 +261,15 @@ export default function WorldAllergyFoundation() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="aspect-video relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
+                <div className="aspect-video relative rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] ring-1 ring-slate-200 group">
                   <Image
                     src="/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png"
                     alt="HPV Vaccination Safety Awareness Campaign"
                     fill
-                    className="object-cover cursor-zoom-in"
+                    className="object-cover group-hover:scale-105 transition-transform duration-[1.5s] cursor-zoom-in"
                     onClick={() => setSelectedImg({ src: "/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png", alt: "HPV Vaccination Safety Awareness Campaign" })}
                   />
+                  <div className="absolute inset-0 border-[12px] border-white/5 rounded-[2.5rem] pointer-events-none" />
                 </div>
                 <p className="mt-6 text-xs text-slate-400 text-center font-medium italic">
                   The campaign highlights that HPV vaccination should not be universally administered without prior screening.
@@ -337,23 +338,26 @@ export default function WorldAllergyFoundation() {
               <p className="text-slate-300 text-xl font-medium leading-relaxed">
                 A widespread periodic monitoring program across major Indian cities like **Hyderabad, Warangal, and throughout Telangana, India**. We collect real-time pollution data to develop city-specific strategies for respiratory health and allergy prevention.
               </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-square relative rounded-2xl overflow-hidden border border-white/10 group">
-                  <Image src="/images/swatch1.jpg" alt="Pollution Study 1" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="aspect-square relative rounded-[2rem] overflow-hidden border border-white/10 group shadow-2xl">
+                    <Image src="/images/swatch1.jpg" alt="Pollution Study 1" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  </div>
+                  <div className="aspect-square relative rounded-[2rem] overflow-hidden border border-white/10 group shadow-2xl">
+                    <Image src="/images/swatch2.jpg" alt="Pollution Study 2" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  </div>
                 </div>
-                <div className="aspect-square relative rounded-2xl overflow-hidden border border-white/10 group">
-                  <Image src="/images/swatch2.jpg" alt="Pollution Study 2" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                </div>
-              </div>
             </div>
-            <div className="flex-1 w-full aspect-video bg-white/5 rounded-[2rem] border border-white/10 backdrop-blur-sm flex items-center justify-center relative overflow-hidden">
+            <div className="flex-1 w-full aspect-video bg-white/5 rounded-[3rem] border border-white/10 backdrop-blur-md flex items-center justify-center relative overflow-hidden group shadow-[0_64px_64px_-32px_rgba(0,0,0,0.5)]">
               <Image
                 src="/images/Work%20shop%20on%20allegy.jpeg"
                 alt="Pollution Workshop"
                 fill
-                className="object-cover opacity-50"
+                className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2s]"
               />
-              <span className="relative z-10 text-xs font-bold uppercase tracking-[0.5em] text-white/50 text-center px-6">Field Research & Environmental Forensic Laboratory</span>
+              <div className="absolute inset-0 bg-black/20" />
+              <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.5em] text-white/70 text-center px-10 leading-loose">Field Research & <br/> Environmental Forensic Laboratory</span>
             </div>
           </div>
         </div>
@@ -373,14 +377,15 @@ export default function WorldAllergyFoundation() {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl ring-1 ring-slate-200"
+                className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-[0_48px_96px_-32px_rgba(0,0,0,0.15)] ring-1 ring-slate-200 group"
               >
                 <Image
                   src="/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.png"
                   alt="Case Study"
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-[1.5s]"
                 />
+                <div className="absolute inset-0 border-[16px] border-white/10 rounded-[3rem] pointer-events-none" />
               </motion.div>
 
               <div className="space-y-8">
@@ -441,17 +446,18 @@ export default function WorldAllergyFoundation() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className={`${img.span} relative aspect-square rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm bg-white/5 group`}
                 >
-                  <Image
-                    src={img.src}
-                    alt={`Workshop image ${idx + 1}`}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-[1.5s] cursor-zoom-in"
-                    onClick={() => setSelectedImg({ src: img.src, alt: `Surat Clinical Workshop Session ${idx + 1}` })}
-                  />
-                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  <div className="absolute inset-0 border-[6px] border-white/10 rounded-2xl md:rounded-[2rem] pointer-events-none" />
+                  <div className={`${img.span} relative aspect-square rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border border-white/20 backdrop-blur-sm bg-white/5 group transition-all duration-700 hover:shadow-[0_64px_96px_-32px_rgba(37,99,235,0.3)]`}>
+                    <Image
+                      src={img.src}
+                      alt={`Workshop image ${idx + 1}`}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-[2s] cursor-zoom-in"
+                      onClick={() => setSelectedImg({ src: img.src, alt: `Surat Clinical Workshop Session ${idx + 1}` })}
+                    />
+                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    <div className="absolute inset-0 border-[10px] border-white/10 rounded-[2rem] md:rounded-[3rem] pointer-events-none" />
+                  </div>
                 </motion.div>
               ))}
               <div className="col-span-1 flex items-center justify-center p-4 bg-primary/5 rounded-[2rem] border border-primary/10">
@@ -503,7 +509,7 @@ export default function WorldAllergyFoundation() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="aspect-video relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm bg-white/5 group">
+                <div className="aspect-video relative rounded-[3rem] overflow-hidden shadow-[0_48px_96px_-32px_rgba(0,0,0,0.15)] border border-white/20 backdrop-blur-md bg-white/5 group">
                   <Image
                     src="/images/Dr.Vyakarnam%20Nageshwar%20along%20with%20Dr.%20Sripad%20Agashe.jpg"
                     alt="Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology"
@@ -511,7 +517,7 @@ export default function WorldAllergyFoundation() {
                     className="object-cover group-hover:scale-105 transition-transform duration-[2s] cursor-zoom-in"
                     onClick={() => setSelectedImg({ src: "/images/Dr.Vyakarnam Nageshwar along with Dr. Sripad Agashe.jpg", alt: "Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology" })}
                   />
-                  <div className="absolute inset-0 border-[10px] border-white/5 rounded-[2rem] pointer-events-none" />
+                  <div className="absolute inset-0 border-[16px] border-white/10 rounded-[3rem] pointer-events-none" />
                 </div>
                 <p className="mt-6 text-xs text-slate-400 text-center font-medium italic">
                   National Conference at Mysore: Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe.
@@ -525,7 +531,7 @@ export default function WorldAllergyFoundation() {
         <section className="py-24 bg-slate-50 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="flex flex-col md:flex-row gap-16 items-center">
-              <div className="flex-1 w-full aspect-[4/5] md:aspect-square relative rounded-[3rem] overflow-hidden shadow-2xl border border-slate-200/50 backdrop-blur-sm bg-white/5 group">
+              <div className="flex-1 w-full aspect-[4/5] md:aspect-square relative rounded-[4rem] overflow-hidden shadow-[0_64px_128px_-32px_rgba(0,0,0,0.2)] border border-slate-200/50 backdrop-blur-md bg-white/5 group">
                 <Image
                   src="/images/Dr.Vyakarnam%20Nageshwar%20in%20his%20Medical%20%20College%20days%20in%20a%20public%20health%20event%20,%20along%20with%20%20his%20close%20associate%20&%20Guide%20FATHER%20OF%20TELANGANA%20STATE%20KALOJI%20NARAYANA%20RAO%20-%20THE%20PRAJA%20KAVI.jpg"
                   alt="Dr. Vyakarnam Nageshwar with Kaloji Narayana Rao - The Praja Kavi"
@@ -533,7 +539,7 @@ export default function WorldAllergyFoundation() {
                   className="object-cover group-hover:scale-110 transition-transform duration-[2s] cursor-zoom-in"
                   onClick={() => setSelectedImg({ src: "/images/Dr.Vyakarnam Nageshwar in his Medical  College days in a public health event , along with  his close associate & Guide FATHER OF TELANGANA STATE KALOJI NARAYANA RAO - THE PRAJA KAVI.jpg", alt: "Dr. Vyakarnam Nageshwar with Kaloji Narayana Rao - The Praja Kavi" })}
                 />
-                <div className="absolute inset-0 border-[15px] border-white/10 rounded-[3rem] pointer-events-none" />
+                <div className="absolute inset-0 border-[20px] border-white/10 rounded-[4rem] pointer-events-none" />
               </div>
               <div className="flex-1 space-y-8">
                 <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
@@ -811,24 +817,24 @@ export default function WorldAllergyFoundation() {
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[1, 2, 3, 4].map((num) => (
-                <motion.div
-                  key={`impact-${num}`}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: num * 0.1 }}
-                  className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm bg-white/5 group"
-                >
-                  <Image
-                  src={`/images/i${num}.jpg`}
-                  alt={`Global Impact Image ${num}`}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-[2s] cursor-zoom-in"
-                  onClick={() => setSelectedImg({ src: `/images/i${num}.jpg`, alt: `Global Impact and Media Coverage - Image ${num}` })}
-                />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute inset-0 border-[8px] border-white/10 rounded-[2.5rem] pointer-events-none" />
-                </motion.div>
+                  <motion.div
+                    key={`impact-${num}`}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: num * 0.1, duration: 0.8 }}
+                    className="relative aspect-[3/4] rounded-[3rem] overflow-hidden shadow-[0_48px_96px_-32px_rgba(0,0,0,0.15)] border border-white/20 backdrop-blur-md bg-white/5 group"
+                  >
+                    <Image
+                    src={`/images/i${num}.jpg`}
+                    alt={`Global Impact Image ${num}`}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-[2.5s] cursor-zoom-in"
+                    onClick={() => setSelectedImg({ src: `/images/i${num}.jpg`, alt: `Global Impact and Media Coverage - Image ${num}` })}
+                  />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-0 border-[12px] border-white/10 rounded-[3rem] pointer-events-none" />
+                  </motion.div>
               ))}
             </div>
             <div className="mt-12 text-center">
@@ -942,25 +948,7 @@ export default function WorldAllergyFoundation() {
               <MediaLogos />
             </div>
 
-            <div className="mt-20 pt-20 border-t border-slate-100">
-              <div className="max-w-4xl mx-auto text-center">
-                <div className="inline-flex items-center gap-2 mb-8">
-                  <Newspaper className="text-primary" size={20} />
-                  <span className="text-xs font-black uppercase tracking-[0.4em] text-slate-400">Press Coverage</span>
-                </div>
-                <div className="relative aspect-[21/9] w-full rounded-[2.5rem] overflow-hidden shadow-2xl ring-1 ring-slate-200 mb-10">
-                  <Image
-                    src="/images/Aswini-Allergy-Centre-Hyderabad-Achieves-National-Recognition-for-RootCause-Allergy-Management-1275x768.jpeg"
-                    alt="National Recognition"
-                    fill
-                    className="object-cover cursor-zoom-in"
-                    onClick={() => setSelectedImg({ src: "/images/Aswini-Allergy-Centre-Hyderabad-Achieves-National-Recognition-for-RootCause-Allergy-Management-1275x768.jpeg", alt: "National Recognition for Root-Cause Allergy Management" })}
-                  />
-                </div>
-                <h4 className="text-2xl font-bold font-heading mb-6 italic text-slate-800">"A Referral Hub for Complex Allergy & Immunological Conditions."</h4>
-                <p className="text-slate-500 font-medium leading-relaxed">Featured in CVR NEWS LIVE Analysis, European Sun Times, Deccan Herald, Deccan Chronicle, TV9 Telugu, and more.</p>
-              </div>
-            </div>
+
           </div>
         </section>
 
