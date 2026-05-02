@@ -259,61 +259,42 @@ export default function WorldAllergyFoundation() {
 
         {/* Avian Flu (H5N1) Advisory Section - PREMIUM REFINEMENT */}
         <section className="py-24 md:py-40 bg-white relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="lg:col-span-5 order-2 lg:order-1"
-              >
-                <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] border border-slate-200/50 group bg-white/5 backdrop-blur-sm">
-                  <Image 
-                    src="/images/deccan%20chronicle%20featured.jpeg" 
-                    alt="Deccan Chronicle Avian Flu Feature" 
-                    fill 
-                    className="object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute inset-0 border-[8px] border-white/10 rounded-[3rem] pointer-events-none" />
-                </div>
-              </motion.div>
+          <div className="max-w-4xl mx-auto px-6 md:px-12">
+            <div className="space-y-10 text-center">
+              <div className="inline-flex items-center gap-3 bg-red-50 text-red-700 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
+                <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" /> Global Health Advisory
+              </div>
+              <h2 className="text-4xl md:text-7xl font-bold font-heading tracking-tight leading-[1.05] text-slate-900">
+                H5N1: One <br /> <span className="text-primary italic font-medium underline decoration-primary/20 decoration-8 underline-offset-8">Mutation Away.</span>
+              </h2>
 
-              <div className="lg:col-span-7 order-1 lg:order-2 space-y-10">
-                <div className="inline-flex items-center gap-3 bg-red-50 text-red-700 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
-                  <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" /> Global Health Advisory
-                </div>
-                <h2 className="text-4xl md:text-7xl font-bold font-heading tracking-tight leading-[1.05] text-slate-900">
-                  H5N1: One <br /> <span className="text-primary italic font-medium underline decoration-primary/20 decoration-8 underline-offset-8">Mutation Away.</span>
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <p className="text-slate-600 leading-relaxed font-medium">
-                      Recent reports from **Deccan Chronicle** highlight a critical emergence of Avian Flu (H5N1) in dairy animals. While human infections remain rare, the clinical severity is staggering.
-                    </p>
-                    <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Fatality Rate</span>
-                      <span className="text-3xl font-bold text-red-600"><Counter value="49" suffix="%" /> <span className="text-sm font-medium text-slate-500">Global Average</span></span>
-                    </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                <div className="space-y-6">
+                  <p className="text-slate-600 leading-relaxed font-medium text-lg">
+                    Recent reports from **Deccan Chronicle** highlight a critical emergence of Avian Flu (H5N1) in dairy animals. While human infections remain rare, the clinical severity is staggering.
+                  </p>
+                  <div className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 shadow-sm">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Fatality Rate</span>
+                    <span className="text-4xl font-bold text-red-600"><Counter value="49" suffix="%" /> <span className="text-sm font-medium text-slate-500 ml-2">Global Average</span></span>
                   </div>
-                  <div className="space-y-4">
-                    <p className="text-slate-500 text-sm leading-relaxed">
-                      "With mortality exceeding 50% in symptomatic cases, the seriousness of this virus cannot be understated. We are monitoring the HPAI strains closely."
-                    </p>
-                    <div className="flex items-center gap-3 pt-2">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <User size={18} className="text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold text-slate-900">Dr. Vyakarnam Nageshwar</p>
-                        <p className="text-[10px] text-slate-500 uppercase tracking-widest">President, WAF</p>
-                      </div>
+                </div>
+                <div className="space-y-6 flex flex-col justify-center">
+                  <p className="text-slate-500 text-lg leading-relaxed italic">
+                    "With mortality exceeding 50% in symptomatic cases, the seriousness of this virus cannot be understated. We are monitoring the HPAI strains closely."
+                  </p>
+                  <div className="flex items-center gap-4 pt-4 border-t border-slate-100">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <User size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-slate-900 tracking-tight">Dr. Vyakarnam Nageshwar</p>
+                      <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black">President, World Allergy Foundation</p>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap justify-center gap-3 pt-4">
                   {["Viral Pneumonia", "ARDS Risk", "Multi-organ Failure", "Dairy-to-Human Transfer"].map((tag) => (
                     <span key={tag} className="px-4 py-2 bg-slate-100 rounded-lg text-[11px] font-bold text-slate-600 border border-slate-200">
                       {tag}
