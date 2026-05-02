@@ -697,26 +697,49 @@ export default function WorldAllergyFoundation() {
             <FadeInBlur>
               <div className="text-center mb-16 md:mb-24">
                 <span className="text-primary-accent font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Global Presence</span>
-                <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-white leading-none">World Allergy <br /> <span className="text-primary-accent italic">Week 2025.</span></h2>
+                <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-white leading-none">World Heritage <br /> <span className="text-primary-accent italic">Week 2025.</span></h2>
               </div>
             </FadeInBlur>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
-              <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+              <div className="lg:col-span-1">
                 <Tilt>
-                  <div className="aspect-video relative rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-2xl border border-white/10 group">
+                  <div 
+                    className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 group cursor-zoom-in"
+                    onClick={() => setSelectedImg({ 
+                      src: "/images/World%20Allergy%20Week%202025%20observed%20by%20Dr.Vyakarnam%20Nageshwar%20world%20Allergy%20Foundation%20by%20Broadcasting%20%20a%20LIVE%20interactive%20show%20about%20Alkergic%20disorders%20in%20TV9.webp", 
+                      alt: "Dr. Vyakarnam Nageshwar broadcasting LIVE for World Heritage Week on TV9" 
+                    })}
+                  >
                     <Image 
                       src="/images/World%20Allergy%20Week%202025%20observed%20by%20Dr.Vyakarnam%20Nageshwar%20world%20Allergy%20Foundation%20by%20Broadcasting%20%20a%20LIVE%20interactive%20show%20about%20Alkergic%20disorders%20in%20TV9.webp" 
-                      alt="Dr. Vyakarnam Nageshwar broadcasting LIVE for World Allergy Week on TV9" 
+                      alt="Dr. Vyakarnam Nageshwar broadcasting LIVE for World Heritage Week on TV9" 
                       fill 
-                      className="object-cover group-hover:scale-105 transition-transform"
-                      sizes="(max-width: 1024px) 100vw, 66vw"
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 1024px) 100vw, 33vw"
                     />
                   </div>
                 </Tilt>
               </div>
-              <div className="flex flex-col gap-12">
-                <Tilt><div className="aspect-[3/4] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10"><Image src="/images/MA1.webp" alt="Health Advisory and Clinical Insights" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" /></div></Tilt>
+              <div className="lg:col-span-1">
+                <Tilt>
+                  <div 
+                    className="aspect-[3/4] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 cursor-zoom-in"
+                    onClick={() => setSelectedImg({ src: "/images/MA1.webp", alt: "Health Advisory and Clinical Insights - Page 1" })}
+                  >
+                    <Image src="/images/MA1.webp" alt="Health Advisory Page 1" fill className="object-contain bg-white" sizes="(max-width: 1024px) 100vw, 33vw" />
+                  </div>
+                </Tilt>
+              </div>
+              <div className="lg:col-span-1">
+                <Tilt>
+                  <div 
+                    className="aspect-[3/4] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 cursor-zoom-in"
+                    onClick={() => setSelectedImg({ src: "/images/MA2.webp", alt: "Health Advisory and Clinical Insights - Page 2" })}
+                  >
+                    <Image src="/images/MA2.webp" alt="Health Advisory Page 2" fill className="object-contain bg-white" sizes="(max-width: 1024px) 100vw, 33vw" />
+                  </div>
+                </Tilt>
               </div>
             </div>
             
