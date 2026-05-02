@@ -172,26 +172,7 @@ export default function Navbar() {
               </Link>
             </Magnetic>
 
-            <div className={`flex items-center rounded-full p-1 border transition-colors ${
-              isLight ? "bg-slate-900/5 border-slate-900/10" : "bg-white/5 border-white/10"
-            }`}>
-              <Link 
-                href="/"
-                className={`p-2 rounded-full transition-all ${!isWAF 
-                  ? (isLight ? "bg-slate-900 text-white" : "bg-white text-black shadow-lg") 
-                  : "text-slate-400 hover:text-slate-900"}`}
-              >
-                <Building2 size={14} />
-              </Link>
-              <Link 
-                href="/world-allergy-foundation"
-                className={`p-2 rounded-full transition-all ${isWAF 
-                  ? "bg-primary text-white shadow-lg" 
-                  : (isLight ? "text-slate-400 hover:text-slate-900" : "text-white/40 hover:text-white")}`}
-              >
-                <Globe size={14} />
-              </Link>
-            </div>
+
           </div>
         </div>
       </motion.nav>
@@ -223,32 +204,7 @@ export default function Navbar() {
               
               <div className={`h-px my-4 ${isLight ? "bg-slate-200" : "bg-white/10"}`} />
               
-              <div className="grid grid-cols-2 gap-4">
-                <Link 
-                  href="/"
-                  className={`flex flex-col items-center p-4 rounded-3xl border transition-all ${
-                    !isWAF 
-                      ? (isLight ? "bg-slate-900 text-white border-slate-900" : "bg-white text-black border-white") 
-                      : (isLight ? "bg-slate-100 text-slate-400 border-slate-200" : "bg-white/5 text-white/40 border-white/10")
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Building2 size={24} className="mb-2" />
-                  <span className="text-[10px] font-black uppercase">Institute</span>
-                </Link>
-                <Link 
-                  href="/world-allergy-foundation"
-                  className={`flex flex-col items-center p-4 rounded-3xl border transition-all ${
-                    isWAF 
-                      ? "bg-primary text-white border-primary" 
-                      : (isLight ? "bg-slate-100 text-slate-400 border-slate-200" : "bg-white/5 text-white/40 border-white/10")
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Globe size={24} className="mb-2" />
-                  <span className="text-[10px] font-black uppercase">Foundation</span>
-                </Link>
-              </div>
+
 
               <Link
                 href={isWAF ? "/contribute" : "/#contact"}

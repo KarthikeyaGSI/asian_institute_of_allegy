@@ -131,7 +131,7 @@ export default function WorldAllergyFoundation() {
       <div className="h-[68px] md:h-[80px]" />
 
       <div data-header-theme="light">
-        {/* Hero Section */}
+        {/* 1. Hero Section */}
         <section className="pt-32 md:pt-40 pb-24 bg-slate-50 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[80vw] h-[80vw] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
           <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -196,7 +196,7 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* Core Pillars */}
+        {/* 2. Core Pillars */}
         <section className="py-24 border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -220,349 +220,7 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* HPV Advocacy Campaign */}
-        <section className="py-24 md:py-32 bg-white">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="space-y-8"
-              >
-                <div className="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
-                  <ShieldAlert size={14} /> Critical Advocacy
-                </div>
-                <h2 className="text-3xl md:text-6xl font-bold tracking-tight font-heading leading-tight">
-                  HPV Vaccination: <br /> <span className="text-red-600 font-medium italic">"NOT for All"</span>
-                </h2>
-                <p className="text-lg text-slate-600 leading-relaxed font-medium italic">
-                  "As a medically qualified citizen, I urge you to potentially prevent the calamity of flare-ups in Allergy & Autoimmune diseases." — Dr. Vyakarnam
-                </p>
-                <div className="space-y-4">
-                  <h4 className="font-bold text-slate-900 uppercase tracking-widest text-xs">The Scientific Concern:</h4>
-                    While HPV vaccination is key for cancer prevention, WAF highlights risks associated with yeast-based recombinant vaccines. Research at Aswini Allergy Centre found a **significant yeast hypersensitivity prevalence** in screened patients.
-                </div>
-                <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                  <p className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-widest">WAF Recommendations:</p>
-                  <ul className="space-y-3">
-                    {["Mandatory pre-vaccination clinical screening", "Detailed history for yeast hypersensitivity", "National referral protocols to specialists", "Strengthened post-vaccination monitoring"].map((item) => (
-                      <li key={item} className="flex items-center gap-3 text-slate-600 text-sm font-medium">
-                        <div className="w-1.5 h-1.5 rounded-full bg-red-500" /> {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <div className="aspect-video relative rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] ring-1 ring-slate-200 group">
-                  <Image
-                    src="/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png"
-                    alt="HPV Vaccination Safety Awareness Campaign"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-[1.5s] cursor-zoom-in"
-                    onClick={() => setSelectedImg({ src: "/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png", alt: "HPV Vaccination Safety Awareness Campaign" })}
-                  />
-                  <div className="absolute inset-0 border-[12px] border-white/5 rounded-[2.5rem] pointer-events-none" />
-                </div>
-                <p className="mt-6 text-xs text-slate-400 text-center font-medium italic">
-                  The campaign highlights that HPV vaccination should not be universally administered without prior screening.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Avian Flu (H5N1) Advisory Section - PREMIUM REFINEMENT */}
-        <section className="py-24 md:py-40 bg-white relative overflow-hidden">
-          <div className="max-w-4xl mx-auto px-6 md:px-12">
-            <div className="space-y-10 text-center">
-              <div className="inline-flex items-center gap-3 bg-red-50 text-red-700 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
-                <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" /> Global Health Advisory
-              </div>
-              <h2 className="text-4xl md:text-7xl font-bold font-heading tracking-tight leading-[1.05] text-slate-900">
-                H5N1: One <br /> <span className="text-primary italic font-medium underline decoration-primary/20 decoration-8 underline-offset-8">Mutation Away.</span>
-              </h2>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
-                <div className="space-y-6">
-                  <p className="text-slate-600 leading-relaxed font-medium text-lg">
-                    Recent reports from **Deccan Chronicle** highlight a critical emergence of Avian Flu (H5N1) in dairy animals. While human infections remain rare, the clinical severity is staggering.
-                  </p>
-                  <div className="p-8 bg-white/50 backdrop-blur-md rounded-[2rem] border border-slate-200/50 shadow-xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Clinical Concern</span>
-                    <span className="text-4xl font-bold text-red-600">High <span className="text-sm font-medium text-slate-500 ml-2">Fatality Risk</span></span>
-                  </div>
-                </div>
-                <div className="space-y-6 flex flex-col justify-center">
-                  <p className="text-slate-500 text-lg leading-relaxed italic">
-                    "With mortality being high in symptomatic cases, the seriousness of this virus cannot be understated. We are monitoring the HPAI strains closely."
-                  </p>
-                  <div className="flex items-center gap-4 pt-4 border-t border-slate-100">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <User size={20} className="text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-slate-900 tracking-tight">Dr. Vyakarnam Nageshwar</p>
-                      <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black">President, World Allergy Foundation</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap justify-center gap-3 pt-4">
-                {["Viral Pneumonia", "ARDS Risk", "Multi-organ Failure", "Dairy-to-Human Transfer"].map((tag) => (
-                  <span key={tag} className="px-4 py-2 bg-slate-100 rounded-lg text-[10px] md:text-[11px] font-bold text-slate-600 border border-slate-200">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-      {/* Swaach Akash Abhiyan - DARK SECTION */}
-      <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-primary/10 opacity-30" />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <div className="flex flex-col md:flex-row gap-16 items-center">
-            <div className="flex-1 space-y-8">
-              <span className="text-primary-accent font-bold tracking-[0.4em] uppercase text-xs">Pollution Monitoring</span>
-              <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight">Swaach Akash Abhiyan</h2>
-              <p className="text-slate-300 text-xl font-medium leading-relaxed">
-                A widespread periodic monitoring program across major Indian cities like **Hyderabad, Warangal, and throughout Telangana, India**. We collect real-time pollution data to develop city-specific strategies for respiratory health and allergy prevention.
-              </p>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="aspect-square relative rounded-[2rem] overflow-hidden border border-white/10 group shadow-2xl">
-                    <Image src="/images/swatch1.jpg" alt="Pollution Study 1" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  </div>
-                  <div className="aspect-square relative rounded-[2rem] overflow-hidden border border-white/10 group shadow-2xl">
-                    <Image src="/images/swatch2.jpg" alt="Pollution Study 2" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  </div>
-                </div>
-            </div>
-            <div className="flex-1 w-full aspect-video bg-white/5 rounded-[3rem] border border-white/10 backdrop-blur-md flex items-center justify-center relative overflow-hidden group shadow-[0_64px_64px_-32px_rgba(0,0,0,0.5)]">
-              <Image
-                src="/images/Work%20shop%20on%20allegy.jpeg"
-                alt="Pollution Workshop"
-                fill
-                className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2s]"
-              />
-              <div className="absolute inset-0 bg-black/20" />
-              <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.5em] text-white/70 text-center px-10 leading-loose">Field Research & <br/> Environmental Forensic Laboratory</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div data-header-theme="light">
-        {/* Case Study Section */}
-        <section className="py-24 md:py-32 bg-white">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="flex flex-col items-center text-center mb-20">
-              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4">Clinical Evidence</span>
-              <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight text-slate-900">Transformation Stories</h2>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-[0_48px_96px_-32px_rgba(0,0,0,0.15)] ring-1 ring-slate-200 group"
-              >
-                <Image
-                  src="/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.png"
-                  alt="Case Study"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-[1.5s]"
-                />
-                <div className="absolute inset-0 border-[16px] border-white/10 rounded-[3rem] pointer-events-none" />
-              </motion.div>
-
-              <div className="space-y-8">
-                <h3 className="text-3xl font-bold font-heading">The Case of Mr. Raghukumar</h3>
-                <p className="text-slate-600 text-lg leading-relaxed font-medium">
-                  A 57-year-old government teacher from Khammam who battled chronic skin rashes and breathing issues for nearly **40 years**.
-                </p>
-                <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="w-1 h-12 bg-primary rounded-full" />
-                    <p className="text-slate-500 italic leading-relaxed">
-                      "Unless the root cause—the immunological basis—is identified, patients remain dependent on temporary relief like steroids." — Dr. Vyakarnam
-                    </p>
-                  </div>
-                  <p className="text-slate-600 leading-relaxed font-medium">
-                    Within three months of scientifically guided immunotherapy and molecular hydrogen therapy, his decades-old ulcers resolved and swelling vanished completely.
-                  </p>
-                </div>
-                <div className="pt-6">
-                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-4">Treatment Framework:</div>
-                  <div className="flex flex-wrap gap-3">
-                    <span className="px-4 py-2 bg-slate-50 rounded-xl text-[10px] font-bold text-slate-600 border border-slate-100">Targeted Avoidance</span>
-                    <span className="px-4 py-2 bg-slate-50 rounded-xl text-[10px] font-bold text-slate-600 border border-slate-100">Sublingual Immunotherapy</span>
-                    <span className="px-4 py-2 bg-slate-50 rounded-xl text-[10px] font-bold text-slate-600 border border-slate-100">Molecular Hydrogen Therapy</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-        {/* Surat Workshop Section */}
-        <section className="py-24 md:py-32 bg-slate-50 relative">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,#2563EB08_0%,transparent_50%)] pointer-events-none" />
-          <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-            <div className="text-center mb-16">
-              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Medical Education</span>
-              <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight text-slate-900">Surat Clinical Workshop</h2>
-              <p className="mt-6 text-slate-500 max-w-2xl mx-auto font-medium text-lg">
-                World Allergy Foundation jointly conducted a high-impact session in Surat, Gujarat, empowering medical professionals with advanced modalities of Allergies, Inflammation, and Immunotherapy.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              {[
-                { src: "/images/W1.jpg", span: "col-span-2 row-span-2" },
-                { src: "/images/W2.jpg", span: "col-span-1 row-span-1" },
-                { src: "/images/W3.jpg", span: "col-span-1 row-span-1" },
-                { src: "/images/W4.jpg", span: "col-span-1 row-span-1" },
-                { src: "/images/W5.jpg", span: "col-span-1 row-span-1" },
-                { src: "/images/W6.jpg", span: "col-span-1 row-span-1" },
-                { src: "/images/w7.jpg", span: "col-span-1 row-span-1" }
-              ].map((img, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                >
-                  <div className={`${img.span} relative aspect-square rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border border-white/20 backdrop-blur-sm bg-white/5 group transition-all duration-700 hover:shadow-[0_64px_96px_-32px_rgba(37,99,235,0.3)]`}>
-                    <Image
-                      src={img.src}
-                      alt={`Workshop image ${idx + 1}`}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-[2s] cursor-zoom-in"
-                      onClick={() => setSelectedImg({ src: img.src, alt: `Surat Clinical Workshop Session ${idx + 1}` })}
-                    />
-                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-                    <div className="absolute inset-0 border-[10px] border-white/10 rounded-[2rem] md:rounded-[3rem] pointer-events-none" />
-                  </div>
-                </motion.div>
-              ))}
-              <div className="col-span-1 flex items-center justify-center p-4 bg-primary/5 rounded-[2rem] border border-primary/10">
-                <p className="text-[10px] font-black uppercase tracking-widest text-primary text-center">Clinical Excellence <br /> Gujarat 2025</p>
-              </div>
-            </div>
-            <div className="mt-12 text-center">
-              <button 
-                onClick={() => document.getElementById('workshop')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 bg-primary text-white rounded-full font-black uppercase tracking-widest text-xs hover:bg-slate-900 transition-all active:scale-95 shadow-xl"
-              >
-                Request a Workshop for Your City
-              </button>
-            </div>
-          </div>
-        </section>
-
-
-        {/* Aerobiology Legacy Section */}
-
-        <section className="py-24 md:py-32 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="space-y-8"
-              >
-                <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
-                  <Beaker size={14} /> Scientific Legacy
-                </div>
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight font-heading leading-tight">
-                  Pioneering <span className="text-primary">Aerobiology</span> <br /> in India
-                </h2>
-                <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                  Dr. Vyakarnam Nageshwar is among the elite few Medical Super Specialists in India dedicated to the field of Aerobiology.
-                </p>
-                <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                  <p className="text-slate-600 italic leading-relaxed">
-                    "His dedication to environmental immunology has earned him a place in the favored students list of **Dr. Sripad Agashe**, the Father of Indian Aerobiology, as documented in his seminal literature."
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <div className="aspect-video relative rounded-[3rem] overflow-hidden shadow-[0_48px_96px_-32px_rgba(0,0,0,0.15)] border border-white/20 backdrop-blur-md bg-white/5 group">
-                  <Image
-                    src="/images/Dr.Vyakarnam%20Nageshwar%20along%20with%20Dr.%20Sripad%20Agashe.jpg"
-                    alt="Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-[2s] cursor-zoom-in"
-                    onClick={() => setSelectedImg({ src: "/images/Dr.Vyakarnam Nageshwar along with Dr. Sripad Agashe.jpg", alt: "Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology" })}
-                  />
-                  <div className="absolute inset-0 border-[16px] border-white/10 rounded-[3rem] pointer-events-none" />
-                </div>
-                <p className="mt-6 text-xs text-slate-400 text-center font-medium italic">
-                  National Conference at Mysore: Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Heritage & Legacy Section */}
-        <section className="py-24 bg-slate-50 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="flex flex-col md:flex-row gap-16 items-center">
-              <div className="flex-1 w-full aspect-[4/5] md:aspect-square relative rounded-[4rem] overflow-hidden shadow-[0_64px_128px_-32px_rgba(0,0,0,0.2)] border border-slate-200/50 backdrop-blur-md bg-white/5 group">
-                <Image
-                  src="/images/Dr.Vyakarnam%20Nageshwar%20in%20his%20Medical%20%20College%20days%20in%20a%20public%20health%20event%20,%20along%20with%20%20his%20close%20associate%20&%20Guide%20FATHER%20OF%20TELANGANA%20STATE%20KALOJI%20NARAYANA%20RAO%20-%20THE%20PRAJA%20KAVI.jpg"
-                  alt="Dr. Vyakarnam Nageshwar with Kaloji Narayana Rao - The Praja Kavi"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-[2s] cursor-zoom-in"
-                  onClick={() => setSelectedImg({ src: "/images/Dr.Vyakarnam Nageshwar in his Medical  College days in a public health event , along with  his close associate & Guide FATHER OF TELANGANA STATE KALOJI NARAYANA RAO - THE PRAJA KAVI.jpg", alt: "Dr. Vyakarnam Nageshwar with Kaloji Narayana Rao - The Praja Kavi" })}
-                />
-                <div className="absolute inset-0 border-[20px] border-white/10 rounded-[4rem] pointer-events-none" />
-              </div>
-              <div className="flex-1 space-y-8">
-                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
-                  Roots & Inspiration
-                </div>
-                <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight text-slate-900 leading-[1.1]">The People's <br /> Physician.</h2>
-                <p className="text-slate-600 text-lg font-medium leading-relaxed italic border-l-4 border-primary pl-6">
-                  "Dr. Vyakarnam Nageshwar during his medical college days, participating in a transformative public health event alongside his close associate and guide."
-                </p>
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-slate-900">Kaloji Narayana Rao</h3>
-                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-4 block">The Praja Kavi | Father of Telangana State</p>
-                  <p className="text-slate-500 leading-relaxed">
-                    Dr.Vyakarnam Nageshwar in his Medical  College days in a public health event , along with  his close associate & Guide FATHER OF TELANGANA STATE KALOJI NARAYANA RAO - THE PRAJA KAVI
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-        {/* Green Channel Treaty Section - BENTO / GLASSMORPHISM STYLE */}
+        {/* 3. Green Channel Treaty Section (Diplomatic Milestone) */}
         <section className="py-24 md:py-40 bg-slate-900 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#2563EB15_0%,transparent_50%)] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -629,7 +287,7 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* International Diplomatic Presence */}
+        {/* 4. International Diplomatic Presence */}
         <section className="py-24 bg-white overflow-hidden relative border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
@@ -656,8 +314,7 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-
-        {/* Supreme Court Section */}
+        {/* 5. Supreme Court Section */}
         <section className="py-24 bg-white overflow-hidden relative">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -693,7 +350,344 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* FTCCI Awareness Section */}
+        {/* 6. Aerobiology Legacy Section */}
+        <section className="py-24 md:py-32 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="space-y-8"
+              >
+                <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
+                  <Beaker size={14} /> Scientific Legacy
+                </div>
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight font-heading leading-tight">
+                  Pioneering <span className="text-primary">Aerobiology</span> <br /> in India
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                  Dr. Vyakarnam Nageshwar is among the elite few Medical Super Specialists in India dedicated to the field of Aerobiology.
+                </p>
+                <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                  <p className="text-slate-600 italic leading-relaxed">
+                    "His dedication to environmental immunology has earned him a place in the favored students list of **Dr. Sripad Agashe**, the Father of Indian Aerobiology, as documented in his seminal literature."
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="aspect-video relative rounded-[3rem] overflow-hidden shadow-[0_48px_96px_-32px_rgba(0,0,0,0.15)] border border-white/20 backdrop-blur-md bg-white/5 group">
+                  <Image
+                    src="/images/Dr.Vyakarnam%20Nageshwar%20along%20with%20Dr.%20Sripad%20Agashe.jpg"
+                    alt="Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-[2s] cursor-zoom-in"
+                    onClick={() => setSelectedImg({ src: "/images/Dr.Vyakarnam Nageshwar along with Dr. Sripad Agashe.jpg", alt: "Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology" })}
+                  />
+                  <div className="absolute inset-0 border-[16px] border-white/10 rounded-[3rem] pointer-events-none" />
+                </div>
+                <p className="mt-6 text-xs text-slate-400 text-center font-medium italic">
+                  National Conference at Mysore: Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* 7. Heritage & Legacy Section */}
+        <section className="py-24 bg-slate-50 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="flex flex-col md:flex-row gap-16 items-center">
+              <div className="flex-1 w-full aspect-[4/5] md:aspect-square relative rounded-[4rem] overflow-hidden shadow-[0_64px_128px_-32px_rgba(0,0,0,0.2)] border border-slate-200/50 backdrop-blur-md bg-white/5 group">
+                <Image
+                  src="/images/Dr.Vyakarnam%20Nageshwar%20in%20his%20Medical%20%20College%20days%20in%20a%20public%20health%20event%20,%20along%20with%20%20his%20close%20associate%20&%20Guide%20FATHER%20OF%20TELANGANA%20STATE%20KALOJI%20NARAYANA%20RAO%20-%20THE%20PRAJA%20KAVI.jpg"
+                  alt="Dr. Vyakarnam Nageshwar with Kaloji Narayana Rao - The Praja Kavi"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-[2s] cursor-zoom-in"
+                  onClick={() => setSelectedImg({ src: "/images/Dr.Vyakarnam Nageshwar in his Medical  College days in a public health event , along with  his close associate & Guide FATHER OF TELANGANA STATE KALOJI NARAYANA RAO - THE PRAJA KAVI.jpg", alt: "Dr. Vyakarnam Nageshwar with Kaloji Narayana Rao - The Praja Kavi" })}
+                />
+                <div className="absolute inset-0 border-[20px] border-white/10 rounded-[4rem] pointer-events-none" />
+              </div>
+              <div className="flex-1 space-y-8">
+                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
+                  Roots & Inspiration
+                </div>
+                <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight text-slate-900 leading-[1.1]">The People's <br /> Physician.</h2>
+                <p className="text-slate-600 text-lg font-medium leading-relaxed italic border-l-4 border-primary pl-6">
+                  "Dr. Vyakarnam Nageshwar during his medical college days, participating in a transformative public health event alongside his close associate and guide."
+                </p>
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold text-slate-900">Kaloji Narayana Rao</h3>
+                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-4 block">The Praja Kavi | Father of Telangana State</p>
+                  <p className="text-slate-500 leading-relaxed">
+                    Dr.Vyakarnam Nageshwar in his Medical  College days in a public health event , along with  his close associate & Guide FATHER OF TELANGANA STATE KALOJI NARAYANA RAO - THE PRAJA KAVI
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 8. HPV Advocacy Campaign */}
+        <section className="py-24 md:py-32 bg-white">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="space-y-8"
+              >
+                <div className="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
+                  <ShieldAlert size={14} /> Critical Advocacy
+                </div>
+                <h2 className="text-3xl md:text-6xl font-bold tracking-tight font-heading leading-tight">
+                  HPV Vaccination: <br /> <span className="text-red-600 font-medium italic">"NOT for All"</span>
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed font-medium italic">
+                  "As a medically qualified citizen, I urge you to potentially prevent the calamity of flare-ups in Allergy & Autoimmune diseases." — Dr. Vyakarnam
+                </p>
+                <div className="space-y-4">
+                  <h4 className="font-bold text-slate-900 uppercase tracking-widest text-xs">The Scientific Concern:</h4>
+                    While HPV vaccination is key for cancer prevention, WAF highlights risks associated with yeast-based recombinant vaccines. Research at Aswini Allergy Centre found a **significant yeast hypersensitivity prevalence** in screened patients.
+                </div>
+                <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                  <p className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-widest">WAF Recommendations:</p>
+                  <ul className="space-y-3">
+                    {["Mandatory pre-vaccination clinical screening", "Detailed history for yeast hypersensitivity", "National referral protocols to specialists", "Strengthened post-vaccination monitoring"].map((item) => (
+                      <li key={item} className="flex items-center gap-3 text-slate-600 text-sm font-medium">
+                        <div className="w-1.5 h-1.5 rounded-full bg-red-500" /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="aspect-video relative rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] ring-1 ring-slate-200 group">
+                  <Image
+                    src="/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png"
+                    alt="HPV Vaccination Safety Awareness Campaign"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-[1.5s] cursor-zoom-in"
+                    onClick={() => setSelectedImg({ src: "/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png", alt: "HPV Vaccination Safety Awareness Campaign" })}
+                  />
+                  <div className="absolute inset-0 border-[12px] border-white/5 rounded-[2.5rem] pointer-events-none" />
+                </div>
+                <p className="mt-6 text-xs text-slate-400 text-center font-medium italic">
+                  The campaign highlights that HPV vaccination should not be universally administered without prior screening.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* 9. Avian Flu (H5N1) Advisory Section */}
+        <section className="py-24 md:py-40 bg-white relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 md:px-12">
+            <div className="space-y-10 text-center">
+              <div className="inline-flex items-center gap-3 bg-red-50 text-red-700 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
+                <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" /> Global Health Advisory
+              </div>
+              <h2 className="text-4xl md:text-7xl font-bold font-heading tracking-tight leading-[1.05] text-slate-900">
+                H5N1: One <br /> <span className="text-primary italic font-medium underline decoration-primary/20 decoration-8 underline-offset-8">Mutation Away.</span>
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                <div className="space-y-6">
+                  <p className="text-slate-600 leading-relaxed font-medium text-lg">
+                    Recent reports from **Deccan Chronicle** highlight a critical emergence of Avian Flu (H5N1) in dairy animals. While human infections remain rare, the clinical severity is staggering.
+                  </p>
+                  <div className="p-8 bg-white/50 backdrop-blur-md rounded-[2rem] border border-slate-200/50 shadow-xl">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Clinical Concern</span>
+                    <span className="text-4xl font-bold text-red-600">High <span className="text-sm font-medium text-slate-500 ml-2">Fatality Risk</span></span>
+                  </div>
+                </div>
+                <div className="space-y-6 flex flex-col justify-center">
+                  <p className="text-slate-500 text-lg leading-relaxed italic">
+                    "With mortality being high in symptomatic cases, the seriousness of this virus cannot be understated. We are monitoring the HPAI strains closely."
+                  </p>
+                  <div className="flex items-center gap-4 pt-4 border-t border-slate-100">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <User size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-slate-900 tracking-tight">Dr. Vyakarnam Nageshwar</p>
+                      <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black">President, World Allergy Foundation</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-3 pt-4">
+                {["Viral Pneumonia", "ARDS Risk", "Multi-organ Failure", "Dairy-to-Human Transfer"].map((tag) => (
+                  <span key={tag} className="px-4 py-2 bg-slate-100 rounded-lg text-[10px] md:text-[11px] font-bold text-slate-600 border border-slate-200">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 10. Transformation Stories (Case Study Section) */}
+        <section className="py-24 md:py-32 bg-white">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="flex flex-col items-center text-center mb-20">
+              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4">Clinical Evidence</span>
+              <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight text-slate-900">Transformation Stories</h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-[0_48px_96px_-32px_rgba(0,0,0,0.15)] ring-1 ring-slate-200 group"
+              >
+                <Image
+                  src="/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.png"
+                  alt="Case Study"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-[1.5s]"
+                />
+                <div className="absolute inset-0 border-[16px] border-white/10 rounded-[3rem] pointer-events-none" />
+              </motion.div>
+
+              <div className="space-y-8">
+                <h3 className="text-3xl font-bold font-heading">The Case of Mr. Raghukumar</h3>
+                <p className="text-slate-600 text-lg leading-relaxed font-medium">
+                  A 57-year-old government teacher from Khammam who battled chronic skin rashes and breathing issues for nearly **40 years**.
+                </p>
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="w-1 h-12 bg-primary rounded-full" />
+                    <p className="text-slate-500 italic leading-relaxed">
+                      "Unless the root cause—the immunological basis—is identified, patients remain dependent on temporary relief like steroids." — Dr. Vyakarnam
+                    </p>
+                  </div>
+                  <p className="text-slate-600 leading-relaxed font-medium">
+                    Within three months of scientifically guided immunotherapy and molecular hydrogen therapy, his decades-old ulcers resolved and swelling vanished completely.
+                  </p>
+                </div>
+                <div className="pt-6">
+                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-4">Treatment Framework:</div>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="px-4 py-2 bg-slate-50 rounded-xl text-[10px] font-bold text-slate-600 border border-slate-100">Targeted Avoidance</span>
+                    <span className="px-4 py-2 bg-slate-50 rounded-xl text-[10px] font-bold text-slate-600 border border-slate-100">Sublingual Immunotherapy</span>
+                    <span className="px-4 py-2 bg-slate-50 rounded-xl text-[10px] font-bold text-slate-600 border border-slate-100">Molecular Hydrogen Therapy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 11. Swaach Akash Abhiyan - DARK SECTION */}
+        <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
+          <div className="absolute top-0 left-0 w-full h-full bg-primary/10 opacity-30" />
+          <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div className="flex flex-col md:flex-row gap-16 items-center">
+              <div className="flex-1 space-y-8">
+                <span className="text-primary-accent font-bold tracking-[0.4em] uppercase text-xs">Pollution Monitoring</span>
+                <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight">Swaach Akash Abhiyan</h2>
+                <p className="text-slate-300 text-xl font-medium leading-relaxed">
+                  A widespread periodic monitoring program across major Indian cities like **Hyderabad, Warangal, and throughout Telangana, India**. We collect real-time pollution data to develop city-specific strategies for respiratory health and allergy prevention.
+                </p>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="aspect-square relative rounded-[2rem] overflow-hidden border border-white/10 group shadow-2xl">
+                      <Image src="/images/swatch1.jpg" alt="Pollution Study 1" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    </div>
+                    <div className="aspect-square relative rounded-[2rem] overflow-hidden border border-white/10 group shadow-2xl">
+                      <Image src="/images/swatch2.jpg" alt="Pollution Study 2" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    </div>
+                  </div>
+              </div>
+              <div className="flex-1 w-full aspect-video bg-white/5 rounded-[3rem] border border-white/10 backdrop-blur-md flex items-center justify-center relative overflow-hidden group shadow-[0_64px_64px_-32px_rgba(0,0,0,0.5)]">
+                <Image
+                  src="/images/Work%20shop%20on%20allegy.jpeg"
+                  alt="Pollution Workshop"
+                  fill
+                  className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2s]"
+                />
+                <div className="absolute inset-0 bg-black/20" />
+                <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.5em] text-white/70 text-center px-10 leading-loose">Field Research & <br/> Environmental Forensic Laboratory</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 12. Surat Workshop Section */}
+        <section className="py-24 md:py-32 bg-slate-50 relative">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,#2563EB08_0%,transparent_50%)] pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div className="text-center mb-16">
+              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Medical Education</span>
+              <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight text-slate-900">Surat Clinical Workshop</h2>
+              <p className="mt-6 text-slate-500 max-w-2xl mx-auto font-medium text-lg">
+                World Allergy Foundation jointly conducted a high-impact session in Surat, Gujarat, empowering medical professionals with advanced modalities of Allergies, Inflammation, and Immunotherapy.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              {[
+                { src: "/images/W1.jpg", span: "col-span-2 row-span-2" },
+                { src: "/images/W2.jpg", span: "col-span-1 row-span-1" },
+                { src: "/images/W3.jpg", span: "col-span-1 row-span-1" },
+                { src: "/images/W4.jpg", span: "col-span-1 row-span-1" },
+                { src: "/images/W5.jpg", span: "col-span-1 row-span-1" },
+                { src: "/images/W6.jpg", span: "col-span-1 row-span-1" },
+                { src: "/images/w7.jpg", span: "col-span-1 row-span-1" }
+              ].map((img, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05 }}
+                >
+                  <div className={`${img.span} relative aspect-square rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border border-white/20 backdrop-blur-sm bg-white/5 group transition-all duration-700 hover:shadow-[0_64px_96px_-32px_rgba(37,99,235,0.3)]`}>
+                    <Image
+                      src={img.src}
+                      alt={`Workshop image ${idx + 1}`}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-[2s] cursor-zoom-in"
+                      onClick={() => setSelectedImg({ src: img.src, alt: `Surat Clinical Workshop Session ${idx + 1}` })}
+                    />
+                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    <div className="absolute inset-0 border-[10px] border-white/10 rounded-[2rem] md:rounded-[3rem] pointer-events-none" />
+                  </div>
+                </motion.div>
+              ))}
+              <div className="col-span-1 flex items-center justify-center p-4 bg-primary/5 rounded-[2rem] border border-primary/10">
+                <p className="text-[10px] font-black uppercase tracking-widest text-primary text-center">Clinical Excellence <br /> Gujarat 2025</p>
+              </div>
+            </div>
+            <div className="mt-12 text-center">
+              <button 
+                onClick={() => document.getElementById('workshop')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-4 bg-primary text-white rounded-full font-black uppercase tracking-widest text-xs hover:bg-slate-900 transition-all active:scale-95 shadow-xl"
+              >
+                Request a Workshop for Your City
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* 13. FTCCI Awareness Section */}
         <section className="py-24 bg-slate-50 overflow-hidden relative">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -733,10 +727,7 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-
-
-
-        {/* FTCCI Event Gallery - BENTO GRID REFINEMENT */}
+        {/* 14. FTCCI Event Gallery */}
         <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="flex flex-col items-center text-center mb-24">
@@ -812,7 +803,7 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* Global Impact & Media Gallery */}
+        {/* 15. Global Impact & Media Gallery */}
         <section className="py-24 bg-slate-50 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -847,7 +838,7 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* World Allergy Week & Media Advisory Section */}
+        {/* 16. World Allergy Week 2025 */}
         <section className="py-24 md:py-32 bg-slate-900 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-full h-full bg-primary/5 opacity-20 pointer-events-none" />
           <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -936,23 +927,18 @@ export default function WorldAllergyFoundation() {
                 </div>
               </motion.div>
             </div>
-          </div>
-        </section>
-
-        {/* Media Partners & Recognition Section */}
-        <section className="py-24 bg-white border-t border-slate-100">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="text-center mb-16">
-              <span className="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Media Impact</span>
-              <h2 className="text-3xl md:text-5xl font-bold font-heading mb-8">Widely Recognized by <br /> Global Media</h2>
-              <MediaLogos />
+            
+            <div className="mt-20 pt-20 border-t border-white/10">
+              <div className="text-center">
+                <span className="text-primary-accent font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Media Impact</span>
+                <h2 className="text-3xl md:text-5xl font-bold font-heading mb-8">Widely Recognized by <br /> Global Media</h2>
+                <MediaLogos />
+              </div>
             </div>
-
-
           </div>
         </section>
 
-        {/* NEW: INVITE WORKSHOP & CONTRIBUTE */}
+        {/* 17. Invite Workshop & Contribute */}
         <section id="workshop" className="py-24 md:py-32 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
