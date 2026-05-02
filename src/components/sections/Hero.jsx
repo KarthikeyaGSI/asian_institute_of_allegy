@@ -57,7 +57,6 @@ export default function Hero() {
           loop
           playsInline
           preload="none"
-          poster="/images/dr-nageswar.webp"
           className="w-full h-full object-cover"
           style={{ objectPosition: "center" }}
         >
