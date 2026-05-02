@@ -793,8 +793,6 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        </section>
-
         {/* World Allergy Week & Media Advisory Section */}
         <section className="py-24 md:py-32 bg-slate-900 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-full h-full bg-primary/5 opacity-20 pointer-events-none" />
