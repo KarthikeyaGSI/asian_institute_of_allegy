@@ -390,6 +390,7 @@ export default function WorldAllergyFoundation() {
             </div>
           </div>
         </section>
+      </div>
 
         {/* Surat Workshop Section */}
         <section className="py-24 md:py-32 bg-slate-50 relative">
@@ -965,6 +966,5 @@ export default function WorldAllergyFoundation() {
 
       <Footer />
     </main>
-
   );
 }
