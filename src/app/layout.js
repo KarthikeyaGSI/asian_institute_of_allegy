@@ -4,6 +4,7 @@ import SmoothScroll from "@/components/effects/SmoothScroll";
 import NoiseOverlay from "@/components/effects/NoiseOverlay";
 import PremiumCursor from "@/components/effects/PremiumCursor";
 import NotificationTriggers from "@/components/ui/NotificationTriggers";
+import ProgressBar from "@/components/effects/ProgressBar";
 import Script from "next/script";
 
 const outfit = Outfit({
@@ -93,6 +94,7 @@ export default function RootLayout({ children }) {
         </noscript>
 
         <SmoothScroll>
+          <ProgressBar />
           <NoiseOverlay />
           <PremiumCursor />
           <NotificationTriggers />
