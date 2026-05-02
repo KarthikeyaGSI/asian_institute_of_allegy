@@ -325,7 +325,7 @@ export default function WorldAllergyFoundation() {
               <span className="text-primary-accent font-bold tracking-[0.4em] uppercase text-xs">Pollution Monitoring</span>
               <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight">Swaach Akash Abhiyan</h2>
               <p className="text-slate-300 text-xl font-medium leading-relaxed">
-                A widespread periodic monitoring program across major Indian cities like Hyderabad and Warangal. We collect real pollution data to develop city-specific strategies for respiratory health.
+                A widespread periodic monitoring program across major Indian cities like **Hyderabad, Warangal, and throughout Telangana, India**. We collect real-time pollution data to develop city-specific strategies for respiratory health and allergy prevention.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="aspect-square relative rounded-2xl overflow-hidden border border-white/10 group">
@@ -495,7 +495,7 @@ export default function WorldAllergyFoundation() {
                 <div className="aspect-video relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm bg-white/5 group">
                   <Image
                     src="/images/Dr.Vyakarnam%20Nageshwar%20along%20with%20Dr.%20Sripad%20Agashe.jpg"
-                    alt="Dr. Nageshwar with Dr. Sripad Agashe"
+                    alt="Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-[2s]"
                   />
@@ -562,7 +562,7 @@ export default function WorldAllergyFoundation() {
               >
                 <Image
                   src="/images/IK.webp"
-                  alt="Green Channel Treaty Signing"
+                  alt="Historic Green Channel Treaty signing between India and Kenya for healthcare collaboration"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
@@ -646,10 +646,10 @@ export default function WorldAllergyFoundation() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <div className="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
+                <div className="relative aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
                   <Image
                     src="/images/SC.jpg"
-                    alt="Dr. Nageshwar at Supreme Court of India"
+                    alt="Dr. Vyakarnam Nageshwar at the Supreme Court of India in Delhi - Leading Allergy Advocacy"
                     fill
                     className="object-cover object-top"
                   />
@@ -987,6 +987,32 @@ export default function WorldAllergyFoundation() {
       </div>
 
       <Footer />
+      
+      {/* SEO/AEO Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalOrganization",
+            "name": "World Allergy Foundation",
+            "url": "https://asian-institute-of-allergy.vercel.app/world-allergy-foundation",
+            "logo": "https://asian-institute-of-allergy.vercel.app/images/world%20allergy%20foundation%20logo.jpeg",
+            "founder": {
+              "@type": "Person",
+              "name": "Dr. Vyakarnam Nageshwar"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "addressCountry": "India"
+            },
+            "description": "Global research and clinical foundation focused on environmental immunology and chronic allergy treatments.",
+            "award": "National Recognition for Root-Cause Allergy Management"
+          })
+        }}
+      />
     </main>
   );
 }
