@@ -267,14 +267,15 @@ export default function WorldAllergyFoundation() {
                 viewport={{ once: true }}
                 className="lg:col-span-5 order-2 lg:order-1"
               >
-                <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] ring-1 ring-slate-200 group">
-                  <Image
-                    src="/images/deccan%20chronicle%20featured.jpeg"
-                    alt="Deccan Chronicle Avian Flu Feature"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] border border-slate-200/50 group bg-white/5 backdrop-blur-sm">
+                  <Image 
+                    src="/images/deccan%20chronicle%20featured.jpeg" 
+                    alt="Deccan Chronicle Avian Flu Feature" 
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 border-[8px] border-white/10 rounded-[3rem] pointer-events-none" />
                 </div>
               </motion.div>
 
@@ -439,15 +440,16 @@ export default function WorldAllergyFoundation() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className={`${img.span} relative aspect-square rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg group`}
+                  className={`${img.span} relative aspect-square rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm bg-white/5 group`}
                 >
                   <Image
                     src={img.src}
                     alt={`Workshop image ${idx + 1}`}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover group-hover:scale-110 transition-transform duration-[1.5s]"
                   />
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 border-[6px] border-white/10 rounded-2xl md:rounded-[2rem] pointer-events-none" />
                 </motion.div>
               ))}
               <div className="col-span-1 flex items-center justify-center p-4 bg-primary/5 rounded-[2rem] border border-primary/10">
@@ -491,13 +493,14 @@ export default function WorldAllergyFoundation() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="aspect-video relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
+                <div className="aspect-video relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm bg-white/5 group">
                   <Image
                     src="/images/Dr.Vyakarnam%20Nageshwar%20along%20with%20Dr.%20Sripad%20Agashe.jpg"
                     alt="Dr. Nageshwar with Dr. Sripad Agashe"
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-105 transition-transform duration-[2s]"
                   />
+                  <div className="absolute inset-0 border-[10px] border-white/5 rounded-[2rem] pointer-events-none" />
                 </div>
                 <p className="mt-6 text-xs text-slate-400 text-center font-medium italic">
                   National Conference at Mysore: Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe.
@@ -511,13 +514,14 @@ export default function WorldAllergyFoundation() {
         <section className="py-24 bg-slate-50 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="flex flex-col md:flex-row gap-16 items-center">
-              <div className="flex-1 w-full aspect-[4/5] md:aspect-square relative rounded-[3rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
+              <div className="flex-1 w-full aspect-[4/5] md:aspect-square relative rounded-[3rem] overflow-hidden shadow-2xl border border-slate-200/50 backdrop-blur-sm bg-white/5 group">
                 <Image
                   src="/images/kal.jpg"
                   alt="Dr. Nageshwar with Kaloji Narayana Rao"
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-110 transition-transform duration-[2s]"
                 />
+                <div className="absolute inset-0 border-[15px] border-white/10 rounded-[3rem] pointer-events-none" />
               </div>
               <div className="flex-1 space-y-8">
                 <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
@@ -795,15 +799,16 @@ export default function WorldAllergyFoundation() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: num * 0.1 }}
-                  className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-slate-200 group"
+                  className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm bg-white/5 group"
                 >
                   <Image
                     src={`/images/i${num}.jpg`}
                     alt={`Impact Image ${num}`}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover group-hover:scale-110 transition-transform duration-[1.5s]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 border-[8px] border-white/10 rounded-[2.5rem] pointer-events-none" />
                 </motion.div>
               ))}
             </div>
