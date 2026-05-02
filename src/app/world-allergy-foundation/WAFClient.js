@@ -273,7 +273,7 @@ export default function WorldAllergyFoundation() {
                   <p className="text-slate-600 leading-relaxed font-medium text-lg">
                     Recent reports from **Deccan Chronicle** highlight a critical emergence of Avian Flu (H5N1) in dairy animals. While human infections remain rare, the clinical severity is staggering.
                   </p>
-                  <div className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 shadow-sm">
+                  <div className="p-8 bg-white/50 backdrop-blur-md rounded-[2rem] border border-slate-200/50 shadow-xl">
                     <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Fatality Rate</span>
                     <span className="text-4xl font-bold text-red-600"><Counter value="49" suffix="%" /> <span className="text-sm font-medium text-slate-500 ml-2">Global Average</span></span>
                   </div>
