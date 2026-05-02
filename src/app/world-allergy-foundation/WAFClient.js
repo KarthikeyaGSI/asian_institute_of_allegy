@@ -426,7 +426,7 @@ export default function WorldAllergyFoundation() {
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Medical Education</span>
               <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight text-slate-900">Surat Clinical Workshop</h2>
               <p className="mt-6 text-slate-500 max-w-2xl mx-auto font-medium text-lg">
-                World Allergy Foundation jointly conducted a high-impact session in Surat, Gujarat, empowering over **<Counter value="400" /> doctors** with advanced modalities of Allergies, Inflammation, and Immunotherapy.
+                World Allergy Foundation jointly conducted a high-impact session in Surat, Gujarat, empowering medical professionals with advanced modalities of Allergies, Inflammation, and Immunotherapy.
               </p>
             </div>
 
