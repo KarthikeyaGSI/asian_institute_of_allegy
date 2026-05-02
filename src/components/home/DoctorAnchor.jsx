@@ -19,7 +19,7 @@ export default function DoctorAnchor() {
                 className="absolute inset-0 w-full h-full"
               >
                 <Image 
-                  src="/images/dr-nageswar.jpeg" 
+                  src="/images/dr-nageswar.webp" 
                   alt="Dr. Vyakarnam" 
                   fill 
                   className="object-cover"

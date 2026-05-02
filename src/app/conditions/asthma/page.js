@@ -46,7 +46,7 @@ export default function AsthmaPage() {
       title="Allergic Asthma"
       subtitle="Breathe Naturally"
       description="India's leading centre for root-cause asthma resolution. We move beyond temporary inhalers to fix the underlying immune dysfunction."
-      image="/images/Work shop on allegy.jpeg"
+      image="/images/Work shop on allegy.webp"
       highlights={highlights}
       faqs={faqs}
     />

@@ -57,7 +57,7 @@ export default function Hero() {
           loop
           playsInline
           preload="none"
-          poster="/images/dr-nageswar.jpeg"
+          poster="/images/dr-nageswar.webp"
           className="w-full h-full object-cover"
           style={{ objectPosition: "center" }}
         >
@@ -177,7 +177,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               <div className="relative w-16 h-16 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl shrink-0">
                 <Image 
-                  src="/images/dr-nageswar.jpeg"
+                  src="/images/dr-nageswar.webp"
                   alt="Dr. Vyakarnam Nageshwar - Chief Immunologist"
                   fill
                   className="object-cover object-top"

@@ -33,7 +33,7 @@ export default function ParallaxClinic() {
         <div ref={containerRef} className="relative aspect-[21/9] rounded-[4rem] overflow-hidden shadow-2xl">
           <div ref={imageRef} className="absolute inset-0 w-full h-[120%] -top-[10%]">
             <Image
-              src="/images/clinic.png"
+              src="/images/clinic.webp"
               alt="Asian Institute Clinic Interior"
               fill
               className="object-cover scale-110"

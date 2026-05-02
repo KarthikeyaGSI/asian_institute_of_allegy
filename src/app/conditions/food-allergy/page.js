@@ -46,7 +46,7 @@ export default function FoodAllergyPage() {
       title="Food Allergy"
       subtitle="Eat With Confidence"
       description="Precision identification of hidden food triggers. We map your biological response to proteins to keep you safe and healthy."
-      image="/images/Work shop on allegy.jpeg"
+      image="/images/Work shop on allegy.webp"
       highlights={highlights}
       faqs={faqs}
     />

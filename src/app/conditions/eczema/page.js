@@ -46,7 +46,7 @@ export default function EczemaPage() {
       title="Eczema & Skin Allergy"
       subtitle="Restore Your Skin"
       description="Stop managing rashes with temporary creams. We identify the immunological basis of your skin condition for permanent clinical resolution."
-      image="/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.png"
+      image="/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.webp"
       highlights={highlights}
       faqs={faqs}
     />

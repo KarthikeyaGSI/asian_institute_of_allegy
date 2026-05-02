@@ -46,7 +46,7 @@ export default function SinusitisPage() {
       title="Sinusitis & Rhinitis"
       subtitle="Clear Your Airway"
       description="Stop living with a blocked nose and constant headaches. We identify your environmental triggers to provide a permanent clinical fix."
-      image="/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png" 
+      image="/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.webp" 
       highlights={highlights}
       faqs={faqs}
     />

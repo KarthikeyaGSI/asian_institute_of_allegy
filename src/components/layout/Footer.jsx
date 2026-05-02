@@ -12,7 +12,7 @@ export default function Footer() {
             <Link href="/" className="inline-block group">
               <div className="bg-white p-4 md:p-6 rounded-[2rem] shadow-xl border border-gray-100 transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2">
                 <Image 
-                  src="/images/asian institute of allergy logo.jpg" 
+                  src="/images/asian institute of allergy logo.webp" 
                   alt="Asian Institute of Allergy" 
                   width={250} 
                   height={250}

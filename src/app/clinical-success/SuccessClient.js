@@ -16,7 +16,7 @@ const stories = [
     result: "Complete resolution in 3 months",
     quote: "Unless the root cause—the immunological basis—is identified, patients remain dependent on temporary relief like steroids.",
     treatment: "Molecular Hydrogen + Targeted SLIT",
-    image: "/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.png"
+    image: "/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.webp"
   },
   {
     name: "Master Aryan",
@@ -26,7 +26,7 @@ const stories = [
     result: "Inhaler-free for 18 months",
     quote: "My son can now play football without fear. The sublingual drops changed our lives forever.",
     treatment: "Environmental Mapping + SLIT",
-    image: "/images/Work shop on allegy.jpeg"
+    image: "/images/Work shop on allegy.webp"
   }
 ];
 

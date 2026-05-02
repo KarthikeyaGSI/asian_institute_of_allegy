@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const logos = [
-  { name: "Deccan Chronicle", src: "/images/DECCAN CHRONICLE.jpg" },
+  { name: "Deccan Chronicle", src: "/images/DECCAN CHRONICLE.webp" },
   { name: "Telangana Today", src: "/images/TELANGANA TODAY.webp" },
   { name: "Hindustan Times", src: "/images/HINDUSTAN TIMES.webp" },
-  { name: "TV9", src: "/images/TV9.jpg" },
-  { name: "WION news", src: "/images/WION news.jpg" },
+  { name: "TV9", src: "/images/TV9.webp" },
+  { name: "WION news", src: "/images/WION news.webp" },
   { name: "TV5", src: "/images/TV5.webp" },
   { name: "TNEWS", src: "/images/TNEWS.webp" },
   { name: "zee news", src: "/images/zee news.webp" },

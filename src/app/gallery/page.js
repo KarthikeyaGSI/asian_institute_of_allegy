@@ -7,23 +7,23 @@ import Image from "next/image";
 import { Maximize2, Plus } from "lucide-react";
 
 const images = [
-  { src: "/images/Asian.jpeg", title: "Asian Institute Entrance" },
-  { src: "/images/Aswini-Allergy-Centre-Hyderabad-Achieves-National-Recognition-for-RootCause-Allergy-Management-1275x768.jpeg", title: "National Recognition" },
-  { src: "/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.png", title: "Clinical Recovery Story" },
-  { src: "/images/Work shop on allegy.jpeg", title: "Allergy Workshop" },
-  { src: "/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png", title: "World Allergy Foundation" },
+  { src: "/images/Asian.webp", title: "Asian Institute Entrance" },
+  { src: "/images/Aswini-Allergy-Centre-Hyderabad-Achieves-National-Recognition-for-RootCause-Allergy-Management-1275x768.webp", title: "National Recognition" },
+  { src: "/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.webp", title: "Clinical Recovery Story" },
+  { src: "/images/Work shop on allegy.webp", title: "Allergy Workshop" },
+  { src: "/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.webp", title: "World Allergy Foundation" },
   { src: "/images/allergy-hospital-in-hyderabad.webp", title: "Hospital View" },
-  { src: "/images/asianinstituteof allergy.jpeg", title: "Institute Facility" },
-  { src: "/images/aswiniallergycentre1.jpg", title: "Clinic Reception" },
-  { src: "/images/aswiniallergycentre2.jpg", title: "Diagnostics Lab" },
-  { src: "/images/aswiniallergycentre3.jpg", title: "Patient Care" },
-  { src: "/images/aswiniallergycentre7.jpg", title: "Specialist Wing" },
+  { src: "/images/asianinstituteof allergy.webp", title: "Institute Facility" },
+  { src: "/images/aswiniallergycentre1.webp", title: "Clinic Reception" },
+  { src: "/images/aswiniallergycentre2.webp", title: "Diagnostics Lab" },
+  { src: "/images/aswiniallergycentre3.webp", title: "Patient Care" },
+  { src: "/images/aswiniallergycentre7.webp", title: "Specialist Wing" },
   { src: "/images/best-allergy-hospital.webp", title: "Centre of Excellence" },
-  { src: "/images/event.jpeg", title: "Medical Conference" },
-  { src: "/images/inside.jpeg", title: "Advanced Treatment Room" },
+  { src: "/images/event.webp", title: "Medical Conference" },
+  { src: "/images/inside.webp", title: "Advanced Treatment Room" },
   { src: "/images/kcr-at-hospital.webp", title: "Dignitary Visit" },
-  { src: "/images/research.jpeg", title: "Clinical Research" },
-  { src: "/images/dr-nageswar.jpeg", title: "Dr. Vyakarnam" },
+  { src: "/images/research.webp", title: "Clinical Research" },
+  { src: "/images/dr-nageswar.webp", title: "Dr. Vyakarnam" },
 ];
 
 export default function GalleryPage() {

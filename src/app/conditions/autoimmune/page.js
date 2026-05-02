@@ -46,7 +46,7 @@ export default function AutoimmunePage() {
       title="Autoimmune Care"
       subtitle="Restore Systemic Balance"
       description="Specialized clinical immunology for treatment-resistant autoimmune conditions. We focus on modulating the immune response for long-term stability."
-      image="/images/dr-nageswar.jpeg"
+      image="/images/dr-nageswar.webp"
       highlights={highlights}
       faqs={faqs}
     />

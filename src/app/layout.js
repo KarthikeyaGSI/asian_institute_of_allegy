@@ -35,7 +35,7 @@ export const metadata = {
     siteName: "Asian Institute of Allergy",
     images: [
       {
-        url: "/images/dr-nageswar.jpeg",
+        url: "/images/dr-nageswar.webp",
         width: 1200,
         height: 630,
         alt: "Dr. Vyakarnam - Chief Immunologist at Asian Institute of Allergy",
@@ -48,7 +48,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Asian Institute of Allergy | Root-Cause Resolution Experts",
     description: "Resolving chronic respiratory and skin allergies through precision immunology.",
-    images: ["/images/dr-nageswar.jpeg"],
+    images: ["/images/dr-nageswar.webp"],
   },
   alternates: {
     canonical: "https://asianinstituteofallergy.com",

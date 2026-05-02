@@ -178,7 +178,7 @@ export default function BookingForm({ onStartQuiz }) {
               >
                 <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-primary ring-4 ring-primary/10">
                   <Image 
-                    src="/images/dr-nageswar.jpeg" 
+                    src="/images/dr-nageswar.webp" 
                     alt="Dr. Vyakarnam"
                     fill
                     className="object-cover object-top"

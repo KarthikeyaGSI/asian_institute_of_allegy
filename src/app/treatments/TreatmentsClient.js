@@ -101,7 +101,7 @@ export default function TreatmentsPage() {
                 <div className="flex-1 w-full relative aspect-square md:aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl">
                    <div className={`absolute inset-0 ${t.color} opacity-10`} />
                    <Image 
-                     src={idx === 0 ? "/images/dr-nageswar.jpeg" : idx === 1 ? "/images/Work shop on allegy.jpeg" : "/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png"}
+                     src={idx === 0 ? "/images/dr-nageswar.webp" : idx === 1 ? "/images/Work shop on allegy.webp" : "/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.webp"}
                      alt={t.title}
                      fill
                      className="object-cover"

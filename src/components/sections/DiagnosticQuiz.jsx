@@ -454,7 +454,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                       <div className="flex items-center gap-4 mb-6">
                         <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
                           <Image
-                            src="/images/dr-nageswar.jpeg"
+                            src="/images/dr-nageswar.webp"
                             alt="Doctor"
                             fill
                             className="object-cover object-top"

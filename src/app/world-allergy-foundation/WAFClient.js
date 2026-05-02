@@ -204,12 +204,12 @@ export default function WorldAllergyFoundation() {
                 >
                   <div className="relative w-full h-full mix-blend-multiply">
                     <Image
-                      src="/images/world%20allergy%20foundation%20logo.jpeg"
+                      src="/images/world%20allergy%20foundation%20logo.webp"
                       alt="World Allergy Foundation Logo"
                       fill
                       className="object-contain cursor-zoom-in"
                       priority
-                      onClick={() => setSelectedImg({ src: "/images/world allergy foundation logo.jpeg", alt: "World Allergy Foundation Logo" })}
+                      onClick={() => setSelectedImg({ src: "/images/world allergy foundation logo.webp", alt: "World Allergy Foundation Logo" })}
                     />
                   </div>
                 </motion.div>
@@ -351,12 +351,12 @@ export default function WorldAllergyFoundation() {
                 <Tilt>
                   <div className="aspect-video relative rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-[0_64px_128px_-32px_rgba(0,0,0,0.15)] ring-1 ring-slate-200">
                     <Image
-                      src="/images/waf%20event%20senior%20deplomat%20hyd.jpg"
+                      src="/images/waf%20event%20senior%20deplomat%20hyd.webp"
                       alt="Senior Diplomatic Officer at World Allergy Foundation Hyderabad Event"
                       fill
                       className="object-cover object-top cursor-zoom-in"
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      onClick={() => setSelectedImg({ src: "/images/waf event senior deplomat hyd.jpg", alt: "International Diplomatic Presence: Ethiopia-India Collaboration" })}
+                      onClick={() => setSelectedImg({ src: "/images/waf event senior deplomat hyd.webp", alt: "International Diplomatic Presence: Ethiopia-India Collaboration" })}
                     />
                   </div>
                 </Tilt>
@@ -385,12 +385,12 @@ export default function WorldAllergyFoundation() {
                 <Tilt>
                   <div className="relative aspect-[3/4] rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
                     <Image
-                      src="/images/SC.jpg"
+                      src="/images/SC.webp"
                       alt="Dr. Vyakarnam Nageshwar providing policy advocacy at the Supreme Court of India"
                       fill
                       className="object-cover object-top cursor-zoom-in"
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      onClick={() => setSelectedImg({ src: "/images/SC.jpg", alt: "Policy Advocacy at the Supreme Court of India" })}
+                      onClick={() => setSelectedImg({ src: "/images/SC.webp", alt: "Policy Advocacy at the Supreme Court of India" })}
                     />
                   </div>
                 </Tilt>
@@ -440,12 +440,12 @@ export default function WorldAllergyFoundation() {
                 <Tilt>
                   <div className="aspect-video relative rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-2xl border border-white/20 group bg-slate-100">
                     <Image
-                      src="/images/Dr.Vyakarnam%20Nageshwar%20along%20with%20Dr.%20Sripad%20Agashe.jpg"
+                      src="/images/Dr.Vyakarnam%20Nageshwar%20along%20with%20Dr.%20Sripad%20Agashe.webp"
                       alt="Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-[2s] cursor-zoom-in"
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      onClick={() => setSelectedImg({ src: "/images/Dr.Vyakarnam Nageshwar along with Dr. Sripad Agashe.jpg", alt: "Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology" })}
+                      onClick={() => setSelectedImg({ src: "/images/Dr.Vyakarnam Nageshwar along with Dr. Sripad Agashe.webp", alt: "Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology" })}
                     />
                   </div>
                 </Tilt>
@@ -466,12 +466,12 @@ export default function WorldAllergyFoundation() {
                 <Tilt>
                   <div className="aspect-square relative rounded-[3rem] md:rounded-[5rem] overflow-hidden shadow-[0_64px_128px_-32px_rgba(0,0,0,0.5)] border border-white/10 group">
                     <Image
-                      src="/images/kal.jpg"
+                      src="/images/kal.webp"
                       alt="Heritage: Dr. Vyakarnam Nageshwar during medical college with Kaloji Narayana Rao"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-[2s] cursor-zoom-in"
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      onClick={() => setSelectedImg({ src: "/images/kal.jpg", alt: "Dr. Vyakarnam Nageshwar with Kaloji Narayana Rao - The Praja Kavi" })}
+                      onClick={() => setSelectedImg({ src: "/images/kal.webp", alt: "Dr. Vyakarnam Nageshwar with Kaloji Narayana Rao - The Praja Kavi" })}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
                   </div>
@@ -531,12 +531,12 @@ export default function WorldAllergyFoundation() {
                 <Tilt>
                   <div className="aspect-video relative rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-2xl ring-1 ring-slate-200 group">
                     <Image
-                      src="/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png"
+                      src="/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.webp"
                       alt="HPV Vaccine Safety Campaign by World Allergy Foundation"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-[1.5s] cursor-zoom-in"
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      onClick={() => setSelectedImg({ src: "/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.png", alt: "HPV Vaccination Safety Awareness Campaign" })}
+                      onClick={() => setSelectedImg({ src: "/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.webp", alt: "HPV Vaccination Safety Awareness Campaign" })}
                     />
                   </div>
                 </Tilt>
@@ -601,7 +601,7 @@ export default function WorldAllergyFoundation() {
               <Tilt>
                 <div className="relative aspect-[4/3] rounded-[3rem] md:rounded-[5rem] overflow-hidden shadow-2xl ring-1 ring-slate-200 group">
                   <Image
-                    src="/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.png"
+                    src="/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.webp"
                     alt="Clinical Result showing skin allergy resolution at Aswini Allergy Centre"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-[2s]"
@@ -646,15 +646,15 @@ export default function WorldAllergyFoundation() {
                     A widespread monitoring program across Indian cities like Hyderabad and Warangal.
                   </p>
                   <div className="grid grid-cols-2 gap-4 md:gap-8">
-                    <Tilt><div className="aspect-square relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl"><Image src="/images/swatch1.jpg" alt="Air Pollution Research Study 1" fill className="object-cover" sizes="(max-width: 768px) 45vw, 25vw" /></div></Tilt>
-                    <Tilt><div className="aspect-square relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl"><Image src="/images/swatch2.jpg" alt="Air Pollution Research Study 2" fill className="object-cover" sizes="(max-width: 768px) 45vw, 25vw" /></div></Tilt>
+                    <Tilt><div className="aspect-square relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl"><Image src="/images/swatch1.webp" alt="Air Pollution Research Study 1" fill className="object-cover" sizes="(max-width: 768px) 45vw, 25vw" /></div></Tilt>
+                    <Tilt><div className="aspect-square relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl"><Image src="/images/swatch2.webp" alt="Air Pollution Research Study 2" fill className="object-cover" sizes="(max-width: 768px) 45vw, 25vw" /></div></Tilt>
                   </div>
                 </FadeInBlur>
               </div>
               <div className="flex-1 w-full">
                 <Tilt>
                   <div className="aspect-video relative rounded-[2rem] md:rounded-[5rem] overflow-hidden shadow-2xl border border-white/10 group">
-                    <Image src="/images/Work%20shop%20on%20allegy.jpeg" alt="Field Research and Allergen Workshop" fill className="object-cover opacity-60 group-hover:opacity-100 transition-opacity" sizes="(max-width: 1024px) 100vw, 50vw" />
+                    <Image src="/images/Work%20shop%20on%20allegy.webp" alt="Field Research and Allergen Workshop" fill className="object-cover opacity-60 group-hover:opacity-100 transition-opacity" sizes="(max-width: 1024px) 100vw, 50vw" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.6em] md:tracking-[0.8em] text-white text-center px-6">Allergen Forensic Lab</span>
                     </div>
@@ -676,10 +676,10 @@ export default function WorldAllergyFoundation() {
             </FadeInBlur>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {[
-                { src: "/images/W1.jpg", span: "col-span-2 row-span-2" },
-                { src: "/images/W2.jpg", span: "col-span-1 row-span-1" },
-                { src: "/images/W3.jpg", span: "col-span-1 row-span-1" },
-                { src: "/images/W4.jpg", span: "col-span-1 row-span-1" }
+                { src: "/images/W1.webp", span: "col-span-2 row-span-2" },
+                { src: "/images/W2.webp", span: "col-span-1 row-span-1" },
+                { src: "/images/W3.webp", span: "col-span-1 row-span-1" },
+                { src: "/images/W4.webp", span: "col-span-1 row-span-1" }
               ].map((img, idx) => (
                 <Tilt key={idx} className={img.span}>
                   <div className="relative h-full aspect-square rounded-[1.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100">
@@ -706,7 +706,7 @@ export default function WorldAllergyFoundation() {
                 <Tilt>
                   <div className="aspect-video relative rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-2xl border border-white/10 group">
                     <Image 
-                      src="/images/World%20Allergy%20Week%202025%20observed%20by%20Dr.Vyakarnam%20Nageshwar%20world%20Allergy%20Foundation%20by%20Broadcasting%20%20a%20LIVE%20interactive%20show%20about%20Alkergic%20disorders%20in%20TV9.jpg" 
+                      src="/images/World%20Allergy%20Week%202025%20observed%20by%20Dr.Vyakarnam%20Nageshwar%20world%20Allergy%20Foundation%20by%20Broadcasting%20%20a%20LIVE%20interactive%20show%20about%20Alkergic%20disorders%20in%20TV9.webp" 
                       alt="Dr. Vyakarnam Nageshwar broadcasting LIVE for World Allergy Week on TV9" 
                       fill 
                       className="object-cover group-hover:scale-105 transition-transform"
@@ -716,7 +716,7 @@ export default function WorldAllergyFoundation() {
                 </Tilt>
               </div>
               <div className="flex flex-col gap-12">
-                <Tilt><div className="aspect-[3/4] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10"><Image src="/images/MA1.jpg" alt="Health Advisory and Clinical Insights" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" /></div></Tilt>
+                <Tilt><div className="aspect-[3/4] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10"><Image src="/images/MA1.webp" alt="Health Advisory and Clinical Insights" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" /></div></Tilt>
               </div>
             </div>
             
@@ -796,7 +796,7 @@ export default function WorldAllergyFoundation() {
             "@type": "MedicalOrganization",
             "name": "World Allergy Foundation",
             "url": "https://asian-institute-of-allergy.vercel.app/world-allergy-foundation",
-            "logo": "https://asian-institute-of-allergy.vercel.app/images/world%20allergy%20foundation%20logo.jpeg",
+            "logo": "https://asian-institute-of-allergy.vercel.app/images/world%20allergy%20foundation%20logo.webp",
             "founder": { "@type": "Person", "name": "Dr. Vyakarnam Nageshwar" },
             "description": "Global research and clinical foundation focused on environmental immunology.",
           })
