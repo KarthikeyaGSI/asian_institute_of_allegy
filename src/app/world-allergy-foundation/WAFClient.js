@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Globe, Beaker, ShieldAlert, Leaf, Newspaper, ArrowRight } from "lucide-react";
+import { Globe, Beaker, ShieldAlert, Leaf, Newspaper, ArrowRight, User, Briefcase } from "lucide-react";
 import MediaLogos from "@/components/sections/MediaLogos";
 
 
