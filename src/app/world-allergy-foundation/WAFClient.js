@@ -170,6 +170,17 @@ export default function WorldAllergyFoundation() {
 
                 Bridging clinical excellence, scientific research, and global public health awareness to solve the crisis of chronic inflammation.
               </p>
+              <div className="mt-12 flex flex-wrap justify-center gap-4">
+                <button 
+                  onClick={() => document.getElementById('workshop')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-8 py-4 bg-primary text-white rounded-full font-black uppercase tracking-widest text-xs hover:bg-slate-900 transition-all active:scale-95 shadow-xl"
+                >
+                  Join the Mission
+                </button>
+                <Link href="/clinical-success" className="px-8 py-4 bg-white text-slate-900 rounded-full font-black uppercase tracking-widest text-xs border border-slate-200 hover:bg-slate-50 transition-all active:scale-95 shadow-sm">
+                  View Success Stories
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -436,6 +447,14 @@ export default function WorldAllergyFoundation() {
                 <p className="text-[10px] font-black uppercase tracking-widest text-primary text-center">Clinical Excellence <br /> Gujarat 2025</p>
               </div>
             </div>
+            <div className="mt-12 text-center">
+              <button 
+                onClick={() => document.getElementById('workshop')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-4 bg-primary text-white rounded-full font-black uppercase tracking-widest text-xs hover:bg-slate-900 transition-all active:scale-95 shadow-xl"
+              >
+                Request a Workshop for Your City
+              </button>
+            </div>
           </div>
         </section>
 
@@ -594,12 +613,12 @@ export default function WorldAllergyFoundation() {
         <section className="py-24 bg-white overflow-hidden relative border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
-              <div className="flex-1 w-full aspect-[4/3] relative rounded-[3rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
+              <div className="flex-1 w-full aspect-video relative rounded-[3rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
                 <Image
                   src="/images/waf%20event%20senior%20deplomat%20hyd.jpg"
                   alt="Ethiopian Diplomat with Dr. Nageshwar"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               <div className="flex-1 space-y-8">
@@ -627,12 +646,12 @@ export default function WorldAllergyFoundation() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
+                <div className="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
                   <Image
                     src="/images/SC.jpg"
                     alt="Dr. Nageshwar at Supreme Court of India"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
               </motion.div>
@@ -667,8 +686,10 @@ export default function WorldAllergyFoundation() {
                 <p className="text-slate-500 leading-relaxed">
                   As President of the World Allergy Foundation, Dr. Vyakarnam Nageshwar delivered a keynote awareness session at the **Federation of Telangana Chambers of Commerce and Industry (FTCCI)**, addressing the evolving landscape of global immunity in the post-pandemic era.
                 </p>
-                <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
-                  <div className="w-8 h-[1px] bg-slate-200" /> Keynote at FTCCI Hyderabad
+                <div className="pt-4">
+                  <Link href="/gallery" className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs hover:gap-4 transition-all">
+                    Explore Event Gallery <ArrowRight size={14} />
+                  </Link>
                 </div>
               </div>
               <motion.div
@@ -793,9 +814,11 @@ export default function WorldAllergyFoundation() {
               ))}
             </div>
             <div className="mt-12 text-center">
-              <button className="px-8 py-4 bg-white text-dark rounded-full border border-slate-200 font-bold text-sm hover:bg-slate-50 transition-all active:scale-95 shadow-sm">
-                View All Images & Media Archives
-              </button>
+              <Link href="/gallery">
+                <button className="px-8 py-4 bg-white text-dark rounded-full border border-slate-200 font-bold text-sm hover:bg-slate-50 transition-all active:scale-95 shadow-sm">
+                  View All Images & Media Archives
+                </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -825,7 +848,7 @@ export default function WorldAllergyFoundation() {
                     src="/images/World%20Allergy%20Week%202025%20observed%20by%20Dr.Vyakarnam%20Nageshwar%20world%20Allergy%20Foundation%20by%20Broadcasting%20%20a%20LIVE%20interactive%20show%20about%20Alkergic%20disorders%20in%20TV9.jpg"
                     alt="TV9 Live Broadcast"
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-8 left-8">
