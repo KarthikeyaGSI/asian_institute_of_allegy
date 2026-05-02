@@ -852,7 +852,6 @@ export default function WorldAllergyFoundation() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-8 left-8">
-                    <div className="bg-red-600 text-white px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest mb-2 inline-block">Live on TV9</div>
                     <h3 className="text-xl font-bold text-white">Interactive Session on Allergic Disorders</h3>
                   </div>
                 </div>
