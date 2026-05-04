@@ -27,16 +27,40 @@ const testimonials = [
     metrics: [10, 9, 6, 3, 0]
   },
   {
-    name: "Seetaram Reddy",
-    age: 70,
+    name: "Sadik Ali",
+    age: 48,
+    location: "Karnataka",
+    category: "rhinitis",
+    duration: "15+ years",
+    previous: "Chronic respiratory & nasal allergies",
+    outcome: "Total clinical resolution",
+    quote: "After 15 years of struggling, the personalized treatment at Aswini Allergy finally cured my condition completely. I can breathe freely now.",
+    videoId: "fKIYdV3SABc",
+    metrics: [10, 7, 3, 1, 0]
+  },
+  {
+    name: "Respiratory Success",
+    age: 39,
     location: "Hyderabad",
     category: "rhinitis",
-    duration: "10+ years",
-    previous: "Decade of nasal, skin & stomach allergies",
-    outcome: "New lease of life, total recovery",
-    quote: "After 10 years of struggling with multiple health problems, the advanced Skin Prick Test identified the exact root cause. I now live a happy, healthy life once again.",
-    videoId: "Xh0Yp_eK-yQ",
-    metrics: [10, 7, 4, 2, 0]
+    duration: "Long-term suffering",
+    previous: "Persistent breathing & sinus difficulties",
+    outcome: "Full respiratory recovery",
+    quote: "The advanced diagnostic protocols in Hyderabad provided the answers I couldn't find anywhere else for years. My quality of life has returned.",
+    videoId: "hfX_xvm5lgc",
+    metrics: [10, 8, 5, 2, 0]
+  },
+  {
+    name: "Kenyan Citizen",
+    age: 42,
+    location: "Kenya",
+    category: "rhinitis",
+    duration: "Chronic case",
+    previous: "Multiple failed treatments abroad",
+    outcome: "International success story",
+    quote: "I traveled from Kenya for this specialized treatment, and the results have been life-changing. My long-standing allergy problems are finally gone.",
+    videoId: "oyo1ApTC0mc",
+    metrics: [10, 6, 4, 1, 0]
   },
   {
     name: "Baby Akshara",
