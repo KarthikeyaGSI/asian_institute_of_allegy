@@ -615,7 +615,7 @@ export default function WorldAllergyFoundation() {
                     <ShieldAlert size={16} aria-hidden="true" /> Global Health Advisory
                   </div>
                   <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight leading-tight">
-                    5. Advisory Messaging on <br /> <span className="text-primary italic">Allergy Patients & COVID-19.</span>
+                    Advisory Messaging on <br /> <span className="text-primary italic">Allergy Patients & COVID-19.</span>
                   </h2>
                   <p className="text-slate-600 text-xl md:text-2xl font-medium leading-relaxed">
                     WAF has highlighted the importance of clinical consultation before vaccination in individuals with:
@@ -746,7 +746,86 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* 14. Media Recognition */}
+        {/* 14. Team Section */}
+        <section className="py-24 md:py-40 bg-white overflow-hidden border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <FadeInBlur>
+              <div className="text-center mb-16 md:mb-24">
+                <span className="text-primary font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Our Leadership</span>
+                <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-slate-950">The Team.</h2>
+              </div>
+            </FadeInBlur>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
+              {/* Dr. Bhagheerathi */}
+              <FadeInBlur>
+                <div className="group space-y-8">
+                  <Tilt>
+                    <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700">
+                      <div className="absolute inset-0 bg-slate-100 flex items-center justify-center">
+                         <User size={80} className="text-slate-300" />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    </div>
+                  </Tilt>
+                  <div className="space-y-4">
+                    <h3 className="text-3xl md:text-5xl font-bold font-heading text-slate-950">Dr. Bhagheerathi</h3>
+                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[10px] md:text-xs">MBBS DNB, GCMP, CFM</p>
+                    <p className="text-slate-500 font-bold text-lg md:text-xl">Director: Asian Institute of Allergy Hyderabad</p>
+                    <div className="space-y-4 pt-6 border-t border-slate-100">
+                      {[
+                        "Senior Radiologist with 15+ years experience in Interventional Radiology.",
+                        "Certified expert in Fetal Medicine.",
+                        "Expert in Molecular Therapeutics for Inflammatory Disorders.",
+                        "Specialist in Stem cell therapy interventions for Non-responsive Disorders.",
+                        "Top 10 Best Radiological Imaging Reporting Expert (Medall 2011).",
+                        "HOD of Chronic Inflammatory disorders unit at Asian Institute of Allergy."
+                      ].map((point, idx) => (
+                        <div key={idx} className="flex gap-4 text-slate-600 text-base md:text-lg leading-relaxed font-medium">
+                          <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                          <p>{point}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </FadeInBlur>
+
+              {/* Dr. Shivaranjani */}
+              <FadeInBlur delay={0.2}>
+                <div className="group space-y-8">
+                  <Tilt>
+                    <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700">
+                      <div className="absolute inset-0 bg-slate-100 flex items-center justify-center">
+                         <User size={80} className="text-slate-300" />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    </div>
+                  </Tilt>
+                  <div className="space-y-4">
+                    <h3 className="text-3xl md:text-5xl font-bold font-heading text-slate-950">Dr. Shivaranjani</h3>
+                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[10px] md:text-xs">Pharm D</p>
+                    <p className="text-slate-500 font-bold text-lg md:text-xl">Advisor & Consultant: Drug Interactions</p>
+                    <div className="space-y-4 pt-6 border-t border-slate-100">
+                      {[
+                        "Over a decade of Pharmaceutical industry & Hospital based services experience.",
+                        "Specialist in Inflammatory Immunology Disorder drug interactions.",
+                        "Certified expert in Allergen Immunotherapy protocols."
+                      ].map((point, idx) => (
+                        <div key={idx} className="flex gap-4 text-slate-600 text-base md:text-lg leading-relaxed font-medium">
+                          <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                          <p>{point}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </FadeInBlur>
+            </div>
+          </div>
+        </section>
+
+        {/* 15. Media Recognition */}
         <section className="py-24 md:py-40 bg-slate-950 text-white relative">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <FadeInBlur>
@@ -809,7 +888,7 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* 15. CTA */}
+        {/* 16. CTA */}
         <section id="workshop" className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
