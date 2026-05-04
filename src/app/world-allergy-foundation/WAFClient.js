@@ -591,7 +591,58 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* 10. Transformation Stories */}
+        {/* 10. COVID-19 Vaccination Advisory */}
+        <section className="py-24 md:py-40 bg-white overflow-hidden relative border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+              <div className="order-2 lg:order-1">
+                <Tilt>
+                  <div className="relative aspect-video rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
+                    <Image
+                      src="/images/covid-vaccination-advisory.png"
+                      alt="Advisory Messaging on Allergy Patients & COVID-19 Vaccination"
+                      fill
+                      className="object-cover cursor-zoom-in"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      onClick={() => setSelectedImg({ src: "/images/covid-vaccination-advisory.png", alt: "COVID-19 Vaccination Advisory for Allergy Patients" })}
+                    />
+                  </div>
+                </Tilt>
+              </div>
+              <div className="order-1 lg:order-2 space-y-8 md:space-y-10 text-left">
+                <FadeInBlur>
+                  <div className="inline-flex items-center gap-3 bg-primary/5 text-primary px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
+                    <ShieldAlert size={16} aria-hidden="true" /> Global Health Advisory
+                  </div>
+                  <h2 className="text-3xl md:text-6xl font-bold font-heading tracking-tight leading-tight">
+                    5. Advisory Messaging on <br /> <span className="text-primary italic">Allergy Patients & COVID-19.</span>
+                  </h2>
+                  <p className="text-slate-600 text-xl md:text-2xl font-medium leading-relaxed">
+                    WAF has highlighted the importance of clinical consultation before vaccination in individuals with:
+                  </p>
+                  <div className="p-8 md:p-10 bg-slate-50 rounded-[2rem] md:rounded-[3rem] border border-slate-100">
+                    <ul className="grid grid-cols-1 gap-4">
+                      {[
+                        "Severe allergic histories",
+                        "Uncontrolled allergic conditions",
+                        "Complex immunological disorders"
+                      ].map((item) => (
+                        <li key={item} className="flex items-center gap-4 text-slate-600 text-base md:text-lg font-medium">
+                          <div className="w-2 h-2 rounded-full bg-primary" /> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <p className="text-slate-500 text-base md:text-lg leading-relaxed font-medium italic border-l-4 border-primary pl-6">
+                    "This messaging aligns with a general principle in medicine: High-risk patients should consult specialists before interventions."
+                  </p>
+                </FadeInBlur>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 11. Transformation Stories */}
         <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <FadeInBlur>
@@ -638,14 +689,14 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* 11. Swaach Akash Abhiyan */}
+        {/* 12. Swaach Akash Abhiyan */}
         <section className="py-24 md:py-40 bg-slate-950 text-white overflow-hidden relative">
           <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
             <div className="flex flex-col lg:flex-row gap-16 md:gap-24 items-center">
               <div className="flex-1 space-y-10 text-left w-full">
                 <FadeInBlur>
                   <span className="text-primary-accent font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Environmental Forensic</span>
-                  <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-white">Clean Air <br /> <span className="text-primary-accent italic">Mission.</span></h2>
+                  <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-white">Swaach Akash Abhiyan <br /> <span className="text-primary-accent italic">(Clean air Mission).</span></h2>
                   <p className="text-slate-300 text-xl md:text-2xl font-medium leading-relaxed">
                     A widespread monitoring program across Indian cities like Hyderabad and Warangal.
                   </p>
@@ -669,7 +720,7 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* 12. Surat Workshop */}
+        {/* 13. Surat Workshop */}
         <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <FadeInBlur>
@@ -695,7 +746,7 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* 16. Media Recognition */}
+        {/* 14. Media Recognition */}
         <section className="py-24 md:py-40 bg-slate-950 text-white relative">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <FadeInBlur>
@@ -758,7 +809,7 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* 17. CTA */}
+        {/* 15. CTA */}
         <section id="workshop" className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
