@@ -114,20 +114,27 @@ export default function Pathways() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
                 <div className="space-y-8">
                   <div>
-                     <span className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">Condition</span>
-                     <p className="text-white font-semibold text-2xl">{path.title}</p>
+                     <span className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">Primary Trigger</span>
+                     <p className="text-white font-semibold text-2xl">{path.trigger}</p>
                   </div>
                   <div>
-                     <span className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">Trigger</span>
-                     <p className="text-white font-semibold text-2xl">{path.trigger}</p>
+                     <span className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">The Clinical Gap</span>
+                     <p className="text-slate-400 text-lg leading-relaxed">{path.desc}</p>
                   </div>
                 </div>
                 
-                <div className="bg-white/5 p-8 rounded-[2rem] border border-white/5 space-y-6 flex flex-col justify-center">
+                <div className="bg-white/5 p-8 rounded-[2rem] border border-white/5 space-y-6">
                   <div>
-                    <span className="block text-[10px] font-bold text-primary-accent uppercase tracking-widest mb-3">Fix</span>
+                    <span className="block text-[10px] font-bold text-primary-accent uppercase tracking-widest mb-3">The Permanent Fix</span>
                     <p className="text-white font-bold text-2xl leading-tight">{path.fix}</p>
                   </div>
+                  <ul className="space-y-3">
+                    {["Protocol Driven", "Direct Supervision", "Root Cause Focus"].map((t) => (
+                      <li key={t} className="flex items-center gap-2 text-[10px] font-black text-white/20 uppercase tracking-widest">
+                        <div className="w-1 h-1 rounded-full bg-primary-accent" /> {t}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
 
@@ -135,7 +142,7 @@ export default function Pathways() {
                 href="/#contact"
                 className="inline-flex items-center justify-center w-full bg-primary-accent text-black py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-primary-accent/10 transition-all active:scale-95"
               >
-                [ Start recovery plan ]
+                Start Recovery Plan
               </Link>
             </div>
           </div>

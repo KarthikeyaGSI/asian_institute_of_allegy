@@ -27,40 +27,16 @@ const testimonials = [
     metrics: [10, 9, 6, 3, 0]
   },
   {
-    name: "Sadik Ali",
-    age: 48,
-    location: "Karnataka",
-    category: "rhinitis",
-    duration: "15+ years",
-    previous: "Chronic respiratory & nasal allergies",
-    outcome: "Total clinical resolution",
-    quote: "After 15 years of struggling, the personalized treatment at Aswini Allergy finally cured my condition completely. I can breathe freely now.",
-    videoId: "fKIYdV3SABc",
-    metrics: [10, 7, 3, 1, 0]
-  },
-  {
-    name: "Respiratory Success",
-    age: 39,
+    name: "Seetaram Reddy",
+    age: 70,
     location: "Hyderabad",
     category: "rhinitis",
-    duration: "Long-term suffering",
-    previous: "Persistent breathing & sinus difficulties",
-    outcome: "Full respiratory recovery",
-    quote: "The advanced diagnostic protocols in Hyderabad provided the answers I couldn't find anywhere else for years. My quality of life has returned.",
-    videoId: "hfX_xvm5lgc",
-    metrics: [10, 8, 5, 2, 0]
-  },
-  {
-    name: "Kenyan Citizen",
-    age: 42,
-    location: "Kenya",
-    category: "rhinitis",
-    duration: "Chronic case",
-    previous: "Multiple failed treatments abroad",
-    outcome: "International success story",
-    quote: "I traveled from Kenya for this specialized treatment, and the results have been life-changing. My long-standing allergy problems are finally gone.",
-    videoId: "oyo1ApTC0mc",
-    metrics: [10, 6, 4, 1, 0]
+    duration: "10+ years",
+    previous: "Decade of nasal, skin & stomach allergies",
+    outcome: "New lease of life, total recovery",
+    quote: "After 10 years of struggling with multiple health problems, the advanced Skin Prick Test identified the exact root cause. I now live a happy, healthy life once again.",
+    videoId: "Xh0Yp_eK-yQ",
+    metrics: [10, 7, 4, 2, 0]
   },
   {
     name: "Baby Akshara",
@@ -199,10 +175,11 @@ export default function Testimonials() {
           <div className="max-w-2xl">
             <span className="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Patient Proof</span>
             <h2 className="text-5xl md:text-7xl font-bold text-slate-900 leading-[1] tracking-tighter font-heading mb-8">
-              Real outcomes.
+              Relevant Proof. <br/>
+              <span className="text-gray-400">Real Outcomes.</span>
             </h2>
-            <p className="text-xl text-slate-600 font-medium italic border-l-4 border-primary pl-6 py-2">
-              “I spent years treating symptoms. This was the first time I understood the cause.”
+            <p className="text-xl text-slate-600 font-medium">
+              See how patients with your specific condition achieved long-term resolution.
             </p>
           </div>
 
@@ -238,7 +215,7 @@ export default function Testimonials() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredTestimonials.slice(0, 3).map((item, i) => (
+          {filteredTestimonials.map((item, i) => (
             <TestimonialCard key={item.name} item={item} i={i} />
           ))}
         </div>

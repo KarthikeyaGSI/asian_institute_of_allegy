@@ -62,22 +62,25 @@ export default function BookingForm({ onStartQuiz }) {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
             
             <div className="relative z-10">
-              <span className="text-primary-accent font-bold tracking-widest uppercase text-sm mb-4 block">Action Required</span>
-              <h2 className="text-3xl md:text-5xl font-bold mb-10 leading-tight">
-                Start your root-cause evaluation.
+              <span className="text-primary-accent font-bold tracking-widest uppercase text-sm mb-4 block">Frictionless Booking</span>
+              <h2 className="text-3xl md:text-5xl font-semibold mb-6 leading-tight">
+                Schedule your clinical evaluation.
               </h2>
+              <p className="text-white/80 text-lg mb-10 leading-relaxed">
+                Skip the waiting room. Speak directly with our care coordinators to schedule your comprehensive evaluation.
+              </p>
               
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {[
-                    "15 min callback",
+                    "Submit your details",
                     "Specialist review",
-                    "No waiting"
-                ].map((point, i) => (
+                    "Meet the team"
+                ].map((step, i) => (
                     <div key={i} className="flex items-center gap-4">
                         <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-primary-accent shrink-0 font-bold">
-                            ✔
+                            {i + 1}
                         </div>
-                        <span className="font-bold text-xl">{point}</span>
+                        <span className="font-medium text-lg">{step}</span>
                     </div>
                 ))}
               </div>
@@ -98,8 +101,8 @@ export default function BookingForm({ onStartQuiz }) {
                   className="w-full p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary/20 hover:bg-white transition-all group text-left flex items-center justify-between"
                 >
                   <div className="max-w-[80%]">
-                    <p className="text-xs font-black uppercase tracking-widest text-primary mb-1">Not sure?</p>
-                    <p className="text-sm font-bold text-slate-700">Take 2-minute assessment</p>
+                    <p className="text-xs font-black uppercase tracking-widest text-primary mb-1">Unsure of your condition?</p>
+                    <p className="text-sm font-bold text-slate-700">Start our 2-minute diagnostic assessment instead.</p>
                   </div>
                   <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                     <ArrowRight size={20} />

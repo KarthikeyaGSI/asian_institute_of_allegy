@@ -74,102 +74,123 @@ export default function Hero() {
         }}
       />
 
-      {/* 📝 CONTENT - Strict Left Alignment */}
-      <div className="relative z-[2] container-custom pt-32 pb-20 md:pt-48 md:pb-32">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+      {/* 📝 CONTENT - Strict Left Alignment & Scroll Reveal */}
+      <motion.div 
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="relative z-[2] w-full pt-[110px] lg:pt-[120px] pb-24 lg:pb-0 px-5 lg:pl-[100px] lg:pr-[40px]"
+      >
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
           
-          {/* Left Content Column */}
-          <div className="w-full lg:max-w-[600px] text-center lg:text-left">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-8xl font-bold font-heading leading-[0.95] tracking-tighter mb-8"
-            >
-              We find the <br/>
-              <span className="text-primary">root cause.</span> <br/>
-              We fix it for good.
-            </motion.h1>
+          {/* Text Content Block */}
+          <div className="w-full max-w-full lg:max-w-[560px] flex flex-col items-start text-left"> 
+            <div className="w-full">
+              <motion.h1
+                initial={{ opacity: 0, x: -30 }}
+                animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="text-[32px] sm:text-[36px] lg:text-[64px] font-bold leading-[1.2] lg:leading-[1.1] tracking-tight font-heading text-left"
+              >
+                We find the <span className="text-[#A3E635]">root cause</span>.<br />
+                We fix it for good.
+              </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-xl md:text-2xl text-white/80 font-medium mb-12 max-w-[520px] mx-auto lg:mx-0 leading-relaxed"
-            >
-              Root-cause diagnosis for chronic allergy, asthma, and immune disorders.
-            </motion.p>
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="mt-4 lg:mt-8 text-[15px] sm:text-[16px] lg:text-[18px] leading-[24px] lg:leading-relaxed text-white/90 font-medium text-left"
+              >
+                India's specialized institute focused on root-cause diagnosis.
+                Personalized care for patients aged 2 to 80.
+              </motion.p>
+            </div>
 
-            {/* CTA STACK */}
+            {/* 🔘 BUTTONS */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col sm:flex-row items-center gap-4 mb-8 justify-center lg:justify-start"
+              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-5 mt-8 w-full lg:w-auto"
             >
-              <Link
-                href="/#contact"
-                className="bg-primary text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-primary-dark hover:scale-105 transition-all shadow-2xl shadow-primary/20 w-full sm:w-auto text-center"
-              >
-                Start Root-Cause Diagnosis
-              </Link>
-              <Link
-                href="https://wa.me/918074368748"
-                target="_blank"
-                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 hover:scale-105 transition-all w-full sm:w-auto text-center flex items-center justify-center gap-3"
-              >
-                <MessageCircle size={22} className="text-[#25D366]" />
-                WhatsApp Specialist
-              </Link>
+              <Magnetic>
+                <Link
+                  href="/#contact"
+                  className="bg-primary text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 text-center shadow-2xl flex items-center justify-center gap-3"
+                >
+                  Start Root-Cause Diagnosis
+                </Link>
+              </Magnetic>
+              <Magnetic>
+                <Link
+                  href="https://wa.me/918074368748?text=Hi, I'd like to start my root-cause evaluation."
+                  target="_blank"
+                  aria-label="Contact Specialist on WhatsApp"
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-3 mt-1 sm:mt-0"
+                >
+                  <MessageCircle size={22} className="text-[#25D366]" />
+                  WhatsApp Specialist
+                </Link>
+              </Magnetic>
             </motion.div>
 
-            {/* TRUST STACK (Under CTA) */}
+            {/* 📍 POINTS & TRUST BADGE */}
+            <div className="flex flex-col md:flex-row md:items-center gap-6 lg:gap-16 mt-8 lg:mt-14 w-full">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                className="flex flex-col gap-3 lg:gap-4 text-[12px] lg:text-[13px] font-bold text-white/60 uppercase tracking-widest"
+              >
+
+                <span className="flex items-center gap-3">
+                  <span className="text-primary-accent text-xl leading-none">•</span> Specialist review
+                </span>
+                <span className="flex items-center gap-3">
+                  <span className="text-primary-accent text-xl leading-none">•</span> ERASE CONFUSION = GET CLARITY
+                </span>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+                className="flex items-center gap-5 bg-white/5 border border-white/10 px-8 py-5 rounded-3xl backdrop-blur-xl w-full lg:w-fit"
+              >
+                <div className="text-primary-accent">
+                  <CheckCircle2 size={36} />
+                </div>
+                <div>
+                  <p className="text-3xl font-black text-white leading-none">50k+</p>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mt-1.5">Patients Treated</p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* DOCTOR TRUST PORTRAIT - Optimized for Relative Mobile */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={isLoaded ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-[11px] font-black uppercase tracking-[0.2em] text-white/40"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[1.5rem] lg:rounded-[2.5rem] border border-white/10 backdrop-blur-md w-full lg:w-auto mt-12 lg:mt-0 lg:ml-auto lg:self-center relative overflow-hidden group"
             >
-              <span className="flex items-center gap-2">
-                <span className="text-primary">✔</span> 15 min callback
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="text-primary">✔</span> Specialist review
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="text-primary">✔</span> No waiting
-              </span>
+              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="relative w-16 h-16 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl shrink-0">
+                <Image 
+                  src="/images/dr-nageswar.webp"
+                  alt="Dr. Vyakarnam Nageshwar - Chief Immunologist"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 80px, 160px"
+                />
+              </div>
+              <div className="text-left lg:text-center relative z-10">
+                <p className="text-base lg:text-xl font-bold text-white tracking-tight">Dr. Vyakarnam</p>
+                <p className="text-[10px] lg:text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mt-1">Chief Immunologist</p>
+              </div>
             </motion.div>
           </div>
-
-          {/* Right Visual Element */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="relative hidden lg:block"
-          >
-            <div className="relative w-[450px] h-[550px] rounded-[4rem] overflow-hidden border-2 border-white/10 shadow-2xl ring-1 ring-white/5">
-              <Image 
-                src="/images/dr-nageswar.webp"
-                alt="Dr. Vyakarnam Nageshwar"
-                fill
-                className="object-cover object-top"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-              <div className="absolute bottom-10 left-10 right-10 p-8 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10">
-                 <p className="text-3xl font-black text-white">50k+</p>
-                 <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mt-1">Patients Treated Globally</p>
-              </div>
-            </div>
-            {/* Decorative blobs */}
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -z-10" />
-            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-primary-accent/10 rounded-full blur-[100px] -z-10" />
-          </motion.div>
-
         </div>
-      </div>
+      </motion.div>
 
       {/* 🖱️ INTERACTIVE SCROLL INDICATOR */}
       <motion.button
