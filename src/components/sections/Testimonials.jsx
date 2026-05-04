@@ -191,8 +191,62 @@ export default function Testimonials() {
 
 
 
+  const schemaData = testimonials.map(item => ({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": item.name
+        },
+        "reviewBody": item.quote,
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "itemReviewed": {
+          "@type": "MedicalBusiness",
+          "name": "Asian Institute of Allergy",
+          "image": "https://asianinstituteofallergy.com/logo.png",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hyderabad",
+            "addressCountry": "IN"
+          }
+        }
+      },
+      {
+        "@type": "VideoObject",
+        "name": `${item.name} Patient Success Story`,
+        "description": `Clinical success story of ${item.name} who recovered from ${item.category} allergy at the Asian Institute of Allergy.`,
+        "thumbnailUrl": [
+          `https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`,
+          `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`
+        ],
+        "uploadDate": "2024-01-01T08:00:00+08:00",
+        "embedUrl": `https://www.youtube.com/embed/${item.videoId}`,
+        "publisher": {
+          "@type": "Organization",
+          "name": "Asian Institute of Allergy",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://asianinstituteofallergy.com/logo.png"
+          }
+        }
+      }
+    ]
+  }));
+
   return (
     <section className="bg-slate-50/50 py-24 md:py-32 overflow-hidden border-t border-slate-100">
+      {/* SEO Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20">
