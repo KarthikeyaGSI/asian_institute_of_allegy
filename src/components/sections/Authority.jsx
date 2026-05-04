@@ -53,19 +53,19 @@ export default function Authority() {
             className="order-1 lg:order-2 space-y-10"
           >
             <div>
-              <span className="text-primary-accent font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Mission</span>
+              <span className="text-primary-accent font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Authority</span>
               <h2 className="text-3xl md:text-7xl font-bold leading-[1.1] text-white tracking-tight font-heading">
-                A Journey Rooted in <br/>
-                <span className="text-gray-500">Suffering & Hope.</span>
+                Built for <br/>
+                <span className="text-gray-500">complex cases.</span>
               </h2>
             </div>
             
             <div className="space-y-6 text-slate-300 text-lg leading-relaxed font-medium">
               <p>
-                Dr. Vyakarnam battled childhood asthma and allergic rhinitis himself. He transformed his personal suffering into a lifelong mission—to uncover the root causes for the 40 crore Indians who suffer silently.
+                Dr. Vyakarnam Nageshwar is a global authority in allergy and immunotherapy. With training from Patel Chest Institute and a mission to redefine allergy care, he focuses on root-cause diagnosis.
               </p>
               <p>
-                From training at Patel Chest Institute to initiating India&apos;s first Allergen Forensic Laboratory, he has redefined allergy care through environmental aerobiology and precision diagnosis.
+                He initiated India&apos;s first Allergen Forensic Laboratory and has treated patients from across the globe through precision diagnosis and environmental aerobiology.
               </p>
             </div>
 
@@ -76,7 +76,7 @@ export default function Authority() {
               </div>
               <div>
                 <span className="block text-4xl md:text-5xl font-bold text-primary-accent mb-2 font-heading tracking-tight">15k+</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Patients Treated</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Success stories</span>
               </div>
             </div>
           </motion.div>

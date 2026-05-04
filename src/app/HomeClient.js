@@ -9,15 +9,15 @@ import Hero from "@/components/sections/Hero";
 
 
 // Phase 2 (Dynamic)
+const ProblemGap = dynamic(() => import("@/components/sections/ProblemGap"), { ssr: true });
+const DecisionEntry = dynamic(() => import("@/components/sections/DecisionEntry"), { ssr: true });
 const Comparison = dynamic(() => import("@/components/sections/Comparison"), { ssr: true });
-const SLITScience = dynamic(() => import("@/components/sections/SLITScience"), { ssr: true });
-
-const Pathways = dynamic(() => import("@/components/sections/Pathways"), { ssr: false }); // GSAP needs client side
 const Science = dynamic(() => import("@/components/sections/Science"), { ssr: true });
 
 // Phase 3 (Dynamic)
-const Authority = dynamic(() => import("@/components/sections/Authority"), { ssr: true });
+const Pathways = dynamic(() => import("@/components/sections/Pathways"), { ssr: false });
 const Testimonials = dynamic(() => import("@/components/sections/Testimonials"), { ssr: true });
+const Authority = dynamic(() => import("@/components/sections/Authority"), { ssr: true });
 const BookingForm = dynamic(() => import("@/components/sections/BookingForm"), { ssr: true });
 const DiagnosticQuiz = dynamic(() => import("@/components/sections/DiagnosticQuiz"), { ssr: false });
 const LocationSection = dynamic(() => import("@/components/home/LocationSection"), { ssr: true });
@@ -44,28 +44,42 @@ export default function Home() {
     >
       <Navbar />
       
-      {/* PHASE 1: THE TRUST LAYER */}
+      {/* 1. HERO (Trust + Action) */}
       <Hero />
 
-      
-      <DiagnosticQuiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
-      
-      {/* PHASE 2: THE LOGIC LAYER */}
-      <Comparison />
-      <SLITScience />
+      {/* 2. PROBLEM → GAP (Emotional Hook) */}
+      <ProblemGap />
 
-      <Pathways />
+      {/* 3. DECISION ENTRY (Conversion Engine) */}
+      <DecisionEntry />
+
+      {/* 4. CORE DIFFERENCE (Kill Confusion) */}
+      <Comparison />
+
+      {/* 5. SCIENCE (Simplified) */}
       <Science />
-      
-      {/* PHASE 3: THE AUTHORITY LAYER */}
-      <Authority />
+
+      {/* 6. PATHWAYS (Conversion Layer) */}
+      <Pathways />
+
+      {/* 7. PROOF (Trust) */}
       <div data-header-theme="light">
         <Testimonials />
       </div>
+
+      {/* 8. DOCTOR (Authority) */}
+      <Authority />
+
+      {/* 9. FINAL CTA (Action) */}
       <BookingForm onStartQuiz={() => setIsQuizOpen(true)} />
+
+      {/* 10. LOCATION + FOOTER */}
       <div data-header-theme="light">
         <LocationSection />
       </div>
+
+      <DiagnosticQuiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
+      
       <Footer />
       <StickyBottomBar />
     </motion.main>

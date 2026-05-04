@@ -13,21 +13,21 @@ if (typeof window !== "undefined") {
 
 const steps = [
   {
-    title: "Identify",
+    title: "Identify trigger",
     label: "Root-Cause Discovery",
-    description: "Advanced diagnostics (PFT, Skin Prick, Component-resolved) to find exactly what triggers your immune system.",
+    description: "Advanced diagnostics to find exactly what triggers your immune system.",
     icon: Search
   },
   {
-    title: "Understand",
-    label: "Immune Logic",
-    description: "We don't just see symptoms; we map your inflammatory pathway to understand why your body is over-reacting.",
+    title: "Train immune system",
+    label: "SLIT Therapy",
+    description: "Gradually exposing your body to allergens to retrain your defense mechanism.",
     icon: Activity
   },
   {
-    title: "Re-train",
-    label: "Immunotherapy (SLIT)",
-    description: "Gradually exposing your body to allergens to build permanent tolerance. Real-world training for your immune system.",
+    title: "Build tolerance",
+    label: "Permanent Relief",
+    description: "Creating a lasting shield against allergens for a life without symptoms.",
     icon: Zap
   }
 ];
@@ -77,8 +77,8 @@ export default function Science() {
             <div className="max-w-xl">
               <span className="text-primary-accent font-bold tracking-widest uppercase text-sm mb-4 block">Our Methodology</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-12 leading-[1.1] tracking-tight">
-                Root-cause resolution. <br/>
-                <span className="text-slate-500">Not symptom management.</span>
+                How it actually <br/>
+                <span className="text-slate-500">works.</span>
               </h2>
 
               <div className="space-y-16 relative pl-8">

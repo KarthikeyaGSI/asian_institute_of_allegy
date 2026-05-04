@@ -56,17 +56,15 @@ const FadeInBlur = ({ children, delay = 0 }) => (
 );
 
 const leftItems = [
-  "Meds like Cetirizine, Allegra",
-  "Nasal Sprays & Inhalers",
-  "Short-term symptomatic relief",
-  "High rate of recurrence"
+  "meds (Cetirizine, inhalers, etc.)",
+  "temporary relief",
+  "recurrence"
 ];
 
 const rightItems = [
-  "Allergen-specific SLIT",
-  "Root-cause diagnosis (Skin Prick)",
-  "Permanent Immune Retraining",
-  "Tailored to ages 2 to 80"
+  "root-cause diagnosis",
+  "SLIT therapy",
+  "long-term control"
 ];
 
 export default function Comparison() {
