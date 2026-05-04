@@ -56,7 +56,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
           className="w-full h-full object-cover"
           style={{ objectPosition: "center" }}
         >
@@ -179,6 +179,7 @@ export default function Hero() {
                   src="/images/dr-nageswar.webp"
                   alt="Dr. Vyakarnam Nageshwar - Chief Immunologist"
                   fill
+                  priority
                   className="object-cover object-top"
                   sizes="(max-width: 1024px) 80px, 160px"
                 />

@@ -214,7 +214,11 @@ export default function WorldAllergyFoundation() {
                   </div>
                 </motion.div>
               </Tilt>
-              <FadeInBlur>
+              <motion.div
+                initial={{ opacity: 0, filter: "blur(10px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
                 <span className="text-primary font-bold tracking-[0.4em] uppercase text-[10px] md:text-xs mb-4 block">Established 2024</span>
                 <motion.h1 
                   initial="hidden"
@@ -228,7 +232,7 @@ export default function WorldAllergyFoundation() {
                     <motion.span
                       key={i}
                       variants={{
-                        hidden: { opacity: 0, y: 30 },
+                        hidden: { opacity: 0, y: 0 },
                         visible: { opacity: 1, y: 0 },
                       }}
                       transition={{ type: "spring", stiffness: 100, damping: 20 }}
@@ -252,7 +256,7 @@ export default function WorldAllergyFoundation() {
                     View Patient Stories
                   </Link>
                 </div>
-              </FadeInBlur>
+              </motion.div>
             </div>
           </div>
         </section>

@@ -76,7 +76,7 @@ export default function ClinicalSuccessPage() {
           {stories.map((story, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: idx === 0 ? 0 : 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 items-center`}
@@ -88,6 +88,7 @@ export default function ClinicalSuccessPage() {
                       src={story.image}
                       alt={story.name}
                       fill
+                      priority={idx === 0}
                       className="object-cover"
                     />
                  </div>

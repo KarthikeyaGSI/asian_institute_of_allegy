@@ -8,19 +8,53 @@ import { useState, useEffect } from "react";
 import Hero from "@/components/sections/Hero";
 
 
-// Phase 2 (Dynamic)
-const Comparison = dynamic(() => import("@/components/sections/Comparison"), { ssr: true });
-const SLITScience = dynamic(() => import("@/components/sections/SLITScience"), { ssr: true });
+// Loading Skeleton Component
+const Skeleton = ({ height = "600px" }) => (
+  <div 
+    style={{ minHeight: height }} 
+    className="w-full bg-slate-50 animate-pulse flex items-center justify-center"
+  >
+    <div className="w-20 h-20 border-4 border-primary/10 border-t-primary rounded-full animate-spin" />
+  </div>
+);
 
-const Pathways = dynamic(() => import("@/components/sections/Pathways"), { ssr: false }); // GSAP needs client side
-const Science = dynamic(() => import("@/components/sections/Science"), { ssr: true });
+// Phase 2 (Dynamic)
+const Comparison = dynamic(() => import("@/components/sections/Comparison"), { 
+  ssr: true,
+  loading: () => <Skeleton height="800px" />
+});
+const SLITScience = dynamic(() => import("@/components/sections/SLITScience"), { 
+  ssr: true,
+  loading: () => <Skeleton height="600px" />
+});
+
+const Pathways = dynamic(() => import("@/components/sections/Pathways"), { 
+  ssr: false,
+  loading: () => <Skeleton height="700px" />
+});
+const Science = dynamic(() => import("@/components/sections/Science"), { 
+  ssr: true,
+  loading: () => <Skeleton height="600px" />
+});
 
 // Phase 3 (Dynamic)
-const Authority = dynamic(() => import("@/components/sections/Authority"), { ssr: true });
-const Testimonials = dynamic(() => import("@/components/sections/Testimonials"), { ssr: true });
-const BookingForm = dynamic(() => import("@/components/sections/BookingForm"), { ssr: true });
+const Authority = dynamic(() => import("@/components/sections/Authority"), { 
+  ssr: true,
+  loading: () => <Skeleton height="500px" />
+});
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials"), { 
+  ssr: true,
+  loading: () => <Skeleton height="600px" />
+});
+const BookingForm = dynamic(() => import("@/components/sections/BookingForm"), { 
+  ssr: true,
+  loading: () => <Skeleton height="600px" />
+});
 const DiagnosticQuiz = dynamic(() => import("@/components/sections/DiagnosticQuiz"), { ssr: false });
-const LocationSection = dynamic(() => import("@/components/home/LocationSection"), { ssr: true });
+const LocationSection = dynamic(() => import("@/components/home/LocationSection"), { 
+  ssr: true,
+  loading: () => <Skeleton height="500px" />
+});
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";

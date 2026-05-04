@@ -60,6 +60,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${playfair.variable} ${inter.variable} h-full antialiased scroll-smooth`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         {/* Microsoft Clarity */}
         <Script id="clarity-script" strategy="afterInteractive">
           {`

@@ -67,7 +67,7 @@ export default function TreatmentsPage() {
             {treatments.map((t, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: idx === 0 ? 0 : 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center p-8 md:p-16 rounded-[3rem] border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl transition-all duration-700`}
@@ -104,6 +104,7 @@ export default function TreatmentsPage() {
                      src={idx === 0 ? "/images/dr-nageswar.webp" : idx === 1 ? "/images/Work shop on allegy.webp" : "/images/World-Allergy-Foundation-Flags-Yeast-Allergy-Risks-in-Indias-HPV-Vaccine-Drive-1275x768.webp"}
                      alt={t.title}
                      fill
+                     priority={idx === 0}
                      className="object-cover"
                    />
                 </div>
