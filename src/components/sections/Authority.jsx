@@ -72,11 +72,11 @@ export default function Authority() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 pt-10 border-t border-white/5">
               <div>
                 <span className="block text-4xl md:text-5xl font-bold text-white mb-2 font-heading tracking-tight">50k+</span>
-                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">International patients</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">International patients</span>
               </div>
               <div>
-                <span className="block text-4xl md:text-5xl font-bold text-primary mb-2 font-heading tracking-tight">15k+</span>
-                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">SLIT Patients Treated</span>
+                <span className="block text-4xl md:text-5xl font-bold text-primary-accent mb-2 font-heading tracking-tight">15k+</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Patients Treated</span>
               </div>
             </div>
           </motion.div>
@@ -96,10 +96,10 @@ export default function Authority() {
           
           <div className="relative z-10 max-w-4xl">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                <Globe size={18} aria-hidden="true" />
+              <div className="w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center text-primary-accent">
+                <Globe size={18} />
               </div>
-              <span className="text-primary font-bold tracking-[0.3em] uppercase text-[10px]">Global Authority</span>
+              <span className="text-primary-accent font-bold tracking-[0.3em] uppercase text-xs">Global Authority</span>
             </div>
             <h3 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-white font-heading">
               The Iconic Hope for <br/> 40 Crore Indians.
@@ -110,15 +110,14 @@ export default function Authority() {
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Complex Cases Solved</span>
                </div>
                <div className="flex-1">
-                  <span className="block text-4xl font-bold text-primary mb-2 font-heading tracking-tight">15k+</span>
+                  <span className="block text-4xl font-bold text-primary-accent mb-2 font-heading tracking-tight">15k+</span>
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Patients Treated</span>
                </div>
             </div>
 
             <Link 
               href="/world-allergy-foundation"
-              aria-label="Explore research and advocacy by the World Allergy Foundation"
-              className="inline-flex items-center gap-2 bg-white text-dark px-8 py-4 rounded-xl font-bold text-sm hover:bg-gray-100 transition-colors liquid-fill"
+              className="inline-flex items-center gap-2 bg-white text-dark px-8 py-4 rounded-xl font-bold text-sm hover:bg-gray-100 transition-colors"
             >
               Explore Foundation Research <ArrowRight size={18} />
             </Link>

@@ -124,8 +124,7 @@ export default function Hero() {
               <Magnetic>
                 <Link
                   href="/#contact"
-                  aria-label="Book a root-cause clinical diagnosis session"
-                  className="bg-primary text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-opacity-90 hover:scale-105 active:scale-95 text-center shadow-2xl flex items-center justify-center gap-3 liquid-fill"
+                  className="bg-primary text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 text-center shadow-2xl flex items-center justify-center gap-3"
                 >
                   Start Root-Cause Diagnosis
                 </Link>
@@ -134,7 +133,7 @@ export default function Hero() {
                 <Link
                   href="https://wa.me/918074368748?text=Hi, I'd like to start my root-cause evaluation."
                   target="_blank"
-                  aria-label="Contact an Immunology Specialist on WhatsApp"
+                  aria-label="Contact Specialist on WhatsApp"
                   className="bg-white/10 backdrop-blur-md border border-white/20 text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-3 mt-1 sm:mt-0"
                 >
                   <MessageCircle size={22} className="text-[#25D366]" />
@@ -153,10 +152,10 @@ export default function Hero() {
               >
 
                 <span className="flex items-center gap-3">
-                  <span className="text-primary text-xl leading-none" aria-hidden="true">•</span> Specialist review
+                  <span className="text-primary-accent text-xl leading-none">•</span> Specialist review
                 </span>
                 <span className="flex items-center gap-3">
-                  <span className="text-primary text-xl leading-none" aria-hidden="true">•</span> Precision Diagnostics
+                  <span className="text-primary-accent text-xl leading-none">•</span> ERASE CONFUSION = GET CLARITY
                 </span>
               </motion.div>
 
@@ -165,10 +164,9 @@ export default function Hero() {
                 animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
                 className="flex items-center gap-5 bg-white/5 border border-white/10 px-8 py-5 rounded-3xl backdrop-blur-xl w-full lg:w-fit"
-                aria-label="Over 50,000 patients treated successfully"
               >
-                <div className="text-primary">
-                  <CheckCircle2 size={36} aria-hidden="true" />
+                <div className="text-primary-accent">
+                  <CheckCircle2 size={36} />
                 </div>
                 <div>
                   <p className="text-3xl font-black text-white leading-none">50k+</p>
@@ -185,10 +183,10 @@ export default function Hero() {
               className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[1.5rem] lg:rounded-[2.5rem] border border-white/10 backdrop-blur-md w-full lg:w-auto mt-12 lg:mt-0 lg:ml-auto lg:self-center relative overflow-hidden group"
             >
               <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              <div className="relative w-16 h-16 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary shadow-2xl shrink-0">
+              <div className="relative w-16 h-16 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl shrink-0">
                 <Image 
                   src="/images/dr-nageswar.webp"
-                  alt="Dr. Vyakarnam Nageshwar - Founder & Chief Immunologist"
+                  alt="Dr. Vyakarnam Nageshwar - Chief Immunologist"
                   fill
                   priority
                   className="object-cover object-top"

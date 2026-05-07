@@ -52,7 +52,7 @@ export default function Navbar() {
   const isLight = headerTheme === "light";
 
   return (
-    <header className="fixed top-0 left-0 w-full z-[999] px-4 py-6 md:px-8 flex justify-center">
+    <div className="fixed top-0 left-0 w-full z-[999] px-4 py-6 md:px-8 flex justify-center">
       <motion.nav
         initial={false}
         animate={{
@@ -92,9 +92,8 @@ export default function Navbar() {
           <div className="flex items-center gap-2 relative z-10">
             <Link
               href={isWAF ? "/contribute" : "/#contact"}
-              aria-label={isWAF ? "Contribute to the foundation" : "Book a clinical evaluation"}
-              className={`px-3.5 h-[36px] rounded-full text-[12px] font-black uppercase tracking-widest transition-all shadow-xl flex items-center justify-center whitespace-nowrap liquid-fill ${
-                isLight ? "bg-slate-900 text-white" : "bg-white text-black"
+              className={`px-3.5 h-[36px] rounded-full text-[12px] font-black uppercase tracking-widest transition-all shadow-xl flex items-center justify-center whitespace-nowrap ${
+                isLight ? "bg-slate-900 text-white hover:bg-primary" : "bg-white text-black hover:bg-primary-accent"
               }`}
             >
               {isWAF ? "Contribute" : "Book Evaluation"}
@@ -119,10 +118,9 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                aria-label={`Navigate to ${link.name}`}
                 className={`text-[9px] xl:text-[11px] font-black tracking-tighter xl:tracking-[0.15em] uppercase transition-all duration-300 whitespace-nowrap ${
                   pathname === link.href 
-                    ? "text-primary" 
+                    ? "text-primary-accent" 
                     : (isLight ? "text-slate-900/60 hover:text-slate-900" : "text-white/80 hover:text-white")
                 }`}
               >
@@ -167,9 +165,8 @@ export default function Navbar() {
             <Magnetic>
               <Link
                 href={isWAF ? "/contribute" : "/#contact"}
-                aria-label={isWAF ? "Contribute to the foundation" : "Book a clinical evaluation"}
-                className={`px-8 py-3.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95 liquid-fill ${
-                  isLight ? "bg-slate-900 text-white" : "bg-white text-black"
+                className={`px-8 py-3.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95 ${
+                  isLight ? "bg-slate-900 text-white hover:bg-primary" : "bg-white text-black hover:bg-primary-accent"
                 }`}
               >
                 {isWAF ? "Contribute Now" : "Book Evaluation"}
@@ -223,7 +220,7 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </div>
   );
 }
 
