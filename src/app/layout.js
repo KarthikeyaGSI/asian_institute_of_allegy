@@ -90,14 +90,12 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-full flex flex-col font-body overflow-x-hidden">
         {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe 
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KSP285ZG"
-            height="0" 
-            width="0" 
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSP285ZG"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+          }}
+        />
 
         <SmoothScroll>
           <ProgressBar />

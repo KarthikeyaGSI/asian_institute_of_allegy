@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle, CheckCircle2, ChevronDown } from "lucide-react";
@@ -14,17 +14,17 @@ export default function Hero() {
 
   const { scrollY } = useScroll();
 
-  // 🎭 SCROLL TRANSFORMATIONS
-  // Video scales up and fades slightly as we scroll
-  const videoScale = useTransform(scrollY, [0, 1000], [1.05, 1.3]);
-  const videoOpacity = useTransform(scrollY, [0, 800], [1, 0.4]);
-  
-  // Content lifts and fades out
-  const contentY = useTransform(scrollY, [0, 500], [0, -100]);
-  const contentOpacity = useTransform(scrollY, [0, 400], [1, 0]);
-  
-  // Indicator fades out quickly
-  const indicatorOpacity = useTransform(scrollY, [0, 150], [1, 0]);
+  const x = useSpring(0, { stiffness: 100, damping: 30 });
+  const y = useSpring(0, { stiffness: 100, damping: 30 });
+
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+    const rotateY = (clientX / innerWidth - 0.5) * 20;
+    const rotateX = (clientY / innerHeight - 0.5) * -20;
+    x.set(rotateX);
+    y.set(rotateY);
+  };
 
   useEffect(() => {
     setIsLoaded(true);
@@ -44,7 +44,8 @@ export default function Hero() {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-screen w-full bg-black overflow-hidden flex items-center text-white"
+      onMouseMove={handleMouseMove}
+      className="relative min-h-screen w-full bg-dark overflow-hidden flex items-center text-white perspective-1000"
     >
       {/* 🎥 VIDEO - Cinematic Parallax Background */}
       <motion.div 
@@ -69,14 +70,14 @@ export default function Hero() {
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background: isMobile 
-            ? "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%)" 
-            : "linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.2) 100%)"
+            ? "linear-gradient(to bottom, rgba(5,7,5,0.85) 0%, rgba(5,7,5,0.4) 100%)" 
+            : "linear-gradient(90deg, rgba(5,7,5,0.9) 0%, rgba(5,7,5,0.6) 45%, rgba(5,7,5,0.2) 100%)"
         }}
       />
 
       {/* 📝 CONTENT - Strict Left Alignment & Scroll Reveal */}
       <motion.div 
-        style={{ y: contentY, opacity: contentOpacity }}
+        style={{ y: contentY, opacity: contentOpacity, rotateX: x, rotateY: y, transformStyle: "preserve-3d" }}
         className="relative z-[2] w-full pt-[110px] lg:pt-[120px] pb-24 lg:pb-0 px-5 lg:pl-[100px] lg:pr-[40px]"
       >
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
@@ -89,8 +90,9 @@ export default function Hero() {
                 animate={isLoaded ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[32px] sm:text-[36px] lg:text-[64px] font-bold leading-[1.2] lg:leading-[1.1] tracking-tight font-heading text-left"
+                style={{ transform: "translateZ(50px)" }}
               >
-                We find the <span className="text-[#A3E635]">root cause</span>.<br />
+                We find the <span className="text-primary italic">root cause</span>.<br />
                 We fix it for good.
               </motion.h1>
 

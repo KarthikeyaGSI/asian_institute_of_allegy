@@ -99,8 +99,20 @@ export default function Pathways() {
 
         {/* Dynamic Cards */}
         {pathways.map((path, i) => (
-          <div key={i} className="pathway-card min-w-full md:min-w-[70vw] md:h-full flex items-center px-6 md:px-12 mb-12 md:mb-0">
-            <div className="bg-white/5 border border-white/10 rounded-[2.5rem] md:rounded-[3.rem] p-8 md:p-16 w-full max-w-4xl backdrop-blur-sm group hover:border-primary-accent/30 transition-colors duration-500">
+          <div key={i} className="pathway-card min-w-full md:min-w-[70vw] md:h-full flex items-center px-6 md:px-12 mb-12 md:mb-0 perspective-1000">
+            <div 
+              onMouseMove={(e) => {
+                const card = e.currentTarget;
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                gsap.to(card, { rotateY: x * 20, rotateX: -y * 20, duration: 0.5, ease: "power2.out" });
+              }}
+              onMouseLeave={(e) => {
+                gsap.to(e.currentTarget, { rotateY: 0, rotateX: 0, duration: 0.5, ease: "power2.out" });
+              }}
+              className="bg-white/5 border border-white/10 rounded-[2.5rem] md:rounded-[3.rem] p-8 md:p-16 w-full max-w-4xl backdrop-blur-sm group hover:border-primary-accent/30 transition-colors duration-500 preserve-3d"
+            >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-12">
                 <div className="flex items-center gap-6">
                   <div className="w-20 h-20 rounded-[2rem] bg-white/5 text-primary-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
@@ -140,7 +152,7 @@ export default function Pathways() {
 
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center w-full bg-primary-accent text-black py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-primary-accent/10 transition-all active:scale-95"
+                className="inline-flex items-center justify-center w-full bg-primary-accent text-dark py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-primary-accent/10 active:scale-95"
               >
                 Start Recovery Plan
               </Link>
