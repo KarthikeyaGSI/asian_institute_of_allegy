@@ -3,9 +3,9 @@
 @theme {
   --color-primary: #2D5A27;
   --color-dark: #050705;
-  --color-muted: #101512;
-  --color-primary-accent: #D4AF37;
-  --color-accent: #0A0F0D;
+  --color-muted: #08121A;
+  --color-primary-accent: #1E3A8A; /* Navy Blue */
+  --color-accent: #0A192F; /* Deep Navy */
   
   --font-heading: var(--font-playfair), serif;
   --font-body: var(--font-inter), sans-serif;
@@ -62,8 +62,34 @@
 .glass-card {
   background: rgba(255,255,255,0.02);
   backdrop-filter: blur(24px);
-  border: 1px solid rgba(212,175,55,0.1);
+  border: 1px solid rgba(30,58,138,0.2);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.liquid-fill {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+}
+
+.liquid-fill::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary);
+  transition: top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: -1;
+}
+
+.liquid-fill:hover::before {
+  top: 0;
+}
+
+.liquid-fill:hover {
+  color: white;
 }
 
 .cta-button {

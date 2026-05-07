@@ -22,12 +22,13 @@ const inter = Inter({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://asianinstituteofallergy.com"),
   title: {
     default: "Asian Institute of Allergy | Root-Cause Clinical Excellence",
     template: "%s | Asian Institute of Allergy"
   },
-  description: "India's specialized Centre of Excellence for Chronic Allergy, Asthma & Immunology. We resolve chronic conditions by identifying the root-cause using precision diagnostics and Sublingual Immunotherapy (SLIT). Directed by Dr. Vyakarnam Nageshwar.",
-  keywords: "chronic allergy resolution, SLIT immunotherapy benefits, asthma root cause treatment, permanent allergy relief Hyderabad, Dr. Vyakarnam Nageshwar immunology, environmental trigger mapping, H5N1 global health advisory 2025, HPV vaccine immune safety, immunotherapy success rate India",
+  description: "Specialized Centre of Excellence for Chronic Allergy, Asthma & Immunology. We resolve chronic conditions by identifying the root-cause using precision diagnostics and Sublingual Immunotherapy (SLIT). Directed by Dr. Vyakarnam Nageshwar.",
+  keywords: "chronic allergy resolution, SLIT immunotherapy benefits, asthma root cause treatment, permanent allergy relief Hyderabad, Dr. Vyakarnam Nageshwar immunology, environmental trigger mapping, immunotherapy success rate India",
   openGraph: {
     title: "Asian Institute of Allergy | Science of Permanent Immune Relief",
     description: "Don't just mask symptoms. Our clinical protocols identify 'why' your immune system overreacts. Advanced SLIT solutions for long-term health freedom.",
@@ -51,7 +52,7 @@ export const metadata = {
     images: ["/images/dr-nageswar.webp"],
   },
   alternates: {
-    canonical: "https://asianinstituteofallergy.com",
+    canonical: "/",
   },
 };
 
@@ -101,8 +102,14 @@ export default function RootLayout({ children }) {
           <ProgressBar />
           <NoiseOverlay />
           <PremiumCursor />
+          <div aria-live="polite" aria-atomic="true" className="sr-only">
+            {/* Hidden region for screen readers to catch dynamic notification updates */}
+            System status updates and patient activity notifications.
+          </div>
           <NotificationTriggers />
-          {children}
+          <main id="main-content" className="flex-grow">
+            {children}
+          </main>
         </SmoothScroll>
         <script
           type="application/ld+json"

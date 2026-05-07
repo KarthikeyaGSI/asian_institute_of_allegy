@@ -66,6 +66,23 @@ export default function Pathways() {
           start: "top top",
           end: () => `+=${sections.length * 100}%`,
           pinSpacing: true,
+          onUpdate: (self) => {
+            // 3.5D Layering: Scale cards as they pass through the center
+            sections.forEach((section) => {
+              const rect = section.getBoundingClientRect();
+              const centerOffset = Math.abs(window.innerWidth / 2 - (rect.left + rect.width / 2));
+              const scale = Math.max(0.8, 1.1 - (centerOffset / window.innerWidth));
+              const opacity = Math.max(0.4, 1.2 - (centerOffset / (window.innerWidth / 2)));
+              
+              gsap.to(section.querySelector('.inner-card'), {
+                scale: scale,
+                opacity: opacity,
+                z: (scale - 1) * 200,
+                duration: 0.1,
+                overwrite: 'auto'
+              });
+            });
+          }
         }
       });
     });
@@ -111,7 +128,7 @@ export default function Pathways() {
               onMouseLeave={(e) => {
                 gsap.to(e.currentTarget, { rotateY: 0, rotateX: 0, duration: 0.5, ease: "power2.out" });
               }}
-              className="bg-white/5 border border-white/10 rounded-[2.5rem] md:rounded-[3.rem] p-8 md:p-16 w-full max-w-4xl backdrop-blur-sm group hover:border-primary-accent/30 transition-colors duration-500 preserve-3d"
+              className="inner-card bg-slate-900/40 border border-white/10 rounded-[2.5rem] md:rounded-[3.rem] p-8 md:p-16 w-full max-w-4xl backdrop-blur-xl group hover:border-primary/30 transition-colors duration-500 preserve-3d"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-12">
                 <div className="flex items-center gap-6">
@@ -152,7 +169,8 @@ export default function Pathways() {
 
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center w-full bg-primary-accent text-dark py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-primary-accent/10 active:scale-95"
+                aria-label={`Begin your ${path.title} recovery plan`}
+                className="inline-flex items-center justify-center w-full bg-primary text-white py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-2xl shadow-primary/20 liquid-fill"
               >
                 Start Recovery Plan
               </Link>

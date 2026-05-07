@@ -62,7 +62,7 @@ export default function BookingForm({ onStartQuiz }) {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
             
             <div className="relative z-10">
-              <span className="text-primary-accent font-bold tracking-widest uppercase text-sm mb-4 block">Frictionless Booking</span>
+              <span className="text-slate-100/60 font-bold tracking-widest uppercase text-xs mb-4 block">Frictionless Booking</span>
               <h2 className="text-3xl md:text-5xl font-semibold mb-6 leading-tight">
                 Schedule your clinical evaluation.
               </h2>
@@ -77,7 +77,7 @@ export default function BookingForm({ onStartQuiz }) {
                     "Meet the team"
                 ].map((step, i) => (
                     <div key={i} className="flex items-center gap-4">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-primary-accent shrink-0 font-bold">
+                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-slate-100 shrink-0 font-bold">
                             {i + 1}
                         </div>
                         <span className="font-medium text-lg">{step}</span>
@@ -127,6 +127,7 @@ export default function BookingForm({ onStartQuiz }) {
                       className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
                       placeholder="e.g. Rahul Sharma"
                       required
+                      aria-required="true"
                     />
                   </div>
                   <div>
@@ -139,6 +140,7 @@ export default function BookingForm({ onStartQuiz }) {
                       className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
                       placeholder="+91"
                       required
+                      aria-required="true"
                     />
                   </div>
                   <div>
@@ -163,7 +165,8 @@ export default function BookingForm({ onStartQuiz }) {
                         whileTap={{ scale: 0.98 }}
                         type="submit"
                         disabled={isSubmitting}
-                        className={`w-full bg-primary text-white py-5 rounded-2xl font-bold shadow-2xl shadow-primary/20 hover:bg-[#154d2e] transition-all text-lg ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
+                        aria-label="Request your complete clinical evaluation"
+                        className={`w-full bg-primary text-white py-5 rounded-2xl font-bold shadow-2xl shadow-primary/20 transition-all text-lg liquid-fill ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
                     >
                         {isSubmitting ? "Processing..." : "Request Complete Evaluation"}
                     </motion.button>
