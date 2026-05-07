@@ -93,12 +93,11 @@ export default function Navbar() {
             <Link
               href={isWAF ? "/contribute" : "/#contact"}
               aria-label={isWAF ? "Contribute to the foundation" : "Book a clinical evaluation"}
-              className={`px-3.5 h-[36px] rounded-full text-[12px] font-black uppercase tracking-widest transition-all shadow-xl flex items-center justify-center whitespace-nowrap premium-cta ${
+              className={`px-3.5 h-[36px] rounded-full text-[12px] font-black uppercase tracking-widest transition-all shadow-xl flex items-center justify-center whitespace-nowrap liquid-fill ${
                 isLight ? "bg-slate-900 text-white" : "bg-white text-black"
               }`}
             >
               {isWAF ? "Contribute" : "Book Evaluation"}
-              <span className="shine" />
             </Link>
             <button 
               aria-label={isOpen ? "Close mobile menu" : "Open mobile menu"}
@@ -169,12 +168,11 @@ export default function Navbar() {
               <Link
                 href={isWAF ? "/contribute" : "/#contact"}
                 aria-label={isWAF ? "Contribute to the foundation" : "Book a clinical evaluation"}
-                className={`px-8 py-3.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95 premium-cta ${
+                className={`px-8 py-3.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95 liquid-fill ${
                   isLight ? "bg-slate-900 text-white" : "bg-white text-black"
                 }`}
               >
                 {isWAF ? "Contribute Now" : "Book Evaluation"}
-                <span className="shine" />
               </Link>
             </Magnetic>
 

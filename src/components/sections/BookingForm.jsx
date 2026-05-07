@@ -166,10 +166,9 @@ export default function BookingForm({ onStartQuiz }) {
                         type="submit"
                         disabled={isSubmitting}
                         aria-label="Request your complete clinical evaluation"
-                        className={`w-full bg-primary text-white py-5 rounded-2xl font-bold shadow-2xl shadow-primary/20 transition-all text-lg premium-cta ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
+                        className={`w-full bg-primary text-white py-5 rounded-2xl font-bold shadow-2xl shadow-primary/20 transition-all text-lg liquid-fill ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
                     >
                         {isSubmitting ? "Processing..." : "Request Complete Evaluation"}
-                        <span className="shine" />
                     </motion.button>
                   </div>
                 </form>

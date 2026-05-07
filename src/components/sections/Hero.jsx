@@ -135,10 +135,9 @@ export default function Hero() {
                 <Link
                   href="/#contact"
                   aria-label="Book a root-cause clinical diagnosis session"
-                  className="bg-primary text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-opacity-90 hover:scale-105 active:scale-95 text-center shadow-2xl flex items-center justify-center gap-3 premium-cta"
+                  className="bg-primary text-white w-full sm:w-auto px-10 lg:px-12 h-[52px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-opacity-90 hover:scale-105 active:scale-95 text-center shadow-2xl flex items-center justify-center gap-3 liquid-fill"
                 >
                   Start Root-Cause Diagnosis
-                  <span className="shine" />
                 </Link>
               </Magnetic>
               <Magnetic>
