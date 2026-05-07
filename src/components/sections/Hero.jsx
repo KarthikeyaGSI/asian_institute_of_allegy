@@ -84,20 +84,19 @@ export default function Hero() {
           <div className="w-full max-w-full lg:max-w-[560px] flex flex-col items-start text-left"> 
             <div className="w-full">
               <motion.h1
-                initial={{ opacity: 0, x: -30 }}
-                animate={isLoaded ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                animate={isLoaded ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[32px] sm:text-[36px] lg:text-[64px] font-bold leading-[1.2] lg:leading-[1.1] tracking-tight font-heading text-left"
-                style={{ transform: "translateZ(50px)" }}
               >
                 We find the <span className="text-primary italic">root cause</span>.<br />
                 We fix it for good.
               </motion.h1>
 
               <motion.p
-                initial={{ opacity: 0, x: -20 }}
-                animate={isLoaded ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
+                animate={isLoaded ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-4 lg:mt-8 text-[15px] sm:text-[16px] lg:text-[18px] leading-[24px] lg:leading-relaxed text-white/90 font-medium text-left"
               >
                 India's specialized institute focused on root-cause diagnosis.
@@ -154,7 +153,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-                className="flex items-center gap-5 bg-white/5 border border-white/10 px-8 py-5 rounded-3xl backdrop-blur-xl w-full lg:w-fit"
+                className="flex items-center gap-5 bg-white/5 border border-white/10 px-8 py-5 rounded-3xl backdrop-blur-xl w-full lg:w-fit clinical-pulse"
               >
                 <div className="text-primary">
                   <CheckCircle2 size={36} />
@@ -171,7 +170,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[1.5rem] lg:rounded-[2.5rem] border border-white/10 backdrop-blur-md w-full lg:w-auto mt-12 lg:mt-0 lg:ml-auto lg:self-center relative overflow-hidden group"
+              className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[1.5rem] lg:rounded-[2.5rem] border border-white/10 backdrop-blur-md w-full lg:w-auto mt-12 lg:mt-0 lg:ml-auto lg:self-center relative overflow-hidden group scanning-line"
             >
               <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               <div className="relative w-16 h-16 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary shadow-2xl shrink-0">
@@ -180,7 +179,7 @@ export default function Hero() {
                   alt="Dr. Vyakarnam Nageshwar - Chief Immunologist"
                   fill
                   priority
-                  className="object-cover object-top"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 1024px) 80px, 160px"
                 />
               </div>

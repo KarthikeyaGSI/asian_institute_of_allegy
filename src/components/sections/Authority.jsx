@@ -46,17 +46,17 @@ export default function Authority() {
           </div>
 
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="order-1 lg:order-2 space-y-10"
           >
             <div>
-              <span className="text-primary-accent font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Mission</span>
+              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Mission</span>
               <h2 className="text-3xl md:text-7xl font-bold leading-[1.1] text-white tracking-tight font-heading">
                 A Journey Rooted in <br/>
-                <span className="text-gray-500">Suffering & Hope.</span>
+                <span className="text-slate-500">Suffering & Hope.</span>
               </h2>
             </div>
             

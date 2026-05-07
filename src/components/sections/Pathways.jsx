@@ -101,17 +101,7 @@ export default function Pathways() {
         {pathways.map((path, i) => (
           <div key={i} className="pathway-card min-w-full md:min-w-[70vw] md:h-full flex items-center px-6 md:px-12 mb-12 md:mb-0 perspective-1000">
             <div 
-              onMouseMove={(e) => {
-                const card = e.currentTarget;
-                const rect = card.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-                gsap.to(card, { rotateY: x * 20, rotateX: -y * 20, duration: 0.5, ease: "power2.out" });
-              }}
-              onMouseLeave={(e) => {
-                gsap.to(e.currentTarget, { rotateY: 0, rotateX: 0, duration: 0.5, ease: "power2.out" });
-              }}
-              className="bg-white/5 border border-white/10 rounded-[2.5rem] md:rounded-[3.rem] p-8 md:p-16 w-full max-w-4xl backdrop-blur-sm group hover:border-primary-accent/30 transition-colors duration-500 preserve-3d"
+              className="bg-white/5 border border-white/10 rounded-[2.5rem] md:rounded-[3.rem] p-8 md:p-16 w-full max-w-4xl backdrop-blur-sm group hover:border-primary/30 transition-colors duration-500 scanning-line"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-12">
                 <div className="flex items-center gap-6">

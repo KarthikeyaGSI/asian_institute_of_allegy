@@ -115,52 +115,57 @@ export default function Navbar() {
           {/* Left: Navigation Links */}
           <div className={`flex items-center transition-all duration-500 ${isScrolled ? "gap-2 xl:gap-6" : "gap-4 xl:gap-8"}`}>
             {navLinks.slice(0, 3).map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`text-[9px] xl:text-[11px] font-black tracking-tighter xl:tracking-[0.15em] uppercase transition-all duration-300 whitespace-nowrap ${
-                  pathname === link.href 
-                    ? "text-primary-accent" 
-                    : (isLight ? "text-slate-900/60 hover:text-slate-900" : "text-white/80 hover:text-white")
-                }`}
-              >
-                {link.name}
-              </Link>
+              <Magnetic key={link.name}>
+                <Link
+                  href={link.href}
+                  className={`text-[9px] xl:text-[11px] font-black tracking-tighter xl:tracking-[0.15em] uppercase transition-all duration-300 whitespace-nowrap ${
+                    pathname === link.href 
+                      ? "text-primary" 
+                      : (isLight ? "text-slate-900/60 hover:text-slate-900" : "text-white/80 hover:text-white")
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              </Magnetic>
             ))}
           </div>
 
           {/* Center: Centered Logo (Absolute positioned for mathematical centering) */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-            <Link href="/" className="flex items-center group cursor-pointer pointer-events-auto">
-              <div className={`rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 flex items-center justify-center bg-white ${
-                isLight ? "ring-1 ring-slate-200" : "ring-1 ring-white/10"
-              } ${
-                isScrolled ? "p-1 md:p-1.5" : "p-1.5 md:p-2"
-              }`}>
-                <Image 
-                  src="/images/asian institute of allergy logo.webp" 
-                  alt="Asian Institute of Allergy" 
-                  width={200} 
-                  height={200}
-                  className={`w-auto object-contain transition-all duration-500 ${
-                    isScrolled ? "h-[55px] md:h-[70px]" : "h-[85px] md:h-[110px]"
-                  }`}
-                  priority
-                />
-              </div>
-            </Link>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <Magnetic>
+              <Link href="/" className="flex items-center group cursor-pointer">
+                <div className={`rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 flex items-center justify-center bg-white ${
+                  isLight ? "ring-1 ring-slate-200" : "ring-1 ring-white/10"
+                } ${
+                  isScrolled ? "p-1 md:p-1.5" : "p-1.5 md:p-2"
+                }`}>
+                  <Image 
+                    src="/images/asian institute of allergy logo.webp" 
+                    alt="Asian Institute of Allergy" 
+                    width={200} 
+                    height={200}
+                    className={`w-auto object-contain transition-all duration-500 ${
+                      isScrolled ? "h-[55px] md:h-[70px]" : "h-[85px] md:h-[110px]"
+                    }`}
+                    priority
+                  />
+                </div>
+              </Link>
+            </Magnetic>
           </div>
 
           {/* Right: Actions */}
           <div className="flex items-center gap-4">
-            <Link
-              href="/#contact"
-              className={`hidden xl:block text-[11px] font-black transition-colors tracking-[0.2em] uppercase ${
-                isLight ? "text-slate-900/60 hover:text-slate-900" : "text-white/80 hover:text-white"
-              }`}
-            >
-              Contact
-            </Link>
+            <Magnetic>
+              <Link
+                href="/#contact"
+                className={`hidden xl:block text-[11px] font-black transition-colors tracking-[0.2em] uppercase ${
+                  isLight ? "text-slate-900/60 hover:text-slate-900" : "text-white/80 hover:text-white"
+                }`}
+              >
+                Contact
+              </Link>
+            </Magnetic>
             
             <Magnetic>
               <Link
