@@ -16,22 +16,28 @@ export default function Authority() {
         {/* DOCTOR ANCHOR & PROOF */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
           <div className="order-2 lg:order-1 relative">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl max-w-md mx-auto lg:mx-0 ring-1 ring-white/10">
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl max-w-md mx-auto lg:mx-0 ring-1 ring-white/10 group">
               <motion.div
-                initial={{ scale: 1 }}
-                whileInView={{ scale: 1.05 }}
+                initial={{ clipPath: "inset(0 100% 0 0)" }}
+                whileInView={{ clipPath: "inset(0 0% 0 0)" }}
                 viewport={{ once: true }}
-                transition={{ duration: 10, ease: "easeOut" }}
+                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute inset-0 w-full h-full"
               >
-                <Image 
-                  src="/images/dr-nageswar.webp" 
-                  alt="Dr. Vyakarnam" 
-                  fill 
-                  className="object-cover object-top"
-                  sizes="(max-w-768px) 100vw, 400px"
-                  priority
-                />
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.6 }}
+                  className="absolute inset-0 w-full h-full"
+                >
+                  <Image 
+                    src="/images/dr-nageswar.webp" 
+                    alt="Dr. Vyakarnam" 
+                    fill 
+                    className="object-cover object-top filter grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+                    sizes="(max-w-768px) 100vw, 400px"
+                    priority
+                  />
+                </motion.div>
               </motion.div>
               <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-90" />
               
