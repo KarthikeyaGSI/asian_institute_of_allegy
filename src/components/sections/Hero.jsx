@@ -14,6 +14,13 @@ export default function Hero() {
 
   const { scrollY } = useScroll();
 
+  // 🎭 SCROLL TRANSFORMATIONS
+  const videoScale = useTransform(scrollY, [0, 1000], [1.05, 1.3]);
+  const videoOpacity = useTransform(scrollY, [0, 800], [1, 0.4]);
+  const contentY = useTransform(scrollY, [0, 500], [0, -100]);
+  const contentOpacity = useTransform(scrollY, [0, 400], [1, 0]);
+  const indicatorOpacity = useTransform(scrollY, [0, 150], [1, 0]);
+
   const x = useSpring(0, { stiffness: 100, damping: 30 });
   const y = useSpring(0, { stiffness: 100, damping: 30 });
 
