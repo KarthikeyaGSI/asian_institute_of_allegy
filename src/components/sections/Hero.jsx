@@ -21,16 +21,13 @@ export default function Hero() {
   const contentOpacity = useTransform(scrollY, [0, 400], [1, 0]);
   const indicatorOpacity = useTransform(scrollY, [0, 150], [1, 0]);
 
-  const x = useSpring(0, { stiffness: 100, damping: 30 });
-  const y = useSpring(0, { stiffness: 100, damping: 30 });
+  const mouseX = useSpring(0, { stiffness: 150, damping: 30 });
+  const mouseY = useSpring(0, { stiffness: 150, damping: 30 });
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-    const rotateY = (clientX / innerWidth - 0.5) * 20;
-    const rotateX = (clientY / innerHeight - 0.5) * -20;
-    x.set(rotateX);
-    y.set(rotateY);
+    mouseX.set(clientX);
+    mouseY.set(clientY);
   };
 
   useEffect(() => {
@@ -52,8 +49,19 @@ export default function Hero() {
     <section 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen w-full bg-dark overflow-hidden flex items-center text-white perspective-1000"
+      className="relative min-h-screen w-full bg-dark overflow-hidden flex items-center text-white"
     >
+      {/* 🔍 UNIQUE: Clinical Spotlight Interaction */}
+      <motion.div 
+        style={{
+          background: useTransform(
+            [mouseX, mouseY],
+            ([x, y]) => `radial-gradient(circle 400px at ${x}px ${y}px, rgba(45, 90, 39, 0.15), transparent 80%)`
+          )
+        }}
+        className="absolute inset-0 z-[1] pointer-events-none"
+      />
+
       {/* 🎥 VIDEO - Cinematic Parallax Background */}
       <motion.div 
         style={{ scale: videoScale, opacity: videoOpacity }}
@@ -84,7 +92,12 @@ export default function Hero() {
 
       {/* 📝 CONTENT - Strict Left Alignment & Scroll Reveal */}
       <motion.div 
-        style={{ y: contentY, opacity: contentOpacity, rotateX: x, rotateY: y, transformStyle: "preserve-3d" }}
+        style={{ 
+          opacity: contentOpacity,
+          translateX: useTransform(mouseX, [0, 2000], [-15, 15]),
+          translateY: useTransform(mouseY, [0, 1000], [-15, 15]),
+          y: contentY // Scroll parallax
+        }}
         className="relative z-[2] w-full pt-[110px] lg:pt-[120px] pb-24 lg:pb-0 px-5 lg:pl-[100px] lg:pr-[40px]"
       >
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
