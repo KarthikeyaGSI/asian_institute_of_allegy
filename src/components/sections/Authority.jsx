@@ -118,9 +118,10 @@ export default function Authority() {
             <Link 
               href="/world-allergy-foundation"
               aria-label="Explore research and advocacy by the World Allergy Foundation"
-              className="inline-flex items-center gap-2 bg-white text-dark px-8 py-4 rounded-xl font-bold text-sm hover:bg-gray-100 transition-colors liquid-fill"
+              className="inline-flex items-center gap-2 bg-white text-dark px-8 py-4 rounded-xl font-bold text-sm hover:bg-gray-100 transition-colors premium-cta"
             >
               Explore Foundation Research <ArrowRight size={18} />
+              <span className="shine" />
             </Link>
           </div>
         </motion.div>

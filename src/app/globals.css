@@ -66,30 +66,73 @@
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-.liquid-fill {
+.premium-cta {
   position: relative;
   overflow: hidden;
-  transition: color 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  isolation: isolate;
 }
 
-.liquid-fill::before {
+.premium-cta::before {
   content: '';
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--color-primary);
-  transition: top 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-accent));
+  opacity: 0;
+  transition: opacity 0.5s ease;
   z-index: -1;
 }
 
-.liquid-fill:hover::before {
-  top: 0;
+.premium-cta::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  transform: scale(0.5);
+  pointer-events: none;
 }
 
-.liquid-fill:hover {
-  color: white;
+.premium-cta:hover {
+  transform: scale(1.05) translateY(-2px);
+  letter-spacing: 0.05em;
+  box-shadow: 0 20px 40px -15px rgba(45, 90, 39, 0.4);
+}
+
+.premium-cta:hover::before {
+  opacity: 1;
+}
+
+.premium-cta:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.premium-cta .shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: left 0.75s ease;
+}
+
+.premium-cta:hover .shine {
+  left: 150%;
 }
 
 .cta-button {

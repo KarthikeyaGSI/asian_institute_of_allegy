@@ -170,9 +170,10 @@ export default function Pathways() {
               <Link
                 href="/#contact"
                 aria-label={`Begin your ${path.title} recovery plan`}
-                className="inline-flex items-center justify-center w-full bg-primary text-white py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-2xl shadow-primary/20 liquid-fill"
+                className="inline-flex items-center justify-center w-full bg-primary text-white py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-2xl shadow-primary/20 premium-cta"
               >
                 Start Recovery Plan
+                <span className="shine" />
               </Link>
             </div>
           </div>
