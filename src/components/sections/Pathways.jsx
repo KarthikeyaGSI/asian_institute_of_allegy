@@ -84,9 +84,9 @@ export default function Pathways() {
             <span className="text-primary-accent font-bold tracking-[0.4em] uppercase text-xs mb-8 block">Diagnostic Compass</span>
             <h2 className="text-5xl md:text-8xl font-bold text-white mb-8 tracking-tighter font-heading">
               Choose your <br/>
-              <span className="text-gray-500 italic">recovery path.</span>
+              <span className="text-slate-400 italic">recovery path.</span>
             </h2>
-            <p className="text-slate-400 text-lg md:text-2xl font-medium max-w-2xl leading-relaxed">
+            <p className="text-slate-200 text-lg md:text-2xl font-medium max-w-2xl leading-relaxed">
               We identify your specific triggers and treat the underlying immune dysfunction, not just the temporary symptoms.
             </p>
             <div className="mt-12 hidden md:flex items-center gap-4 text-white/20">

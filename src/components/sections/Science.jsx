@@ -76,9 +76,9 @@ export default function Science() {
           <div ref={contentRef} className="flex-1 order-2 lg:order-1">
             <div className="max-w-xl">
               <span className="text-primary-accent font-bold tracking-widest uppercase text-sm mb-4 block">Our Methodology</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-12 leading-[1.1] tracking-tight">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-12 leading-[1.1] tracking-tight">
                 Root-cause resolution. <br/>
-                <span className="text-slate-500">Not symptom management.</span>
+                <span className="text-slate-400 font-medium italic">Not symptom management.</span>
               </h2>
 
               <div className="space-y-16 relative pl-8">
@@ -122,7 +122,8 @@ export default function Science() {
                   muted
                   playsInline
                   preload="none"
-                  className="w-full h-full object-cover opacity-70 transition-opacity duration-1000 hover:opacity-90"
+                  poster="/images/research.webp"
+                  className="w-full h-full object-cover opacity-80 transition-opacity duration-1000 hover:opacity-100"
                 >
                   <source src="/_INFLAMMATION%20VIDEO%20(Scientific%20Section).mp4" type="video/mp4" />
                 </video>

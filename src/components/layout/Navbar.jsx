@@ -12,7 +12,6 @@ const navLinks = [
   { name: "Treatments", href: "/treatments" },
   { name: "Patient Stories", href: "/clinical-success" },
   { name: "World Allergy Foundation", href: "/world-allergy-foundation" },
-  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -158,27 +157,14 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Magnetic>
               <Link
-                href="/#contact"
-                className={`hidden xl:block text-[11px] font-black transition-colors tracking-[0.2em] uppercase ${
-                  isLight ? "text-slate-900/60 hover:text-slate-900" : "text-white/80 hover:text-white"
-                }`}
-              >
-                Contact
-              </Link>
-            </Magnetic>
-            
-            <Magnetic>
-              <Link
                 href={isWAF ? "/contribute" : "/#contact"}
                 className={`px-8 py-3.5 rounded-full text-[11px] font-black uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95 ${
-                  isLight ? "bg-slate-900 text-white hover:bg-primary" : "bg-white text-black hover:bg-primary-accent"
+                  isLight ? "bg-slate-900 text-white hover:bg-primary" : "bg-white text-black hover:bg-primary"
                 }`}
               >
                 {isWAF ? "Contribute Now" : "Book Evaluation"}
               </Link>
             </Magnetic>
-
-
           </div>
         </div>
       </motion.nav>

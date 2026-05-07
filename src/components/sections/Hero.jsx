@@ -52,7 +52,8 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
+          poster="/images/asianinstituteof allergy.webp"
           className="w-full h-full object-cover"
           style={{ objectPosition: "center" }}
         >
