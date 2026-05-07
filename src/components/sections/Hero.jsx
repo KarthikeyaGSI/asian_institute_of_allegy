@@ -92,35 +92,25 @@ export default function Hero() {
           {/* Text Content Block */}
           <div className="w-full max-w-full lg:max-w-[560px] flex flex-col items-start text-left"> 
             <div className="w-full">
-              <motion.h1 
-                className="text-[12vw] sm:text-[9vw] lg:text-[7.5vw] font-bold leading-[0.85] tracking-tighter mb-12 font-heading"
-                initial={{ opacity: 0 }}
-                animate={isLoaded ? { opacity: 1 } : {}}
+              <motion.h1
+                initial={{ opacity: 0, x: -30 }}
+                animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="text-[32px] sm:text-[36px] lg:text-[64px] font-bold leading-[1.2] lg:leading-[1.1] tracking-tight font-heading text-left"
+                style={{ transform: "translateZ(50px)" }}
               >
-                {["PRECISION", "IMMUNOLOGY", "DEFINED"].map((word, i) => (
-                  <motion.span 
-                    key={i} 
-                    className="block relative overflow-hidden"
-                  >
-                    <motion.span
-                      initial={{ y: "100%", rotate: 5 }}
-                      animate={isLoaded ? { y: 0, rotate: 0 } : {}}
-                      transition={{ duration: 1, delay: 0.2 + (i * 0.15), ease: [0.16, 1, 0.3, 1] }}
-                      className="block"
-                    >
-                      {word}
-                    </motion.span>
-                  </motion.span>
-                ))}
+                We find the <span className="text-primary italic">root cause</span>.<br />
+                We fix it for good.
               </motion.h1>
 
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="text-lg sm:text-xl lg:text-2xl text-white/70 max-w-2xl mb-16 leading-relaxed font-medium"
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="mt-4 lg:mt-8 text-[15px] sm:text-[16px] lg:text-[18px] leading-[24px] lg:leading-relaxed text-white/90 font-medium text-left"
               >
-                Resolving the root-cause of chronic allergies through clinical forensic diagnosis and advanced SLIT immunotherapy.
+                India's specialized institute focused on root-cause diagnosis.
+                Personalized care for patients aged 2 to 80.
               </motion.p>
             </div>
 

@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Outfit } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/effects/SmoothScroll";
 import NoiseOverlay from "@/components/effects/NoiseOverlay";
@@ -7,17 +7,17 @@ import NotificationTriggers from "@/components/ui/NotificationTriggers";
 import ProgressBar from "@/components/effects/ProgressBar";
 import Script from "next/script";
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-cormorant",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-outfit",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -58,7 +58,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${outfit.variable} h-full antialiased scroll-smooth`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable} h-full antialiased scroll-smooth`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Google Tag Manager */}
@@ -99,12 +99,6 @@ export default function RootLayout({ children }) {
         />
 
         <SmoothScroll>
-          <div className="molecular-bg overflow-hidden" aria-hidden="true">
-            <div className="molecular-dot top-[10%] left-[5%]" style={{ animationDelay: '0s' }} />
-            <div className="molecular-dot top-[40%] left-[85%]" style={{ animationDelay: '-5s' }} />
-            <div className="molecular-dot top-[70%] left-[15%]" style={{ animationDelay: '-10s' }} />
-            <div className="molecular-dot top-[20%] left-[60%]" style={{ animationDelay: '-15s' }} />
-          </div>
           <ProgressBar />
           <NoiseOverlay />
           <PremiumCursor />
