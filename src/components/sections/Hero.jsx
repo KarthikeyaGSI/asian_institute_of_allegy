@@ -21,15 +21,6 @@ export default function Hero() {
   const contentOpacity = useTransform(scrollY, [0, 400], [1, 0]);
   const indicatorOpacity = useTransform(scrollY, [0, 150], [1, 0]);
 
-  const mouseX = useSpring(0, { stiffness: 150, damping: 30 });
-  const mouseY = useSpring(0, { stiffness: 150, damping: 30 });
-
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    mouseX.set(clientX);
-    mouseY.set(clientY);
-  };
-
   useEffect(() => {
     setIsLoaded(true);
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -48,19 +39,8 @@ export default function Hero() {
   return (
     <section 
       ref={containerRef}
-      onMouseMove={handleMouseMove}
       className="relative min-h-screen w-full bg-dark overflow-hidden flex items-center text-white"
     >
-      {/* 🔍 UNIQUE: Clinical Spotlight Interaction */}
-      <motion.div 
-        style={{
-          background: useTransform(
-            [mouseX, mouseY],
-            ([x, y]) => `radial-gradient(circle 400px at ${x}px ${y}px, rgba(45, 90, 39, 0.15), transparent 80%)`
-          )
-        }}
-        className="absolute inset-0 z-[1] pointer-events-none"
-      />
 
       {/* 🎥 VIDEO - Cinematic Parallax Background */}
       <motion.div 
@@ -94,8 +74,6 @@ export default function Hero() {
       <motion.div 
         style={{ 
           opacity: contentOpacity,
-          translateX: useTransform(mouseX, [0, 2000], [-15, 15]),
-          translateY: useTransform(mouseY, [0, 1000], [-15, 15]),
           y: contentY // Scroll parallax
         }}
         className="relative z-[2] w-full pt-[110px] lg:pt-[120px] pb-24 lg:pb-0 px-5 lg:pl-[100px] lg:pr-[40px]"
@@ -165,10 +143,10 @@ export default function Hero() {
               >
 
                 <span className="flex items-center gap-3">
-                  <span className="text-primary-accent text-xl leading-none">•</span> Specialist review
+                  <span className="text-primary text-xl leading-none">•</span> Specialist review
                 </span>
                 <span className="flex items-center gap-3">
-                  <span className="text-primary-accent text-xl leading-none">•</span> ERASE CONFUSION = GET CLARITY
+                  <span className="text-primary text-xl leading-none">•</span> PRECISION DIAGNOSIS = GET CLARITY
                 </span>
               </motion.div>
 
@@ -178,7 +156,7 @@ export default function Hero() {
                 transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
                 className="flex items-center gap-5 bg-white/5 border border-white/10 px-8 py-5 rounded-3xl backdrop-blur-xl w-full lg:w-fit"
               >
-                <div className="text-primary-accent">
+                <div className="text-primary">
                   <CheckCircle2 size={36} />
                 </div>
                 <div>
@@ -196,7 +174,7 @@ export default function Hero() {
               className="flex flex-row lg:flex-col items-center gap-5 bg-white/5 p-5 lg:p-8 rounded-[1.5rem] lg:rounded-[2.5rem] border border-white/10 backdrop-blur-md w-full lg:w-auto mt-12 lg:mt-0 lg:ml-auto lg:self-center relative overflow-hidden group"
             >
               <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              <div className="relative w-16 h-16 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary-accent shadow-2xl shrink-0">
+              <div className="relative w-16 h-16 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-primary shadow-2xl shrink-0">
                 <Image 
                   src="/images/dr-nageswar.webp"
                   alt="Dr. Vyakarnam Nageshwar - Chief Immunologist"
@@ -223,9 +201,9 @@ export default function Hero() {
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-[3] flex flex-col items-center gap-2 cursor-pointer group"
       >
-        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 group-hover:text-primary-accent transition-colors">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-bottom from-primary-accent to-transparent" />
-        <ChevronDown size={20} className="text-primary-accent mt-[-4px]" />
+        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 group-hover:text-primary transition-colors">Scroll</span>
+        <div className="w-px h-12 bg-gradient-to-bottom from-primary to-transparent" />
+        <ChevronDown size={20} className="text-primary mt-[-4px]" />
       </motion.button>
 
       {/* CERTIFICATION LOGO STRIP */}
@@ -238,10 +216,10 @@ export default function Hero() {
         <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20 mr-8">Affiliations</div>
         <div className="flex items-center gap-12">
 
-           <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">PATEL CHEST</span>
-           <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">CVR NEWS LIVE</span>
+           <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary hover:drop-shadow-[0_0_10px_rgba(45,90,39,0.8)] transition-all duration-300 cursor-default uppercase">PATEL CHEST</span>
+           <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary hover:drop-shadow-[0_0_10px_rgba(45,90,39,0.8)] transition-all duration-300 cursor-default uppercase">CVR NEWS LIVE</span>
 
-           <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary-accent hover:drop-shadow-[0_0_10px_rgba(163,230,53,0.8)] transition-all duration-300 cursor-default uppercase">WAO WORLDWIDE</span>
+           <span className="text-white/30 font-bold tracking-tighter text-lg hover:text-primary hover:drop-shadow-[0_0_10px_rgba(45,90,39,0.8)] transition-all duration-300 cursor-default uppercase">WAO WORLDWIDE</span>
         </div>
       </motion.div>
     </section>
