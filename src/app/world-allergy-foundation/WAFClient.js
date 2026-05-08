@@ -822,7 +822,7 @@ export default function WorldAllergyFoundation() {
               </div>
             </FadeInBlur>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
               {/* Dr. Bhagheerathi */}
               <FadeInBlur>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
@@ -915,6 +915,33 @@ export default function WorldAllergyFoundation() {
                         </p>
                         <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
                           Her diverse expertise brings unique multidisciplinary insight to legal, healthcare, and technology matters within the organization.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </FadeInBlur>
+
+              {/* Mr. Sivakumar Thotapalli */}
+              <FadeInBlur delay={0.5}>
+                <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
+                  <div className="space-y-4">
+                    <h3 className="text-3xl md:text-4xl font-bold font-heading text-slate-950">Mr. Sivakumar Thotapalli</h3>
+                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[10px] md:text-xs">Public Health Advisor</p>
+                    <p className="text-slate-500 font-bold text-lg">Global Health & Policy Advocate</p>
+                    <div className="space-y-4 pt-6 border-t border-slate-100">
+                      <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium italic">
+                        "Contributing a youth-led and international perspective to allergy awareness and public health communication."
+                      </p>
+                      <div className="space-y-3">
+                        <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
+                          Mr. Sivakumar Thotapalli supports initiatives related to allergy awareness, immunology education, preventive healthcare, and community outreach.
+                        </p>
+                        <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
+                          With academic exposure to genetics, immunology, and chronic inflammation, he brings a strong interest in advancing public understanding of allergic diseases.
+                        </p>
+                        <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
+                          His background includes engagement in global platforms like the World Health Summit, G20, G7, and United Nations youth forums.
                         </p>
                       </div>
                     </div>
