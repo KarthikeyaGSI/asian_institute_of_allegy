@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Heart, ShieldCheck, Globe2, ArrowRight, MessageSquare } from "lucide-react";
+import PhoneInput from "@/components/ui/PhoneInput";
 
 export default function ContributePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -131,15 +132,13 @@ export default function ContributePage() {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
+                    <div className="space-y-2 relative z-20">
                       <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Phone</label>
-                      <input 
-                        type="tel"
-                        required
+                      <PhoneInput
                         value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        placeholder="+91"
-                        className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-primary-accent/50 focus:outline-none transition-all placeholder:text-white/20"
+                        onChange={(val) => setFormData({ ...formData, phone: val })}
+                        required
+                        dark={true}
                       />
                     </div>
                     <div className="space-y-2">

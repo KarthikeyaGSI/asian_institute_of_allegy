@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence, useScroll, useSpring as useMotionSpring } from "framer-motion";
 import { X, Sparkles, ArrowRight, ShieldCheck, Zap } from "lucide-react";
+import PhoneInput from "@/components/ui/PhoneInput";
 
 // Phase 1 (Static - Above the fold)
 import Hero from "@/components/sections/Hero";
@@ -219,14 +220,10 @@ export default function Home() {
                         required
                       />
                     </div>
-                    <div>
-                      <input
-                        type="tel"
-                        autoComplete="tel"
+                    <div className="relative z-20">
+                      <PhoneInput
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="Phone Number"
-                        className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all"
+                        onChange={(val) => setFormData({ ...formData, phone: val })}
                         required
                       />
                     </div>

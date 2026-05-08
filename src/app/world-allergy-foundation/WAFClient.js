@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import MediaLogos from "@/components/sections/MediaLogos";
 import Counter from "@/components/ui/Counter";
+import PhoneInput from "@/components/ui/PhoneInput";
 import { useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const Tilt = ({ children, className = "" }) => {
@@ -155,17 +156,12 @@ const WAFActionForm = ({ type, title, description, buttonText, buttonStyle }) =>
             required
           />
         </div>
-        <div>
-          <label className="sr-only" htmlFor={`${type}-phone`}>Phone</label>
-          <input
-            id={`${type}-phone`}
-            type="tel"
-            autoComplete="tel"
+        <div className="relative z-20">
+          <PhoneInput
             value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            placeholder="Phone Number"
-            className="w-full px-5 py-3 rounded-xl border border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary-accent"
+            onChange={(val) => setFormData({ ...formData, phone: val })}
             required
+            dark={true}
           />
         </div>
         <button

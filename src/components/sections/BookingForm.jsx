@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import PhoneInput from "@/components/ui/PhoneInput";
 
 export default function BookingForm({ onStartQuiz }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -129,15 +130,11 @@ export default function BookingForm({ onStartQuiz }) {
                       required
                     />
                   </div>
-                  <div>
+                  <div className="relative z-20">
                     <label htmlFor="phone" className="block text-sm font-bold text-slate-700 mb-2">Phone Number</label>
-                    <input 
-                      id="phone"
-                      type="tel" 
+                    <PhoneInput
                       value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-slate-50/50"
-                      placeholder="+91"
+                      onChange={(val) => setFormData({ ...formData, phone: val })}
                       required
                     />
                   </div>
