@@ -887,6 +887,17 @@ export default function WorldAllergyFoundation() {
               {/* Vyakaranam Padma */}
               <FadeInBlur delay={0.4}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
+                  <Tilt>
+                    <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700">
+                      <Image
+                        src="/images/Padma Vyakarnam.webp"
+                        alt="Ms. Vyakaranam Padma"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    </div>
+                  </Tilt>
                   <div className="space-y-4">
                     <h3 className="text-3xl md:text-4xl font-bold font-heading text-slate-950">Vyakaranam Padma</h3>
                     <p className="text-primary font-black uppercase tracking-[0.3em] text-[10px] md:text-xs">Senior Advisor – Legal</p>
