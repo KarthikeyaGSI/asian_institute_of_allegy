@@ -53,7 +53,6 @@ export default function Hero() {
           loop
           playsInline
           preload="metadata"
-          poster="/images/asianinstituteof allergy.webp"
           className="w-full h-full object-cover"
           style={{ objectPosition: "center" }}
         >
