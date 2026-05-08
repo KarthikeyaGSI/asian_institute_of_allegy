@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence, useScroll, useSpring as useMotionSpring } from "framer-motion";
 import { X, Sparkles, ArrowRight, ShieldCheck, Zap } from "lucide-react";
 
