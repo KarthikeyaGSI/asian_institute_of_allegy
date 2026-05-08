@@ -185,7 +185,7 @@ export default function Home() {
               initial={{ scale: 0.9, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.9, y: 20, opacity: 0 }}
-              className="relative max-w-lg w-full bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl overflow-hidden"
+              className="relative max-w-lg w-full bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl"
               onClick={e => e.stopPropagation()}
             >
               {/* Decoration */}

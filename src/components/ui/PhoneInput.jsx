@@ -79,6 +79,14 @@ export default function PhoneInput({ value, onChange, className, required = fals
     }
   };
 
+  const selectCountry = (country) => {
+    const digits = value ? value.replace(selectedCountry.code, "") : "";
+    setSelectedCountry(country);
+    onChange(`${country.code}${digits}`);
+    setIsOpen(false);
+    setSearch("");
+  };
+
   const displayValue = value ? value.replace(selectedCountry.code, "") : "";
 
   return (
@@ -120,7 +128,7 @@ export default function PhoneInput({ value, onChange, className, required = fals
       {/* Dropdown */}
       {isOpen && (
         <div className={clsx(
-          "absolute top-full left-0 mt-2 w-72 max-h-80 overflow-y-auto rounded-2xl shadow-2xl z-[1000] border overflow-hidden",
+          "absolute top-full left-0 mt-2 w-72 max-h-80 overflow-y-auto rounded-2xl shadow-2xl z-[1000] border",
           dark ? "bg-slate-900 border-white/10" : "bg-white border-slate-200"
         )}>
           <div className={clsx("sticky top-0 p-3 border-b", dark ? "bg-slate-900 border-white/10" : "bg-white border-slate-200")}>
@@ -139,30 +147,28 @@ export default function PhoneInput({ value, onChange, className, required = fals
             </div>
           </div>
           <div className="py-2">
-            {filteredCountries.map((c) => (
-              <button
-                key={c.iso}
-                type="button"
-                onClick={() => {
-                  setSelectedCountry(c);
-                  setIsOpen(false);
-                  setSearch("");
-                  // Update parent value with new code
-                  onChange(`${c.code}${displayValue}`);
-                }}
-                className={clsx(
-                  "w-full flex items-center justify-between px-4 py-3 text-left transition-colors",
-                  dark ? "hover:bg-white/5 text-white" : "hover:bg-slate-50 text-slate-900",
-                  selectedCountry.iso === c.iso && (dark ? "bg-white/10" : "bg-slate-100")
-                )}
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-xl">{c.flag}</span>
-                  <span className="text-sm font-medium">{c.name}</span>
-                </div>
-                <span className="text-sm font-bold text-slate-400">{c.code}</span>
-              </button>
-            ))}
+            {filteredCountries.length > 0 ? (
+              filteredCountries.map((c) => (
+                <button
+                  key={c.iso}
+                  type="button"
+                  onClick={() => selectCountry(c)}
+                  className={clsx(
+                    "w-full flex items-center justify-between px-4 py-3 text-left transition-colors",
+                    dark ? "hover:bg-white/5 text-white" : "hover:bg-slate-50 text-slate-900",
+                    selectedCountry.iso === c.iso && (dark ? "bg-white/10" : "bg-slate-100")
+                  )}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-xl">{c.flag}</span>
+                    <span className="text-sm font-medium">{c.name}</span>
+                  </div>
+                  <span className="text-sm font-bold text-slate-400">{c.code}</span>
+                </button>
+              ))
+            ) : (
+              <div className="px-4 py-8 text-center text-slate-400 text-sm">No countries found</div>
+            )}
           </div>
         </div>
       )}

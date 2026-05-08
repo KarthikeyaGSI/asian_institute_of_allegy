@@ -57,9 +57,9 @@ export default function BookingForm({ onStartQuiz }) {
   return (
     <section id="contact" className="bg-muted py-24 md:py-32 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl shadow-primary/10 border border-slate-100 overflow-hidden flex flex-col md:flex-row">
+        <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl shadow-primary/10 border border-slate-100 flex flex-col md:flex-row">
           
-          <div className="p-10 md:p-16 flex-1 bg-primary text-white flex flex-col justify-center relative overflow-hidden">
+          <div className="p-10 md:p-16 flex-1 bg-primary text-white flex flex-col justify-center relative overflow-hidden rounded-t-3xl md:rounded-t-none md:rounded-l-3xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
             
             <div className="relative z-10">
