@@ -2,13 +2,13 @@
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring as useMotionSpring } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
   Globe, Beaker, ShieldAlert, Leaf, Newspaper, ArrowRight, User, Briefcase, X, Maximize2, 
-  Sparkles, Layers, Zap 
+  Sparkles, Layers, Zap, ArrowUp 
 } from "lucide-react";
 import MediaLogos from "@/components/sections/MediaLogos";
 import Counter from "@/components/ui/Counter";
@@ -95,7 +95,9 @@ const WAFActionForm = ({ type, title, description, buttonText, buttonStyle }) =>
 
     const subject = type === 'workshop'
       ? `New Workshop Request from ${formData.name}`
-      : `New Contribution Inquiry from ${formData.name}`;
+      : type === 'popup'
+        ? `New Lead Capture from WAF Popup: ${formData.name}`
+        : `New Contribution Inquiry from ${formData.name}`;
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -132,7 +134,11 @@ const WAFActionForm = ({ type, title, description, buttonText, buttonStyle }) =>
   return (
     <div className="relative z-10 w-full">
       <span className={type === 'workshop' ? "text-primary-accent font-bold tracking-[0.3em] uppercase text-[10px] mb-6 block" : "text-white/40 font-bold tracking-[0.3em] uppercase text-[10px] mb-6 block"}>{type === 'workshop' ? 'Educational Outreach' : 'Support the Mission'}</span>
-      <h3 className="text-3xl md:text-4xl font-bold mb-6 font-heading tracking-tight" dangerouslySetInnerHTML={{ __html: title }} />
+      <h3 className="text-3xl md:text-4xl font-bold mb-6 font-heading tracking-tight">
+        {title.split('<br/>').map((part, i) => (
+          <span key={i}>{part}{i < title.split('<br/>').length - 1 && <br />}</span>
+        ))}
+      </h3>
       <p className={type === 'workshop' ? "text-white/60 text-base md:text-lg mb-8 font-medium leading-relaxed" : "text-white/80 text-base md:text-lg mb-8 font-medium leading-relaxed"}>{description}</p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -141,6 +147,7 @@ const WAFActionForm = ({ type, title, description, buttonText, buttonStyle }) =>
           <input
             id={`${type}-name`}
             type="text"
+            autoComplete="name"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="Your Name"
@@ -153,6 +160,7 @@ const WAFActionForm = ({ type, title, description, buttonText, buttonStyle }) =>
           <input
             id={`${type}-phone`}
             type="tel"
+            autoComplete="tel"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             placeholder="Phone Number"
@@ -174,17 +182,61 @@ const WAFActionForm = ({ type, title, description, buttonText, buttonStyle }) =>
 
 export default function WorldAllergyFoundation() {
   const [selectedImg, setSelectedImg] = useState(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [hasShownPopup, setHasShownPopup] = useState(false);
+  
+  const { scrollYProgress } = useScroll();
+  const scaleX = useMotionSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 1000);
+      
+      // Trigger popup at 40% scroll
+      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      if (scrollPercent > 40 && !hasShownPopup) {
+        setIsPopupOpen(true);
+        setHasShownPopup(true);
+      }
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hasShownPopup]);
+
+  // Trigger popup after 9 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!hasShownPopup) {
+        setIsPopupOpen(true);
+        setHasShownPopup(true);
+      }
+    }, 9000);
+    return () => clearTimeout(timer);
+  }, [hasShownPopup]);
 
   // Close on Escape
   useEffect(() => {
     const handleEsc = (e) => {
-      if (e.key === "Escape") setSelectedImg(null);
+      if (e.key === "Escape") {
+        setSelectedImg(null);
+        setIsPopupOpen(false);
+      }
     };
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
   }, []);
   return (
-    <main className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
+    <main className="min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-primary selection:text-white">
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100] origin-left"
+        style={{ scaleX }}
+      />
       <Navbar />
 
       {/* Spacer for fixed Navbar */}
@@ -246,15 +298,18 @@ export default function WorldAllergyFoundation() {
                   Bridging clinical excellence, scientific research, and global public health awareness to solve the crisis of chronic inflammation.
                 </p>
                 <div className="mt-10 md:mt-12 flex flex-col sm:flex-row justify-center gap-4 px-6 sm:px-0">
-                  <button 
+                  <motion.button 
+                    whileTap={{ scale: 0.98 }}
                     onClick={() => document.getElementById('workshop')?.scrollIntoView({ behavior: 'smooth' })}
                     className="px-10 py-5 bg-primary text-white rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-slate-900 transition-all active:scale-95 shadow-[0_20px_40px_-15px_rgba(26,95,58,0.4)]"
                   >
                     Join the Mission
-                  </button>
-                  <Link href="/clinical-success" className="px-10 py-5 bg-white text-slate-900 rounded-full font-black uppercase tracking-widest text-[10px] border border-slate-200 hover:bg-slate-50 transition-all active:scale-95 shadow-sm">
-                    View Patient Stories
-                  </Link>
+                  </motion.button>
+                  <motion.div whileTap={{ scale: 0.98 }}>
+                    <Link href="/clinical-success" className="px-10 py-5 bg-white text-slate-900 rounded-full font-black uppercase tracking-widest text-[10px] border border-slate-200 hover:bg-slate-50 transition-all block text-center active:scale-95 shadow-sm">
+                      View Patient Stories
+                    </Link>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
@@ -759,7 +814,7 @@ export default function WorldAllergyFoundation() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16 items-start">
               {/* Dr. Bhagheerathi */}
               <FadeInBlur>
-                <div className="group space-y-8">
+                <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
                     <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700">
                       <Image
@@ -791,12 +846,12 @@ export default function WorldAllergyFoundation() {
                       ))}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </FadeInBlur>
 
               {/* Dr. Shivaranjani */}
               <FadeInBlur delay={0.2}>
-                <div className="group space-y-8">
+                <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   {/* Image preview removed as requested */}
                   <div className="space-y-4">
                     <h3 className="text-3xl md:text-4xl font-bold font-heading text-slate-950">Dr. Shivaranjani</h3>
@@ -815,12 +870,12 @@ export default function WorldAllergyFoundation() {
                       ))}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </FadeInBlur>
 
               {/* Vyakaranam Padma */}
               <FadeInBlur delay={0.4}>
-                <div className="group space-y-8">
+                <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <div className="space-y-4">
                     <h3 className="text-3xl md:text-4xl font-bold font-heading text-slate-950">Vyakaranam Padma</h3>
                     <p className="text-primary font-black uppercase tracking-[0.3em] text-[10px] md:text-xs">Senior Advisor – Legal</p>
@@ -842,7 +897,7 @@ export default function WorldAllergyFoundation() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </FadeInBlur>
             </div>
           </div>
@@ -945,6 +1000,19 @@ export default function WorldAllergyFoundation() {
       <Footer />
       
       <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="fixed bottom-8 right-8 z-[90] p-4 bg-primary text-white rounded-full shadow-2xl hover:bg-slate-900 transition-colors active:scale-90 md:active:scale-95"
+            aria-label="Back to top"
+          >
+            <ArrowUp size={24} />
+          </motion.button>
+        )}
+
         {selectedImg && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -966,6 +1034,47 @@ export default function WorldAllergyFoundation() {
             </motion.div>
           </motion.div>
         )}
+
+        {isPopupOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100000] bg-slate-950/40 backdrop-blur-md flex items-center justify-center p-4"
+            onClick={() => setIsPopupOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 20, opacity: 0 }}
+              className="relative max-w-lg w-full bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-2xl border border-white/10"
+              onClick={e => e.stopPropagation()}
+            >
+              <button 
+                onClick={() => setIsPopupOpen(false)}
+                className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors"
+              >
+                <X size={24} />
+              </button>
+              
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Sparkles className="text-primary-accent" size={32} />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-heading">Join the Mission</h3>
+                <p className="text-white/60 text-sm md:text-base">Get the latest clinical breakthroughs and research updates directly.</p>
+              </div>
+
+              <WAFActionForm
+                type="popup"
+                title=""
+                description=""
+                buttonText="Connect with WAF"
+                buttonStyle="bg-primary text-white hover:bg-primary-accent"
+              />
+            </motion.div>
+          </motion.div>
+        )}
       </AnimatePresence>
 
       <script
@@ -975,10 +1084,50 @@ export default function WorldAllergyFoundation() {
             "@context": "https://schema.org",
             "@type": "MedicalOrganization",
             "name": "World Allergy Foundation",
+            "alternateName": "WAF",
             "url": "https://asian-institute-of-allergy.vercel.app/world-allergy-foundation",
             "logo": "https://asian-institute-of-allergy.vercel.app/images/world%20allergy%20foundation%20logo.webp",
-            "founder": { "@type": "Person", "name": "Dr. Vyakarnam Nageshwar" },
-            "description": "Global research and clinical foundation focused on environmental immunology.",
+            "founder": { 
+              "@type": "Person", 
+              "name": "Dr. Vyakarnam Nageshwar",
+              "jobTitle": "President",
+              "description": "Pioneer in Aerobiology and Molecular Immunology."
+            },
+            "member": [
+              {
+                "@type": "Person",
+                "name": "Dr. Bhagheerathi Kalidass",
+                "jobTitle": "Director",
+                "description": "Expert in Molecular Therapeutics and Radiology."
+              },
+              {
+                "@type": "Person",
+                "name": "Dr. Shivaranjani",
+                "jobTitle": "Advisor & Consultant",
+                "description": "Specialist in Drug Interactions."
+              },
+              {
+                "@type": "Person",
+                "name": "Vyakaranam Padma",
+                "jobTitle": "Senior Advisor",
+                "description": "Medico-Legal and IP Law Specialist."
+              }
+            ],
+            "description": "Global research and clinical foundation focused on environmental immunology, chronic inflammation mapping (Swaach Akash Abhiyan), and health advocacy.",
+            "knowsAbout": [
+              "Environmental Immunology",
+              "Aerobiology",
+              "Molecular Therapeutics",
+              "HPV Vaccine Safety",
+              "H5N1 Avian Flu Policy"
+            ],
+            "areaServed": "Global",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "addressCountry": "India"
+            }
           })
         }}
       />
