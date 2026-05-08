@@ -184,7 +184,7 @@ export default function WorldAllergyFoundation() {
   const [selectedImg, setSelectedImg] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [hasShownPopup, setHasShownPopup] = useState(false);
+  const [hasShownPopup, setHasShownPopup] = useState(true); // Initialize as true to avoid flash, then check in useEffect
   
   const { scrollYProgress } = useScroll();
   const scaleX = useMotionSpring(scrollYProgress, {
@@ -194,14 +194,30 @@ export default function WorldAllergyFoundation() {
   });
 
   useEffect(() => {
+    // Check localStorage for popup suppression
+    const lastSeen = localStorage.getItem('waf_popup_seen');
+    const now = new Date().getTime();
+    
+    // Show again only after 24 hours
+    if (!lastSeen || now - parseInt(lastSeen) > 24 * 60 * 60 * 1000) {
+      setHasShownPopup(false);
+    }
+  }, []);
+
+  const triggerPopup = () => {
+    setIsPopupOpen(true);
+    setHasShownPopup(true);
+    localStorage.setItem('waf_popup_seen', new Date().getTime().toString());
+  };
+
+  useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 1000);
       
-      // Trigger popup at 40% scroll
+      // Trigger popup at 40% scroll (within the requested 30-50% range)
       const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       if (scrollPercent > 40 && !hasShownPopup) {
-        setIsPopupOpen(true);
-        setHasShownPopup(true);
+        triggerPopup();
       }
     };
     
@@ -209,12 +225,11 @@ export default function WorldAllergyFoundation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [hasShownPopup]);
 
-  // Trigger popup after 9 seconds
+  // Trigger popup after 9 seconds (within the requested 8-10s range)
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!hasShownPopup) {
-        setIsPopupOpen(true);
-        setHasShownPopup(true);
+        triggerPopup();
       }
     }, 9000);
     return () => clearTimeout(timer);
