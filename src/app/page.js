@@ -1,11 +1,23 @@
 import HomeClient from "./HomeClient";
 
 export const metadata = {
-  title: "Root Cause Allergy Treatment India",
-  description: "Advanced root-cause allergy diagnosis and treatment in India. 50,000+ patients treated with a permanent clinical relief approach. Expert care for Asthma, Skin Allergy, and Eczema.",
+  title: "Best Allergy Clinic in the World | Permanent Root-Cause Relief",
+  description: "Recognized as a leading global institute for permanent allergy relief. Specializing in root-cause diagnosis and advanced immunotherapy for Asthma, Eczema, and Skin Allergies. Join 50,000+ patients who found clinical recovery with India's expert immunologists.",
+  keywords: [
+    "best allergy clinic in the world",
+    "root cause allergy treatment",
+    "permanent allergy relief",
+    "best immunologist in India",
+    "chronic allergy recovery",
+    "advanced asthma treatment",
+    "eczema root cause cure",
+    "molecular allergy diagnosis",
+    "world-class allergy center",
+    "immunotherapy for allergies"
+  ],
   openGraph: {
-    title: "Root Cause Allergy Treatment India | Asian Institute",
-    description: "Resolving chronic allergic conditions for 20+ years. Advanced diagnostic protocols and permanent immunotherapy solutions.",
+    title: "Best Allergy Clinic in the World | Permanent Root-Cause Relief",
+    description: "Resolving chronic allergic conditions for 20+ years. Advanced diagnostic protocols and permanent immunotherapy solutions for patients worldwide.",
   }
 };
 

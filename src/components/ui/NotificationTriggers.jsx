@@ -148,30 +148,30 @@ const NotificationTriggers = () => {
                     <currentNotification.icon size={20} strokeWidth={2.5} />
                   </div>
 
-                  {/* Content Section */}
-                  <div className="flex-1 min-w-0">
-                    {currentNotification.type === 'booking' ? (
-                      <div className="flex flex-col">
-                        <span className="text-sm font-semibold text-white/90">
-                          {currentNotification.name}
-                          <span className="text-white/40 font-normal ml-1">from</span>
-                          <span className="text-blue-300 ml-1">{currentNotification.location}</span>
-                        </span>
-                        <p className="text-xs text-white/60 mt-0.5">
-                          {currentNotification.action}
-                        </p>
-                      </div>
-                    ) : (
-                      <div className="flex flex-col">
-                        <span className="text-sm font-semibold text-white/90">
-                          {currentNotification.title}
-                        </span>
-                        <p className="text-xs text-white/60 mt-0.5 leading-relaxed">
-                          {currentNotification.content}
-                        </p>
-                      </div>
-                    )}
-                  </div>
+                    {/* Content Section */}
+                    <div className="flex-1 min-w-0">
+                      {currentNotification.type === 'booking' ? (
+                        <div className="flex flex-col">
+                          <span className="text-[15px] font-bold text-white leading-tight">
+                            {currentNotification.name}
+                            <span className="text-white/50 font-normal ml-1">from</span>
+                            <span className="text-blue-300 ml-1">{currentNotification.location}</span>
+                          </span>
+                          <p className="text-[13px] text-white/70 mt-1 font-medium">
+                            {currentNotification.action}
+                          </p>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col">
+                          <span className="text-[15px] font-bold text-white leading-tight">
+                            {currentNotification.title}
+                          </span>
+                          <p className="text-[13px] text-white/70 mt-1 leading-relaxed font-medium">
+                            {currentNotification.content}
+                          </p>
+                        </div>
+                      )}
+                    </div>
 
                   {/* Close Indicator (Subtle) */}
                   <div className="h-full flex flex-col items-end justify-between opacity-0 group-hover:opacity-100 transition-opacity">

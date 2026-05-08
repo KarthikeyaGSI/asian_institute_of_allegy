@@ -1,24 +1,24 @@
 import WAFClient from "./WAFClient";
 
 export const metadata = {
-  title: "World Allergy Foundation (WAF) | Dr. Vyakarnam Nageshwar | Global Immunology",
-  description: "Official portal of the World Allergy Foundation (WAF). Led by Dr. Vyakarnam Nageshwar, WAF focuses on clinical research, environmental mapping (Swaach Akash Abhiyan), and international immunology advocacy. Discover evidence-based therapies for chronic inflammatory disorders.",
+  title: "World Allergy Foundation | Global Leadership in Permanent Relief",
+  description: "The world's leading foundation for root-cause allergy research and environmental mapping. Led by Dr. Vyakarnam Nageshwar, WAF is pioneering permanent clinical relief for chronic inflammatory disorders globally.",
   keywords: [
-    "World Allergy Foundation", 
-    "Dr. Vyakarnam Nageshwar", 
-    "Dr. Bhagheerathi Kalidass",
-    "Swaach Akash Abhiyan Clean Air Mission", 
-    "Green Channel Treaty India Kenya", 
-    "Aerobiology India Scientific Legacy",
-    "HPV Vaccine Safety Advisory India",
-    "H5N1 Avian Flu Global Health Advisory",
-    "Molecular Therapeutics for Allergy",
-    "Chronic Inflammatory Disorders Treatment Hyderabad"
+    "World Allergy Foundation",
+    "best allergy clinic in the world",
+    "Dr. Vyakarnam Nageshwar",
+    "global immunology research",
+    "Swaach Akash Abhiyan",
+    "permanent allergy relief",
+    "international allergy advocacy",
+    "molecular therapeutics",
+    "root cause diagnosis",
+    "world-class clinical research"
   ],
   authors: [{ name: "Asian Institute of Allergy" }],
   openGraph: {
     title: "World Allergy Foundation | Pioneering Global Immunology Research",
-    description: "Bridging the gap between clinical excellence and global health policy. Exploring the intersection of environment, genetics, and inflammation.",
+    description: "Bridging the gap between clinical excellence and global health policy. Exploring the intersection of environment, genetics, and inflammation for permanent recovery.",
     url: "https://asian-institute-of-allergy.vercel.app/world-allergy-foundation",
     siteName: "World Allergy Foundation",
     locale: "en_IN",
@@ -42,7 +42,7 @@ export const metadata = {
     canonical: "/world-allergy-foundation",
   },
   other: {
-    "google-site-verification": "verification_token", // Placeholder for actual verification
+    "google-site-verification": "verification_token",
     "theme-color": "#1a5f3a",
   }
 };
