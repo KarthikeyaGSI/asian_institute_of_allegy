@@ -25,7 +25,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/images/world allergy foundation logo.webp",
+        url: "/images/world%20allergy%20foundation%20logo.webp",
         width: 1200,
         height: 630,
         alt: "World Allergy Foundation Official Logo",
@@ -36,7 +36,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "World Allergy Foundation | Global Health Leadership",
     description: "Scientific breakthroughs in Aerobiology and Molecular Immunology led by Dr. Vyakarnam Nageshwar.",
-    images: ["/images/world allergy foundation logo.webp"],
+    images: ["/images/world%20allergy%20foundation%20logo.webp"],
   },
   alternates: {
     canonical: "/world-allergy-foundation",

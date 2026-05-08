@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const logos = [
-  { name: "Deccan Chronicle", src: "/images/DECCAN CHRONICLE.webp" },
-  { name: "Telangana Today", src: "/images/TELANGANA TODAY.webp" },
-  { name: "Hindustan Times", src: "/images/HINDUSTAN TIMES.webp" },
+  { name: "Deccan Chronicle", src: "/images/DECCAN%20CHRONICLE.webp" },
+  { name: "Telangana Today", src: "/images/TELANGANA%20TODAY.webp" },
+  { name: "Hindustan Times", src: "/images/HINDUSTAN%20TIMES.webp" },
   { name: "TV9", src: "/images/TV9.webp" },
-  { name: "WION news", src: "/images/WION news.webp" },
+  { name: "WION news", src: "/images/WION%20news.webp" },
   { name: "TV5", src: "/images/TV5.webp" },
   { name: "TNEWS", src: "/images/TNEWS.webp" },
-  { name: "zee news", src: "/images/zee news.webp" },
+  { name: "zee news", src: "/images/zee%20news.webp" },
 ];
 
 export default function MediaLogos() {

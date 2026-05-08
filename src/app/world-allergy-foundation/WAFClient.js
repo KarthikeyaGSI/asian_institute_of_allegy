@@ -272,7 +272,7 @@ export default function WorldAllergyFoundation() {
                       fill
                       className="object-contain cursor-zoom-in"
                       priority
-                      onClick={() => setSelectedImg({ src: "/images/world allergy foundation logo.webp", alt: "World Allergy Foundation Logo" })}
+                      onClick={() => setSelectedImg({ src: "/images/world%20allergy%20foundation%20logo.webp", alt: "World Allergy Foundation Logo" })}
                     />
                   </div>
                 </motion.div>
@@ -426,7 +426,7 @@ export default function WorldAllergyFoundation() {
                       fill
                       className="object-cover object-top cursor-zoom-in"
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      onClick={() => setSelectedImg({ src: "/images/waf event senior deplomat hyd.webp", alt: "International Diplomatic Presence: Ethiopia-India Collaboration" })}
+                      onClick={() => setSelectedImg({ src: "/images/waf%20event%20senior%20deplomat%20hyd.webp", alt: "International Diplomatic Presence: Ethiopia-India Collaboration" })}
                     />
                   </div>
                 </Tilt>
@@ -515,7 +515,7 @@ export default function WorldAllergyFoundation() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-[2s] cursor-zoom-in"
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      onClick={() => setSelectedImg({ src: "/images/Dr.Vyakarnam Nageshwar along with Dr. Sripad Agashe.webp", alt: "Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology" })}
+                      onClick={() => setSelectedImg({ src: "/images/Dr.Vyakarnam%20Nageshwar%20along%20with%20Dr.%20Sripad%20Agashe.webp", alt: "Dr. Vyakarnam Nageshwar with Dr. Sripad Agashe - Father of Indian Aerobiology" })}
                     />
                   </div>
                 </Tilt>
@@ -829,7 +829,7 @@ export default function WorldAllergyFoundation() {
                   <Tilt>
                     <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700">
                       <Image
-                        src="/images/Dr. Bhagheerathi Kalidass.webp"
+                        src="/images/Dr.%20Bhagheerathi%20Kalidass.webp"
                         alt="Dr. Bhagheerathi Kalidass"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -862,11 +862,9 @@ export default function WorldAllergyFoundation() {
               {/* Dr. Shivaranjani */}
               <FadeInBlur delay={0.2}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
-                  <Tilt>
-                    <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl border border-slate-100 bg-slate-50 flex items-center justify-center group-hover:shadow-primary/10 transition-all duration-700">
-                      <User size={48} className="text-slate-200 group-hover:scale-110 transition-transform duration-700" />
-                    </div>
-                  </Tilt>
+                  {/* No Image for Dr. Shivaranjani as requested */}
+                  <div className="pt-8"></div>
+
                   <div className="space-y-4 text-center">
                     <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Dr. Shivaranjani</h3>
                     <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">Pharm D</p>
@@ -893,7 +891,7 @@ export default function WorldAllergyFoundation() {
                   <Tilt>
                     <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700">
                       <Image
-                        src="/images/Padma Vyakarnam.webp"
+                        src="/images/Padma%20Vyakarnam.webp"
                         alt="Ms. Vyakaranam Padma"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -925,11 +923,9 @@ export default function WorldAllergyFoundation() {
               {/* Mr. Sivakumar Thotapalli */}
               <FadeInBlur delay={0.5}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
-                  <Tilt>
-                    <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl border border-slate-100 bg-slate-50 flex items-center justify-center group-hover:shadow-primary/20 transition-all duration-700">
-                      <User size={48} className="text-slate-200 group-hover:scale-110 transition-transform duration-700" />
-                    </div>
-                  </Tilt>
+                  {/* No Image for Mr. Sivakumar Thotapalli as requested */}
+                  <div className="pt-8"></div>
+
                   <div className="space-y-4 text-center">
                     <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Mr. Sivakumar Thotapalli</h3>
                     <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">Public Health Advisor</p>

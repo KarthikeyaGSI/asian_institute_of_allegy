@@ -77,7 +77,7 @@ export default function Navbar() {
               isLight ? "ring-1 ring-slate-200" : "ring-1 ring-white/10"
             }`}>
               <Image 
-                src="/images/asian institute of allergy logo.webp" 
+                src="/images/asian%20institute%20of%20allergy%20logo.webp" 
                 alt="Asian Institute of Allergy" 
                 width={120} 
                 height={120}
@@ -139,7 +139,7 @@ export default function Navbar() {
                   isScrolled ? "p-1 md:p-1.5" : "p-1.5 md:p-2"
                 }`}>
                   <Image 
-                    src="/images/asian institute of allergy logo.webp" 
+                    src="/images/asian%20institute%20of%20allergy%20logo.webp" 
                     alt="Asian Institute of Allergy" 
                     width={200} 
                     height={200}

@@ -73,21 +73,45 @@ export default function PhoneInput({ value, onChange, className, required = fals
   );
 
   const handlePhoneChange = (e) => {
-    const val = e.target.value.replace(/\D/g, "");
-    if (val.length <= selectedCountry.length) {
-      onChange(`${selectedCountry.code}${val}`);
+    // Extract only digits from the input
+    const inputVal = e.target.value;
+    const digits = inputVal.replace(/\D/g, "");
+    
+    // Determine the digits that are NOT part of the country code
+    // If the input starts with the country code (with or without +), we strip it
+    const codeDigits = selectedCountry.code.replace(/\D/g, "");
+    let pureDigits = digits;
+    
+    if (digits.startsWith(codeDigits)) {
+      pureDigits = digits.slice(codeDigits.length);
+    }
+
+    if (pureDigits.length <= selectedCountry.length) {
+      onChange(`${selectedCountry.code}${pureDigits}`);
     }
   };
 
   const selectCountry = (country) => {
-    const digits = value ? value.replace(selectedCountry.code, "") : "";
+    // Extract current digits excluding the OLD country code
+    const oldCodeDigits = selectedCountry.code.replace(/\D/g, "");
+    const currentTotalDigits = value ? value.replace(/\D/g, "") : "";
+    let digits = currentTotalDigits;
+    
+    if (currentTotalDigits.startsWith(oldCodeDigits)) {
+      digits = currentTotalDigits.slice(oldCodeDigits.length);
+    }
+    
     setSelectedCountry(country);
-    onChange(`${country.code}${digits}`);
+    // Limit digits to the NEW country's length
+    const truncatedDigits = digits.slice(0, country.length);
+    onChange(`${country.code}${truncatedDigits}`);
     setIsOpen(false);
     setSearch("");
   };
 
-  const displayValue = value ? value.replace(selectedCountry.code, "") : "";
+  const displayValue = value && value.startsWith(selectedCountry.code) 
+    ? value.slice(selectedCountry.code.length) 
+    : value ? value.replace(/\D/g, "").replace(selectedCountry.code.replace(/\D/g, ""), "") : "";
 
   return (
     <div className={clsx("relative w-full flex items-center", className)} ref={dropdownRef}>
