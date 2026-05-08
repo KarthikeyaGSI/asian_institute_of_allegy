@@ -665,12 +665,12 @@ export default function WorldAllergyFoundation() {
                 <Tilt>
                   <div className="relative aspect-video rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl ring-1 ring-slate-200">
                     <Image
-                      src="/images/covid-vaccination-advisory.png"
+                      src="/images/covid-vaccination-advisory.webp"
                       alt="Advisory Messaging on Allergy Patients & COVID-19 Vaccination"
                       fill
                       className="object-cover cursor-zoom-in"
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      onClick={() => setSelectedImg({ src: "/images/covid-vaccination-advisory.png", alt: "COVID-19 Vaccination Advisory for Allergy Patients" })}
+                      onClick={() => setSelectedImg({ src: "/images/covid-vaccination-advisory.webp", alt: "COVID-19 Vaccination Advisory for Allergy Patients" })}
                     />
                   </div>
                 </Tilt>
@@ -829,7 +829,7 @@ export default function WorldAllergyFoundation() {
                   <Tilt>
                     <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700">
                       <Image
-                        src="/images/Dr. Bhagheerathi Kalidass.jpg"
+                        src="/images/Dr. Bhagheerathi Kalidass.webp"
                         alt="Dr. Bhagheerathi Kalidass"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
