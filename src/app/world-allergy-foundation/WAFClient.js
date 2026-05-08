@@ -822,7 +822,7 @@ export default function WorldAllergyFoundation() {
               </div>
             </FadeInBlur>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
               {/* Dr. Bhagheerathi */}
               <FadeInBlur>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
@@ -837,21 +837,20 @@ export default function WorldAllergyFoundation() {
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     </div>
                   </Tilt>
-                  <div className="space-y-4">
-                    <h3 className="text-3xl md:text-4xl font-bold font-heading text-slate-950">Dr. Bhagheerathi Kalidass</h3>
-                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[10px] md:text-xs">MBBS DNB, GCMP, CFM</p>
-                    <p className="text-slate-500 font-bold text-lg">Director: Asian Institute of Allergy Hyderabad</p>
-                    <div className="space-y-4 pt-6 border-t border-slate-100">
+                  <div className="space-y-4 text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Dr. Bhagheerathi Kalidass</h3>
+                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">MBBS DNB, GCMP, CFM</p>
+                    <p className="text-slate-500 font-bold text-sm md:text-base px-2">Director: Asian Institute of Allergy Hyderabad</p>
+                    <div className="space-y-3 pt-6 border-t border-slate-100 text-left">
                       {[
-                        "Senior Radiologist with more than 15yrs experience in the Interventional Radiology.",
+                        "Senior Radiologist with 15yrs+ experience.",
                         "Certified expert in Fetal Medicine.",
-                        "Expert in Molecular Therapeutics addressing different Inflammatory Disorders.",
-                        "Specialist in studies on Interventions of Stem cell therapy in Non responsive Disorders.",
-                        "Top 10 Best Radiological Imaging Reporting Expert in South India (Medall 2011).",
-                        "HOD of Chronic Inflammatory disorders unit at Asian Institute of Allergy, Asthma, Immunology: Hyderabad."
+                        "Expert in Molecular Therapeutics.",
+                        "Specialist in Stem cell therapy.",
+                        "HOD of Chronic Inflammatory disorders unit."
                       ].map((point, idx) => (
-                        <div key={idx} className="flex gap-4 text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-                          <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                        <div key={idx} className="flex gap-3 text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
+                          <div className="mt-1.5 w-1 h-1 rounded-full bg-primary shrink-0" />
                           <p>{point}</p>
                         </div>
                       ))}
@@ -863,19 +862,23 @@ export default function WorldAllergyFoundation() {
               {/* Dr. Shivaranjani */}
               <FadeInBlur delay={0.2}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
-                  {/* Image preview removed as requested */}
-                  <div className="space-y-4">
-                    <h3 className="text-3xl md:text-4xl font-bold font-heading text-slate-950">Dr. Shivaranjani</h3>
-                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[10px] md:text-xs">Pharm D</p>
-                    <p className="text-slate-500 font-bold text-lg">Advisor & Consultant: Drug Interactions</p>
-                    <div className="space-y-4 pt-6 border-t border-slate-100">
+                  <Tilt>
+                    <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl border border-slate-100 bg-slate-50 flex items-center justify-center group-hover:shadow-primary/10 transition-all duration-700">
+                      <User size={48} className="text-slate-200 group-hover:scale-110 transition-transform duration-700" />
+                    </div>
+                  </Tilt>
+                  <div className="space-y-4 text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Dr. Shivaranjani</h3>
+                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">Pharm D</p>
+                    <p className="text-slate-500 font-bold text-sm md:text-base px-2">Advisor & Consultant: Drug Interactions</p>
+                    <div className="space-y-3 pt-6 border-t border-slate-100 text-left">
                       {[
-                        "Holds more than a Decade Pharmaceutical industry & Hospital based services experience.",
+                        "Decade of Pharma industry experience.",
                         "Expert in Allergen Immunotherapy protocols.",
-                        "Advisor & Consultant: Drug Interactions in Inflammatory Immunology Disorder."
+                        "Consultant: Drug Interactions."
                       ].map((point, idx) => (
-                        <div key={idx} className="flex gap-4 text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-                          <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                        <div key={idx} className="flex gap-3 text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
+                          <div className="mt-1.5 w-1 h-1 rounded-full bg-primary shrink-0" />
                           <p>{point}</p>
                         </div>
                       ))}
@@ -898,23 +901,20 @@ export default function WorldAllergyFoundation() {
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     </div>
                   </Tilt>
-                  <div className="space-y-4">
-                    <h3 className="text-3xl md:text-4xl font-bold font-heading text-slate-950">Vyakaranam Padma</h3>
-                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[10px] md:text-xs">Senior Advisor – Legal</p>
-                    <p className="text-slate-500 font-bold text-lg">Medico-Legal, IP & Cyber Law</p>
-                    <div className="space-y-4 pt-6 border-t border-slate-100">
-                      <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium italic">
-                        "Nearly two decades of experience across medico-legal matters, civil and criminal law, intellectual property, and cyber law."
+                  <div className="space-y-4 text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Vyakaranam Padma</h3>
+                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">Senior Advisor – Legal</p>
+                    <p className="text-slate-500 font-bold text-sm md:text-base px-2">Medico-Legal, IP & Cyber Law</p>
+                    <div className="space-y-3 pt-6 border-t border-slate-100 text-left">
+                      <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium italic text-center">
+                        "Nearly two decades of experience across medico-legal matters and cyber law."
                       </p>
-                      <div className="space-y-3">
-                        <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
-                          Ms. Vyakaranam Padma holds an LL.M. and a Post Graduate Diploma in Cybersecurity and IPR, with a background in Biochemistry.
+                      <div className="space-y-2">
+                        <p className="text-slate-600 text-[11px] md:text-xs leading-relaxed">
+                          Ms. Padma holds an LL.M. and PG Diploma in Cybersecurity and IPR.
                         </p>
-                        <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
-                          She has worked extensively with healthcare institutions on documentation, dispute resolution, patents, and advisory support.
-                        </p>
-                        <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
-                          Her diverse expertise brings unique multidisciplinary insight to legal, healthcare, and technology matters within the organization.
+                        <p className="text-slate-600 text-[11px] md:text-xs leading-relaxed">
+                          Worked extensively on healthcare dispute resolution and patents.
                         </p>
                       </div>
                     </div>
@@ -925,23 +925,25 @@ export default function WorldAllergyFoundation() {
               {/* Mr. Sivakumar Thotapalli */}
               <FadeInBlur delay={0.5}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
-                  <div className="space-y-4">
-                    <h3 className="text-3xl md:text-4xl font-bold font-heading text-slate-950">Mr. Sivakumar Thotapalli</h3>
-                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[10px] md:text-xs">Public Health Advisor</p>
-                    <p className="text-slate-500 font-bold text-lg">Global Health & Policy Advocate</p>
-                    <div className="space-y-4 pt-6 border-t border-slate-100">
-                      <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium italic">
-                        "Contributing a youth-led and international perspective to allergy awareness and public health communication."
+                  <Tilt>
+                    <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl border border-slate-100 bg-slate-50 flex items-center justify-center group-hover:shadow-primary/20 transition-all duration-700">
+                      <User size={48} className="text-slate-200 group-hover:scale-110 transition-transform duration-700" />
+                    </div>
+                  </Tilt>
+                  <div className="space-y-4 text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Mr. Sivakumar Thotapalli</h3>
+                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">Public Health Advisor</p>
+                    <p className="text-slate-500 font-bold text-sm md:text-base px-2">Global Health & Policy Advocate</p>
+                    <div className="space-y-3 pt-6 border-t border-slate-100 text-left">
+                      <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium italic text-center">
+                        "Contributing an international perspective to allergy awareness."
                       </p>
-                      <div className="space-y-3">
-                        <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
-                          Mr. Sivakumar Thotapalli supports initiatives related to allergy awareness, immunology education, preventive healthcare, and community outreach.
+                      <div className="space-y-2">
+                        <p className="text-slate-600 text-[11px] md:text-xs leading-relaxed">
+                          Supports initiatives related to allergy awareness and preventive healthcare.
                         </p>
-                        <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
-                          With academic exposure to genetics, immunology, and chronic inflammation, he brings a strong interest in advancing public understanding of allergic diseases.
-                        </p>
-                        <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
-                          His background includes engagement in global platforms like the World Health Summit, G20, G7, and United Nations youth forums.
+                        <p className="text-slate-600 text-[11px] md:text-xs leading-relaxed">
+                          Engaged in global platforms like the World Health Summit and G20.
                         </p>
                       </div>
                     </div>
