@@ -839,7 +839,7 @@ export default function WorldAllergyFoundation() {
                   </Tilt>
                   <div className="space-y-4 text-center">
                     <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Dr. Bhagheerathi Kalidass</h3>
-                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">MBBS DNB, GCMP, CFM</p>
+                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">MBBS DNB, CGMP, CFM</p>
                     <p className="text-slate-500 font-bold text-sm md:text-base px-2">Director: Asian Institute of Allergy Hyderabad</p>
                     <div className="space-y-3 pt-6 border-t border-slate-100 text-left">
                       {[
