@@ -15,6 +15,7 @@ export const metadata = {
     "world-class allergy center",
     "immunotherapy for allergies"
   ],
+  openGraph: {
     title: "Best Allergy Clinic in the World | Permanent Root-Cause Relief",
     description: "Resolving chronic allergic conditions for 20+ years. Advanced diagnostic protocols and permanent immunotherapy solutions for patients worldwide.",
   },
