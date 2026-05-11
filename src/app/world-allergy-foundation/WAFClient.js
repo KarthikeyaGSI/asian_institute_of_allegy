@@ -720,7 +720,7 @@ export default function WorldAllergyFoundation() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
               <Tilt>
-                <div className="relative aspect-[4/3] rounded-[3rem] md:rounded-[5rem] overflow-hidden shadow-2xl ring-1 ring-slate-200 group">
+                <div className="relative aspect-[4/3] rounded-[3rem] md:rounded-[5rem] overflow-hidden shadow-2xl ring-1 ring-slate-200 group cursor-zoom-in" onClick={() => setSelectedImg({ src: "/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.webp", alt: "Clinical Result showing skin allergy resolution at Aswini Allergy Centre" })}>
                   <Image
                     src="/images/Before-and-after-treatment-of-chronic-skin-allergy-with-swelling-and-ulcers-resolved-after-immunotherapy-at-Aswini-Allergy-Centre-Hyderabad-1275x7.webp"
                     alt="Clinical Result showing skin allergy resolution at Aswini Allergy Centre"
@@ -767,14 +767,14 @@ export default function WorldAllergyFoundation() {
                     A widespread monitoring program across Indian cities like Hyderabad and Warangal.
                   </p>
                   <div className="grid grid-cols-2 gap-4 md:gap-8">
-                    <Tilt><div className="aspect-square relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl"><Image src="/images/swatch1.webp" alt="Air Pollution Research Study 1" fill className="object-cover" sizes="(max-width: 768px) 45vw, 25vw" /></div></Tilt>
-                    <Tilt><div className="aspect-square relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl"><Image src="/images/swatch2.webp" alt="Air Pollution Research Study 2" fill className="object-cover" sizes="(max-width: 768px) 45vw, 25vw" /></div></Tilt>
+                    <Tilt><div className="aspect-square relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in" onClick={() => setSelectedImg({ src: "/images/swatch1.webp", alt: "Air Pollution Research Study 1" })}><Image src="/images/swatch1.webp" alt="Air Pollution Research Study 1" fill className="object-cover" sizes="(max-width: 768px) 45vw, 25vw" /></div></Tilt>
+                    <Tilt><div className="aspect-square relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in" onClick={() => setSelectedImg({ src: "/images/swatch2.webp", alt: "Air Pollution Research Study 2" })}><Image src="/images/swatch2.webp" alt="Air Pollution Research Study 2" fill className="object-cover" sizes="(max-width: 768px) 45vw, 25vw" /></div></Tilt>
                   </div>
                 </FadeInBlur>
               </div>
               <div className="flex-1 w-full">
                 <Tilt>
-                  <div className="aspect-video relative rounded-[2rem] md:rounded-[5rem] overflow-hidden shadow-2xl border border-white/10 group">
+                  <div className="aspect-video relative rounded-[2rem] md:rounded-[5rem] overflow-hidden shadow-2xl border border-white/10 group cursor-zoom-in" onClick={() => setSelectedImg({ src: "/images/Work%20shop%20on%20allegy.webp", alt: "Field Research and Allergen Workshop" })}>
                     <Image src="/images/Work%20shop%20on%20allegy.webp" alt="Field Research and Allergen Workshop" fill className="object-cover opacity-60 group-hover:opacity-100 transition-opacity" sizes="(max-width: 1024px) 100vw, 50vw" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.6em] md:tracking-[0.8em] text-white text-center px-6">Allergen Forensic Lab</span>
@@ -803,7 +803,7 @@ export default function WorldAllergyFoundation() {
                 { src: "/images/W4.webp", span: "col-span-1 row-span-1" }
               ].map((img, idx) => (
                 <Tilt key={idx} className={img.span}>
-                  <div className="relative h-full aspect-square rounded-[1.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100">
+                  <div className="relative h-full aspect-square rounded-[1.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 cursor-zoom-in" onClick={() => setSelectedImg({ src: img.src, alt: `Medical Education Workshop Session ${idx + 1}` })}>
                     <Image src={img.src} alt={`Medical Education Workshop Session ${idx + 1}`} fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
                   </div>
                 </Tilt>
@@ -827,7 +827,10 @@ export default function WorldAllergyFoundation() {
               <FadeInBlur>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
-                    <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700">
+                    <div 
+                      className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700 cursor-zoom-in"
+                      onClick={() => setSelectedImg({ src: "/images/Dr.%20Bhagheerathi%20Kalidass.webp", alt: "Dr. Bhagheerathi Kalidass" })}
+                    >
                       <Image
                         src="/images/Dr.%20Bhagheerathi%20Kalidass.webp"
                         alt="Dr. Bhagheerathi Kalidass"
@@ -863,7 +866,10 @@ export default function WorldAllergyFoundation() {
               <FadeInBlur delay={0.2}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
-                    <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700">
+                    <div 
+                      className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700 cursor-zoom-in"
+                      onClick={() => setSelectedImg({ src: "/images/Dr Shivaranjani.webp", alt: "Dr. Shivaranjani" })}
+                    >
                       <Image
                         src="/images/Dr Shivaranjani.webp"
                         alt="Dr. Shivaranjani"
@@ -907,7 +913,10 @@ export default function WorldAllergyFoundation() {
               <FadeInBlur delay={0.4}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
-                    <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700">
+                    <div 
+                      className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700 cursor-zoom-in"
+                      onClick={() => setSelectedImg({ src: "/images/Padma%20Vyakarnam.webp", alt: "Ms. Vyakaranam Padma" })}
+                    >
                       <Image
                         src="/images/Padma%20Vyakarnam.webp"
                         alt="Ms. Vyakaranam Padma"
