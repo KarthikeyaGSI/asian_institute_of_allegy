@@ -13,6 +13,7 @@ export default function sitemap() {
     "/treatments",
     "/clinical-success",
     "/gallery",
+    "/doctor",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

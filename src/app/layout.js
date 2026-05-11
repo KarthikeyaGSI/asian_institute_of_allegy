@@ -27,7 +27,15 @@ export const metadata = {
     template: "%s | Asian Institute of Allergy"
   },
   description: "India's specialized Centre of Excellence for Chronic Allergy, Asthma & Immunology. We resolve chronic conditions by identifying the root-cause using precision diagnostics and Sublingual Immunotherapy (SLIT). Directed by Dr. Vyakarnam Nageshwar.",
-  keywords: "chronic allergy resolution, SLIT immunotherapy benefits, asthma root cause treatment, permanent allergy relief Hyderabad, Dr. Vyakarnam Nageshwar immunology, environmental trigger mapping, H5N1 global health advisory 2025, HPV vaccine immune safety, immunotherapy success rate India",
+  keywords: "chronic allergy resolution, SLIT immunotherapy benefits, asthma root cause treatment, permanent allergy relief Hyderabad, Dr. Vyakarnam Nageshwar immunology, environmental trigger mapping, H5N1 global health advisory 2025, HPV vaccine immune safety, immunotherapy success rate India, best allergy doctor Hyderabad",
+  authors: [{ name: "Dr. Vyakarnam Nageshwar", url: "https://asianinstituteofallergy.com/doctor" }],
+  creator: "Dr. Vyakarnam Nageshwar",
+  publisher: "Asian Institute of Allergy",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     title: "Asian Institute of Allergy | Science of Permanent Immune Relief",
     description: "Don't just mask symptoms. Our clinical protocols identify 'why' your immune system overreacts. Advanced SLIT solutions for long-term health freedom.",
@@ -52,6 +60,17 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://asianinstituteofallergy.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -85,8 +104,6 @@ export default function RootLayout({ children }) {
             })(window, document, "clarity", "script", "wi9q44yos5");
           `}
         </Script>
-
-
       </head>
       <body className="min-h-full flex flex-col font-body overflow-x-hidden">
         {/* Google Tag Manager (noscript) */}
@@ -104,73 +121,106 @@ export default function RootLayout({ children }) {
           <NotificationTriggers />
           {children}
         </SmoothScroll>
+
+        {/* Unified Structured Data for GEO/AEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "MedicalClinic",
-              name: "Asian Institute of Allergy",
-              medicalSpecialty: ["Allergy", "Immunology", "Pulmonology"],
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Khajaguda",
-                addressLocality: "Hyderabad",
-                addressRegion: "Telangana",
-                postalCode: "500075",
-                addressCountry: "India"
-              }
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Physician",
-              name: "Dr. Vyakarnam",
-              medicalSpecialty: "Immunology",
-              worksFor: {
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
                 "@type": "MedicalClinic",
-                name: "Asian Institute of Allergy"
+                "@id": "https://asianinstituteofallergy.com/#clinic",
+                "name": "Asian Institute of Allergy",
+                "alternateName": "AIA Hyderabad",
+                "url": "https://asianinstituteofallergy.com",
+                "logo": "https://asianinstituteofallergy.com/images/asian%20institute%20of%20allergy%20logo.webp",
+                "image": "https://asianinstituteofallergy.com/images/dr-nageswar.webp",
+                "description": "India's specialized Centre of Excellence for Chronic Allergy, Asthma & Immunology.",
+                "telephone": "+91-8074368748",
+                "priceRange": "$$",
+                "medicalSpecialty": ["Allergy", "Immunology", "Pulmonology"],
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Khajaguda",
+                  "addressLocality": "Hyderabad",
+                  "addressRegion": "Telangana",
+                  "postalCode": "500075",
+                  "addressCountry": "India"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "17.4123", 
+                  "longitude": "78.3610"
+                },
+                "openingHoursSpecification": [
+                  {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:00",
+                    "closes": "19:00"
+                  }
+                ],
+                "sameAs": [
+                  "https://www.facebook.com/AsianInstituteOfAllergy",
+                  "https://www.instagram.com/asianinstituteofallergy",
+                  "https://www.youtube.com/@AsianInstituteOfAllergy"
+                ]
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Physician",
+                "@id": "https://asianinstituteofallergy.com/#doctor",
+                "name": "Dr. Vyakarnam Nageshwar",
+                "jobTitle": "Chief Immunologist",
+                "image": "https://asianinstituteofallergy.com/images/dr-nageswar.webp",
+                "medicalSpecialty": "Immunology",
+                "url": "https://asianinstituteofallergy.com/doctor",
+                "worksFor": { "@id": "https://asianinstituteofallergy.com/#clinic" }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Can allergies be cured permanently?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, at the Asian Institute of Allergy, we focus on root-cause diagnosis and Sublingual Immunotherapy (SLIT) to train the immune system, providing long-term clinical relief from chronic allergies."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is Sublingual Immunotherapy (SLIT)?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "SLIT is a needle-free, safe alternative to allergy shots. It involves placing allergen drops under the tongue to desensitize the immune system over time, addressing the root cause rather than just masking symptoms."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How is the Asian Institute of Allergy different?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "We provide a 45-90 minute clinical evaluation to map environmental triggers and identify immune 'why'. We focus on permanent resolution rather than life-long symptom management."
+                    }
+                  }
+                ]
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://asianinstituteofallergy.com"
+                  }
+                ]
               }
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Can allergies be cured permanently?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, at the Asian Institute of Allergy, we focus on root-cause diagnosis and Sublingual Immunotherapy (SLIT) to train the immune system, providing long-term clinical relief from chronic allergies."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is root-cause allergy diagnosis?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Root-cause diagnosis involves understanding a patient's individual immune response through extensive clinical interaction (45-90 minutes) to identify why the disease started, rather than just treating symptoms."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Is immunotherapy safe for children?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, Sublingual Immunotherapy (SLIT) is a safe, needle-free, and effective treatment option for patients as young as 2 years old, helping them develop natural immunity against allergens."
-                  }
-                }
-              ]
-            }),
+            ]),
           }}
         />
       </body>
