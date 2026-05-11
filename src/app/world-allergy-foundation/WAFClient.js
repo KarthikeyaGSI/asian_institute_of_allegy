@@ -968,7 +968,46 @@ export default function WorldAllergyFoundation() {
           </div>
         </section>
 
-        {/* 15. Media Recognition */}
+        {/* 15. Republic World Network Feature */}
+        <section className="py-24 md:py-40 bg-white overflow-hidden relative border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <FadeInBlur>
+              <div className="text-center mb-16 md:mb-24">
+                <span className="text-primary font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Global Recognition</span>
+                <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-slate-950 leading-none">Republic World <br /> <span className="text-primary italic">Network.</span></h2>
+                <p className="mt-8 text-xl md:text-3xl font-bold text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                  Featured among INDIA'S TOP 15 <span className="text-primary">Visionary Entrepreneurs</span> in 2026.
+                </p>
+              </div>
+            </FadeInBlur>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+              {[
+                { src: "/images/republic tv featured.jpg", alt: "Republic World Network: Visionary Entrepreneurs 2026" },
+                { src: "/images/republic tv featured 2.jpg", alt: "Republic World Network: Recognition of Excellence" }
+              ].map((img, idx) => (
+                <FadeInBlur key={idx} delay={0.2 * idx}>
+                  <Tilt>
+                    <div 
+                      className="aspect-video relative rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-[0_64px_128px_-32px_rgba(0,0,0,0.15)] ring-1 ring-slate-200 group cursor-zoom-in"
+                      onClick={() => setSelectedImg({ src: img.src, alt: img.alt })}
+                    >
+                      <Image 
+                        src={img.src} 
+                        alt={img.alt} 
+                        fill 
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                    </div>
+                  </Tilt>
+                </FadeInBlur>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 16. Media Recognition */}
         <section className="py-24 md:py-40 bg-slate-950 text-white relative">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <FadeInBlur>
@@ -977,7 +1016,8 @@ export default function WorldAllergyFoundation() {
                 <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-white leading-none">World Heritage <br /> <span className="text-primary-accent italic">Week 2025.</span></h2>
               </div>
             </FadeInBlur>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
               <div className="lg:col-span-1">
                 <Tilt>
                   <div 
@@ -1000,38 +1040,10 @@ export default function WorldAllergyFoundation() {
               <div className="lg:col-span-1">
                 <Tilt>
                   <div 
-                    className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 group cursor-zoom-in"
-                    onClick={() => setSelectedImg({ 
-                      src: "/images/republic tv featured.jpg", 
-                      alt: "Republic World Network: INDIA'S TOP 15 Visionary Entrepreneurs 2026" 
-                    })}
+                    className="aspect-[3/4] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 cursor-zoom-in"
+                    onClick={() => setSelectedImg({ src: "/images/MA1.webp", alt: "Health Advisory and Clinical Insights - Page 1" })}
                   >
-                    <Image 
-                      src="/images/republic tv featured.jpg" 
-                      alt="Republic World Network Featured" 
-                      fill 
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      sizes="(max-width: 1024px) 100vw, 25vw"
-                    />
-                  </div>
-                </Tilt>
-              </div>
-              <div className="lg:col-span-1">
-                <Tilt>
-                  <div 
-                    className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 group cursor-zoom-in"
-                    onClick={() => setSelectedImg({ 
-                      src: "/images/republic tv featured 2.jpg", 
-                      alt: "Republic World Network Feature - Visionary Leadership" 
-                    })}
-                  >
-                    <Image 
-                      src="/images/republic tv featured 2.jpg" 
-                      alt="Republic World Network Featured 2" 
-                      fill 
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      sizes="(max-width: 1024px) 100vw, 25vw"
-                    />
+                    <Image src="/images/MA1.webp" alt="Health Advisory Page 1" fill className="object-contain bg-white" sizes="(max-width: 1024px) 100vw, 33vw" />
                   </div>
                 </Tilt>
               </div>
@@ -1039,9 +1051,9 @@ export default function WorldAllergyFoundation() {
                 <Tilt>
                   <div 
                     className="aspect-[3/4] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 cursor-zoom-in"
-                    onClick={() => setSelectedImg({ src: "/images/MA1.webp", alt: "Health Advisory and Clinical Insights - Page 1" })}
+                    onClick={() => setSelectedImg({ src: "/images/MA2.webp", alt: "Health Advisory and Clinical Insights - Page 2" })}
                   >
-                    <Image src="/images/MA1.webp" alt="Health Advisory Page 1" fill className="object-contain bg-white" sizes="(max-width: 1024px) 100vw, 33vw" />
+                    <Image src="/images/MA2.webp" alt="Health Advisory Page 2" fill className="object-contain bg-white" sizes="(max-width: 1024px) 100vw, 33vw" />
                   </div>
                 </Tilt>
               </div>
