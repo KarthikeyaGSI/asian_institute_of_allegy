@@ -862,18 +862,36 @@ export default function WorldAllergyFoundation() {
               {/* Dr. Shivaranjani */}
               <FadeInBlur delay={0.2}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
-                  {/* No Image for Dr. Shivaranjani as requested */}
-                  <div className="pt-8"></div>
+                  <Tilt>
+                    <div className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700">
+                      <Image
+                        src="/images/Dr Shivaranjani.webp"
+                        alt="Dr. Shivaranjani"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    </div>
+                  </Tilt>
 
                   <div className="space-y-4 text-center">
                     <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Dr. Shivaranjani</h3>
                     <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">Pharm D</p>
                     <p className="text-slate-500 font-bold text-sm md:text-base px-2">Advisor & Consultant: Drug Interactions</p>
-                    <div className="space-y-3 pt-6 border-t border-slate-100 text-left">
+                    
+                    <div className="py-4 border-y border-slate-100 my-6">
+                      <p className="text-slate-600 italic text-sm md:text-base leading-relaxed font-medium px-4">
+                        "Every Step of Life matter, Every Learning point is a Guided Growth Factor."
+                      </p>
+                    </div>
+
+                    <div className="space-y-3 pt-6 text-left">
                       {[
                         "Decade of Pharma industry experience.",
                         "Expert in Allergen Immunotherapy protocols.",
-                        "Consultant: Drug Interactions."
+                        "Consultant: Drug Interactions.",
+                        "One more point for a smile : Featured in Republic World Network among INDIA'S TOP 15 Visionary Entrepreneurs in 2026."
                       ].map((point, idx) => (
                         <div key={idx} className="flex gap-3 text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
                           <div className="mt-1.5 w-1 h-1 rounded-full bg-primary shrink-0" />
@@ -959,8 +977,7 @@ export default function WorldAllergyFoundation() {
                 <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-white leading-none">World Heritage <br /> <span className="text-primary-accent italic">Week 2025.</span></h2>
               </div>
             </FadeInBlur>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
               <div className="lg:col-span-1">
                 <Tilt>
                   <div 
@@ -983,10 +1000,38 @@ export default function WorldAllergyFoundation() {
               <div className="lg:col-span-1">
                 <Tilt>
                   <div 
-                    className="aspect-[3/4] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 cursor-zoom-in"
-                    onClick={() => setSelectedImg({ src: "/images/MA1.webp", alt: "Health Advisory and Clinical Insights - Page 1" })}
+                    className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 group cursor-zoom-in"
+                    onClick={() => setSelectedImg({ 
+                      src: "/images/republic tv featured.jpg", 
+                      alt: "Republic World Network: INDIA'S TOP 15 Visionary Entrepreneurs 2026" 
+                    })}
                   >
-                    <Image src="/images/MA1.webp" alt="Health Advisory Page 1" fill className="object-contain bg-white" sizes="(max-width: 1024px) 100vw, 33vw" />
+                    <Image 
+                      src="/images/republic tv featured.jpg" 
+                      alt="Republic World Network Featured" 
+                      fill 
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 1024px) 100vw, 25vw"
+                    />
+                  </div>
+                </Tilt>
+              </div>
+              <div className="lg:col-span-1">
+                <Tilt>
+                  <div 
+                    className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 group cursor-zoom-in"
+                    onClick={() => setSelectedImg({ 
+                      src: "/images/republic tv featured 2.jpg", 
+                      alt: "Republic World Network Feature - Visionary Leadership" 
+                    })}
+                  >
+                    <Image 
+                      src="/images/republic tv featured 2.jpg" 
+                      alt="Republic World Network Featured 2" 
+                      fill 
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 1024px) 100vw, 25vw"
+                    />
                   </div>
                 </Tilt>
               </div>
@@ -994,9 +1039,9 @@ export default function WorldAllergyFoundation() {
                 <Tilt>
                   <div 
                     className="aspect-[3/4] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 cursor-zoom-in"
-                    onClick={() => setSelectedImg({ src: "/images/MA2.webp", alt: "Health Advisory and Clinical Insights - Page 2" })}
+                    onClick={() => setSelectedImg({ src: "/images/MA1.webp", alt: "Health Advisory and Clinical Insights - Page 1" })}
                   >
-                    <Image src="/images/MA2.webp" alt="Health Advisory Page 2" fill className="object-contain bg-white" sizes="(max-width: 1024px) 100vw, 33vw" />
+                    <Image src="/images/MA1.webp" alt="Health Advisory Page 1" fill className="object-contain bg-white" sizes="(max-width: 1024px) 100vw, 33vw" />
                   </div>
                 </Tilt>
               </div>
