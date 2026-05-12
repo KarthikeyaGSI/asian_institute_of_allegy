@@ -9,6 +9,7 @@ import PhoneInput from "@/components/ui/PhoneInput";
 
 export default function ContributePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState(null); // 'success' | 'error' | null
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -38,16 +39,22 @@ export default function ContributePage() {
       const result = await response.json();
 
       if (result.success) {
+        setStatus('success');
         const waMessage = encodeURIComponent(
           `Hello World Allergy Foundation,\n\nI am interested in contributing.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Email:* ${formData.email}\n*Interest:* ${formData.interest}\n\nPlease let me know how I can help.`
         );
-        window.location.href = `https://wa.me/918074368748?text=${waMessage}`;
+        setTimeout(() => {
+          window.location.href = `https://wa.me/918074368748?text=${waMessage}`;
+        }, 1500);
       } else {
-        alert("Something went wrong. Please try again.");
+        setStatus('error');
       }
     } catch (error) {
       console.error("Submission error:", error);
-      window.location.href = "https://wa.me/918074368748";
+      setStatus('error');
+      setTimeout(() => {
+        window.location.href = "https://wa.me/918074368748";
+      }, 2000);
     } finally {
       setIsSubmitting(false);
     }
@@ -119,63 +126,90 @@ export default function ContributePage() {
                 <h2 className="text-3xl font-bold mb-8 text-center">Inquiry for Contribution</h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Full Name</label>
-                    <input 
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      placeholder="e.g. Dr. Sameer Khan"
-                      className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-primary-accent/50 focus:outline-none transition-all placeholder:text-white/20"
-                    />
-                  </div>
+                  <AnimatePresence mode="wait">
+                    {status === 'success' ? (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="py-12 text-center space-y-4"
+                      >
+                        <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto text-primary-accent">
+                          <Heart size={40} fill="currentColor" />
+                        </div>
+                        <h3 className="text-2xl font-bold">Inquiry Received.</h3>
+                        <p className="text-white/60 text-sm">Thank you for your support. Redirecting to WhatsApp...</p>
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="fields"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="space-y-6"
+                      >
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Full Name</label>
+                          <input 
+                            type="text"
+                            required
+                            value={formData.name}
+                            onChange={(e) => setFormData({...formData, name: e.target.value})}
+                            placeholder="e.g. Dr. Sameer Khan"
+                            className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-primary-accent/50 focus:outline-none transition-all placeholder:text-white/20"
+                          />
+                        </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2 relative z-20">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Phone</label>
-                      <PhoneInput
-                        value={formData.phone}
-                        onChange={(val) => setFormData({ ...formData, phone: val })}
-                        required
-                        dark={true}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Email</label>
-                      <input 
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        placeholder="your@email.com"
-                        className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-primary-accent/50 focus:outline-none transition-all placeholder:text-white/20"
-                      />
-                    </div>
-                  </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div className="space-y-2 relative z-20">
+                            <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Phone</label>
+                            <PhoneInput
+                              value={formData.phone}
+                              onChange={(val) => setFormData({ ...formData, phone: val })}
+                              required
+                              dark={true}
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Email</label>
+                            <input 
+                              type="email"
+                              required
+                              value={formData.email}
+                              onChange={(e) => setFormData({...formData, email: e.target.value})}
+                              placeholder="your@email.com"
+                              className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-primary-accent/50 focus:outline-none transition-all placeholder:text-white/20"
+                            />
+                          </div>
+                        </div>
 
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">I'm Interested In</label>
-                    <select 
-                      value={formData.interest}
-                      onChange={(e) => setFormData({...formData, interest: e.target.value})}
-                      className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-primary-accent/50 focus:outline-none transition-all appearance-none text-white"
-                    >
-                      <option className="bg-black" value="General Support">General Support</option>
-                      <option className="bg-black" value="Clinical Research">Clinical Research Fund</option>
-                      <option className="bg-black" value="Awareness Campaign">Awareness Campaign</option>
-                      <option className="bg-black" value="Institutional Partnership">Institutional Partnership</option>
-                    </select>
-                  </div>
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">I'm Interested In</label>
+                          <select 
+                            value={formData.interest}
+                            onChange={(e) => setFormData({...formData, interest: e.target.value})}
+                            className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-primary-accent/50 focus:outline-none transition-all appearance-none text-white"
+                          >
+                            <option className="bg-black" value="General Support">General Support</option>
+                            <option className="bg-black" value="Clinical Research">Clinical Research Fund</option>
+                            <option className="bg-black" value="Awareness Campaign">Awareness Campaign</option>
+                            <option className="bg-black" value="Institutional Partnership">Institutional Partnership</option>
+                          </select>
+                        </div>
 
-                  <button 
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-5 rounded-2xl bg-primary-accent text-black font-black uppercase tracking-[0.2em] text-xs hover:bg-white transition-all shadow-xl shadow-primary-accent/20 flex items-center justify-center gap-3 group"
-                  >
-                    {isSubmitting ? "Processing..." : "Submit Inquiry"}
-                    {!isSubmitting && <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />}
-                  </button>
+                        {status === 'error' && (
+                          <p className="text-red-400 text-xs font-bold text-center">Something went wrong. Please try again.</p>
+                        )}
+
+                        <button 
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full py-5 rounded-2xl bg-primary-accent text-black font-black uppercase tracking-[0.2em] text-xs hover:bg-white transition-all shadow-xl shadow-primary-accent/20 flex items-center justify-center gap-3 group"
+                        >
+                          {isSubmitting ? "Processing..." : "Submit Inquiry"}
+                          {!isSubmitting && <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />}
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
                   <p className="text-[9px] text-center text-white/30 uppercase tracking-[0.3em] mt-4 font-medium">
                     Confidential Submission • Secure Processing

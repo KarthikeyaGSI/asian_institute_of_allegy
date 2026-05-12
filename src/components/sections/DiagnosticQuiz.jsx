@@ -485,10 +485,10 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
                   ) : (
                     <div className="text-center py-6">
                       <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
-                        <CheckCircle2 size={32} />
+                        <Sparkles size={32} />
                       </div>
-                      <p className="font-bold text-slate-900">Report Sent!</p>
-                      <p className="text-sm text-slate-500 mt-1">Please check your inbox (and spam folder).</p>
+                      <p className="font-bold text-slate-900">Analysis Dispatched!</p>
+                      <p className="text-sm text-slate-500 mt-1">Your forensic report has been sent to your inbox.</p>
                     </div>
                   )}
                 </div>

@@ -245,7 +245,7 @@ export default function Home() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-8"
                 >
-                  <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
                     <ShieldCheck size={40} />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">Request Received.</h3>
