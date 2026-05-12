@@ -822,9 +822,48 @@ export default function WorldAllergyFoundation() {
               </div>
             </FadeInBlur>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
-              {/* Dr. Bhagheerathi */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 items-start">
+              {/* 1. Dr. Vyakarnam Nageshwar */}
               <FadeInBlur>
+                <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
+                  <Tilt>
+                    <div 
+                      className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700 cursor-zoom-in"
+                      onClick={() => setSelectedImg({ src: "/images/dr-nageswar.webp", alt: "Dr. Vyakarnam Nageshwar" })}
+                    >
+                      <Image
+                        src="/images/dr-nageswar.webp"
+                        alt="Dr. Vyakarnam Nageshwar"
+                        fill
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    </div>
+                  </Tilt>
+                  <div className="space-y-4 text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Dr. Vyakarnam Nageshwar</h3>
+                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">MD, Founder & President</p>
+                    <p className="text-slate-500 font-bold text-sm md:text-base px-2">Chief Immunologist: Asian Institute of Allergy</p>
+                    <div className="space-y-3 pt-6 border-t border-slate-100 text-left">
+                      {[
+                        "Pioneer of Sublingual Immunotherapy (SLIT) in India.",
+                        "Expert in Aerobiology and Molecular Immunology.",
+                        "Over 50,000 cases resolved through precision medicine.",
+                        "Dedicated to root-cause diagnosis of chronic inflammation.",
+                        "Global advocate for allergy awareness and research."
+                      ].map((point, idx) => (
+                        <div key={idx} className="flex gap-3 text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
+                          <div className="mt-1.5 w-1 h-1 rounded-full bg-primary shrink-0" />
+                          <p>{point}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </FadeInBlur>
+
+              {/* 2. Dr. Bhagheerathi Kalidass */}
+              <FadeInBlur delay={0.1}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
                     <div 
@@ -862,7 +901,7 @@ export default function WorldAllergyFoundation() {
                 </motion.div>
               </FadeInBlur>
 
-              {/* Dr. Shivaranjani */}
+              {/* 3. Dr. Shivaranjani */}
               <FadeInBlur delay={0.2}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
@@ -897,7 +936,7 @@ export default function WorldAllergyFoundation() {
                         "Decade of Pharma industry experience.",
                         "Expert in Allergen Immunotherapy protocols.",
                         "Consultant: Drug Interactions.",
-                        "One more point for a smile : Featured in Republic World Network among INDIA'S TOP 15 Visionary Entrepreneurs in 2026."
+                        "Featured in Republic World Network among INDIA'S TOP 15 Visionary Entrepreneurs in 2026."
                       ].map((point, idx) => (
                         <div key={idx} className="flex gap-3 text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
                           <div className="mt-1.5 w-1 h-1 rounded-full bg-primary shrink-0" />
@@ -909,8 +948,92 @@ export default function WorldAllergyFoundation() {
                 </motion.div>
               </FadeInBlur>
 
-              {/* Vyakaranam Padma */}
+              {/* 4. Dr. Kavya Lalam */}
+              <FadeInBlur delay={0.3}>
+                <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
+                  <Tilt>
+                    <div 
+                      className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700 cursor-zoom-in"
+                      onClick={() => setSelectedImg({ src: "/images/Dr. Kavya.webp", alt: "Dr. Kavya Lalam" })}
+                    >
+                      <Image
+                        src="/images/Dr. Kavya.webp"
+                        alt="Dr. Kavya Lalam"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    </div>
+                  </Tilt>
+
+                  <div className="space-y-4 text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Dr. Kavya Lalam</h3>
+                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">Physician Asst.</p>
+                    <p className="text-slate-500 font-bold text-sm md:text-base px-2">Expert in Immune Nutrition & Functional Medicine</p>
+                    
+                    <div className="space-y-3 pt-6 border-t border-slate-100 text-left">
+                      <p className="text-slate-600 text-[11px] md:text-xs leading-relaxed font-medium italic">
+                        Dr. Kavya Lalam is a Doctorate in Immune Nutrition and Functional Medicine Expert at Ashwini Allergy Center.
+                      </p>
+                      {[
+                        "Specializes in nutritional approaches for chronic inflammation.",
+                        "Focus areas include Allergic Rhinitis, Urticaria, and Psoriasis.",
+                        "Expertise in childhood allergic manifestations.",
+                        "Integrates personalized nutrition with functional medicine."
+                      ].map((point, idx) => (
+                        <div key={idx} className="flex gap-3 text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
+                          <div className="mt-1.5 w-1 h-1 rounded-full bg-primary shrink-0" />
+                          <p>{point}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </FadeInBlur>
+
+              {/* 5. Mr. Sivakumar Thotapalli */}
               <FadeInBlur delay={0.4}>
+                <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
+                  <Tilt>
+                    <div 
+                      className="aspect-[4/5] relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 group-hover:shadow-primary/20 transition-all duration-700 cursor-zoom-in"
+                      onClick={() => setSelectedImg({ src: "/images/Sivakumar.webp", alt: "Mr. Sivakumar Thotapalli" })}
+                    >
+                      <Image
+                        src="/images/Sivakumar.webp"
+                        alt="Mr. Sivakumar Thotapalli"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    </div>
+                  </Tilt>
+
+                  <div className="space-y-4 text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Mr. Sivakumar Thotapalli</h3>
+                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">Public Health Advisor</p>
+                    <p className="text-slate-500 font-bold text-sm md:text-base px-2">Global Health & Policy Advocate</p>
+                    <div className="space-y-3 pt-6 border-t border-slate-100 text-left">
+                      <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium italic text-center">
+                        "Contributing an international perspective to allergy awareness."
+                      </p>
+                      <div className="space-y-2">
+                        <p className="text-slate-600 text-[11px] md:text-xs leading-relaxed">
+                          Supports initiatives related to allergy awareness and preventive healthcare.
+                        </p>
+                        <p className="text-slate-600 text-[11px] md:text-xs leading-relaxed">
+                          Engaged in global platforms like the World Health Summit and G20.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </FadeInBlur>
+
+              {/* 6. Vyakaranam Padma */}
+              <FadeInBlur delay={0.5}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
                     <div 
@@ -922,6 +1045,7 @@ export default function WorldAllergyFoundation() {
                         alt="Ms. Vyakaranam Padma"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width: 768px) 100vw, 25vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     </div>
@@ -940,33 +1064,6 @@ export default function WorldAllergyFoundation() {
                         </p>
                         <p className="text-slate-600 text-[11px] md:text-xs leading-relaxed">
                           Worked extensively on healthcare dispute resolution and patents.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </FadeInBlur>
-
-              {/* Mr. Sivakumar Thotapalli */}
-              <FadeInBlur delay={0.5}>
-                <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
-                  {/* No Image for Mr. Sivakumar Thotapalli as requested */}
-                  <div className="pt-8"></div>
-
-                  <div className="space-y-4 text-center">
-                    <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-950">Mr. Sivakumar Thotapalli</h3>
-                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px]">Public Health Advisor</p>
-                    <p className="text-slate-500 font-bold text-sm md:text-base px-2">Global Health & Policy Advocate</p>
-                    <div className="space-y-3 pt-6 border-t border-slate-100 text-left">
-                      <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium italic text-center">
-                        "Contributing an international perspective to allergy awareness."
-                      </p>
-                      <div className="space-y-2">
-                        <p className="text-slate-600 text-[11px] md:text-xs leading-relaxed">
-                          Supports initiatives related to allergy awareness and preventive healthcare.
-                        </p>
-                        <p className="text-slate-600 text-[11px] md:text-xs leading-relaxed">
-                          Engaged in global platforms like the World Health Summit and G20.
                         </p>
                       </div>
                     </div>
@@ -1218,6 +1315,18 @@ export default function WorldAllergyFoundation() {
                 "name": "Dr. Shivaranjani",
                 "jobTitle": "Advisor & Consultant",
                 "description": "Specialist in Drug Interactions."
+              },
+              {
+                "@type": "Person",
+                "name": "Dr. Kavya Lalam",
+                "jobTitle": "Physician Asst.",
+                "description": "Doctorate in Immune Nutrition and Functional Medicine."
+              },
+              {
+                "@type": "Person",
+                "name": "Mr. Sivakumar Thotapalli",
+                "jobTitle": "Public Health Advisor",
+                "description": "Global Health & Policy Advocate."
               },
               {
                 "@type": "Person",
