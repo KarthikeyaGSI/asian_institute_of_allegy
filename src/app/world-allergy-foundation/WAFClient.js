@@ -13,6 +13,7 @@ import {
 import MediaLogos from "@/components/sections/MediaLogos";
 import Counter from "@/components/ui/Counter";
 import PhoneInput from "@/components/ui/PhoneInput";
+import AllergenExplorer from "@/components/sections/AllergenExplorer";
 import { useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const Tilt = ({ children, className = "" }) => {
@@ -377,6 +378,9 @@ export default function WorldAllergyFoundation() {
             </div>
           </div>
         </section>
+
+        {/* 2.5 Allergen Forensic Explorer */}
+        <AllergenExplorer />
 
         {/* 3. Green Channel Treaty Section */}
         <section className="py-24 md:py-40 bg-slate-950 text-white relative overflow-hidden">
