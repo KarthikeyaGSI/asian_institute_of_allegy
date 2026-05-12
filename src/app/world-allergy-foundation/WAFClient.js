@@ -1024,7 +1024,7 @@ export default function WorldAllergyFoundation() {
                           Supports initiatives related to allergy awareness and preventive healthcare.
                         </p>
                         <p className="text-slate-600 text-[11px] md:text-xs leading-relaxed">
-                          Engaged in global platforms like the World Health Summit and G20.
+                          Engaged in global platforms like the World Health Summit, G20, G7, SDG summit, HLPF event, COP and COY.
                         </p>
                       </div>
                     </div>
