@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Heart, ShieldCheck, Globe2, ArrowRight, MessageSquare } from "lucide-react";
 import PhoneInput from "@/components/ui/PhoneInput";
