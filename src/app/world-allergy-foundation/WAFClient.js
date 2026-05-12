@@ -59,8 +59,8 @@ const Tilt = ({ children, className = "" }) => {
 
 const FadeInBlur = ({ children, delay = 0 }) => (
   <motion.div
-    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
   >
