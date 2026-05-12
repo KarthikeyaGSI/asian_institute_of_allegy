@@ -70,12 +70,7 @@ export default function Home() {
   const [status, setStatus] = useState(null); // 'success' | 'error' | null
   const [formData, setFormData] = useState({ name: "", phone: "", condition: "General Inquiry" });
 
-  const { scrollYProgress } = useScroll();
-  const scaleX = useMotionSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+
 
   useEffect(() => {
     // Check localStorage for AIA popup suppression
@@ -162,12 +157,6 @@ export default function Home() {
       className="relative min-h-screen bg-white text-gray-900 selection:bg-primary selection:text-white overflow-x-hidden"
     >
       <Navbar />
-      
-      {/* Scroll Progress */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100] origin-left"
-        style={{ scaleX }}
-      />
       
       {/* PHASE 1: THE TRUST LAYER */}
       <Hero />

@@ -217,12 +217,7 @@ export default function WorldAllergyFoundation() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [hasShownPopup, setHasShownPopup] = useState(true); // Initialize as true to avoid flash, then check in useEffect
   
-  const { scrollYProgress } = useScroll();
-  const scaleX = useMotionSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+
 
   useEffect(() => {
     // Check localStorage for popup suppression
@@ -279,10 +274,6 @@ export default function WorldAllergyFoundation() {
   }, []);
   return (
     <main className="min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-primary selection:text-white">
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100] origin-left"
-        style={{ scaleX }}
-      />
       <Navbar />
 
       {/* Spacer for fixed Navbar */}
