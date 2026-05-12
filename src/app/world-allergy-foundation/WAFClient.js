@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence, useScroll, useSpring as useMotionSpring } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -10,10 +10,12 @@ import {
   Globe, Beaker, ShieldAlert, Leaf, Newspaper, ArrowRight, User, Briefcase, X, Maximize2, 
   Sparkles, Layers, Zap, ArrowUp 
 } from "lucide-react";
-import MediaLogos from "@/components/sections/MediaLogos";
-import Counter from "@/components/ui/Counter";
-import PhoneInput from "@/components/ui/PhoneInput";
-import AllergenExplorer from "@/components/sections/AllergenExplorer";
+
+const MediaLogos = dynamic(() => import("@/components/sections/MediaLogos"), { ssr: true });
+const Counter = dynamic(() => import("@/components/ui/Counter"), { ssr: false });
+const PhoneInput = dynamic(() => import("@/components/ui/PhoneInput"), { ssr: false });
+const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: true });
+
 import { useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const Tilt = ({ children, className = "" }) => {
@@ -81,9 +83,9 @@ const sections = [
     content: "Our campaigns reach millions across India through digital media and public health sessions, focusing on early recognition and preventive care for allergic diseases."
   },
   {
-    title: "Environmental Mapping",
-    icon: Leaf,
-    content: "Through the 'Allergen Forensic Laboratory', we integrate botany and clinical immunology to identify region-specific triggers like pollen and pollutants."
+    title: "Global Collaboration",
+    icon: ShieldAlert,
+    content: "We partner with international diplomatic missions and healthcare blocks to establish 'Green Channels' for specialized immunological care."
   }
 ];
 
@@ -378,9 +380,6 @@ export default function WorldAllergyFoundation() {
             </div>
           </div>
         </section>
-
-        {/* 2.5 Allergen Forensic Explorer */}
-        <AllergenExplorer />
 
         {/* 3. Green Channel Treaty Section */}
         <section className="py-24 md:py-40 bg-slate-950 text-white relative overflow-hidden">
