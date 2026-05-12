@@ -11,6 +11,7 @@ export default function sitemap() {
     "/conditions/food-allergy",
     "/conditions/autoimmune",
     "/treatments",
+    "/treatments/allergy-treatment-hyderabad",
     "/clinical-success",
     "/gallery",
     "/doctor",

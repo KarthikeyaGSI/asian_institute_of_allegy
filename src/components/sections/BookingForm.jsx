@@ -8,7 +8,7 @@ import PhoneInput from "@/components/ui/PhoneInput";
 
 export default function BookingForm({ onStartQuiz }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [status, setStatus] = useState(null); // 'success' | 'error' | null
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -41,14 +41,17 @@ export default function BookingForm({ onStartQuiz }) {
       const result = await response.json();
 
       if (result.success) {
-        setIsSubmitted(true);
+        setStatus('success');
       } else {
-        throw new Error(result.message || "Submission failed");
+        setStatus('error');
       }
     } catch (error) {
       console.error("Submission error:", error);
+      setStatus('error');
       // Fallback: If Web3Forms fails, redirect to WhatsApp
-      window.location.href = `https://wa.me/918074368748?text=${encodeURIComponent(`Hi, I'm ${formData.name}. I'd like to book an evaluation for ${formData.condition}.`)}`;
+      setTimeout(() => {
+        window.location.href = `https://wa.me/918074368748?text=${encodeURIComponent(`Hi, I'm ${formData.name}. I'd like to book an evaluation for ${formData.condition}.`)}`;
+      }, 2000);
     } finally {
       setIsSubmitting(false);
     }
@@ -155,6 +158,9 @@ export default function BookingForm({ onStartQuiz }) {
                     </select>
                   </div>
                   <div className="space-y-4">
+                    {status === 'error' && (
+                      <p className="text-red-500 text-xs font-bold px-2">Something went wrong. Please try again or use WhatsApp.</p>
+                    )}
                     <motion.button 
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
@@ -173,13 +179,8 @@ export default function BookingForm({ onStartQuiz }) {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center space-y-8"
               >
-                <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-primary ring-4 ring-primary/10">
-                  <Image 
-                    src="/images/dr-nageswar.webp" 
-                    alt="Dr. Vyakarnam"
-                    fill
-                    className="object-cover object-top"
-                  />
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+                  <ShieldCheck size={40} />
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold text-slate-900 mb-2 font-heading tracking-tight">Evaluation Confirmed.</h3>
