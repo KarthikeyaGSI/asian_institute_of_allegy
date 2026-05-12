@@ -79,9 +79,9 @@ export default function Comparison() {
         <div className="text-center mb-16 md:mb-24">
           <FadeInBlur>
             <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The clinical difference</span>
-            <h2 className="text-5xl md:text-8xl font-display font-extrabold mb-8 leading-[1.05] tracking-tighter text-slate-900">
+            <h2 className="text-3xl md:text-7xl font-bold mb-8 leading-tight tracking-tight text-slate-900 font-heading">
               Root-cause resolution. <br/> 
-              <span className="text-primary italic">Not temporary relief.</span>
+              <span className="text-slate-400 font-medium italic">Not temporary relief.</span>
             </h2>
             <div className="max-w-4xl mx-auto space-y-8">
               <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed">

@@ -53,10 +53,10 @@ export default function Authority() {
             className="order-1 lg:order-2 space-y-10"
           >
             <div>
-              <span className="text-primary font-bold tracking-[0.3em] uppercase text-[10px] mb-4 block">The Mission</span>
-              <h2 className="text-4xl md:text-8xl font-display font-extrabold leading-[1.05] text-white tracking-tight">
+              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Mission</span>
+              <h2 className="text-3xl md:text-7xl font-bold leading-[1.1] text-white tracking-tight font-heading">
                 A Journey Rooted in <br/>
-                <span className="text-slate-500 italic">Suffering & Hope.</span>
+                <span className="text-slate-500">Suffering & Hope.</span>
               </h2>
             </div>
             
@@ -71,11 +71,11 @@ export default function Authority() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 pt-10 border-t border-white/5">
               <div>
-                <span className="block text-5xl md:text-7xl font-display font-black text-white mb-2 tracking-tighter">50k+</span>
+                <span className="block text-4xl md:text-5xl font-bold text-white mb-2 font-heading tracking-tight">50k+</span>
                 <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">International patients</span>
               </div>
               <div>
-                <span className="block text-5xl md:text-7xl font-display font-black text-primary-accent mb-2 tracking-tighter">15k+</span>
+                <span className="block text-4xl md:text-5xl font-bold text-primary-accent mb-2 font-heading tracking-tight">15k+</span>
                 <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Patients Treated</span>
               </div>
             </div>
@@ -101,16 +101,16 @@ export default function Authority() {
               </div>
               <span className="text-primary-accent font-bold tracking-[0.3em] uppercase text-xs">Global Authority</span>
             </div>
-            <h3 className="text-5xl md:text-8xl font-display font-extrabold mb-8 tracking-tighter text-white leading-[1.05]">
+            <h3 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-white font-heading">
               The Iconic Hope for <br/> 40 Crore Indians.
             </h3>
              <div className="flex flex-col md:flex-row gap-10 mb-12">
                <div className="flex-1">
-                  <span className="block text-5xl font-display font-black text-white mb-2 tracking-tighter">50,000+</span>
+                  <span className="block text-4xl font-bold text-white mb-2 font-heading tracking-tight">50,000+</span>
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Complex Cases Solved</span>
                </div>
                <div className="flex-1">
-                  <span className="block text-5xl font-display font-black text-primary-accent mb-2 tracking-tighter">15k+</span>
+                  <span className="block text-4xl font-bold text-primary-accent mb-2 font-heading tracking-tight">15k+</span>
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Patients Treated</span>
                </div>
             </div>
