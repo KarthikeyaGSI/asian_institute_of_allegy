@@ -98,7 +98,7 @@ export default function BookingForm({ onStartQuiz }) {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="p-10 md:p-16 flex-1 bg-white flex flex-col justify-center min-h-[500px]"
           >
-            {!isSubmitted ? (
+            {status !== 'success' ? (
               <div className="space-y-8">
                 <button 
                   onClick={onStartQuiz}

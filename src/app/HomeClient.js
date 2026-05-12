@@ -67,7 +67,7 @@ export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [hasShownPopup, setHasShownPopup] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [status, setStatus] = useState(null); // 'success' | 'error' | null
   const [formData, setFormData] = useState({ name: "", phone: "", condition: "General Inquiry" });
 
   const { scrollYProgress } = useScroll();
@@ -137,7 +137,7 @@ export default function Home() {
 
       const result = await response.json();
       if (result.success) {
-        setIsSubmitted(true);
+        setStatus('success');
         setTimeout(() => setIsPopupOpen(false), 3000);
       }
     } catch (error) {
@@ -198,7 +198,7 @@ export default function Home() {
                 <X size={24} />
               </button>
               
-              {!isSubmitted ? (
+              {status !== 'success' ? (
                 <>
                   <div className="text-center mb-8 relative z-10">
                     <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
