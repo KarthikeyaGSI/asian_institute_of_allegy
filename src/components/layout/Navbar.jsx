@@ -11,6 +11,7 @@ import Magnetic from "@/components/effects/Magnetic";
 const navLinks = [
   { name: "Treatments", href: "/treatments" },
   { name: "Patient Stories", href: "/clinical-success" },
+  { name: "Insights", href: "/blog/4-ways-to-animate-a-framer-website" },
   { name: "World Allergy Foundation", href: "/world-allergy-foundation" },
 ];
 
