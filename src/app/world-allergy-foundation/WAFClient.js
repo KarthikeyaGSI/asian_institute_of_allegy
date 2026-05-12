@@ -89,6 +89,7 @@ const sections = [
 const WAFActionForm = ({ type, title, description, buttonText, buttonStyle }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "" });
+  const [status, setStatus] = useState(null); // 'success' | 'error' | null
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -105,7 +106,7 @@ const WAFActionForm = ({ type, title, description, buttonText, buttonStyle }) =>
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          access_key: "3c43e0ba-47fb-424c-9103-345682cc4a5a",
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
           subject: subject,
           from_name: "WAF Foundation",
           name: formData.name,
@@ -116,17 +117,22 @@ const WAFActionForm = ({ type, title, description, buttonText, buttonStyle }) =>
       const result = await response.json();
 
       if (result.success) {
+        setStatus('success');
         const waMessage = encodeURIComponent(
           `Hello World Allergy Foundation,\n\nI would like to ${type === 'workshop' ? 'request a workshop' : 'contribute to the foundation'}.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n\nPlease contact me.`
         );
-        window.location.href = `https://wa.me/918074368748?text=${waMessage}`;
+        setTimeout(() => {
+          window.location.href = `https://wa.me/918074368748?text=${waMessage}`;
+        }, 1500);
       } else {
-        alert("Something went wrong. Please try again or call us directly.");
+        setStatus('error');
       }
     } catch (error) {
       console.error("Submission error:", error);
-      alert("Submission failed. Redirecting to WhatsApp directly...");
-      window.location.href = "https://wa.me/918074368748";
+      setStatus('error');
+      setTimeout(() => {
+        window.location.href = "https://wa.me/918074368748";
+      }, 2000);
     } finally {
       setIsSubmitting(false);
     }
@@ -143,34 +149,60 @@ const WAFActionForm = ({ type, title, description, buttonText, buttonStyle }) =>
       <p className={type === 'workshop' ? "text-white/60 text-base md:text-lg mb-8 font-medium leading-relaxed" : "text-white/80 text-base md:text-lg mb-8 font-medium leading-relaxed"}>{description}</p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="sr-only" htmlFor={`${type}-name`}>Name</label>
-          <input
-            id={`${type}-name`}
-            type="text"
-            autoComplete="name"
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            placeholder="Your Name"
-            className="w-full px-5 py-3 rounded-xl border border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary-accent"
-            required
-          />
-        </div>
-        <div className="relative z-20">
-          <PhoneInput
-            value={formData.phone}
-            onChange={(val) => setFormData({ ...formData, phone: val })}
-            required
-            dark={true}
-          />
-        </div>
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className={buttonStyle + " w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs transition-colors" + (isSubmitting ? " opacity-70 cursor-not-allowed" : "")}
-        >
-          {isSubmitting ? "Processing..." : buttonText} <ArrowRight size={16} />
-        </button>
+        <AnimatePresence mode="wait">
+          {status === 'success' ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-primary/20 border border-primary/30 p-6 rounded-2xl text-center"
+            >
+              <Sparkles className="text-primary-accent mx-auto mb-3" size={32} />
+              <p className="text-white font-bold text-sm">Request Sent Successfully!</p>
+              <p className="text-white/60 text-xs mt-1">Redirecting to WhatsApp...</p>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="form-fields"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="space-y-4"
+            >
+              <div>
+                <label className="sr-only" htmlFor={`${type}-name`}>Name</label>
+                <input
+                  id={`${type}-name`}
+                  type="text"
+                  autoComplete="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  placeholder="Your Name"
+                  className="w-full px-5 py-3 rounded-xl border border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary-accent"
+                  required
+                />
+              </div>
+              <div className="relative z-20">
+                <PhoneInput
+                  value={formData.phone}
+                  onChange={(val) => setFormData({ ...formData, phone: val })}
+                  required
+                  dark={true}
+                />
+              </div>
+
+              {status === 'error' && (
+                <p className="text-red-400 text-xs font-medium px-2">Something went wrong. Please try again or connect via WhatsApp.</p>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={buttonStyle + " w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs transition-colors" + (isSubmitting ? " opacity-70 cursor-not-allowed" : "")}
+              >
+                {isSubmitting ? "Processing..." : buttonText} <ArrowRight size={16} />
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </form>
     </div>
   );

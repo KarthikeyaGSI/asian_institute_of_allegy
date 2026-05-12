@@ -189,7 +189,7 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          access_key: "3c43e0ba-47fb-424c-9103-345682cc4a5a",
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
           subject: `Urgent: Diagnostic Report for ${reportEmail}`,
           from_name: "AIA Medical Funnel",
           email: reportEmail,
