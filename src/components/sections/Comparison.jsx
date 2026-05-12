@@ -1,5 +1,7 @@
 "use client";
 
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { Check, X } from "lucide-react";
 import Magnetic from "@/components/motion/Magnetic";
 import TextReveal from "@/components/motion/TextReveal";
 import ScrollReveal from "@/components/motion/ScrollReveal";

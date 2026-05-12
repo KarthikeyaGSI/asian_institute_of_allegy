@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { motion, AnimatePresence, useScroll, useSpring as useMotionSpring } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValue, useSpring, useTransform, useSpring as useMotionSpring } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";

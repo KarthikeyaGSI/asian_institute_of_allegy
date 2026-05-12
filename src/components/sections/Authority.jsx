@@ -1,3 +1,9 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { Globe, ArrowRight } from "lucide-react";
 import Magnetic from "@/components/motion/Magnetic";
 import TextReveal from "@/components/motion/TextReveal";
 import ScrollReveal from "@/components/motion/ScrollReveal";

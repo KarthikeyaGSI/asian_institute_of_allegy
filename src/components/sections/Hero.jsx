@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { MessageCircle, CheckCircle2, ChevronDown } from "lucide-react";
 import Magnetic from "@/components/motion/Magnetic";
 import TextReveal from "@/components/motion/TextReveal";
 import { fadeInUp, easeLuxury } from "@/components/motion/variants";
