@@ -1,4 +1,4 @@
-import { Playfair_Display, Inter } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/effects/SmoothScroll";
 import NoiseOverlay from "@/components/effects/NoiseOverlay";
@@ -7,17 +7,24 @@ import NotificationTriggers from "@/components/ui/NotificationTriggers";
 import ProgressBar from "@/components/effects/ProgressBar";
 import Script from "next/script";
 
-const playfair = Playfair_Display({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-outfit",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
-const inter = Inter({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-jakarta",
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -76,7 +83,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} h-full antialiased scroll-smooth`}>
+    <html lang="en" className={`${outfit.variable} ${plusJakarta.variable} ${syne.variable} h-full antialiased scroll-smooth`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Google Tag Manager */}

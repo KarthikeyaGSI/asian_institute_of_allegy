@@ -87,7 +87,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                 animate={isLoaded ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                className="text-[32px] sm:text-[40px] lg:text-[72px] font-bold leading-[1.1] tracking-tight font-heading text-left"
+                className="text-[42px] sm:text-[54px] lg:text-[88px] font-display font-black leading-[1.05] tracking-tight text-left"
               >
                 We find the <span className="text-primary italic">root cause</span>.<br />
                 We fix it for good.

@@ -15,7 +15,6 @@ export default function sitemap() {
     "/clinical-success",
     "/gallery",
     "/doctor",
-    "/blog/4-ways-to-animate-a-framer-website",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

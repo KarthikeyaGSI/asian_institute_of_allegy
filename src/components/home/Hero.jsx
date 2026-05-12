@@ -35,10 +35,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl md:text-6xl font-semibold leading-[1.1] text-white"
+          className="text-5xl md:text-7xl font-display font-extrabold tracking-tight leading-[1.05] text-white"
         >
           You don&apos;t need more treatment. <br />
-          <span className="text-primary-accent">You need the right diagnosis.</span>
+          <span className="text-primary-accent italic">You need the right diagnosis.</span>
         </motion.h1>
 
         <motion.p
