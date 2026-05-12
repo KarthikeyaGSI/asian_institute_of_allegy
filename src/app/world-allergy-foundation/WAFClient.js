@@ -13,6 +13,7 @@ import {
 import MediaLogos from "@/components/sections/MediaLogos";
 import Counter from "@/components/ui/Counter";
 import PhoneInput from "@/components/ui/PhoneInput";
+import VortexGallery from "@/components/effects/VortexGallery";
 import { useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const Tilt = ({ children, className = "" }) => {
@@ -784,6 +785,26 @@ export default function WorldAllergyFoundation() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* 12.5 Cinematic Vortex Gallery */}
+        <section className="bg-slate-950 pt-24 md:pt-40">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-16">
+            <span className="text-primary-accent font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Visual Journey</span>
+            <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-white">Experience the <br /> <span className="text-primary-accent italic">Mission.</span></h2>
+          </div>
+          <VortexGallery 
+            images={[
+              { src: "/images/W1.webp" },
+              { src: "/images/W2.webp" },
+              { src: "/images/W3.webp" },
+              { src: "/images/W4.webp" },
+              { src: "/images/W5.webp" },
+              { src: "/images/W6.webp" },
+              { src: "/images/MA1.webp" },
+              { src: "/images/MA2.webp" }
+            ]} 
+          />
         </section>
 
         {/* 13. Surat Workshop */}

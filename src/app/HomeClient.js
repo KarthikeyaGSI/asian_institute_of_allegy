@@ -57,6 +57,10 @@ const LocationSection = dynamic(() => import("@/components/home/LocationSection"
   ssr: true,
   loading: () => <Skeleton height="500px" />
 });
+const SpotlightGallery = dynamic(() => import("@/components/effects/SpotlightGallery"), { 
+  ssr: false,
+  loading: () => <Skeleton height="500px" />
+});
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -265,6 +269,26 @@ export default function Home() {
 
       <Pathways />
       <Science />
+
+      {/* 📸 CLINICAL GALLERY SECTION */}
+      <section className="bg-white py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-16">
+          <span className="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Our Facility</span>
+          <h2 className="text-4xl md:text-7xl font-bold text-slate-900 leading-[1] tracking-tighter font-heading">
+            Clinical <span className="text-primary italic">Excellence.</span>
+          </h2>
+        </div>
+        <SpotlightGallery 
+          images={[
+            { src: "/images/aswiniallergycentre1.webp", title: "Advanced Diagnostics", description: "State-of-the-art laboratory for molecular allergy testing." },
+            { src: "/images/aswiniallergycentre2.webp", title: "Personalized Care", description: "Private consultation rooms for in-depth clinical review." },
+            { src: "/images/aswiniallergycentre3.webp", title: "Modern Infrastructure", description: "World-class facilities designed for patient comfort." },
+            { src: "/images/aswiniallergycentre7.webp", title: "Research Unit", description: "Dedicated center for immunological studies." },
+            { src: "/images/allergy-hospital-in-hyderabad.webp", title: "Specialized Clinic", description: "India's premier destination for chronic allergy relief." },
+            { src: "/images/best-allergy-hospital.webp", title: "Global Standards", description: "Following international protocols for root-cause treatment." }
+          ]} 
+        />
+      </section>
       
       {/* PHASE 3: THE AUTHORITY LAYER */}
       <Authority />

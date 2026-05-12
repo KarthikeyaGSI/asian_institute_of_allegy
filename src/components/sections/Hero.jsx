@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle, CheckCircle2, ChevronDown } from "lucide-react";
 import Magnetic from "@/components/effects/Magnetic";
+import Antigravity from "@/components/effects/Antigravity";
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -59,6 +60,9 @@ export default function Hero() {
           <source src="/_HERO%20VIDEO%20(Breathing%20Cinematic).mp4" type="video/mp4" />
         </video>
       </motion.div>
+
+      {/* 🌌 ANTIGRAVITY PARTICLES */}
+      <Antigravity particleColor="#1A5F3A" count={isMobile ? 30 : 60} />
 
       {/* 🎨 OVERLAY - Precise Gradient Specs */}
       <div 
