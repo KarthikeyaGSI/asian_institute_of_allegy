@@ -1,9 +1,11 @@
-"use client";
-
 import { motion } from "framer-motion";
-import { Quote, Play, Clock, ShieldCheck } from "lucide-react";
+import { Quote, Play, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import Magnetic from "@/components/motion/Magnetic";
+import TextReveal from "@/components/motion/TextReveal";
+import ScrollReveal from "@/components/motion/ScrollReveal";
+import { fadeInUp, staggerContainer, easeLuxury } from "@/components/motion/variants";
 
 const categories = [
   { id: "all", label: "All Cases" },
@@ -101,11 +103,8 @@ function TestimonialCard({ item, i }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: i * 0.1 }}
+    <ScrollReveal
+      delay={i * 0.1}
       className="bg-white rounded-[2.5rem] border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 flex flex-col group"
     >
       {/* Video Section */}
@@ -178,7 +177,7 @@ function TestimonialCard({ item, i }) {
 
         <SeverityChart metrics={item.metrics} />
       </div>
-    </motion.div>
+    </ScrollReveal>
   );
 }
 
@@ -253,8 +252,8 @@ export default function Testimonials() {
           <div className="max-w-2xl">
             <span className="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Patient Proof</span>
             <h2 className="text-5xl md:text-7xl font-bold text-slate-900 leading-[1] tracking-tighter font-heading mb-8">
-              Relevant Proof. <br/>
-              <span className="text-gray-400">Real Outcomes.</span>
+              <TextReveal text="Relevant Proof." /> <br/>
+              <TextReveal text="Real Outcomes." className="text-gray-400" delay={0.4} />
             </h2>
             <p className="text-xl text-slate-600 font-medium">
               See how patients with your specific condition achieved long-term resolution.
@@ -264,17 +263,18 @@ export default function Testimonials() {
           {/* Filters */}
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveFilter(cat.id)}
-                className={`px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition-all ${
-                  activeFilter === cat.id 
-                    ? "bg-primary text-white shadow-xl shadow-primary/20 scale-105" 
-                    : "bg-white text-slate-400 border border-slate-200 hover:border-slate-400"
-                }`}
-              >
-                {cat.label}
-              </button>
+              <Magnetic key={cat.id} strength={0.1}>
+                <button
+                  onClick={() => setActiveFilter(cat.id)}
+                  className={`px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition-all ${
+                    activeFilter === cat.id 
+                      ? "bg-primary text-white shadow-xl shadow-primary/20 scale-105" 
+                      : "bg-white text-slate-400 border border-slate-200 hover:border-slate-400"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              </Magnetic>
             ))}
           </div>
         </div>
@@ -305,9 +305,11 @@ export default function Testimonials() {
                 <p className="text-sm font-bold text-slate-900">Join 50,000+ Patient Stories</p>
                 <p className="text-xs text-slate-500">International patients</p>
              </div>
-             <a href="#contact" className="bg-primary text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-105 transition-all">
-                Start My Journey
-             </a>
+             <Magnetic strength={0.2}>
+               <a href="#contact" className="bg-primary text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-105 transition-all">
+                  Start My Journey
+               </a>
+             </Magnetic>
            </div>
         </div>
       </div>

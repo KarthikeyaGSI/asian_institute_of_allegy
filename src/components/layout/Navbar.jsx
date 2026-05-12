@@ -6,7 +6,8 @@ import { Menu, X, LayoutGrid, Globe, Building2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import Magnetic from "@/components/effects/Magnetic";
+import Magnetic from "@/components/motion/Magnetic";
+import { easeLuxury, easeSmooth } from "@/components/motion/variants";
 
 const navLinks = [
   { name: "Treatments", href: "/treatments" },
@@ -173,45 +174,69 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className={`lg:hidden absolute top-[100px] left-4 right-4 backdrop-blur-3xl border rounded-[2.5rem] p-10 z-[1000] shadow-2xl ${
+            initial={{ opacity: 0, scale: 0.95, y: -20, filter: "blur(20px)" }}
+            animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, scale: 0.95, y: -20, filter: "blur(20px)" }}
+            transition={{ duration: 0.8, ease: easeLuxury }}
+            className={`lg:hidden absolute top-[100px] left-4 right-4 backdrop-blur-3xl border rounded-[2.5rem] p-10 z-[1000] shadow-2xl overflow-hidden ${
               isLight ? "bg-white/95 border-slate-200" : "bg-black/95 border-white/10"
             }`}
           >
-            <div className="flex flex-col gap-8">
+            <motion.div 
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
+              }}
+              className="flex flex-col gap-8"
+            >
               {navLinks.map((link) => (
-                <Link
+                <motion.div
                   key={link.name}
-                  href={link.href}
-                  className={`text-3xl font-bold uppercase tracking-tighter ${
-                    isLight ? "text-slate-900" : "text-white"
+                  variants={{
+                    hidden: { opacity: 0, x: -20 },
+                    visible: { opacity: 1, x: 0 }
+                  }}
+                  transition={{ duration: 0.6, ease: easeSmooth }}
+                >
+                  <Link
+                    href={link.href}
+                    className={`text-3xl font-bold uppercase tracking-tighter ${
+                      isLight ? "text-slate-900" : "text-white"
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+              
+              <motion.div 
+                variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                className={`h-px my-4 ${isLight ? "bg-slate-200" : "bg-white/10"}`} 
+              />
+              
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.6, ease: easeSmooth }}
+              >
+                <Link
+                  href={isWAF ? "/contribute" : "/#contact"}
+                  className={`py-5 rounded-full font-black text-center text-lg uppercase tracking-widest shadow-xl block ${
+                    isLight ? "bg-slate-900 text-white" : "bg-primary-accent text-black"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
-                  {link.name}
+                  {isWAF ? "Contribute Now" : "Book Evaluation"}
                 </Link>
-              ))}
-              
-              <div className={`h-px my-4 ${isLight ? "bg-slate-200" : "bg-white/10"}`} />
-              
-
-
-              <Link
-                href={isWAF ? "/contribute" : "/#contact"}
-                className={`py-5 rounded-full font-black text-center text-lg uppercase tracking-widest shadow-xl ${
-                  isLight ? "bg-slate-900 text-white" : "bg-primary-accent text-black"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {isWAF ? "Contribute Now" : "Book Evaluation"}
-              </Link>
-            </div>
+              </motion.div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
     </div>
   );
-}
 
