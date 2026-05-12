@@ -5,9 +5,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle, CheckCircle2, ChevronDown } from "lucide-react";
-import Magnetic from "@/components/motion/Magnetic";
-import TextReveal from "@/components/motion/TextReveal";
-import { fadeInUp, easeLuxury } from "@/components/motion/variants";
+import Magnetic from "@/components/effects/Magnetic";
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -17,9 +15,9 @@ export default function Hero() {
   const { scrollY } = useScroll();
 
   // 🎭 SCROLL TRANSFORMATIONS
-  const videoScale = useTransform(scrollY, [0, 1000], [1, 1.2]);
+  const videoScale = useTransform(scrollY, [0, 1000], [1.05, 1.3]);
   const videoOpacity = useTransform(scrollY, [0, 800], [1, 0.4]);
-  const contentY = useTransform(scrollY, [0, 500], [0, -80]);
+  const contentY = useTransform(scrollY, [0, 500], [0, -100]);
   const contentOpacity = useTransform(scrollY, [0, 400], [1, 0]);
   const indicatorOpacity = useTransform(scrollY, [0, 150], [1, 0]);
 
@@ -47,9 +45,6 @@ export default function Hero() {
       {/* 🎥 VIDEO - Cinematic Parallax Background */}
       <motion.div 
         style={{ scale: videoScale, opacity: videoOpacity }}
-        initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.8, ease: easeLuxury }}
         className="absolute inset-0 z-0"
       >
         <video
@@ -57,6 +52,7 @@ export default function Hero() {
           muted
           loop
           playsInline
+          preload="metadata"
           className="w-full h-full object-cover"
           style={{ objectPosition: "center" }}
         >
@@ -64,7 +60,7 @@ export default function Hero() {
         </video>
       </motion.div>
 
-      {/* 🎨 OVERLAY - Precise Graduate Specs */}
+      {/* 🎨 OVERLAY - Precise Gradient Specs */}
       <div 
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
@@ -87,26 +83,35 @@ export default function Hero() {
           {/* Left Column: Core Message */}
           <div className="w-full lg:flex-1 flex flex-col items-start text-left"> 
             <div className="w-full">
-              <h1 className="text-[32px] sm:text-[40px] lg:text-[72px] font-bold leading-[1.1] tracking-tight font-heading text-left">
-                <TextReveal text="We find the root cause." className="block" />
-                <TextReveal text="We fix it for good." className="text-primary italic" delay={0.4} />
-              </h1>
+              <motion.h1
+                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                animate={isLoaded ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                className="text-[32px] sm:text-[40px] lg:text-[72px] font-bold leading-[1.1] tracking-tight font-heading text-left"
+              >
+                We find the <span className="text-primary italic">root cause</span>.<br />
+                We fix it for good.
+              </motion.h1>
 
-              <TextReveal 
-                text="The world's specialized institute focused on permanent root-cause diagnosis. Personalized clinical care for all ages." 
+              <motion.p
+                initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
+                animate={isLoaded ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-6 lg:mt-8 text-[16px] lg:text-[20px] leading-relaxed text-white/90 font-medium text-left max-w-[500px]"
-                delay={0.8}
-              />
+              >
+                The world's specialized institute focused on permanent root-cause diagnosis. 
+                Personalized clinical care for all ages.
+              </motion.p>
             </div>
 
             {/* 🔘 BUTTONS */}
             <motion.div
-              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-              animate={isLoaded ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-              transition={{ duration: 1.2, delay: 1.2, ease: easeLuxury }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col sm:flex-row gap-4 mt-10 w-full lg:w-auto"
             >
-              <Magnetic strength={0.2}>
+              <Magnetic>
                 <Link
                   href="/#contact"
                   className="bg-primary text-white w-full sm:w-auto px-10 lg:px-12 h-[56px] lg:h-auto lg:py-5 rounded-[12px] lg:rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95 text-center shadow-2xl flex items-center justify-center gap-3"
@@ -114,7 +119,7 @@ export default function Hero() {
                   Start Root-Cause Diagnosis
                 </Link>
               </Magnetic>
-              <Magnetic strength={0.2}>
+              <Magnetic>
                 <Link
                   href="https://wa.me/918074368748?text=Hi, I'd like to start my root-cause evaluation."
                   target="_blank"
@@ -128,8 +133,9 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-              {...fadeInUp}
-              transition={{ duration: 1.2, delay: 1.4, ease: easeLuxury }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
               className="flex flex-wrap items-center gap-6 mt-12 text-[11px] lg:text-[13px] font-bold text-white/50 uppercase tracking-widest"
             >
               <span className="flex items-center gap-3">
@@ -145,8 +151,9 @@ export default function Hero() {
           <div className="w-full lg:w-auto flex flex-col items-center lg:items-end gap-8 lg:gap-12 mt-12 lg:mt-0">
             {/* 📍 PATIENTS BADGE */}
             <motion.div
-              {...fadeInUp}
-              transition={{ duration: 1.2, delay: 1.6, ease: easeLuxury }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
               className="flex items-center gap-6 bg-white/5 border border-white/10 px-10 py-6 rounded-[2rem] backdrop-blur-xl w-full lg:w-[320px] clinical-pulse"
             >
               <div className="text-primary">
@@ -160,8 +167,9 @@ export default function Hero() {
 
             {/* DOCTOR TRUST PORTRAIT */}
             <motion.div
-              {...fadeInUp}
-              transition={{ duration: 1.2, delay: 1.8, ease: easeLuxury }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center gap-6 bg-white/5 p-6 lg:p-8 rounded-[2rem] lg:rounded-[3rem] border border-white/10 backdrop-blur-md w-full lg:w-[320px] relative overflow-hidden group scanning-line"
             >
               <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />

@@ -5,7 +5,6 @@ import NoiseOverlay from "@/components/effects/NoiseOverlay";
 import PremiumCursor from "@/components/effects/PremiumCursor";
 import NotificationTriggers from "@/components/ui/NotificationTriggers";
 import ProgressBar from "@/components/effects/ProgressBar";
-import PageTransition from "@/components/motion/PageTransition";
 import Script from "next/script";
 
 const playfair = Playfair_Display({
@@ -120,9 +119,7 @@ export default function RootLayout({ children }) {
           <NoiseOverlay />
           <PremiumCursor />
           <NotificationTriggers />
-          <PageTransition>
-            {children}
-          </PageTransition>
+          {children}
         </SmoothScroll>
 
         {/* Unified Structured Data for GEO/AEO */}

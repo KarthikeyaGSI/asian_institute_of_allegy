@@ -2,27 +2,25 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Check, X } from "lucide-react";
-import Magnetic from "@/components/motion/Magnetic";
-import TextReveal from "@/components/motion/TextReveal";
-import ScrollReveal from "@/components/motion/ScrollReveal";
-import { fadeInUp, easeLuxury } from "@/components/motion/variants";
 
-// 2026-Grade Tilt Component with Premium Springs
 const Tilt = ({ children, className = "" }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const springConfig = { stiffness: 160, damping: 20, mass: 0.5 };
-  const mouseX = useSpring(x, springConfig);
-  const mouseY = useSpring(y, springConfig);
+  const mouseX = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseY = useSpring(y, { stiffness: 300, damping: 30 });
 
-  const rotateX = useTransform(mouseY, [-0.5, 0.5], ["8deg", "-8deg"]);
-  const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-8deg", "8deg"]);
+  const rotateX = useTransform(mouseY, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-10deg", "10deg"]);
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const xPct = (e.clientX - rect.left) / rect.width - 0.5;
-    const yPct = (e.clientY - rect.top) / rect.height - 0.5;
+    const width = rect.width;
+    const height = rect.height;
+    const mouseXPos = e.clientX - rect.left;
+    const mouseYPos = e.clientY - rect.top;
+    const xPct = mouseXPos / width - 0.5;
+    const yPct = mouseYPos / height - 0.5;
     x.set(xPct);
     y.set(yPct);
   };
@@ -39,12 +37,23 @@ const Tilt = ({ children, className = "" }) => {
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
       className={`perspective-1000 ${className}`}
     >
-      <motion.div style={{ transform: "translateZ(60px)", transformStyle: "preserve-3d" }}>
+      <div style={{ transform: "translateZ(40px)", transformStyle: "preserve-3d" }}>
         {children}
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
+
+const FadeInBlur = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+  >
+    {children}
+  </motion.div>
+);
 
 const leftItems = [
   "Meds like Cetirizine, Allegra",
@@ -68,11 +77,11 @@ export default function Comparison() {
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16 md:mb-24">
-          <ScrollReveal>
+          <FadeInBlur>
             <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The clinical difference</span>
             <h2 className="text-3xl md:text-7xl font-bold mb-8 leading-tight tracking-tight text-slate-900 font-heading">
-              <TextReveal text="Root-cause resolution." /> <br/> 
-              <TextReveal text="Not temporary relief." className="text-slate-400 font-medium italic" delay={0.4} />
+              Root-cause resolution. <br/> 
+              <span className="text-slate-400 font-medium italic">Not temporary relief.</span>
             </h2>
             <div className="max-w-4xl mx-auto space-y-8">
               <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed">
@@ -86,7 +95,7 @@ export default function Comparison() {
                 </p>
               </div>
             </div>
-          </ScrollReveal>
+          </FadeInBlur>
         </div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">

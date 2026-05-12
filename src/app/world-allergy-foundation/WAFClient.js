@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { motion, AnimatePresence, useScroll, useMotionValue, useSpring, useTransform, useSpring as useMotionSpring } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring as useMotionSpring } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,27 +13,26 @@ import {
 import MediaLogos from "@/components/sections/MediaLogos";
 import Counter from "@/components/ui/Counter";
 import PhoneInput from "@/components/ui/PhoneInput";
-import Magnetic from "@/components/motion/Magnetic";
-import TextReveal from "@/components/motion/TextReveal";
-import ScrollReveal from "@/components/motion/ScrollReveal";
-import { fadeInUp, staggerContainer, easeLuxury } from "@/components/motion/variants";
+import { useMotionValue, useSpring, useTransform } from "framer-motion";
 
-// 2026-Grade Tilt Component with Premium Springs
 const Tilt = ({ children, className = "" }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const springConfig = { stiffness: 160, damping: 20, mass: 0.5 };
-  const mouseX = useSpring(x, springConfig);
-  const mouseY = useSpring(y, springConfig);
+  const mouseX = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseY = useSpring(y, { stiffness: 300, damping: 30 });
 
-  const rotateX = useTransform(mouseY, [-0.5, 0.5], ["8deg", "-8deg"]);
-  const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-8deg", "8deg"]);
+  const rotateX = useTransform(mouseY, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-10deg", "10deg"]);
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const xPct = (e.clientX - rect.left) / rect.width - 0.5;
-    const yPct = (e.clientY - rect.top) / rect.height - 0.5;
+    const width = rect.width;
+    const height = rect.height;
+    const mouseXPos = e.clientX - rect.left;
+    const mouseYPos = e.clientY - rect.top;
+    const xPct = mouseXPos / width - 0.5;
+    const yPct = mouseYPos / height - 0.5;
     x.set(xPct);
     y.set(yPct);
   };
@@ -50,12 +49,23 @@ const Tilt = ({ children, className = "" }) => {
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
       className={`perspective-1000 ${className}`}
     >
-      <motion.div style={{ transform: "translateZ(60px)", transformStyle: "preserve-3d" }}>
+      <div style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }}>
         {children}
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
+
+const FadeInBlur = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+  >
+    {children}
+  </motion.div>
+);
 
 
 const sections = [
@@ -267,32 +277,52 @@ export default function WorldAllergyFoundation() {
                   </div>
                 </motion.div>
               </Tilt>
-              <ScrollReveal delay={0.2} className="text-center">
+              <motion.div
+                initial={{ opacity: 0, filter: "blur(10px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
                 <span className="text-primary font-bold tracking-[0.4em] uppercase text-[10px] md:text-xs mb-4 block">Established 2024</span>
-                <h1 className="text-3xl sm:text-5xl md:text-8xl font-bold tracking-tight mb-6 md:mb-8 font-heading leading-tight md:leading-none">
-                  <TextReveal text="World Allergy Foundation" />
-                </h1>
-                <TextReveal 
-                  text="Bridging clinical excellence, scientific research, and global public health awareness to solve the crisis of chronic inflammation."
-                  className="text-lg md:text-2xl text-slate-500 max-w-3xl leading-relaxed font-medium mx-auto px-4 md:px-0"
-                  delay={0.6}
-                />
-                <div className="mt-10 md:mt-12 flex flex-col sm:flex-row justify-center gap-4 px-6 sm:px-0">
-                  <Magnetic strength={0.2}>
-                    <button 
-                      onClick={() => document.getElementById('workshop')?.scrollIntoView({ behavior: 'smooth' })}
-                      className="px-10 py-5 bg-primary text-white rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-slate-900 transition-all active:scale-95 shadow-[0_20px_40px_-15px_rgba(26,95,58,0.4)]"
+                <motion.h1 
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    visible: { transition: { staggerChildren: 0.1 } },
+                  }}
+                  className="text-3xl sm:text-5xl md:text-8xl font-bold tracking-tight mb-6 md:mb-8 font-heading leading-tight md:leading-none"
+                >
+                  {"World Allergy Foundation".split(" ").map((word, i) => (
+                    <motion.span
+                      key={i}
+                      variants={{
+                        hidden: { opacity: 0, y: 0 },
+                        visible: { opacity: 1, y: 0 },
+                      }}
+                      transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                      className="inline-block mr-2 md:mr-4"
                     >
-                      Join the Mission
-                    </button>
-                  </Magnetic>
-                  <Magnetic strength={0.2}>
+                      {word}
+                    </motion.span>
+                  ))}
+                </motion.h1>
+                <p className="text-lg md:text-2xl text-slate-500 max-w-3xl leading-relaxed font-medium mx-auto px-4 md:px-0">
+                  Bridging clinical excellence, scientific research, and global public health awareness to solve the crisis of chronic inflammation.
+                </p>
+                <div className="mt-10 md:mt-12 flex flex-col sm:flex-row justify-center gap-4 px-6 sm:px-0">
+                  <motion.button 
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => document.getElementById('workshop')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="px-10 py-5 bg-primary text-white rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-slate-900 transition-all active:scale-95 shadow-[0_20px_40px_-15px_rgba(26,95,58,0.4)]"
+                  >
+                    Join the Mission
+                  </motion.button>
+                  <motion.div whileTap={{ scale: 0.98 }}>
                     <Link href="/clinical-success" className="px-10 py-5 bg-white text-slate-900 rounded-full font-black uppercase tracking-widest text-[10px] border border-slate-200 hover:bg-slate-50 transition-all block text-center active:scale-95 shadow-sm">
                       View Patient Stories
                     </Link>
-                  </Magnetic>
+                  </motion.div>
                 </div>
-              </ScrollReveal>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -302,7 +332,7 @@ export default function WorldAllergyFoundation() {
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
               {sections.map((s, idx) => (
-                <ScrollReveal key={s.title} delay={idx * 0.1}>
+                <FadeInBlur key={s.title} delay={idx * 0.1}>
                   <div className="group space-y-6">
                     <div className="w-16 h-16 bg-primary/5 rounded-3xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 group-hover:rotate-12">
                       <s.icon size={32} aria-hidden="true" />
@@ -310,7 +340,7 @@ export default function WorldAllergyFoundation() {
                     <h3 className="text-2xl md:text-3xl font-bold font-heading">{s.title}</h3>
                     <p className="text-slate-600 leading-relaxed font-medium text-base md:text-lg">{s.content}</p>
                   </div>
-                </ScrollReveal>
+                </FadeInBlur>
               ))}
             </div>
           </div>
@@ -320,12 +350,12 @@ export default function WorldAllergyFoundation() {
         <section className="py-24 md:py-40 bg-slate-950 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#2563EB15_0%,transparent_50%)] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-            <ScrollReveal>
+            <FadeInBlur>
               <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
                 <span className="text-primary-accent font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Diplomatic Milestone</span>
                 <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight leading-tight text-white">The "Green Channel" <br /> <span className="text-primary-accent italic">Historic Treaty</span></h2>
               </div>
-            </ScrollReveal>
+            </FadeInBlur>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16">
               <div className="lg:col-span-7">
@@ -354,7 +384,7 @@ export default function WorldAllergyFoundation() {
               </div>
 
               <div className="lg:col-span-5 flex flex-col gap-8">
-                <ScrollReveal delay={0.2}>
+                <FadeInBlur delay={0.2}>
                   <div className="glass-card p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary-accent/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
                     <h3 className="text-3xl md:text-4xl font-bold mb-6 font-heading text-primary-accent">A Vision for <Counter value="14" suffix=" Million" /></h3>
@@ -362,20 +392,20 @@ export default function WorldAllergyFoundation() {
                       The MOU between WAF and the Lake Region Economic Bloc (LREB) of Kenya opens new avenues in medical tourism and research.
                     </p>
                   </div>
-                </ScrollReveal>
+                </FadeInBlur>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                   {[
                     { icon: Globe, title: "Medical Tourism", desc: "Seamless access to India's top specialists." },
                     { icon: Briefcase, title: "Capacity Building", desc: "Specialized training for 14,000+ professionals." }
                   ].map((item, idx) => (
-                    <ScrollReveal key={item.title} delay={0.3 + idx * 0.1}>
+                    <FadeInBlur key={item.title} delay={0.3 + idx * 0.1}>
                       <div className="glass-card p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] hover:bg-white/10 transition-colors h-full">
                         <item.icon className="text-primary-accent mb-6" size={32} aria-hidden="true" />
                         <h4 className="text-white font-bold text-sm mb-3 uppercase tracking-widest">{item.title}</h4>
                         <p className="text-[11px] text-slate-500 leading-relaxed font-medium">{item.desc}</p>
                       </div>
-                    </ScrollReveal>
+                    </FadeInBlur>
                   ))}
                 </div>
               </div>
@@ -402,7 +432,7 @@ export default function WorldAllergyFoundation() {
                 </Tilt>
               </div>
               <div className="flex-1 space-y-8 md:space-y-10 text-left">
-                <ScrollReveal>
+                <FadeInBlur>
                   <span className="text-primary font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Global Impact</span>
                   <h2 className="text-3xl md:text-7xl font-bold font-heading tracking-tight leading-tight">International <br /> <span className="text-primary italic">Partnerships.</span></h2>
                   <p className="text-slate-600 text-xl md:text-2xl font-medium leading-relaxed">
@@ -411,7 +441,7 @@ export default function WorldAllergyFoundation() {
                   <p className="text-slate-500 text-base md:text-lg leading-relaxed font-medium">
                     These interactions underscore WAF's commitment to sharing clinical breakthroughs in immunology with the global community.
                   </p>
-                </ScrollReveal>
+                </FadeInBlur>
               </div>
             </div>
           </div>
@@ -436,7 +466,7 @@ export default function WorldAllergyFoundation() {
                 </Tilt>
               </div>
               <div className="order-1 lg:order-2 space-y-8 md:space-y-10 text-left">
-                <ScrollReveal>
+                <FadeInBlur>
                   <div className="inline-flex items-center gap-3 bg-slate-900 text-white px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
                     <ShieldAlert size={16} aria-hidden="true" /> Legal & Policy Advocacy
                   </div>
@@ -447,7 +477,7 @@ export default function WorldAllergyFoundation() {
                   <p className="text-slate-500 text-base md:text-lg leading-relaxed font-medium">
                     Focusing on the intersection of public health policy and legal frameworks to ensure healthcare accessibility nationwide.
                   </p>
-                </ScrollReveal>
+                </FadeInBlur>
               </div>
             </div>
           </div>
@@ -458,7 +488,7 @@ export default function WorldAllergyFoundation() {
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
               <div className="space-y-8 md:space-y-10 text-left">
-                <ScrollReveal>
+                <FadeInBlur>
                   <div className="inline-flex items-center gap-3 bg-amber-50 text-amber-700 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
                     <Beaker size={16} aria-hidden="true" /> Scientific Legacy
                   </div>
@@ -473,7 +503,7 @@ export default function WorldAllergyFoundation() {
                       "His dedication has earned him a place in the favored students list of Dr. Sripad Agashe, the Father of Indian Aerobiology."
                     </p>
                   </div>
-                </ScrollReveal>
+                </FadeInBlur>
               </div>
 
               <div>
@@ -518,7 +548,7 @@ export default function WorldAllergyFoundation() {
                 </Tilt>
               </div>
               <div className="flex-1 space-y-8 md:space-y-10 text-left">
-                <ScrollReveal>
+                <FadeInBlur>
                   <div className="inline-flex items-center gap-3 bg-primary/20 text-primary-accent px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
                     <Sparkles size={16} aria-hidden="true" /> Roots & Inspiration
                   </div>
@@ -533,7 +563,7 @@ export default function WorldAllergyFoundation() {
                       This historic moment during Dr. Vyakarnam's medical college days shaped the foundation of his clinical empathy and public health mission.
                     </p>
                   </div>
-                </ScrollReveal>
+                </FadeInBlur>
               </div>
             </div>
           </div>
@@ -544,7 +574,7 @@ export default function WorldAllergyFoundation() {
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
               <div className="space-y-8 md:space-y-10 text-left">
-                <ScrollReveal>
+                <FadeInBlur>
                   <div className="inline-flex items-center gap-3 bg-red-50 text-red-600 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
                     <ShieldAlert size={16} aria-hidden="true" /> Critical Advocacy
                   </div>
@@ -564,7 +594,7 @@ export default function WorldAllergyFoundation() {
                       ))}
                     </ul>
                   </div>
-                </ScrollReveal>
+                </FadeInBlur>
               </div>
 
               <div>
@@ -588,7 +618,7 @@ export default function WorldAllergyFoundation() {
         {/* 9. Avian Flu (H5N1) Advisory */}
         <section className="py-24 md:py-40 bg-slate-50 relative overflow-hidden">
           <div className="max-w-5xl mx-auto px-6 md:px-12">
-            <ScrollReveal>
+            <FadeInBlur>
               <div className="space-y-12 text-center">
                 <div className="inline-flex items-center gap-3 bg-red-100 text-red-700 px-6 md:px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.4em]">
                   <div className="w-3 h-3 rounded-full bg-red-600 animate-pulse" /> Global Health Advisory
@@ -623,7 +653,7 @@ export default function WorldAllergyFoundation() {
                   </div>
                 </div>
               </div>
-            </ScrollReveal>
+            </FadeInBlur>
           </div>
         </section>
 
@@ -646,7 +676,7 @@ export default function WorldAllergyFoundation() {
                 </Tilt>
               </div>
               <div className="order-1 lg:order-2 space-y-8 md:space-y-10 text-left">
-                <ScrollReveal>
+                <FadeInBlur>
                   <div className="inline-flex items-center gap-3 bg-primary/5 text-primary px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
                     <ShieldAlert size={16} aria-hidden="true" /> Global Health Advisory
                   </div>
@@ -672,7 +702,7 @@ export default function WorldAllergyFoundation() {
                   <p className="text-slate-500 text-base md:text-lg leading-relaxed font-medium italic border-l-4 border-primary pl-6">
                     "This messaging aligns with a general principle in medicine: High-risk patients should consult specialists before interventions."
                   </p>
-                </ScrollReveal>
+                </FadeInBlur>
               </div>
             </div>
           </div>
@@ -681,12 +711,12 @@ export default function WorldAllergyFoundation() {
         {/* 11. Transformation Stories */}
         <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <ScrollReveal>
+            <FadeInBlur>
               <div className="flex flex-col items-center text-center mb-16 md:mb-24">
                 <span className="text-primary font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Clinical Evidence</span>
                 <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-slate-950">Patient Results.</h2>
               </div>
-            </ScrollReveal>
+            </FadeInBlur>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
               <Tilt>
@@ -702,7 +732,7 @@ export default function WorldAllergyFoundation() {
               </Tilt>
 
               <div className="space-y-8 md:space-y-10 text-left">
-                <ScrollReveal>
+                <FadeInBlur>
                   <h3 className="text-3xl md:text-4xl font-bold font-heading">Case Study: Mr. Raghukumar</h3>
                   <p className="text-slate-600 text-xl md:text-2xl font-medium leading-relaxed">
                     Battle with chronic skin ulcers and respiratory distress for nearly 40 years resolved in months.
@@ -719,7 +749,7 @@ export default function WorldAllergyFoundation() {
                       ))}
                     </div>
                   </div>
-                </ScrollReveal>
+                </FadeInBlur>
               </div>
             </div>
           </div>
@@ -730,7 +760,7 @@ export default function WorldAllergyFoundation() {
           <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
             <div className="flex flex-col lg:flex-row gap-16 md:gap-24 items-center">
               <div className="flex-1 space-y-10 text-left w-full">
-                <ScrollReveal>
+                <FadeInBlur>
                   <span className="text-primary-accent font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Environmental Forensic</span>
                   <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-white">Swaach Akash Abhiyan <br /> <span className="text-primary-accent italic">(Clean air Mission).</span></h2>
                   <p className="text-slate-300 text-xl md:text-2xl font-medium leading-relaxed">
@@ -740,7 +770,7 @@ export default function WorldAllergyFoundation() {
                     <Tilt><div className="aspect-square relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in" onClick={() => setSelectedImg({ src: "/images/swatch1.webp", alt: "Air Pollution Research Study 1" })}><Image src="/images/swatch1.webp" alt="Air Pollution Research Study 1" fill className="object-cover" sizes="(max-width: 768px) 45vw, 25vw" /></div></Tilt>
                     <Tilt><div className="aspect-square relative rounded-[1.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl cursor-zoom-in" onClick={() => setSelectedImg({ src: "/images/swatch2.webp", alt: "Air Pollution Research Study 2" })}><Image src="/images/swatch2.webp" alt="Air Pollution Research Study 2" fill className="object-cover" sizes="(max-width: 768px) 45vw, 25vw" /></div></Tilt>
                   </div>
-                </ScrollReveal>
+                </FadeInBlur>
               </div>
               <div className="flex-1 w-full">
                 <Tilt>
@@ -759,12 +789,12 @@ export default function WorldAllergyFoundation() {
         {/* 13. Surat Workshop */}
         <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <ScrollReveal>
+            <FadeInBlur>
               <div className="text-center mb-16 md:mb-24">
                 <span className="text-primary font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Medical Education</span>
                 <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-slate-950">Clinical Workshop.</h2>
               </div>
-            </ScrollReveal>
+            </FadeInBlur>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {[
                 { src: "/images/W1.webp", span: "col-span-2 row-span-2" },
@@ -785,16 +815,16 @@ export default function WorldAllergyFoundation() {
         {/* 14. Team Section */}
         <section className="py-24 md:py-40 bg-white overflow-hidden border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <ScrollReveal>
+            <FadeInBlur>
               <div className="text-center mb-16 md:mb-24">
                 <span className="text-primary font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Our Leadership</span>
                 <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-slate-950">The Team.</h2>
               </div>
-            </ScrollReveal>
+            </FadeInBlur>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 items-start">
               {/* 1. Dr. Vyakarnam Nageshwar */}
-              <ScrollReveal>
+              <FadeInBlur>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
                     <div 
@@ -830,10 +860,10 @@ export default function WorldAllergyFoundation() {
                     </div>
                   </div>
                 </motion.div>
-              </ScrollReveal>
+              </FadeInBlur>
 
               {/* 2. Dr. Bhagheerathi Kalidass */}
-              <ScrollReveal delay={0.1}>
+              <FadeInBlur delay={0.1}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
                     <div 
@@ -869,10 +899,10 @@ export default function WorldAllergyFoundation() {
                     </div>
                   </div>
                 </motion.div>
-              </ScrollReveal>
+              </FadeInBlur>
 
               {/* 3. Dr. Shivaranjani */}
-              <ScrollReveal delay={0.2}>
+              <FadeInBlur delay={0.2}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
                     <div 
@@ -916,10 +946,10 @@ export default function WorldAllergyFoundation() {
                     </div>
                   </div>
                 </motion.div>
-              </ScrollReveal>
+              </FadeInBlur>
 
               {/* 4. Dr. Kavya Lalam */}
-              <ScrollReveal delay={0.3}>
+              <FadeInBlur delay={0.3}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
                     <div 
@@ -960,10 +990,10 @@ export default function WorldAllergyFoundation() {
                     </div>
                   </div>
                 </motion.div>
-              </ScrollReveal>
+              </FadeInBlur>
 
               {/* 5. Mr. Sivakumar Thotapalli */}
-              <ScrollReveal delay={0.4}>
+              <FadeInBlur delay={0.4}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
                     <div 
@@ -1000,10 +1030,10 @@ export default function WorldAllergyFoundation() {
                     </div>
                   </div>
                 </motion.div>
-              </ScrollReveal>
+              </FadeInBlur>
 
               {/* 6. Vyakaranam Padma */}
-              <ScrollReveal delay={0.5}>
+              <FadeInBlur delay={0.5}>
                 <motion.div whileTap={{ scale: 0.99 }} className="group space-y-8">
                   <Tilt>
                     <div 
@@ -1039,7 +1069,7 @@ export default function WorldAllergyFoundation() {
                     </div>
                   </div>
                 </motion.div>
-              </ScrollReveal>
+              </FadeInBlur>
             </div>
           </div>
         </section>
@@ -1047,7 +1077,7 @@ export default function WorldAllergyFoundation() {
         {/* 15. Republic World Network Feature */}
         <section className="py-24 md:py-40 bg-white overflow-hidden relative border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <ScrollReveal>
+            <FadeInBlur>
               <div className="text-center mb-16 md:mb-24">
                 <span className="text-primary font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Global Recognition</span>
                 <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-slate-950 leading-none">Republic World <br /> <span className="text-primary italic">Network.</span></h2>
@@ -1055,14 +1085,14 @@ export default function WorldAllergyFoundation() {
                   Featured among INDIA'S TOP 15 <span className="text-primary">Visionary Entrepreneurs</span> in 2026.
                 </p>
               </div>
-            </ScrollReveal>
+            </FadeInBlur>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
               {[
                 { src: "/images/republic tv featured.jpg", alt: "Republic World Network: Visionary Entrepreneurs 2026" },
                 { src: "/images/republic tv featured 2.jpg", alt: "Republic World Network: Recognition of Excellence" }
               ].map((img, idx) => (
-                <ScrollReveal key={idx} delay={0.2 * idx}>
+                <FadeInBlur key={idx} delay={0.2 * idx}>
                   <Tilt>
                     <div 
                       className="aspect-video relative rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-[0_64px_128px_-32px_rgba(0,0,0,0.15)] ring-1 ring-slate-200 group cursor-zoom-in"
@@ -1077,7 +1107,7 @@ export default function WorldAllergyFoundation() {
                       />
                     </div>
                   </Tilt>
-                </ScrollReveal>
+                </FadeInBlur>
               ))}
             </div>
           </div>
@@ -1086,12 +1116,12 @@ export default function WorldAllergyFoundation() {
         {/* 16. Media Recognition */}
         <section className="py-24 md:py-40 bg-slate-950 text-white relative">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <ScrollReveal>
+            <FadeInBlur>
               <div className="text-center mb-16 md:mb-24">
                 <span className="text-primary-accent font-black tracking-[0.5em] uppercase text-[10px] mb-6 block">Global Presence</span>
                 <h2 className="text-3xl md:text-8xl font-bold font-heading tracking-tight text-white leading-none">World Heritage <br /> <span className="text-primary-accent italic">Week 2025.</span></h2>
               </div>
-            </ScrollReveal>
+            </FadeInBlur>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
               <div className="lg:col-span-1">
@@ -1136,12 +1166,12 @@ export default function WorldAllergyFoundation() {
             </div>
             
             <div className="mt-20 md:mt-32 pt-20 md:pt-32 border-t border-white/10">
-              <ScrollReveal>
+              <FadeInBlur>
                 <div className="text-center">
                   <h3 className="text-xl md:text-2xl font-bold mb-12 uppercase tracking-[0.4em] text-white/40">Recognized By</h3>
                   <MediaLogos />
                 </div>
-              </ScrollReveal>
+              </FadeInBlur>
             </div>
           </div>
         </section>

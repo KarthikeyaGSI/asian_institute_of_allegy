@@ -3,11 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Globe, ArrowRight } from "lucide-react";
-import Magnetic from "@/components/motion/Magnetic";
-import TextReveal from "@/components/motion/TextReveal";
-import ScrollReveal from "@/components/motion/ScrollReveal";
-import { fadeInUp, easeLuxury } from "@/components/motion/variants";
+import { ArrowRight, Globe, CheckCircle2 } from "lucide-react";
 
 export default function Authority() {
   return (
@@ -19,13 +15,13 @@ export default function Authority() {
         
         {/* DOCTOR ANCHOR & PROOF */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
-          <ScrollReveal className="order-2 lg:order-1 relative">
+          <div className="order-2 lg:order-1 relative">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl max-w-md mx-auto lg:mx-0 ring-1 ring-white/10">
               <motion.div
-                initial={{ scale: 1.1, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
+                initial={{ scale: 1 }}
+                whileInView={{ scale: 1.05 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1.8, ease: easeLuxury }}
+                transition={{ duration: 10, ease: "easeOut" }}
                 className="absolute inset-0 w-full h-full"
               >
                 <Image 
@@ -44,17 +40,23 @@ export default function Authority() {
                 <p className="text-gray-400 font-medium">Founder & Chief Immunologist</p>
               </div>
             </div>
-          </ScrollReveal>
+            
+            {/* Accreditation Badges */}
 
-          <ScrollReveal 
-            delay={0.2}
+          </div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="order-1 lg:order-2 space-y-10"
           >
             <div>
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Mission</span>
               <h2 className="text-3xl md:text-7xl font-bold leading-[1.1] text-white tracking-tight font-heading">
-                <TextReveal text="A Journey Rooted in" /> <br/>
-                <TextReveal text="Suffering & Hope." className="text-slate-500" delay={0.4} />
+                A Journey Rooted in <br/>
+                <span className="text-slate-500">Suffering & Hope.</span>
               </h2>
             </div>
             
@@ -77,12 +79,15 @@ export default function Authority() {
                 <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">SLIT Patients Treated</span>
               </div>
             </div>
-          </ScrollReveal>
+          </motion.div>
         </div>
 
         {/* GLOBAL STANDARDS (Foundation) */}
-        <ScrollReveal 
-          delay={0.4}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="bg-white/5 border border-white/10 p-10 md:p-16 rounded-[3rem] backdrop-blur-sm relative overflow-hidden group"
         >
           <div className="absolute right-0 top-0 text-white/5 -translate-y-1/4 translate-x-1/4 group-hover:scale-110 transition-transform duration-1000">
@@ -97,8 +102,7 @@ export default function Authority() {
               <span className="text-primary-accent font-bold tracking-[0.3em] uppercase text-xs">Global Authority</span>
             </div>
             <h3 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-white font-heading">
-              <TextReveal text="The Iconic Hope for" /> <br/> 
-              <TextReveal text="40 Crore Indians." delay={0.4} />
+              The Iconic Hope for <br/> 40 Crore Indians.
             </h3>
              <div className="flex flex-col md:flex-row gap-10 mb-12">
                <div className="flex-1">
@@ -111,16 +115,14 @@ export default function Authority() {
                </div>
             </div>
 
-            <Magnetic strength={0.2}>
-              <Link 
-                href="/world-allergy-foundation"
-                className="inline-flex items-center gap-2 bg-white text-dark px-8 py-4 rounded-xl font-bold text-sm hover:bg-gray-100 transition-all hover:scale-105 active:scale-95"
-              >
-                Explore Foundation Research <ArrowRight size={18} />
-              </Link>
-            </Magnetic>
+            <Link 
+              href="/world-allergy-foundation"
+              className="inline-flex items-center gap-2 bg-white text-dark px-8 py-4 rounded-xl font-bold text-sm hover:bg-gray-100 transition-colors"
+            >
+              Explore Foundation Research <ArrowRight size={18} />
+            </Link>
           </div>
-        </ScrollReveal>
+        </motion.div>
 
       </div>
     </section>
