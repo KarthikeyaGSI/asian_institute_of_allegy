@@ -6,8 +6,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CheckCircle2, Zap, Search, Activity } from "lucide-react";
-import ParticlesSphere from "@/components/effects/ParticlesSphere";
-import MotionTiles from "@/components/effects/MotionTiles";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -68,12 +66,6 @@ export default function Science() {
 
   return (
     <section id="research" ref={containerRef} className="bg-[#0B0F0E] py-24 md:py-40 overflow-hidden text-white relative scroll-mt-24">
-      {/* 🧩 MOTION TILES BACKGROUND */}
-      <MotionTiles color="#1A5F3A" rows={6} cols={10} />
-      
-      {/* 🌀 PARTICLES SPHERE */}
-      <ParticlesSphere color="#1A5F3A" count={150} />
-
       {/* Background ambient glow - Claude style */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
       

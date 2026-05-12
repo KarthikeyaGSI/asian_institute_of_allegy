@@ -28,8 +28,8 @@ export default function ProblemSolution() {
           
           {/* LEFT (Dark) */}
           <motion.div 
-            initial={{ x: -100, opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : {}}
+            initial={{ x: -100, opacity: 0, filter: "blur(10px)" }}
+            animate={isInView ? { x: 0, opacity: 1, filter: "blur(0px)" } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="bg-dark text-white p-10 md:p-16 flex flex-col justify-center"
           >
@@ -46,8 +46,8 @@ export default function ProblemSolution() {
 
           {/* RIGHT (Light) */}
           <motion.div 
-            initial={{ x: 100, opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : {}}
+            initial={{ x: 100, opacity: 0, filter: "blur(10px)" }}
+            animate={isInView ? { x: 0, opacity: 1, filter: "blur(0px)" } : {}}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             className="bg-white text-gray-900 p-10 md:p-16 flex flex-col justify-center"
           >

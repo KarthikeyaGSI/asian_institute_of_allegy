@@ -27,16 +27,24 @@ export default function SmoothScroll({ children }) {
     // Sync ScrollTrigger with Lenis
     lenis.on("scroll", ScrollTrigger.update);
 
-    const update = (time) => {
+    gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
-    };
+    });
 
-    gsap.ticker.add(update);
     gsap.ticker.lagSmoothing(0);
-    
+
+    let rafId;
+    function raf(time) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+
+    rafId = requestAnimationFrame(raf);
+
     return () => {
       lenis.destroy();
-      gsap.ticker.remove(update);
+      cancelAnimationFrame(rafId);
+      gsap.ticker.remove(lenis.raf);
     };
   }, []);
 

@@ -51,8 +51,8 @@ const Tilt = ({ children, className = "" }) => {
 
 const FadeInBlur = ({ children, delay = 0 }) => (
   <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
     viewport={{ once: true }}
     transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
   >
@@ -172,9 +172,9 @@ export default function SLITScience() {
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeMode}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, y: -10, filter: "blur(5px)" }}
                     transition={{ duration: 0.4 }}
                     className="space-y-10"
                   >

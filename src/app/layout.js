@@ -1,5 +1,6 @@
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/effects/SmoothScroll";
 import NoiseOverlay from "@/components/effects/NoiseOverlay";
 import PremiumCursor from "@/components/effects/PremiumCursor";
 import NotificationTriggers from "@/components/ui/NotificationTriggers";
@@ -113,11 +114,13 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        <ProgressBar />
-        <NoiseOverlay />
-        <PremiumCursor />
-        <NotificationTriggers />
-        {children}
+        <SmoothScroll>
+          <ProgressBar />
+          <NoiseOverlay />
+          <PremiumCursor />
+          <NotificationTriggers />
+          {children}
+        </SmoothScroll>
 
         {/* Unified Structured Data for GEO/AEO */}
         <script

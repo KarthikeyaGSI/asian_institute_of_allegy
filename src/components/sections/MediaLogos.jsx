@@ -24,35 +24,42 @@ export default function MediaLogos() {
       <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 md:gap-12 items-center">
-          {logos.map((logo, index) => (
-            <motion.div
-              key={logo.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="relative flex-shrink-0"
-              whileHover={{ 
-                y: -8,
-                transition: { type: "spring", stiffness: 300, damping: 15 }
-              }}
-            >
-              <div className="relative w-full h-12 md:h-16 flex items-center justify-center group">
-                <div className="relative w-full h-full transition-all duration-500">
-                  <Image
-                    src={logo.src}
-                    alt={logo.name}
-                    fill
-                    className="object-contain filter grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                  />
-                </div>
+      <motion.div
+        className="flex items-center gap-20 md:gap-32 whitespace-nowrap px-10"
+        animate={{
+          x: [0, -2240], // Calculated: 8 logos * (160px width + 120px gap) = 2240px
+        }}
+        transition={{
+          duration: 35,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        {scrollingLogos.map((logo, index) => (
+          <motion.div
+            key={`${logo.name}-${index}`}
+            className="relative flex-shrink-0"
+            whileHover={{ 
+              y: -12,
+              transition: { type: "spring", stiffness: 300, damping: 15 }
+            }}
+          >
+            <div className="relative w-32 h-16 md:w-44 md:h-24 flex items-center justify-center group">
+              {/* Gold Shimmer Glow Effect */}
+              <div className="absolute inset-0 bg-amber-400/0 group-hover:bg-amber-400/5 blur-2xl rounded-full transition-all duration-700 scale-150" />
+              
+              <div className="relative w-full h-full transition-all duration-500 group-hover:drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  fill
+                  className="object-contain filter brightness-95 contrast-90 group-hover:brightness-110 group-hover:contrast-110 transition-all duration-500"
+                />
               </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </div>
   );
 }

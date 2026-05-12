@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle, CheckCircle2, ChevronDown } from "lucide-react";
 import Magnetic from "@/components/effects/Magnetic";
-import Antigravity from "@/components/effects/Antigravity";
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -61,9 +60,6 @@ export default function Hero() {
         </video>
       </motion.div>
 
-      {/* 🌌 ANTIGRAVITY PARTICLES */}
-      <Antigravity particleColor="#1A5F3A" count={isMobile ? 30 : 60} />
-
       {/* 🎨 OVERLAY - Precise Gradient Specs */}
       <div 
         className="absolute inset-0 z-[1] pointer-events-none"
@@ -88,8 +84,8 @@ export default function Hero() {
           <div className="w-full lg:flex-1 flex flex-col items-start text-left"> 
             <div className="w-full">
               <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                animate={isLoaded ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[32px] sm:text-[40px] lg:text-[72px] font-bold leading-[1.1] tracking-tight font-heading text-left"
               >
@@ -98,8 +94,8 @@ export default function Hero() {
               </motion.h1>
 
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
+                animate={isLoaded ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
                 transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-6 lg:mt-8 text-[16px] lg:text-[20px] leading-relaxed text-white/90 font-medium text-left max-w-[500px]"
               >
