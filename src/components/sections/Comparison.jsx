@@ -64,7 +64,7 @@ const leftItems = [
 
 const rightItems = [
   "Allergen-specific SLIT",
-  "Root-cause diagnosis (Skin Prick)",
+  "Root-cause diagnosis (Allergen Testing)",
   "Permanent Immune Retraining",
   "Tailored to ages 2 to 80"
 ];

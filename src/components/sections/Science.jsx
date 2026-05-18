@@ -15,7 +15,7 @@ const steps = [
   {
     title: "Identify",
     label: "Root-Cause Discovery",
-    description: "Advanced diagnostics (PFT, Skin Prick, Component-resolved) to find exactly what triggers your immune system.",
+    description: "Advanced diagnostics (PFT, Allergen Testing, Component-resolved) to find exactly what triggers your immune system.",
     icon: Search
   },
   {
