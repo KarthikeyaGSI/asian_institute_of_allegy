@@ -158,7 +158,7 @@ export default function ContributePage() {
                           />
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 gap-6">
                           <div className="space-y-2 relative z-20">
                             <label className="text-[10px] font-black uppercase tracking-widest text-white/40 ml-1">Phone</label>
                             <PhoneInput

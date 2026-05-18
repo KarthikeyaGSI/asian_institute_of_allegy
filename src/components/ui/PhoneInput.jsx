@@ -140,7 +140,7 @@ export default function PhoneInput({ value, onChange, className, required = fals
         placeholder={`Enter ${selectedCountry.length} digits`}
         required={required}
         className={clsx(
-          "flex-1 px-5 py-4 rounded-r-xl border transition-all h-full focus:outline-none focus:ring-2",
+          "flex-1 min-w-0 px-5 py-4 rounded-r-xl border transition-all h-full focus:outline-none focus:ring-2",
           dark
             ? "bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:ring-primary-accent"
             : "bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 focus:ring-primary",
