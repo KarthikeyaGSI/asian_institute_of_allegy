@@ -83,12 +83,14 @@ function SeverityChart({ metrics }) {
       {["Before", "Month 3", "Month 6", "Today"].map((label, i) => (
         <div key={label} className="flex items-center gap-3">
           <span className="text-[10px] font-bold text-slate-500 w-16">{label}</span>
-          <div className="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+          <div className="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden relative">
             <motion.div 
-              initial={{ width: 0 }}
-              whileInView={{ width: `${(metrics[i] / 10) * 100}%` }}
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
-              className="h-full bg-primary"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              style={{ width: `${(metrics[i] / 10) * 100}%`, transformOrigin: "left" }}
+              className="h-full bg-primary origin-left"
             />
           </div>
         </div>
@@ -102,11 +104,18 @@ function TestimonialCard({ item, i }) {
 
   return (
     <motion.div
+      layout
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: i * 0.1 }}
-      className="bg-white rounded-[2.5rem] border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 flex flex-col group"
+      transition={{ 
+        delay: i * 0.05,
+        layout: { type: "spring", stiffness: 300, damping: 30 },
+        opacity: { duration: 0.4 },
+        y: { duration: 0.4 }
+      }}
+      style={{ willChange: "transform, opacity" }}
+      className="bg-white rounded-[2.5rem] border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-shadow duration-300 flex flex-col group"
     >
       {/* Video Section */}
       <div className="relative aspect-video bg-slate-100 overflow-hidden cursor-pointer" onClick={() => setIsPlaying(true)}>
@@ -119,8 +128,8 @@ function TestimonialCard({ item, i }) {
               className="object-cover group-hover:scale-105 transition-transform duration-700"
               sizes="(max-w-768px) 100vw, 400px"
             />
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors">
-              <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform">
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors duration-300">
+              <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-300">
                 <Play fill="currentColor" size={24} className="ml-1" />
               </div>
             </div>

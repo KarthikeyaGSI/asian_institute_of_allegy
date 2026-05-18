@@ -182,10 +182,11 @@ const NotificationTriggers = () => {
 
                 {/* Progress Bar (Timer) */}
                 <motion.div 
-                  initial={{ width: "100%" }}
-                  animate={{ width: "0%" }}
+                  initial={{ scaleX: 1 }}
+                  animate={{ scaleX: 0 }}
                   transition={{ duration: 6, ease: "linear" }}
-                  className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-blue-500/50 to-purple-500/50"
+                  style={{ transformOrigin: "left", willChange: "transform" }}
+                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/50 to-purple-500/50 origin-left"
                 />
               </div>
             </div>

@@ -259,11 +259,13 @@ export default function DiagnosticQuiz({ isOpen, onClose }) {
         </div>
 
         {/* Quiz Progress Bar */}
-        <div className="w-full h-1 bg-slate-100">
+        <div className="w-full h-1 bg-slate-100 overflow-hidden relative">
           <motion.div
-            className="h-full bg-primary"
-            initial={{ width: 0 }}
-            animate={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
+            className="h-full bg-primary w-full origin-left"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: (currentStep + 1) / steps.length }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            style={{ transformOrigin: "left", willChange: "transform" }}
           />
         </div>
 

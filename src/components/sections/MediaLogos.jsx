@@ -26,6 +26,7 @@ export default function MediaLogos() {
 
       <motion.div
         className="flex items-center gap-20 md:gap-32 whitespace-nowrap px-10"
+        style={{ willChange: "transform" }}
         animate={{
           x: [0, -2240], // Calculated: 8 logos * (160px width + 120px gap) = 2240px
         }}
