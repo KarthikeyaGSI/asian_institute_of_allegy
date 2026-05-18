@@ -279,18 +279,7 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Dynamic Outcome Stats */}
-        <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 bg-white p-8 rounded-[2rem] border border-slate-100"
-        >
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Verified Stories</p>
-              <p className="text-4xl font-bold text-slate-900 font-heading">{filteredTestimonials.length}</p>
-              <p className="text-xs font-medium text-slate-500 mt-1">Documented Patient Stories in our records</p>
-            </div>
-        </motion.div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredTestimonials.map((item, i) => (
